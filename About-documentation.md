@@ -1,5 +1,3 @@
-# About documentation
-
 The Charting Library is under intensive development, so some things may change very fast. Different parts of this document have different stability: some are rather stable and others may change every day, or several times a day. We marked each document section with its stability estimate. We use following marks:
 
 |Value|Meaning|
