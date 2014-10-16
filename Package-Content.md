@@ -1,5 +1,6 @@
-*version: 0.8*
-*stability: 2 (rather stable)*
+**version: 0.8**
+
+**stability: 2 (rather stable)**
 
 Charting Library package is available on GitHub. You may check out the latest stable version (`master` branch) or the most recent development build (`dev` branch). To have an access to this repo please contact us.
 
