@@ -1,5 +1,8 @@
 # 1.1
-
+* Implementing Charting Library: [Best practices](Best-practices) page added
+* FIXED: Price accuracy problem #193
+* FIXED: Chart fails to load on back/forward. #191
+* IMPLEMENTED: Add Asia/Tehran (GMT +3:30) timezone #159
 * IMPLEMENTED: Timeframes list customization #176
 * IMPLEMENTED: Full control over Volume properties #177
 * IMPLEMENTED: Change chart status to `closed` when market is closed #180
