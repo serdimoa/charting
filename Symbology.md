@@ -102,8 +102,7 @@ The boolean value showing whether library should filter bars with current sessio
 #####has_no_volume <false>
 Boolean showing whether symbol has volume data or not.
 
-#####has_fractional_volume <false>
-**obsolete (1.1 - 1.5), use volume_precision instead**
+#####has_fractional_volume <false> | obsolete (1.1 - 1.5), use volume_precision instead
 If has_fractional_volume=true, `Volume` indicator values will not be rounded to integer values.
 
 #####volume_precision <0>
