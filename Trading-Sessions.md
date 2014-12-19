@@ -20,6 +20,8 @@ Fragment | Meaning
 
 Days numbers are 1 for Sunday and 7 for Saturday (2 -- Monday, 3 -- Tuesday, e.t.c.). It's possible to override more than one day with a single session record. E.g., in "0900-1630|0900-1400:23" 0900-1400 sessions will be assigned to days #2 and #3 (Monday, Tuesday).
 
+**version: 1.1**:
+
 One can specify the first trading day of a week using semicolon. Examples:
 ```
 "1;0900-1630|0900-1400:2" : first day of week is Sunday
