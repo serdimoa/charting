@@ -9,4 +9,4 @@
 ###JavaScript API or UDF?
 
 ![](https://www.dropbox.com/s/dedg3tzlp7jj0v6/api_structure.png?dl=1)
-The picture above illustrates the relationships between the [[default package|Default-Package]] components. Mandatory Charting Library parts are colored red. Green parts (default data transport) are included in default package (having non-minimized source code) and may be replaced. You may see the default data transport implements JS API. Also, default transport implements UDF protocol.
+The picture above illustrates the relationships between the [[default package|Package-Content]] components. Mandatory Charting Library parts are colored red. Green parts (default data transport) are included in default package (having non-minimized source code) and may be replaced. You may see the default data transport implements JS API. Also, default transport implements UDF protocol.
