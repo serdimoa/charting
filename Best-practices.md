@@ -1,5 +1,3 @@
-#Implementing Charting Library: Best practices
-
 ##Creating the best user experience
 
 We love our charts. We want them to be the best: the most beautiful, the most responsive and the most powerful charts in the whole HTML5 world. We are working hard to reach these goals.
