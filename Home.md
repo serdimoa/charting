@@ -8,17 +8,17 @@ This solution is best for companies of any size that want to get top-notch HTML5
 
 TradingView Charting Library allows you to implement your own high-end charting solution in a few steps.
 
-* Download your [copy of Charting Library](Package-Content) and then [run it](Running-Your-Charting-Library).
-* [Decide how to provide the data for charts](Choosing-Data-Transport).
-* Implement your own data source solution or use an existing one. [Want samples](Choosing-Data-Transport#want-examples-)?
+* Download your [[copy of Charting Library|Package-Content]] and then [[run it|Running-Your-Charting-Library]].
+* [[Decide how to provide the data for charts|Choosing-Data-Transport]].
+* Implement your own data source solution or use an existing one. [[Want samples|Choosing-Data-Transport#want-examples-]]?
 
 After step 3 you will have a complete and working charting tool. If you want your charts to have a custom appearance, then you may go further.
 
-* Investigate Charting Library [customization possibilities](Widget-Customization)
+* Investigate Charting Library [[customization possibilities|Widget-Customization]]
 
 If you need some more custom stuff, please refer to: 
 
-* [Creating Custom Studies](Creating-Custom-Studies)
-* [Best Practices](Best-Practices)
+* [[Creating Custom Studies|Creating-Custom-Studies]]
+* [[Best Practices|Best-Practices]]
 
 Also you may want to know more about known issues and issues tracking.
