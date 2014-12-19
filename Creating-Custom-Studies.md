@@ -1,1 +1,1 @@
-`__************__`
+We use our [Pine scripting language](https://www.tradingview.com/study-script-reference/) to create indicators for Charting Library. If you want to create a custom indicator you have to write it in Pine using TradingView site. Then contact us and we'll compile your Pine code to a code for Charting Library. Then use widget constructor's `indicators_file_name` parameter to show the library where to find your studies.
