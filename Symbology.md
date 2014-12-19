@@ -19,29 +19,52 @@ For now both of this fields are expected to have short name of exchange where th
 
 #####timezone
 Exchange timezone for this symbol. We expect to get name of time zone in olsondb format. Supported timezones are:
+```
+America/New_York
+America/Los_Angeles
+America/Chicago
+America/Toronto
+America/Vancouver
+America/Argentina/Buenos_Aires
+America/Bogota
+Europe/Moscow
+Europe/Athens
+Europe/Berlin
+Europe/London
+Europe/Madrid
+Europe/Paris
+Europe/Warsaw
+Australia/Sydney
+Asia/Bangkok
+Asia/Tokyo
+Asia/Taipei
+Asia/Singapore
+Asia/Shanghai
+Asia/Seoul
+Asia/Kolkata
+Asia/Hong_Kong
+```
+#####pricescale, minmov
+1. Minimal possible price change is determined by those values.
+2. PriceScale parameter determines interval between price lines on chart's price scale.
+```
+MinimalPossiblePriceChange = minmov / pricescale
+PriceScaleInterval = 1 / pricescale
+```
 
-* America/New_York
-* America/Los_Angeles
-* America/Chicago
-* America/Toronto
-* America/Vancouver
-* America/Argentina/Buenos_Aires
-* America/Bogota
-* Europe/Moscow
-* Europe/Athens
-* Europe/Berlin
-* Europe/London
-* Europe/Madrid
-* Europe/Paris
-* Europe/Warsaw
-* Australia/Sydney
-* Asia/Bangkok
-* Asia/Tokyo
-* Asia/Taipei
-* Asia/Singapore
-* Asia/Shanghai
-* Asia/Seoul
-* Asia/Kolkata
-* Asia/Hong_Kong
+#####minmove2
+It's a magic number for complex price formatting cases. Here are some samples:
+```
+typical stock with 0.01 price increment: minmov = 1, pricescale = 100, minmove2 = 0
+ZBM2014 (T-Bond) with 1/32: minmov = 1, pricescale = 32, minmove2 = 0
+ZCM2014 (Corn) with 2/8: minmov = 2, pricescale = 8, minmove2 = 0
+ZFM2014 (5 year t-note) with 1/4 of 1/32: minmov=1, pricescale=128, minmove2= 4
+```
 
-#####pricescale
+#####has_intraday
+Boolean showing whether symbol has intraday history data. If it's false then all buttons for intradays resolutions will be disabled when this symbol is active in chart.
+
+#####intraday_multipliers
+It is an array containing intraday resolutions (in minutes) the datafeed wants to build by itself. E.g., if the datafeed reported he supports resolutions [1, 5, 15], but in fact it has only 1 minute bars for symbol X, it should set intraday_multipliers of X = [1]. This will make Charting Library to build 5 and 15 resolutions by itself.
+
+#####
