@@ -11,4 +11,37 @@ But there are some fine points you should know about:
 
 SymbolInfo is an object containing symbol metadata. This object is the result of resolving the symbol. SymbolInfo has following fields:
 
-######field0
+#####name
+It's name of a symbol. It is a string which your users will see. Also, it will be used for data requests if you are not using **tickers**.
+
+#####exchange-traded, exchange-listed
+For now both of this fields are expected to have short name of exchange where this symbol is traded. This name will be printed in chart's legend for this symbol. This field is not used for other purposes now.
+
+#####timezone
+Exchange timezone for this symbol. We expect to get name of time zone in olsondb format. Supported timezones are:
+
+* America/New_York
+* America/Los_Angeles
+* America/Chicago
+* America/Toronto
+* America/Vancouver
+* America/Argentina/Buenos_Aires
+* America/Bogota
+* Europe/Moscow
+* Europe/Athens
+* Europe/Berlin
+* Europe/London
+* Europe/Madrid
+* Europe/Paris
+* Europe/Warsaw
+* Australia/Sydney
+* Asia/Bangkok
+* Asia/Tokyo
+* Asia/Taipei
+* Asia/Singapore
+* Asia/Shanghai
+* Asia/Seoul
+* Asia/Kolkata
+* Asia/Hong_Kong
+
+#####pricescale
