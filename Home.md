@@ -10,7 +10,7 @@ TradingView Charting Library allows you to implement your own high-end charting 
 
 * Download your [copy of Charting Library](Package-Content) and then [run it](Running-Your-Charting-Library).
 * [Decide how to provide the data for charts](Choosing-Data-Transport).
-* Implement your own data source solution or use an existing one. [Want samples](Datafeed-Implementation-Samples)?
+* Implement your own data source solution or use an existing one. [Want samples](Choosing-Data-Transport#want-examples-)?
 
 After step 3 you will have a complete and working charting tool. If you want your charts to have a custom appearance, then you may go further.
 
