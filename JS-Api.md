@@ -26,12 +26,12 @@ An array of exchange descriptors. Exchange descriptor is an object `{value, name
 
 `exchanges` = []  leads to exchanges filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all exchanges).
 
-#####symbolsTypes / symbols_types
+#####symbols_types
 An array of filter descriptors. Filter descriptor is an object `{name, value}`. `value` will be passed as `symbolType` argument  to searchSymbolsByName. 
 
 `symbolsTypes` = []  leads to types filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all types)
 
-#####supportedResolutions / supported_resolutions
+#####supported_resolutions
 An array of supported resolutions. Resolution may be a number or a string. If the resolution is a number, it is treated as minutes count. Strings may be "*D", "*W", "*M" (* means any number).
 
 'resolutions'=undefined or [] leads to resolutons widget having its default content (see <http://tradingview.com/e/> ). Example: `[1, 15, 240, "D", "6M"]` will give you "1 minute, 15 minutes, 4 hours, 1 day, 6 months" in resolution widget.
