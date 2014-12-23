@@ -207,6 +207,8 @@ API object methods:
 * `onModify(callback)` / `onModify(data, callback)`
 * `onMove(callback)` / `onMove(data, callback)`
 
+API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
+
 **General properties**:
 
 Property|Type|Supported Values|Default Value
@@ -220,10 +222,10 @@ Quantity|String|String|""
 
 Property|Type|Supported Values|Default Value
 ---|---|---|---
-Extend Left|Boolean|Boolean|True
-Line Length|Integer|0 .. 100|0
-Line Style|Integer|0 .. 2|2
-Line Width|Integer|1 .. 4|1
+Extend Left|Boolean|"inherit" or Boolean|True
+Line Length|Integer|"inherit" or 0 .. 100|0
+Line Style|Integer|"inherit" or 0 .. 2|2
+Line Width|Integer|"inherit" or 1 .. 4|1
 
 **Fonts**:
 
@@ -247,7 +249,95 @@ Cancel Button Border Color|String|"rgb(255, 0, 0)"
 Cancel Button Background Color|String|"rgba(255, 255, 255, 0.75)"
 Cancel Button Icon Color|String|"rgb(255, 0, 0)"
 
+Example:
+```javascript
+widget.createOrderLine()
+    .onMove(function() {
+        this.setText("onMove called");
+    })
+    .onModify("onModify called", function(text) {
+        this.setText(text);
+    })
+    .onCancel("onCancel called", function(text) {
+        this.setText(text);
+    })
+    .setText("STOP: 73.5 (5,64%)")
+    .setQuantity("2");
+```
 
+####createPositionLine()
+Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior.  It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
+
+API object methods:
+* `remove()`: Removes the position from the chart. You can’t use API-object after this call.
+* `onClose(callback)` / `onClose(data, callback)`
+* `onModify(callback)` / `onModify(data, callback)`
+* `onReverse(callback)` / `onReverse(data, callback)`
+
+API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
+
+**General properties**:
+
+Property|Type|Supported Values|Default Value
+---|---|---|---
+Price|Double|Double|0.0
+Text|String|String|""
+Quantity|String|String|""
+
+
+**Connection line properties**:
+
+Property|Type|Supported Values|Default Value
+---|---|---|---
+Extend Left|Boolean|"inherit" or Boolean|True
+Line Length|Integer|"inherit" or 0 .. 100|0
+Line Style|Integer|"inherit" or 0 .. 2|2
+Line Width|Integer|"inherit" or 1 .. 4|1
+
+**Fonts**:
+
+Property|Type|Default Value
+---|---|---
+Body Font|String|"bold 7pt Verdana"
+Quantity Font|String|"bold 7pt Verdana"
+
+**Colors**:
+
+Property|Type|Default Value
+---|---|---
+Line Color|String|"rgb(0, 113, 224)"
+Body Border Color|String|"rgb(0, 113, 224)"
+Body Background Color|String|"rgba(255, 255, 255, 0.75)"
+Body Text Color|String|"rgb(0, 113, 224)"
+Quantity Border Color|String|"rgb(0, 113, 224)"
+Quantity Background Color|String|"rgba(0, 113, 224, 0.75)"
+Quantity Text Color|String|"rgb(255, 255, 255)"
+Reverse Button Border Color|String|"rgb(0, 113, 224)"
+Reverse Button Background Color|String|"rgba(255, 255, 255, 0.75)"
+Reverse Button Icon Color|String|"rgb(0, 113, 224)"
+Close Button Border Color|String|"rgb(0, 113, 224)"
+Close Button Background Color|String|"rgba(255, 255, 255, 0.75)"
+Close Button Icon Color|String|"rgb(0, 113, 224)"
+
+Example:
+```javascript
+widget.createPositionLine()
+    .onModify(function() {
+        this.setText("onModify called");
+    })
+    .onReverse("onReverse called", function(text) {
+        this.setText(text);
+    })
+    .onClose("onClose called", function(text) {
+        this.setText(text);
+    })
+    .setText("PROFIT: 71.1 (3.31%)")
+    .setQuantity("8.235")
+    .setPrice(15.5)
+    .setExtendLeft(false)
+.setLineStyle(0)
+.setLineLength(25);
+```
 ####createExecutionShape()
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
