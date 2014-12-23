@@ -3,6 +3,9 @@ Here is a list of supported widget's methods. You can call them using widget obj
 **Remark**: Please note that it's safe to call any method only **after** onChartReady callback is fired. So the common practice is to do smth like
 
 ```javascript
+widget.onChartReady(function() {
+    // now it's safe to call any other widget's methods
+});
 ```
 
 ####remove()
