@@ -8,6 +8,8 @@ widget.onChartReady(function() {
 });
 ```
 
+#Methods List
+
 ####remove()
 Removes chart widget from your page.
 
