@@ -8,37 +8,36 @@ widget.onChartReady(function() {
 });
 ```
 #Contents Table
-
 * Subscribing To Chart Events
-  * [[onChartReady(callback)|Widget-Methods#onChartReady(callback)]]
-  * [[onSymbolChange(callback)|Widget-Methods#onSymbolChange(callback)]]
-  * [[onIntervalChange(callback)|Widget-Methods#onIntervalChange(callback)]]
-  * [[symbolInterval(callback)|Widget-Methods#symbolInterval(callback)]]
-  * [[onRealtimeTick(callback)|Widget-Methods#onRealtimeTick(callback)]]
-  * [[onAutoSaveNeeded(callback)|Widget-Methods#onAutoSaveNeeded(callback)]]
-  * [[onMarkClick(callback)|Widget-Methods#onMarkClick(callback)]]
-  * [[onGrayedObjectClicked(callback)|Widget-Methods#onGrayedObjectClicked(callback)]]
+  * [[onChartReady(callback)|Widget-Methods#onChartReadycallback]
+  * [[onSymbolChange(callback)|Widget-Methods#onSymbolChangecallback]]
+  * [[onIntervalChange(callback)|Widget-Methods#onIntervalChangecallback]]
+  * [[symbolInterval(callback)|Widget-Methods#symbolIntervalcallback]]
+  * [[onRealtimeTick(callback)|Widget-Methods#onRealtimeTickcallback]]
+  * [[onAutoSaveNeeded(callback)|Widget-Methods#onAutoSaveNeededcallback]]
+  * [[onMarkClick(callback)|Widget-Methods#onMarkClickcallback]]
+  * [[onGrayedObjectClicked(callback)|Widget-Methods#onGrayedObjectClickedcallback]]
 * Chart Actions
-  * [[setLanguage(locale)|Widget-Methods#setLanguage(locale)]]
-  * [[setSymbol(symbol, interval, callback)|Widget-Methods#setSymbol(symbol, interval, callback)]]
-  * [[remove()|Widget-Methods#remove()]]
-  * [[executeAction(action)|Widget-Methods#executeAction(action)]]
+  * [[setLanguage(locale)|Widget-Methods#setLanguagelocale]]
+  * [[setSymbol(symbol, interval, callback)|Widget-Methods#setSymbolsymbol-interval-callback]]
+  * [[remove()|Widget-Methods#remove]]
+  * [[executeAction(action)|Widget-Methods#executeActionaction]]
 * Studies And Shapes 
-  * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createStudy(name, forceOverlay, lock, inputs)]]
-  * [[createShape(point, options)|Widget-Methods#createShape(point, options)]]
-  * [[createVerticalLine(point, options)|Widget-Methods#createVerticalLine(point, options)]]
-  * [[removeAllShapes()|Widget-Methods#removeAllShapes()]]
-  * [[removeAllStudies()|Widget-Methods#removeAllStudies()]]
+  * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createStudyname-forceOverlay-lock-inputs]]
+  * [[createShape(point, options)|Widget-Methods#createShapepoint-options]]
+  * [[createVerticalLine(point, options)|Widget-Methods#createVerticalLinepoint-options]]
+  * [[removeAllShapes()|Widget-Methods#removeAllShapes]]
+  * [[removeAllStudies()|Widget-Methods#removeAllStudies]]
 * Saving/Loading Charts
-  * [[save(callback)|Widget-Methods#save(callback)]]
-  * [[load(state)|Widget-Methods#load(state)]]
+  * [[save(callback)|Widget-Methods#savecallback]]
+  * [[load(state)|Widget-Methods#loadstate]]
 * Custom UI Controls
-  * [[onContextMenu(callback)|Widget-Methods#onContextMenu(callback)]]
-  * [[createButton()|Widget-Methods#createButton()]]
+  * [[onContextMenu(callback)|Widget-Methods#onContextMenucallback]]
+  * [[createButton()|Widget-Methods#createButton]]
 * Trading Primitives
-  * [[createOrderLine()|Widget-Methods#createOrderLine()]]
-  * [[createPositionLine()|Widget-Methods#createPositionLine()]]
-  * [[createExecutionShape()|Widget-Methods#createExecutionShape()]]
+  * [[createOrderLine()|Widget-Methods#createOrderLine]]
+  * [[createPositionLine()|Widget-Methods#createPositionLine]]
+  * [[createExecutionShape()|Widget-Methods#createExecutionShape]]
 
 #Methods List
 
