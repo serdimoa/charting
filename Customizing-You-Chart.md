@@ -22,6 +22,8 @@ They are most about data-related stuff. Those customizations are done through da
 };
 ```
 
+One may find more detailed description of this parameters on [[JS API page|JS-Api]].
+
 #####Customizations done on client-side. 
 These ones allow you to affect most of UI/UX. These customizations are done through chart widget constructor arguments. The example of widget constructor call: 
 
@@ -62,3 +64,5 @@ var widget = new TradingView.widget({
 	}
 });
 ```
+
+See the details in [[Widget Constructor Arguments article|Widget-Constructor]].
