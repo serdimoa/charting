@@ -199,17 +199,13 @@ widget.onChartReady(function() {
 });
 ```
 
-####createPositionLine()
-Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior. 
-
 ####createOrderLine()
 Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
 API object methods:
 * `remove()`: Removes the position from the chart. You can’t use API-object after this call.
-* `onClose(callback)` / `onClose(data, callback)`
 * `onModify(callback)` / `onModify(data, callback)`
-* `onReverse(callback)` / `onReverse(data, callback)`
+* `onMove(callback)` / `onMove(data, callback)`
 
 **General properties**:
 
