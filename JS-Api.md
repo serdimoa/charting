@@ -38,3 +38,24 @@ An array of supported resolutions. Resolution may be a number or a string. If th
 
 #####supports_marks
 Boolean showing whether your datafeed supports marks on bars or not. 
+
+###searchSymbolsByName(userInput, exchange, symbolType, onResultReadyCallback)
+1. `userInput`: string. It is text entered by user in symbol search field
+2. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
+3. `symbolType`: string. The requested symbol type: index, stock, forex e.t.c. (chosen by user). Empty value means no filter was specified.
+4. `onResultReadyCallback`: function(result)
+  1. `result`: ```javascript
+[
+    {
+        "symbol": <short symbol name>,
+        "full_name": <full symbol name -- e.g., BTCE:BTCUSD>,
+        "description": <symbol description>,
+        "exchange": <symbol exchange name>,
+            "ticker": <symbol ticker name>,
+        "type": "stock" | "futures" | "bitcoin" | "forex" | "index"
+    }, {
+        //    .....
+    }
+]
+```
+
