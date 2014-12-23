@@ -13,37 +13,37 @@ new TradingView.widget({
 
 Find full supported parameters list below. Please remember that changing those parameters after chart is initialized **does not work**. If you want to change the state of a chart after it was initialized, use [[Widget methods|Widget-Methods]] instead.
 
-#####symbol, interval [mandatory]
+####symbol, interval [mandatory]
 Initial symbol & interval of your chart.
 
-#####container_id [mandatory]
+####container_id [mandatory]
 `id` attribute of a DOM element you want to contain the widget.
 
-#####datafeed [mandatory]
+####datafeed [mandatory]
 JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed the chart width data.
 
-#####timezone <UTC>
+####timezone <UTC>
 Initial timezone of the chart. Numbers on time scale depend on this timezone.
 See [[supported timezones list|Symbology#timezone]] for available values.
 
-#####debug
+####debug
 Setting this property to `true` makes the chart to write detailed API logs to console. Feature `charting_library_debug_mode` is a synonym for this field usage.
 
-#####library_path
+####library_path
 A path to `static` folder
 
-#####width, height
+####width, height
 The desired size of a widget. Please make sure the widget has enough space to look smart.
 
 **Remark**: if you want the chart to occupy all the available space, do not use '100%' in those field. Use `fullscreen` parameter instead (see below). It's because of issues with DOM nodes resizing in different browsers.
 
-#####fullscreen <false>
+####fullscreen <false>
 Boolean value showing whether chart should occupy all the available space or not.
 
-#####toolbar_bg
+####toolbar_bg
 Toolbars background color
 
-#####studies_access
+####studies_access
 *version: 1.1*
 An object with following structure:
 ```
@@ -63,18 +63,18 @@ An object with following structure:
   * `name` (mandatory) is the name of a study. Use the same names as you can see them in Indicators widget
   * `grayed` is a boolean showing whether this study should be visible but look like it's disabled. If the study is grayed and user clicks it, then `onGrayedObjectClicked` is called.
 
-#####drawings_access
+####drawings_access
 *version: 1.1*
 This property has the same structure as the `studies_access` described above. Use the same names as you see them in UI.
 **Remark**: There is a special case for font-based drawings. Use "Font Icons" name for them. This group is a special case and its drawings cannot be enabled or disabled particularly -- one can either enable or disable the whole group.
 
-#####saved_data
+####saved_data
 JS object containing saved chart content (see save/load calls below). Use this parameter if you already have chart's JSON when creating chart. If you want to load chart content to chart that is already initialized then use `loadData()` widget method. 
 
-#####locale
+####locale
 Locale to be used by Charting Library. See [[Localization]] section for details.
 
-#####overrides
+####overrides
 The object containing default Widget properties overrides. Overriding a property means assigning a default value to it.
 You can override most of Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` supposed to be an object having range of fields. Each field name is a name of overridden property and the field value is the desired value for those property. Example:
 
@@ -87,14 +87,14 @@ overrides: {
 This override will make the watermark 100% opaque (invisible). All customizable properties are listed in [[separate article|Overrides]]
 
 
-#####disabled_features, enabled_features
+####disabled_features, enabled_features
 The array containing names of features which should be enabled/disabled by default. `Feature` means a part of chart's functionality (more likely a part of UI/UX). Supported features are listed [[here|Featuresets]].
 
-#####snapshot_url
+####snapshot_url
 *experimental feature*
 URL for POST request with base64-encoded chart snapshots which will been sent when user press snapshot button. The service should return full URL to saved image in its response.
 
-#####widgetbar | TradingTerminal only |
+####widgetbar | TradingTerminal only |
 The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
 ```
 widgetbar: {
@@ -111,16 +111,16 @@ widgetbar: {
 * **watchlist <false>**: Enables watchlist widget in right-side widget bar.
 * **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
 
-#####indicators_file_name
+####indicators_file_name
 Path to file containing your compiled indicators. See more details [[here|Creating-Custom-Studies]].
 
-#####preset
+####preset
 `preset` is a name of a set of pre-defined widget settings. All settings used by preset also may be used directly by you in widget's constructor. For now, the only `mobile` preset is supported. The example of this preset is available online.
 
-#####studies_overrides
+####studies_overrides
 Use this option to customize default indicators' style or inputs. See more details [[here|Studies-Overrides]]
 
-#####time_frames
+####time_frames
 List of time frames visible in timeframes picker at the bottom of the chart. Example:
 ```
 time_frames: [
@@ -132,11 +132,13 @@ time_frames: [
 ```
 Time frame is an object containing `text` and `resolution` property. Text must have following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string having the common resolutions format. See [[this topic|Time-Frames]] to learn more about time frames.
 
-#####charts_storage_url, client_id, user_id
+####charts_storage_url, client_id, user_id
 Those arguments are regarding high-level charts save/load. See more details [[here|Saving-and-Loading-Charts]].
 
-#####favorites
+####favorites
 Items which should be favored by default. This option requires disabling localstorage usage(see [[featuresets |Featuresets]] list to know more). `favorites` property expects to be an object. Following properties are supported:
 
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
-* **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`. 
+* **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
+
+#See Also
