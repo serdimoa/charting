@@ -18,6 +18,7 @@ You can use following string format for setting fonts: `<bold> <italic> <size>pt
 ###Line Styles
 
 Following line styles are supported:
+
 Style|Value
 ---|---
 Solid|0
@@ -25,6 +26,6 @@ Dotted|1
 Dashed|2
 
 ###Callbacks
-1. You can use this keyword to access API-object from callback function
-2. You can pass two arguments to callback register function - in this case first argument is arbitrary data which will be passed as first parameter to callback function (see examples).
+1. You can use `this` keyword to access API-object from within callback function
+2. You can pass two arguments to callback registration function - in this case first argument is an object which will be passed as first argument to callback function (see examples).
 3. If callback isn’t set, then respective button will be hidden (affects `onReverse`, `onClose` and `onCancel` callbacks).
