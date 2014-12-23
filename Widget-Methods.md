@@ -8,7 +8,7 @@ widget.onChartReady(function() {
 });
 ```
 
-#Contents Table
+#Methods
 
 * Subscribing To Chart Events
   * [[onChartReady(callback)|Widget-Methods#onchartreadycallback]]
