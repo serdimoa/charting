@@ -11,6 +11,6 @@
 4. Chart Customization
   1. [[Charts Customization 101]]
   2. Client-Side Customization
-    1. [[Widget Constructor Arguments|Widget-Constructor]]
+    1. [[Widget Constructor|Widget-Constructor]]
     2. [[Widget Methods]]
   3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
