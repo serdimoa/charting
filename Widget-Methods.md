@@ -200,7 +200,10 @@ widget.onChartReady(function() {
 ```
 
 ####createPositionLine()
-Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
+Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior. 
+
+####createOrderLine()
+Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
 API object methods:
 * `remove()`: Removes the position from the chart. You can’t use API-object after this call.
@@ -209,13 +212,16 @@ API object methods:
 * `onReverse(callback)` / `onReverse(data, callback)`
 
 **General properties**:
+
 Property|Type|Supported Values|Default Value
 ---|---|---|---
 Price|Double|Double|0.0
 Text|String|String|""
 Quantity|String|String|""
 
+
 **Connection line properties**:
+
 Property|Type|Supported Values|Default Value
 ---|---|---|---
 Extend Left|Boolean|Boolean|True
@@ -224,12 +230,14 @@ Line Style|Integer|0 .. 2|2
 Line Width|Integer|1 .. 4|1
 
 **Fonts**:
+
 Property|Type|Default Value
 ---|---|---
 Body Font|String|"bold 7pt Verdana"
 Quantity Font|String|"bold 7pt Verdana"
 
 **Colors**:
+
 Property|Type|Default Value
 ---|---|---
 Line Color|String|"rgb(255, 0, 0)"
@@ -243,8 +251,6 @@ Cancel Button Border Color|String|"rgb(255, 0, 0)"
 Cancel Button Background Color|String|"rgba(255, 255, 255, 0.75)"
 Cancel Button Icon Color|String|"rgb(255, 0, 0)"
 
-####createOrderLine()
-Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
 ####createExecutionShape()
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
