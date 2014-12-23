@@ -142,7 +142,7 @@ Items which should be favored by default. This option requires disabling localst
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
 
 #See Also
-* [[Chart Customization 101]]
+* [[Charts Customization 101]]
 * [[Widget Methods]]
 * [[Featuresets]]
 * [[Saving and Loading Charts|Saving-and-Loading-Charts]]
