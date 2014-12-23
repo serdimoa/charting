@@ -131,3 +131,9 @@ time_frames: [
 ]
 ```
 Time frame is an object containing `text` and `resolution` property. Text must have following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string having the common resolutions format. See [[this topic|Time-Frames]] to learn more about time frames.
+
+#####charts_storage_url, client_id, user_id
+Those arguments are regarding high-level charts save/load. See more details [[here|Charts-Save-Load]].
+
+#####favorites
+Items which should be favored by default. This option requires disabling localstorage usage(see [[featuresets |Featuresets]] list to know more). `favorites` property expects to be an object
