@@ -1,5 +1,10 @@
 Here is a list of supported widget's methods. You can call them using widget object returned to you by widget's constructor.
 
+**Remark**: Please note that it's safe to call any method only **after** onChartReady callback is fired. So the common practice is to do smth like
+
+```javascript
+```
+
 ####remove()
 Removes chart widget from your page.
 
