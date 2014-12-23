@@ -136,4 +136,7 @@ Time frame is an object containing `text` and `resolution` property. Text must h
 Those arguments are regarding high-level charts save/load. See more details [[here|Charts-Save-Load]].
 
 #####favorites
-Items which should be favored by default. This option requires disabling localstorage usage(see [[featuresets |Featuresets]] list to know more). `favorites` property expects to be an object
+Items which should be favored by default. This option requires disabling localstorage usage(see [[featuresets |Featuresets]] list to know more). `favorites` property expects to be an object. Following properties are supported:
+
+* **intervals**: an array of favored intervals. Example: `["D", "2D"]`
+* **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`. 
