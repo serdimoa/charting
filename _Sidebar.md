@@ -1,6 +1,6 @@
 #Wiki Content
 
-1. [[TradingView Charting Library Overview|Home]]
+1. [[Overview|TradingView Charting Library Overview|Home]]
 2. Getting started
   1. [[Package Content]]
   2. [[Running Your Charting Library]]
