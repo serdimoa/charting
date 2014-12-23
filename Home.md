@@ -27,4 +27,4 @@ If you need some more custom stuff, please refer to:
   2. [[Running Your Charting Library]]
 3. Data binding
   1. [[Choosing Data Transport]]
-  2. [[SJ API|JS-Api]]
+  2. [[JS API|JS-Api]]
