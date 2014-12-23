@@ -14,7 +14,7 @@ TradingView Charting Library allows you to implement your own high-end charting 
 
 After step 3 you will have a complete and working charting tool. If you want your charts to have a custom appearance, then you may go further.
 
-* Investigate Charting Library [[customization possibilities|Widget-Customization]]
+* Investigate Charting Library [[customization possibilities|Customizing-You-Chart]]
 
 If you need some more custom stuff, please refer to: 
 
