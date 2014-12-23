@@ -1,10 +1,10 @@
 #Wiki Content
 
 1. [[Overview|Home]]
-2. Getting started
+2. Getting Started
   1. [[Package Content]]
   2. [[Running Your Charting Library]]
-3. Data binding
+3. Data Binding
   1. [[Choosing Data Transport]]
   2. [[JS API|JS-Api]]
   3. [[UDF|UDF]]
