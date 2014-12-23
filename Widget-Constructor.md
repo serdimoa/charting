@@ -23,7 +23,7 @@ Initial symbol & interval of your chart.
 JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed the chart width data.
 
 #####timezone <UTC>
-Initial timezone of the chart. Numbers on time scale depend on this timzeone.
+Initial timezone of the chart. Numbers on time scale depend on this timezone.
 See [[supported timezones list|Symbology#timezone]] for available values.
 
 #####library_path
@@ -38,15 +38,15 @@ The desired size of a widget. Please make sure the widget has enough space to lo
 Toolbars background color
 
 #####disabled_studies <[]>
-**version: 0.4, obsolete(1.1 - 1.5) (use studies_access instead)**
+*version: 0.4, obsolete(1.1 - 1.5) (use studies_access instead)*
 An array containing all the disabled studies names. Use names as you can see them in Indicators widget. 
 
 #####enabled_studies <[]>
-**version: 0.4, obsolete(1.1 - 1.5) (use studies_access instead) |**
+*version: 0.4, obsolete(1.1 - 1.5) (use studies_access instead)*
 An array containing all the enabled studies names. Pass [] or nothing if you want to enable all. Has priority above `disabled_studies`
 
 #####studies_access
-**version: 1.1**
+*version: 1.1*
 An object with following structure:
 ```
 {
@@ -62,5 +62,5 @@ An object with following structure:
 ```
 * `type` is a type of list. Supported values: `black` (all the listed items should be disabled), `white` (only the listed items should be enabled).
 * `tools` is an array of objects. Each object could have following properties:
-* * `name` (mandatory) is the name of a study. Use the same names as you can see them in Indicators widget
-* * `grayed` is a boolean showing whether this study should be visible but look like it's disabled. If the study is grayed and user clicks it, then `onGrayedObjectClicked` is called.
+  * `name` (mandatory) is the name of a study. Use the same names as you can see them in Indicators widget
+  * `grayed` is a boolean showing whether this study should be visible but look like it's disabled. If the study is grayed and user clicks it, then `onGrayedObjectClicked` is called.
