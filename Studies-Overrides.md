@@ -56,8 +56,21 @@ Format: `indicator_name.plot_name.color<.color_index>`
 * **color_index** (optional): color index (if any). It's just an ordinal number of a color for this plot. I.e., to replace the color which is green by default for Volume, one should use `color_index = 1`.
 
 **Remark 1**: `color.0` is a synonym of `color` .So paths `volume.volume.color.0` and `volume.volume.color` are treated to be the same.
-**Remark 2**: For now, customizing area fill color and transparency is not supported.
-**Limitations**: Only `#RRGGBB` format is supported for colors. Do not use short format `#RGB`.
-Transparency varies in [0..100] range. 100 means plot is fully opaque.
-Thickness is an integer.
 
+**Remark 2**: For now, customizing area fill color and transparency is not supported.
+
+**Limitations**:
+* Only `#RRGGBB` format is supported for colors. Do not use short format `#RGB`.
+* Transparency varies in [0..100] range. 100 means plot is fully opaque.
+* Thickness is an integer.
+
+#####Study options
+Format: `indicator_name.options.option_name`
+
+* **indicator_name**:  < ... >
+* **options**:  Keyword
+* **option_name**: name of option you want to assign. Supported values are:
+  * **showStudyArguments**: boolean, controls arguments visibility in header
+  * **showLastValue**: boolean, controls visibility of price scale labels
+
+Examples: `volume.options.showStudyArguments`, `volume.options.showLastValue`
