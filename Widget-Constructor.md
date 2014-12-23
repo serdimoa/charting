@@ -59,7 +59,7 @@ An object with following structure:
 
 #####drawings_access
 *version: 1.1*
-This proprty has the same structure as the `studies_access` described above. Use the same names as you see them in UI.
+This property has the same structure as the `studies_access` described above. Use the same names as you see them in UI.
 **Remark**: There is a special case for font-based drawings. Use "Font Icons" name for them. This group is a special case and its drawings cannot be enabled or disabled particularly -- one can either enable or disable the whole group.
 
 #####saved_data
@@ -79,3 +79,28 @@ overrides: {
 ```
 
 This override will make the watermark 100% opaque (invisible). All customizable properties are listed in [[separate article|Overrides]]
+
+
+#####disabled_features, enabled_features
+The array containing names of features which should be enabled/disabled by default. `Feature` means a part of chart's functionality (more likely a part of UI/UX). Supported features are listed [[here|Featuresets]].
+
+#####snapshot_url
+*experimental feature*
+URL for POST request with base64-encoded chart snapshots which will been sent when user press snapshot button. The service should return full URL to saved image in its response.
+
+#####widgetbar | TradingTerminal only |
+The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
+```
+widgetbar: {
+    datawindow: true,
+    details: true,
+    watchlist: true,
+    watchlist_settings: {
+        default_symbols: [“NYSE:AA”, “NYSE:AAL”, “NASDAQ:AAPL”]
+    }
+}
+```
+* **datawindow <false>**: Enables data window widget in right-side widget bar.
+* **details <false>**: Enables details widget in right-side widget bar.
+* **watchlist <false>**: Enables watchlist widget in right-side widget bar.
+* **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
