@@ -44,16 +44,18 @@ Boolean showing whether your datafeed supports marks on bars or not.
 2. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
 3. `symbolType`: string. The requested symbol type: index, stock, forex e.t.c. (chosen by user). Empty value means no filter was specified.
 4. `onResultReadyCallback`: function(result)
-  1. `result`: object (see below)
+  1. `result`: array (see below)
 
-This call is intended to provide the list of symbols matching to user's search query.
+This call is intended to provide the list of symbols matching to user's search query. `result` is expected to be smth like this:
+
+```javascript
 [
     {
         "symbol": <short symbol name>,
         "full_name": <full symbol name -- e.g., BTCE:BTCUSD>,
         "description": <symbol description>,
         "exchange": <symbol exchange name>,
-            "ticker": <symbol ticker name>,
+        "ticker": <symbol ticker name, optional>,
         "type": "stock" | "futures" | "bitcoin" | "forex" | "index"
     }, {
         //    .....
@@ -61,3 +63,9 @@ This call is intended to provide the list of symbols matching to user's search q
 ]
 ```
 
+If no symbols are found, then callback should be called with an empty array.
+
+###resolveSymbol(symbolName, onSymbolResolvedCallback, onResolveErrorCallback)
+1. `symbolName`: string. Symbol name or `ticker` if provided.
+2. `onSymbolResolvedCallback`: function([[SymbolInfo|Symbology]]
+3. `onResolveErrorCallback`: function(reason)
