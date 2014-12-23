@@ -1,7 +1,5 @@
 **Charting Library manual is hosted [on Google Docs](https://docs.google.com/document/d/1rAigRhQUSLgLCzUAiVBJGAB7uchb-PzFVe0Bl8WTtF0/edit) but we are moving it here.**
 
-# TradingView Charting Library Overview
-
 The Charting Library consists of a charting component that you should host on your server, and a set of APIs. Flexible design lets you quickly and easily create a charting solution with your own data - which can be in real-time or refresh-only. 
 
 This solution is best for companies of any size that want to get top-notch HTML5 charting onto the corporate site, blog or portal as soon as possible, and for free. 
@@ -21,4 +19,6 @@ If you need some more custom stuff, please refer to:
 * [[Creating Custom Studies|Creating-Custom-Studies]]
 * [[Best Practices|Best-Practices]]
 
-Also you may want to know more about known issues and issues tracking.
+#This Wiki Contents Table
+
+1. 
