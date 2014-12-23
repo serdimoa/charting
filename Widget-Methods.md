@@ -7,7 +7,38 @@ widget.onChartReady(function() {
     // now it's safe to call any other widget's methods
 });
 ```
+#Contents Table
 
+* Subscribing To Chart Events
+  * [[onChartReady(callback)|Widget-Methods#onChartReady(callback)]]
+  * [[onSymbolChange(callback)|Widget-Methods#onSymbolChange(callback)]]
+  * [[onIntervalChange(callback)|Widget-Methods#onIntervalChange(callback)]]
+  * [[symbolInterval(callback)|Widget-Methods#symbolInterval(callback)]]
+  * [[onRealtimeTick(callback)|Widget-Methods#onRealtimeTick(callback)]]
+  * [[onAutoSaveNeeded(callback)|Widget-Methods#onAutoSaveNeeded(callback)]]
+  * [[onMarkClick(callback)|Widget-Methods#onMarkClick(callback)]]
+  * [[onGrayedObjectClicked(callback)|Widget-Methods#onGrayedObjectClicked(callback)]]
+* Chart Actions
+  * [[setLanguage(locale)|Widget-Methods#setLanguage(locale)]]
+  * [[setSymbol(symbol, interval, callback)|Widget-Methods#setSymbol(symbol, interval, callback)]]
+  * [[remove()|Widget-Methods#remove()]]
+  * [[executeAction(action)|Widget-Methods#executeAction(action)]]
+* Studies And Shapes 
+  * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createStudy(name, forceOverlay, lock, inputs)]]
+  * [[createShape(point, options)|Widget-Methods#createShape(point, options)]]
+  * [[createVerticalLine(point, options)|Widget-Methods#createVerticalLine(point, options)]]
+  * [[removeAllShapes()|Widget-Methods#removeAllShapes()]]
+  * [[removeAllStudies()|Widget-Methods#removeAllStudies()]]
+* Saving/Loading Charts
+  * [[save(callback)|Widget-Methods#save(callback)]]
+  * [[load(state)|Widget-Methods#load(state)]]
+* Custom UI Controls
+  * [[onContextMenu(callback)|Widget-Methods#onContextMenu(callback)]]
+  * [[createButton()|Widget-Methods#createButton()]]
+* Trading Primitives
+  * [[createOrderLine()|Widget-Methods#createOrderLine()]]
+  * [[createPositionLine()|Widget-Methods#createPositionLine()]]
+  * [[createExecutionShape()|Widget-Methods#createExecutionShape()]]
 
 #Methods List
 
