@@ -41,10 +41,8 @@ widget.onChartReady(function() {
   * [[createPositionLine()|Widget-Methods#createpositionline]]
   * [[createExecutionShape()|Widget-Methods#createexecutionshape]]
 
-#Methods List
 
-####remove()
-Removes chart widget from your page.
+#Subscribing To Chart Events
 
 ####onChartReady(callback)
 1. `callback`: function()
@@ -63,13 +61,6 @@ The Charting Library will call the callback provided every time the main series 
 
 The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
 
-####setSymbol(symbol, interval, callback)
-1. `symbol`: string
-2. `interval`: string
-3. `callback`: function()
-
-Makes the chart to change its symbol and resolution. Callback is called after new symbol's data arrived.
-
 ####symbolInterval(callback)
 1. `callback`: function(result)
   1. `result`: object `{symbol, interval}`
@@ -81,60 +72,6 @@ Charting Library will call your callback passes some data about chart's symbol a
   1. `barData`: object `{time, open, high, low, close, volume}`
 
 The Charting Library will call the callback provided every time the new bar update comes.
-
-####createShape(point, options)
-1. `point`: object `{time, [price], [channel]}`
-  1. `time`: unix time. The only mandatory argument.
-  2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
-  3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
-2. `options`: object `{shape, [text], [lock], [overrides]}`
-  1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line']. 'flag' is the default value.
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text (for now, it's only 'arrow_up' and 'arrow_down').
-  3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `overrides` (since version `1.2`). It is an object containing properties you'd like to set for your new shape.
-
-Supported overrides:
-
-* Shape: vertical_line
-  1. `linecolor` [#80CCDB]
-  2. `linewidth` [1.0]
-  3. `linestyle` [1]
-  4. `showTime` [true]
-* Shape: arrow_up, arrow_down
-  1. `color` [#787878]
-  2. `text` [""]
-  3. `fontsize` [20]
-  4. `font` ["Verdana"]
-* Shape: flag
-  1. `color` [#FF0000]
-
-This call creates a shape at specified point on main series.
-
-####createVerticalLine(point, options)
-1. `point`: object `{time}`
-2. `options`: obejct `{lock}`
-
-This function is a synonym for `createShape` with shape = 'vertical_line'. It is treated as **obsolete**.
-
-####createStudy(name, forceOverlay, lock, inputs)
-1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
-2. `forceOverlay`: forces the Charting Library to place the created study on main pane
-3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
-4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
-
-Creates the study on a main symbol. Examples: 
-  * `createStudy('MACD', false, false, [14, 30, 9])`
-  * `createStudy('Moving Average Exponential', false, false, [26])`
-
-####save(callback)
-1. `callback`: function(object)
-
-Saves the chart state to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
-
-####load(state)
-1. `state`: object
-
-Loads the chart from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
 ####onAutoSaveNeeded(callback)
 1. `callback`: function()
@@ -184,6 +121,106 @@ widget.onChartReady(function() {
 
 ```
 
+#Chart Actions
+
+
+####setLanguage(locale)
+1. `locale`: [[language code|Localization]]
+
+Sets the Widget's language. For now, this call reloads the chart. **Please avoid using it**.
+
+####setSymbol(symbol, interval, callback)
+1. `symbol`: string
+2. `interval`: string
+3. `callback`: function()
+
+Makes the chart to change its symbol and resolution. Callback is called after new symbol's data arrived.
+
+####remove()
+Removes chart widget from your page.
+
+####executeAction(action)
+1. `action`: string
+
+Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
+```javascript
+// < ... >
+widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
+// < ... >
+widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
+// < ... >
+```
+
+#Studies And Shapes
+
+####createStudy(name, forceOverlay, lock, inputs)
+1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
+2. `forceOverlay`: forces the Charting Library to place the created study on main pane
+3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
+4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
+
+Creates the study on a main symbol. Examples: 
+  * `createStudy('MACD', false, false, [14, 30, 9])`
+  * `createStudy('Moving Average Exponential', false, false, [26])`
+
+
+####createShape(point, options)
+1. `point`: object `{time, [price], [channel]}`
+  1. `time`: unix time. The only mandatory argument.
+  2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
+  3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
+2. `options`: object `{shape, [text], [lock], [overrides]}`
+  1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line']. 'flag' is the default value.
+  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text (for now, it's only 'arrow_up' and 'arrow_down').
+  3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
+  4. `overrides` (since version `1.2`). It is an object containing properties you'd like to set for your new shape.
+
+Supported overrides:
+
+* Shape: vertical_line
+  1. `linecolor` [#80CCDB]
+  2. `linewidth` [1.0]
+  3. `linestyle` [1]
+  4. `showTime` [true]
+* Shape: arrow_up, arrow_down
+  1. `color` [#787878]
+  2. `text` [""]
+  3. `fontsize` [20]
+  4. `font` ["Verdana"]
+* Shape: flag
+  1. `color` [#FF0000]
+
+This call creates a shape at specified point on main series.
+
+####createVerticalLine(point, options)
+1. `point`: object `{time}`
+2. `options`: obejct `{lock}`
+
+This function is a synonym for `createShape` with shape = 'vertical_line'. It is treated as **obsolete**.
+
+####removeAllShapes()
+Removes all shapes (drawings) from the chart.
+
+####removeAllStudies()
+Removed all studies from the chart.
+
+
+#Saving/Loading Charts
+
+
+####save(callback)
+1. `callback`: function(object)
+
+Saves the chart state to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
+
+####load(state)
+1. `state`: object
+
+Loads the chart from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
+
+
+#Custom UI Controls
+
 ####onContextMenu(callback)
 1. `callback`: function(unixtime, price). This callback is expected to return a value (see below).
 
@@ -231,6 +268,9 @@ widget.onChartReady(function() {
         .append($('<span>My custom button caption</span>'));
 });
 ```
+
+#Trading Primitives
+
 
 ####createOrderLine()
 Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
@@ -373,29 +413,3 @@ widget.createPositionLine()
 ```
 ####createExecutionShape()
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
-
-
-####setLanguage(locale)
-1. `locale`: [[language code|Localization]]
-
-Sets the Widget's language. For now, this call reloads the chart. **Please avoid using it**.
-
-
-####removeAllStudies()
-Removed all studies from the chart.
-
-####removeAllShapes()
-Removes all shapes (drawings) from the chart.
-
-####executeAction(action)
-1. `action`: string
-
-Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
-```javascript
-// < ... >
-widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
-// < ... >
-widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
-// < ... >
-```
-
