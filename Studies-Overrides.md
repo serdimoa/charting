@@ -14,11 +14,11 @@ studies_overrides: {
 }
 ```
 
-###Syntax
+#Syntax
 
 Property path is a set of lower-case identifiers splitted with dot (`.`). Path formats are described below.
 
-#####Study input
+###Study input
 Format: `indicator_name.input_name`
 
 * **indicator_name**: use name as you can see it in `Indicators` dialog.  
@@ -26,7 +26,7 @@ Format: `indicator_name.input_name`
 
 Examples: `volume.show ma`, `bollinger bands.length`
 
-#####Plot property
+###Plot property
 Format: `indicator_name.plot_name.property_name`
 
 * **indicator_name**:  < ... >
@@ -47,7 +47,7 @@ Format: `indicator_name.plot_name.property_name`
 
 Examples: `volume.volume.transparency`, `bollinger bands.median.linewidth`
 
-#####Plot colors
+###Plot colors
 Format: `indicator_name.plot_name.color<.color_index>`
 
 * **indicator_name**:  < ... >
@@ -64,7 +64,7 @@ Format: `indicator_name.plot_name.color<.color_index>`
 * Transparency varies in [0..100] range. 100 means plot is fully opaque.
 * Thickness is an integer.
 
-#####Study options
+###Study options
 Format: `indicator_name.options.option_name`
 
 * **indicator_name**:  < ... >
