@@ -8,6 +8,31 @@ widget.onChartReady(function() {
 });
 ```
 
+[[#remove()]]
+[[#onChartReady(callback)]]
+[[#onSymbolChange(callback)]]
+[[#onIntervalChange(callback)]]
+[[#setSymbol(symbol, interval, callback)]]
+[[#symbolInterval(callback)]]
+[[#onRealtimeTick(callback)]]
+[[#createShape(point, options)]]
+[[#createVerticalLine(point, options)]]
+[[#createStudy(name, forceOverlay, lock, inputs)]]
+[[#save(callback)]]
+[[#load(state)]]
+[[#onAutoSaveNeeded(callback)]]
+[[#onMarkClick(callback)]]
+[[#onGrayedObjectClicked(callback)]]
+[[#onContextMenu(callback)]]
+[[#createButton()]]
+[[#createOrderLine()]]
+[[#createPositionLine()]]
+[[#createExecutionShape()]]
+[[#setLanguage(locale)]]
+[[#removeAllStudies()]]
+[[#removeAllShapes()]]
+[[#executeAction(action)]]
+
 #Methods List
 
 ####remove()
