@@ -10,7 +10,7 @@
   3. [[UDF|UDF]]
 4. Chart Customization
   1. [[Charts Customization 101]]
-  2. Client-Side Customizations
+  2. Client-Side Customization
     1. [[Widget Constructor Arguments|Widget-Constructor]]
     2. [[Widget Methods]]
-  3. [[Server-side Customization|Charts Customization 101#customization-done-through-data-stream]]
+  3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
