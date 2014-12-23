@@ -111,7 +111,7 @@ The Library will call the callback provided every time when user clicks a [[mark
 
 The Library will call the callback provided every time when user clicks on grayed out object. Example:
 
-```
+```javascript
 new TradingView.widget({
     drawings_access: {
         type: "black",
@@ -157,7 +157,7 @@ The Library will call the callback provided every time when user opens context m
 * `click`: callback which will be called when user select your menu item
 
 Example: 
-```
+```javascript
 widget.onChartReady(function() {
     widget.onContextMenu(function(unixtime, price) {
         return [{
@@ -180,7 +180,7 @@ widget.onChartReady(function() {
 
 Creates a new DOM element in chart top toolbar and returns **jQuery object** for this button. You can use it to append custom controls right on the chart. Example:
 
-```
+```javascript
 widget.onChartReady(function() {
     widget.createButton()
         .attr('title', "My custom button tooltip")
@@ -211,11 +211,11 @@ Removes all shapes (drawings) from the chart.
 1. `action`: string
 
 Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
-```
-< ... >
+```javascript
+// < ... >
 widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
-< ... >
+// < ... >
 widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
-< ... >
+// < ... >
 ```
 
