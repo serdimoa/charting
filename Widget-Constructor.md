@@ -26,6 +26,9 @@ JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed
 Initial timezone of the chart. Numbers on time scale depend on this timezone.
 See [[supported timezones list|Symbology#timezone]] for available values.
 
+#####debug
+Setting this property to `true` makes the chart to write detailed API logs to console. Feature `charting_library_debug_mode` is a synonym for this field usage.
+
 #####library_path
 A path to `static` folder
 
@@ -33,6 +36,9 @@ A path to `static` folder
 The desired size of a widget. Please make sure the widget has enough space to look smart.
 
 **Remark**: if you want the chart to occupy all the available space, do not use '100%' in those field. Use `fullscreen` parameter instead (see below). It's because of issues with DOM nodes resizing in different browsers.
+
+#####fullscreen <false>
+Boolean value showing whether chart should occupy all the available space or not.
 
 #####toolbar_bg
 Toolbars background color
@@ -96,7 +102,7 @@ widgetbar: {
     details: true,
     watchlist: true,
     watchlist_settings: {
-        default_symbols: [“NYSE:AA”, “NYSE:AAL”, “NASDAQ:AAPL”]
+        default_symbols: ["NYSE:AA", "NYSE:AAL", "NASDAQ:AAPL"]
     }
 }
 ```
@@ -104,3 +110,13 @@ widgetbar: {
 * **details <false>**: Enables details widget in right-side widget bar.
 * **watchlist <false>**: Enables watchlist widget in right-side widget bar.
 * **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
+
+#####indicators_file_name
+Path to file containing your compiled indicators. See more details [[here|Creating-Custom-Studies]].
+
+#####preset
+`preset` is a name of a set of pre-defined widget settings. All settings used by preset also may be used directly by you in widget's constructor. For now, the only `mobile` preset is supported. The example of this preset is available online.
+
+#####studies_overrides
+Use this option to customize default indicators' style or inputs. See more details [[here|Studies-Overrides]]
+
