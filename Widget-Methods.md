@@ -90,6 +90,7 @@ Saves the chart state to JS object. Charting Library will call your callback and
 
 ####load(state)
 1. `state`: object
+
 Loads the chart from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
 ####onAutoSaveNeeded(callback)
@@ -201,12 +202,15 @@ Sets the Widget's language. For now, this call reloads the chart. **Please avoid
 
 
 ####removeAllStudies()
+Removed all studies from the chart.
+
 ####removeAllShapes()
-These functions do the stuff arising from their names.
+Removes all shapes (drawings) from the chart.
 
 ####executeAction(action)
 1. `action`: string
-Executes any action from chart's context menu by its name. Examples:
+
+Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
 ```
 < ... >
 widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
