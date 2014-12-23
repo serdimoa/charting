@@ -17,8 +17,24 @@ To feed your data to the charts using JS API, create an object that has a specif
 ###setup(reserved, callback)
 1. `reserved` is not used now
 2. `callback`: function(configurationData)
-  1. `configurationData`: object `{exchanges, symbols_types, supported_resolutions, supports_marks}`
-    1. `exchanges`: An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument  to searchSymbolsByName (see below). `exchanges` = []  leads to exchanges filter absence in Symbol Search list.
+  1. `configurationData`: object (see below)
 
+This call is intended to provide the object filled with configuration data. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. Configuration data is an object; for now, following properties are supported:
 
-This call is intended to provide the object filled with configuration data. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument.
+#####exchanges
+An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument  to searchSymbolsByName (see below).
+
+`exchanges` = []  leads to exchanges filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all exchanges).
+
+#####symbolsTypes / symbols_types
+An array of filter descriptors. Filter descriptor is an object `{name, value}`. `value` will be passed as `symbolType` argument  to searchSymbolsByName. 
+
+`symbolsTypes` = []  leads to types filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all types)
+
+#####supportedResolutions / supported_resolutions
+An array of supported resolutions. Resolution may be a number or a string. If the resolution is a number, it is treated as minutes count. Strings may be "*D", "*W", "*M" (* means any number).
+
+'resolutions'=undefined or [] leads to resolutons widget having its default content (see <http://tradingview.com/e/> ). Example: `[1, 15, 240, "D", "6M"]` will give you "1 minute, 15 minutes, 4 hours, 1 day, 6 months" in resolution widget.
+
+#####supports_marks
+Boolean showing whether your datafeed supports marks on bars or not. 
