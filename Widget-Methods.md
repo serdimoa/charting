@@ -20,13 +20,13 @@ The Charting Library will call the callback provided once when chart is initiali
 
 ####onSymbolChange(callback)
 1. `callback`: function(symbolData)
-  1.  `symbolData`: object `{name, exchange, description, type, interval}
+  1.  `symbolData`: object `{name, exchange, description, type, interval}`
 
 The Charting Library will call the callback provided every time the main series symbol changes. New symbol info will be passed as argument.
 
 ####onIntervalChange(callback)
 1. `callback`: function(interval)
-  1. interval: string
+  1. `interval`: string
 
 The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
 
