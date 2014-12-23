@@ -99,7 +99,6 @@ The Library will call the callback provided every time when user changes the cha
 
 ####onMarkClick(callback)
 1. `callback`: function(markId)
-  1. markId: object
 
 The Library will call the callback provided every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument.
 
@@ -132,7 +131,7 @@ new TradingView.widget({
 
 widget.onChartReady(function() {
     widget.onGrayedObjectClicked(function(data) {
-        // this fucntion will be called when one tries to
+        // this function will be called when one tries to
         // create Balance Of Power study or Trend Angle shape
 
         alert(data.name + " is grayed out!");
@@ -140,3 +139,79 @@ widget.onChartReady(function() {
 });
 
 ```
+
+####onContextMenu(callback)
+1. `callback`: function(unixtime, price). This callback is expected to return a value (see below).
+
+The Library will call the callback provided every time when user opens context menu on the chart. Unix time and price of context menu point will be provided as arguments. To customize context menu items you have to return array of items descriptors. Item descriptor has following structure:
+```
+{
+    position: 'top' | 'bottom',
+    text: 'Menu item text',
+    click: <onItemClicked callback>
+}
+```
+* `position`: position of item in context menu
+* `text`: text of menu item
+* `click`: callback which will be called when user select your menu item
+
+Example: 
+```
+widget.onChartReady(function() {
+    widget.onContextMenu(function(unixtime, price) {
+        return [{
+            position: "top",
+            text: "First top menu item, time: " + unixtime + ", price: " + price,
+            click: function() { alert("First clicked."); }
+        }, {
+            position: "top",
+            text: "Second top menu item 2",
+            click: function() { alert("Second clicked."); }
+        }, {
+            position: "bottom",
+            text: "Bottom menu item",
+            click: function() { alert("Third clicked."); }
+        }];
+    });
+```
+
+####createButton()
+
+Creates a new DOM element in chart top toolbar and returns **jQuery object** for this button. You can use it to append custom controls right on the chart. Example:
+
+```
+widget.onChartReady(function() {
+    widget.createButton()
+        .attr('title', "My custom button tooltip")
+        .on('click', function (e) { alert("My custom button pressed!"); })
+        .append($('<span>My custom button caption</span>'));
+});
+```
+
+####createPositionLine()
+####createOrderLine()
+####createExecutionShape()
+
+Those methods are regarding visual primitives for trading purposes.
+
+####setLanguage(locale)
+1. `locale`: [[language code|Localization]]
+
+Sets the Widget's language. For now, this call reloads the chart. **Please avoid using it**.
+
+
+####removeAllStudies()
+####removeAllShapes()
+These functions do the stuff arising from their names.
+
+####executeAction(action)
+1. `action`: string
+Executes any action from chart's context menu by its name. Examples:
+```
+< ... >
+widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
+< ... >
+widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
+< ... >
+```
+
