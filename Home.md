@@ -18,13 +18,3 @@ If you need some more custom stuff, please refer to:
 
 * [[Creating Custom Studies|Creating-Custom-Studies]]
 * [[Best Practices|Best-Practices]]
-
-#Wiki Contents Table
-
-1. [[TradingView Charting Library Overview|Home]]
-2. Getting started
-  1. [[Package Content]]
-  2. [[Running Your Charting Library]]
-3. Data binding
-  1. [[Choosing Data Transport]]
-  2. [[JS API|JS-Api]]
