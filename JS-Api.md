@@ -44,7 +44,9 @@ Boolean showing whether your datafeed supports marks on bars or not.
 2. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
 3. `symbolType`: string. The requested symbol type: index, stock, forex e.t.c. (chosen by user). Empty value means no filter was specified.
 4. `onResultReadyCallback`: function(result)
-  1. `result`: ```javascript
+  1. `result`: object (see below)
+
+This call is intended to provide the list of symbols matching to user's search query.
 [
     {
         "symbol": <short symbol name>,
