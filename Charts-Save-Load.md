@@ -1,4 +1,5 @@
-Charting Library supports saving/loading charts on 2 levels of abstraction: 
+Charting Library supports saving/loading charts on 2 levels of abstraction:
+
 1. **Low-Level**: save/load functionality is present by widget's `save()` and `load()` methods. One who uses them should take care of physical storage on his own. But you can save those JSONs where you want to --  in example, you may embed them to your saved pages or user's working area and so on.
 
 2. **High-Level**: Charting Library is able to save or load charts from storage you'll point to. We created a tiny storage sample with Python and PostgreSQL and put it on [our GitHub](https://github.com/tradingview/saveload_backend). You may grab it and run on your own server so you'll have control over all your users' saved data.
