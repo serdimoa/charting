@@ -120,3 +120,14 @@ Path to file containing your compiled indicators. See more details [[here|Creati
 #####studies_overrides
 Use this option to customize default indicators' style or inputs. See more details [[here|Studies-Overrides]]
 
+#####time_frames
+List of time frames visible in timeframes picker at the bottom of the chart. Example:
+```
+time_frames: [
+    { text: "50y", resolution: "6M" },
+    { text: "3y", resolution: "W" },
+    { text: "8m", resolution: "D" },
+    { text: "3d", resolution: "5" },
+]
+```
+Time frame is an object containing `text` and `resolution` property. Text must have following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string having the common resolutions format. See [[this topic|Time-Frames]] to learn more about time frames.
