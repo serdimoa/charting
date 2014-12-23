@@ -23,7 +23,7 @@ Here are a few steps for those who want to have their own charts storage:
 
 #Using Demo Charts Storage
 
-We're running demo charts storage service to let you try save/load as fast as you got new Library's build. This storage URL is <http://saveload.tradingview.com>. It's just a demo so it is provided as-is. We do not guarantee its stability. Also, we drop all the data from this storage now and again.
+We're running demo charts storage service to let you try save/load as fast as you've got new Library's build. This storage URL is <http://saveload.tradingview.com>. It's just a demo so it is provided as-is. We do not guarantee its stability. Also, we drop all the data from this storage now and again.
 
 #Managing Saved Charts Access
 You should take care of which charts your users will be able to see and load. Basically, user can see/load charts having the same `client_id` and `user_id` the user has. `client_id` is an identifier of user's group. It is intended to cover the case when you have few groups of users (i.e, when you have few sites) using the same charts storage. So the common practice is to set `client_id = your-site's-URL`. It's up to you however.
