@@ -413,3 +413,40 @@ widget.createPositionLine()
 ```
 ####createExecutionShape()
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
+
+API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
+
+**General properties**:
+
+Property|Type|Supported Values|Default Value
+---|---|---|---
+Price|Double|Double|0.0
+Time|Integer|Unix time|0
+Direction|String|"buy" or "sell"|"buy"
+Text|String|String|"execution"
+Arrow Height|Integer|Integer|8
+Arrow Spacing|Integer|Integer|1
+
+**Fonts**:
+
+Property|Type|Default Value
+---|---|---
+Font|String|"8pt Verdana"
+
+**Colors**:
+
+Property|Type|Default Value
+---|---|---
+Text Color|String|"rgb(0, 0, 0)""
+Arrow Color|String|"rgba(0, 0, 255)"
+
+Example:
+```javascript
+widget.createExecutionShape()
+    .setText("@1,320.75 Limit Buy 1")
+    .setTextColor("rgba(0,255,0,0.5)")
+    .setArrowColor("#0F0")
+    .setDirection("buy")
+    .setTime(1413559061758)
+    .setPrice(15.5);
+```
