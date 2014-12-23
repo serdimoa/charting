@@ -1,7 +1,5 @@
 **version: 1.1 / stability: 2 (rather stable)**
 
-One may want to disable or enable a part of the Library's functionality. There are a few arguments of widget's constructor which are intended for this purpose. This section is about `disabled_features` and `enabled_features`.
-
 `Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below.
 
 ###header_widget
