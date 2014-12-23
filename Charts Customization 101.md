@@ -66,3 +66,7 @@ var widget = new TradingView.widget({
 ```
 
 See the details in [[Widget Constructor Arguments article|Widget-Constructor]].
+
+#See Also
+* [[Widget's Constructor Arguments|Widget-Constructor]]
+* [[Widget's Methods|Widget-Methods]]
