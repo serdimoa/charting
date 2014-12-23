@@ -21,7 +21,7 @@ If you need some more custom stuff, please refer to:
 
 #Wiki Contents Table
 
-1. [[TradingView Charting Library Overview]]
+1. [[TradingView Charting Library Overview|Home]]
 2. Getting started
   1. [[Package Content]]
   2. [[Running Your Charting Library]]
