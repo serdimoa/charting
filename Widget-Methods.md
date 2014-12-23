@@ -200,10 +200,14 @@ widget.onChartReady(function() {
 ```
 
 ####createPositionLine()
-####createOrderLine()
-####createExecutionShape()
+Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior. See more details in [[separate article|Trading-Primitives]].
 
-Those methods are regarding visual primitives for trading purposes.
+####createOrderLine()
+Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. See more details in [[separate article|Trading-Primitives]].
+
+####createExecutionShape()
+Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. See more details in [[separate article|Trading-Primitives]].
+
 
 ####setLanguage(locale)
 1. `locale`: [[language code|Localization]]
