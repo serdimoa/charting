@@ -4,7 +4,7 @@ To feed your data to the charts using JS API, create an object that has a specif
 
 #Methods
 
-1. setup
+1. [[setup
 2. searchSymbolsByName
 3. resolveSymbol
 4. getBars
