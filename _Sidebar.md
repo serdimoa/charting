@@ -9,6 +9,7 @@
   2. [[JS API|JS-Api]]
   3. [[UDF|UDF]]
   4. [[Symbology]]
+  5. [[Quotes]]
 4. Chart Customization
   1. [[Charts Customization 101]]
   2. Client-Side Customization
