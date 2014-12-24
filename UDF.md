@@ -171,6 +171,31 @@ Example:
    h: [43.0, 44.1, 44.8, 44.5],
    l: [40.4, 42.1, 42.8, 42.3],
    v: [12000, 18500, 24000, 45000]
-}```
+}
+```
 
-Any omitted price will be treated as equal to `close`.
+All omitted prices will be treated as equal to `close`.
+
+###Marks
+Request: `GET /marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
+
+1. `symbol`: symbol name or ticker.
+2. `from`: unix timestamp (UTC) or leftmost visible bar
+3. `to`: unix timestamp (UTC) or rightmost visible bar
+4. `resolution`: string 
+
+Response: Response is expected to be an object with some properties listed below. This object is similar to [[respective response|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]] in JS API, but each property is treated as table column, like described above.
+
+```javascript
+{
+    id: [array of ids],
+    time: [array of times],
+    color: [array of colors],
+    text: [array of texts],
+    label: [array of labels],
+    labelFontColor: [array of label font colors],
+    minSize: [array of minSizes],
+}
+```
+
+**Remark**: This call will be requested if your datafeed sent `supports_marks: true` in configuration data.
