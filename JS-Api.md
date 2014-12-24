@@ -77,8 +77,8 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
 2. `resolution`: string
 3. `from`: unix timestamp, leftmost required bar time
 3. `to`: unix timestamp, rightmost required bar time
-4. `onHistoryCallback`: function(bars)
-  1. `bars`: array of `{time, close, open, high, low, volume}`
+4. `onHistoryCallback`: function(array of `bar`s)
+  1. `bar`: object `{time, close, open, high, low, volume}`
 5. `onErrorCallback`: function(reason)
 
 This function is called when chart needs a history fragment defined by dates range. The charting library expects `onHistoryCallback` to be called **just once** after receiving all the requesting history. No further calls are expected.
@@ -128,8 +128,7 @@ Example:
 
 Assume the implementation is
 ```javascript
-Datafeed.prototype.calculateHistoryDepth = function(period,
-resolutionBack, intervalBack) {
+Datafeed.prototype.calculateHistoryDepth = function(resolution, resolutionBack, intervalBack) {
     if (period == "1D") {
         return {
             resolutionBack: 'M',
@@ -140,3 +139,23 @@ resolutionBack, intervalBack) {
 ```
 
 This means when Charting Library will request the data for '1D' resolution, the history will be 6 months in depth. In all other cases the history depth will have the default value.
+
+
+###getMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
+1. `symbolInfo`: [[SymbolInfo|Symbology]] object
+2. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
+3. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
+4. `onDataCallback`: function(array of `mark`s)
+5. `resolution`: string
+
+Library calls this function to get [[marks|Marks-On-Bars]] for visible bars range. Chart expects you to call `onDataCallback` only once per each `getMarks` call. `mark` is an object having following properties:
+
+* **id**: unique mark id. Will be passed to a [[respective callback|Widget-Methods#onmarkclickcallback]] when user clicks on a mark
+* **time**: unix time, UTC
+* **color**: `red` | `green` | `blue` | `yellow`
+* **text**: mark popup text. HTML supported
+* **label**: a letter to be printed on a mark. Single character
+* **labelFontColor**: color of a letter on a mark
+* **minSize**: minimal size of mark (diameter, pixels)
+
+A few marks per bar are allowed (for now, maximum is 10). Marks out of bars are not allowed.
