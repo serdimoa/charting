@@ -210,4 +210,49 @@ Response: Response is an object.
 * **errmsg**: error message for client
 * **d**: [[symbols data|Quotes]] array
 
+Example:
 
+```javascript
+{
+    "s": "ok",
+    "d": [{
+        "s": "ok",
+        "n": "NYSE:AA",
+        "v": {
+            "ch": "+0.16",
+            "chp": "0.98",
+            "short_name": "AA",
+            "exchange": "NYSE",
+            "original_name": "NYSE:AA",
+            "description": "Alcoa Inc. Common",
+            "lp": "16.57",
+            "ask": "16.58",
+            "bid": "16.57",
+            "open_price": "16.25",
+            "high_price": "16.60",
+            "low_price": "16.25",
+            "prev_close_price": "16.41",
+            "volume": "4029041"
+        }
+    }, {
+        "s": "ok",
+        "n": "NYSE:F",
+        "v": {
+            "ch": "+0.15",
+            "chp": "0.89",
+            "short_name": "F",
+            "exchange": "NYSE",
+            "original_name": "NYSE:F",
+            "description": "Ford Motor Compan",
+            "lp": "17.02",
+            "ask": "17.03",
+            "bid": "17.02",
+            "open_price": "16.74",
+            "high_price": "17.08",
+            "low_price": "16.74",
+            "prev_close_price": "16.87",
+            "volume": "7713782"
+        }
+    }]
+}
+```
