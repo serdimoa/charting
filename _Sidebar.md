@@ -8,6 +8,7 @@
   1. [[Choosing Data Transport]]
   2. [[JS API|JS-Api]]
   3. [[UDF|UDF]]
+  4. [[Symbology]]
 4. Chart Customization
   1. [[Charts Customization 101]]
   2. Client-Side Customization
