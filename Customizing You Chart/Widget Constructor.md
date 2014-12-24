@@ -1,6 +1,6 @@
 You may specify Charting library widget parameters when calling its constructor. E.g., your call may look like
 
-```
+```javascript
 new TradingView.widget({
     symbol: 'A',
     interval: 'D',
