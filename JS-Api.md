@@ -4,14 +4,14 @@ To feed your data to the charts using JS API, create an object that has a specif
 
 #Methods
 
-1. [[setup
-2. searchSymbolsByName
-3. resolveSymbol
-4. getBars
-5. subscribeBars
-6. unsubscribeBars
-7. calculateHistoryDepth
-8. getMarks
+1. [[setup|JS-Api#setupreserved-callback]]
+2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
+3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
+4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback]]
+5. [[subscribeBars|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid]]
+6. [[unsubscribeBars|JS-Api#unsubscribebarssubscriberuid]]
+7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
+8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 9. getQuotes
 
 ###setup(reserved, callback)
@@ -161,3 +161,11 @@ Library calls this function to get [[marks|Marks-On-Bars]] for visible bars rang
 A few marks per bar are allowed (for now, maximum is 10). Marks out of bars are not allowed.
 
 **Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_marks]].
+
+###getQuotes(symbols, onDataCallback, onErrorCallback)
+1. `symbols`: array of symbols names
+2. `onDataCallback`: function(array of `data`)
+  1. `data`: [[symbol quote data|Quotes]]
+3. `onErrorCallback`: function(reason)
+
+This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
