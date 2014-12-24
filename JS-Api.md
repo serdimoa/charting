@@ -159,3 +159,5 @@ Library calls this function to get [[marks|Marks-On-Bars]] for visible bars rang
 * **minSize**: minimal size of mark (diameter, pixels)
 
 A few marks per bar are allowed (for now, maximum is 10). Marks out of bars are not allowed.
+
+**Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_marks]].
