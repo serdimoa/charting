@@ -165,7 +165,7 @@ A few marks per bar are allowed (for now, maximum is 10). Marks out of bars are 
 ###getQuotes(symbols, onDataCallback, onErrorCallback)
 1. `symbols`: array of symbols names
 2. `onDataCallback`: function(array of `data`)
-  1. `data`: [[symbol quote data|Quotes]]
+  1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
 3. `onErrorCallback`: function(reason)
 
 This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
