@@ -63,7 +63,7 @@ This call is intended to provide the list of symbols matching to user's search q
 ]
 ```
 
-If no symbols are found, then callback should be called with an empty array.
+If no symbols are found, then callback should be called with an empty array. See more details about `ticker` value [[here|Symbology#ticker]]
 
 ###resolveSymbol(symbolName, onSymbolResolvedCallback, onResolveErrorCallback)
 1. `symbolName`: string. Symbol name or `ticker` if provided.
