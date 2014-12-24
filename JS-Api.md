@@ -12,7 +12,7 @@ To feed your data to the charts using JS API, create an object that has a specif
 6. [[unsubscribeBars|JS-Api#unsubscribebarssubscriberuid]]
 7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
-9. getQuotes
+9. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
 
 ###setup(reserved, callback)
 1. `reserved` is not used now
