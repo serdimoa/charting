@@ -50,7 +50,9 @@ Either `supports_search` or `supports_group_request` should be `true`.
 
 ###Group symbols info
 Request: `GET /symbol_info?group=<group_name>`
+
 1. `group_name`: string
+
 Example: `GET /symbol_info?group=NYSE`
 
 
@@ -106,13 +108,23 @@ Example: Here is the example of datafeed response to `GET /symbol_info?group=NYS
 
 ###Symbol resolve
 Request: `GET /symbols?symbol=<symbol>`
+
+1. `symbol`: string. Symbol name or ticker.
+
 Example: `GET /symbols?symbol=AAL`, `GET /symbols?symbol=NYSE:MSFT`
+
 Response: JSON containing object **exactly** similar to [[SymbolInfo|Symbology#symbolinfo-structure]]
 
 **Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
 
 ###Symbol search
 Request: `GET /search?query=<query>&type=<type>&exchange=<exchange>&limit=<limit>`
+
+1. `query`: string. Text typed by user in Symbol Search edit box
+2. `type`: string. One of the types [[supported|JS-Api#symbols_types]] by your back-end
+3. `exchange`: string. One of the exchanges [[supported|JS-Api#exchanges]] by your back-end
+4. `limit`: integer. Maximal items count in response
+
 Example: `GET /search?query=AA&type=stock&exchange=NYSE&limit=15`
 
 Response: Response is expected to be an array of symbol records as in [[respective JS API call|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
@@ -122,4 +134,42 @@ Response: Response is expected to be an array of symbol records as in [[respecti
 
 ###Bars
 Request: `GET /history?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
+
+1. `symbol`: symbol name or ticker.
+2. `from`: unix timestamp (UTC) or leftmost required bar
+3. `to`: unix timestamp (UTC) or rightmost required bar
+4. `resolution`: string 
+
 Example: `GET /history?symbol=BEAM~0&resolution=D&from=1386493512&to=1395133512`
+
+Response: Response is expected to be an object with some properties listed below. Each property is treated as table column, like described above.
+
+* **s**: status code. Expected values: `ok` | `error`
+* **errmsg**: error message. Should be present just if `s = 'error'`
+* **t**: bar time. unix timestamp (UTC)
+* **c**: close price
+* **o**: open price (optional)
+* **h**: high price (optional)
+* **l**: low price (optional)
+* **v**: volume (optional)
+
+Example:
+```javascript
+{
+   s: "ok",
+   t: [1386493512, 1386493572, 1386493632, 1386493692],
+   c: [42.1, 43.4, 44.3, 42.8]
+}```
+
+```javascript
+{
+   s: "ok",
+   t: [1386493512, 1386493572, 1386493632, 1386493692],
+   c: [42.1, 43.4, 44.3, 42.8],
+   o: [41.0, 42.9, 43.7, 44.5],
+   h: [43.0, 44.1, 44.8, 44.5],
+   l: [40.4, 42.1, 42.8, 42.3],
+   v: [12000, 18500, 24000, 45000]
+}```
+
+Any omitted price will be treated as equal to `close`.
