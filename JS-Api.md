@@ -67,13 +67,13 @@ If no symbols are found, then callback should be called with an empty array.
 
 ###resolveSymbol(symbolName, onSymbolResolvedCallback, onResolveErrorCallback)
 1. `symbolName`: string. Symbol name or `ticker` if provided.
-2. `onSymbolResolvedCallback`: function([[SymbolInfo|Symbology]]
+2. `onSymbolResolvedCallback`: function([[SymbolInfo|Symbology#symbolinfo-structure]]
 3. `onResolveErrorCallback`: function(reason)
 
-Charting Library will call this function when it need to get [[SymbolInfo|Symbology]] by symbol's name.
+Charting Library will call this function when it need to get [[SymbolInfo|Symbology#symbolinfo-structure]] by symbol's name.
 
 ###getBars(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback)
-1. `symbolInfo`: [[SymbolInfo|Symbology]] object
+1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `resolution`: string
 3. `from`: unix timestamp, leftmost required bar time
 3. `to`: unix timestamp, rightmost required bar time
@@ -88,7 +88,7 @@ This function is called when chart needs a history fragment defined by dates ran
 
 
 ###subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID)
-1. `symbolInfo`: [[SymbolInfo|Symbology]] object
+1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `resolution`: string
 3. `onRealtimeCallback`: function(bar)
   1. `bar`: object `{time, close, open, high, low, volume}`
@@ -142,7 +142,7 @@ This means when Charting Library will request the data for '1D' resolution, the 
 
 
 ###getMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
-1. `symbolInfo`: [[SymbolInfo|Symbology]] object
+1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
 3. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
 4. `onDataCallback`: function(array of `mark`s)
