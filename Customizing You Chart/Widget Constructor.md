@@ -46,7 +46,7 @@ Toolbars background color
 ####studies_access
 *version: 1.1*
 An object with following structure:
-```
+```javascript
 {
     type: "black" | "white",
     tools: [
@@ -78,7 +78,7 @@ Locale to be used by Charting Library. See [[Localization]] section for details.
 The object containing default Widget properties overrides. Overriding a property means assigning a default value to it.
 You can override most of Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` supposed to be an object having range of fields. Each field name is a name of overridden property and the field value is the desired value for those property. Example:
 
-```
+```javascript
 overrides: {
     "symbolWatermarkProperties.transparency": 100
 }
@@ -96,7 +96,7 @@ URL for POST request with base64-encoded chart snapshots which will been sent wh
 
 ####widgetbar | TradingTerminal only |
 The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
-```
+```javascript
 widgetbar: {
     datawindow: true,
     details: true,
@@ -122,7 +122,7 @@ Use this option to customize default indicators' style or inputs. See more detai
 
 ####time_frames
 List of time frames visible in timeframes picker at the bottom of the chart. Example:
-```
+```javascript
 time_frames: [
     { text: "50y", resolution: "6M" },
     { text: "3y", resolution: "W" },
