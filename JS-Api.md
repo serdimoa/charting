@@ -67,7 +67,7 @@ If no symbols are found, then callback should be called with an empty array.
 
 ###resolveSymbol(symbolName, onSymbolResolvedCallback, onResolveErrorCallback)
 1. `symbolName`: string. Symbol name or `ticker` if provided.
-2. `onSymbolResolvedCallback`: function([[SymbolInfo|Symbology#symbolinfo-structure]]
+2. `onSymbolResolvedCallback`: function([[SymbolInfo|Symbology#symbolinfo-structure]])
 3. `onResolveErrorCallback`: function(reason)
 
 Charting Library will call this function when it need to get [[SymbolInfo|Symbology#symbolinfo-structure]] by symbol's name.
