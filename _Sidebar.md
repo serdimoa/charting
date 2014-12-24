@@ -16,5 +16,6 @@
     1. [[Widget Constructor|Widget-Constructor]]
     2. [[Widget Methods]]
   3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
-5. [[Creating Custom Studies]]
-6. [[Best Practices]]
+5. [[Saving/Loading Charts|Saving-and-Loading-Charts]]
+6. [[Creating Custom Studies]]
+7. [[Best Practices]]
