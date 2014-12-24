@@ -199,3 +199,15 @@ Response: Response is expected to be an object with some properties listed below
 ```
 
 **Remark**: This call will be requested if your datafeed sent `supports_marks: true` in configuration data.
+
+###Quotes
+Request: `GET /quotes?symbols=<ticker_name_1>,<ticker_name_2>,...,<ticker_name_n>`
+
+Example: `GET /quotes?symbols=NYSE%3AAA%2CNYSE%3AF%2CNasdaqNM%3AAAPL`
+
+Response: Response is an object.
+* **s**: status code for request. Expected values: `ok` | `error`
+* **errmsg**: error message for client
+* **d**: [[symbols data|Quotes]] array
+
+
