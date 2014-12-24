@@ -13,7 +13,7 @@ The picture above illustrates the relationships between the [[default package|Pa
 
 1. **If you already have a data transport ready** (websocket streaming, polling, or any other transport), or if you don’t but need streaming data - use our [[JavaScript API|JS-Api]], which is extremely compact and simple to implement. You will have to create a small **client-side data adapter** between your data transport and our charts using JavaScript.
 
-2. **If you don’t have any transports** and do not need streaming data (e.g., data pulsing is all you need), then you will have to create (or use) at least a thin server-side datafeed wrapper. You may use any language and technology for this purpose: it’s just necessary for your wrapper to support our data exchange protocol (we call it [[UDF|UDF-protocol]]) to be able to feed your Charting Library with data. You will have to create a small **server-side data adapter** between your back-end and our charts using you favorite language.
+2. **If you don’t have any transports** and do not need streaming data (e.g., data pulsing is all you need), then you will have to create (or use) at least a thin server-side datafeed wrapper. You may use any language and technology for this purpose: it’s just necessary for your wrapper to support our data exchange protocol (we call it [[UDF|UDF]]) to be able to feed your Charting Library with data. You will have to create a small **server-side data adapter** between your back-end and our charts using you favorite language.
 
 ###Want Examples ?
 
