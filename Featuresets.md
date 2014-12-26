@@ -15,6 +15,7 @@ It is a composite feature. it is **on** by default. Simple features included her
 * `header_undo_redo`
 * `header_screenshot`
 * `header_fullscreen_button`
+* `header_saveload`
 
 #context_menus
 It is a composite feature. it is **on** by default. Simple features included here:
