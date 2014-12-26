@@ -9,7 +9,7 @@ Also, there may be a situation when trading hours differ from day to day. You ca
 
 Fragment | Meaning
 ---------|--------
-0900-1630|A session 0900-1630. It's the default session for all days because it's not followed by `:` specifier.
+0900-1630|A session 0900-1630. This session will be assigned by default to all non-weekend days because it's not followed by `:` specifier.
 \||Sessions separator. This character divides different sessions descriptors.
 0900-1400|A session 0900-1400. It's the session for a day #2 (see below)
 :|Day specifier. This character follows the session hours description and is followed by day number.
