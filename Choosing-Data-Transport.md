@@ -20,3 +20,5 @@ The picture above illustrates the relationships between the [[default package|Pa
 A sample implementation of **UDF-compatible** (case #2 described below) server-side wrapper is available [on github](https://github.com/drbeep/yahoo_datafeed). It uses Yahoo! data.
 
 A sample of **JS API** implementation (and UDF client-side at the same time) is a part of Charting Library package (see *datafeed.js* file).
+
+If you use Ruby on Rails you can see the gem for Charting Library kindly provided by our user [[bobstar6|https://github.com/bobstar6]] [[here|https://github.com/tradingview/tv_chart_rails]].
