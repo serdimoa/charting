@@ -1,5 +1,3 @@
-**version: 0.5 | stability: 2 (rather stable)**
-
 The Charting Library expects to receive trading sessions descriptor in Symbol Info. Session is a time range when trades may appear. Each session should be assigned with left and right bounds. In the Charting Library, session time format is “HHMM-HHMM”. E.g., session starting at 9:30am and ending at 16:00 pm should look like “0930-1600”. There is a special case for symbols traded 24x7 (e.g., Bitcoin and other cryptocurrencies): the session string then should be "24x7". Session time is expected to be in exchange time zone.
 
 If session left border is greater than the right one (ie, 1700-0900), this session is treated as an overnight one. Overnight session is always started in previous day: e.g., if the symbol is traded Monday-Friday 1700-0900, the first session on week (#i) will be treated as started in Sunday 17:00 of previous week (#i-1) and ending at 09:00 on Monday of this week (#i).
@@ -18,7 +16,7 @@ Fragment | Meaning
 2|The day number for the session above (0900-1400)
 
 
-Days numbers are 1 for Sunday and 7 for Saturday (2 -- Monday, 3 -- Tuesday, e.t.c.). It's possible to override more than one day with a single session record. E.g., in "0900-1630|0900-1400:23" 0900-1400 sessions will be assigned to days #2 and #3 (Monday, Tuesday).
+Days numbers are 1 for Sunday and 7 for Saturday (2 -- Monday, 3 -- Tuesday, e.t.c.). It's possible to override more than one day with a single session record. E.g., in "0900-1630|0900-1400:23" 0900-1400 sessions will be assigned to days #2 and #3 (Monday, Tuesday). 
 
 **version: 1.1**:
 
@@ -28,3 +26,5 @@ One can specify the first trading day of a week using semicolon. Examples:
 "0900-1630|0900-1400:2;6" : first day of week is Saturday
 "0900-1630|0900-1400:2"   : first day of week is Monday (default value)
 ```
+
+**Remark**: By default, all non-`24x7` symbols are treated to be non-tradable in Saturday and Sunday. So if your symbol is traded on weekends, you should specify trading days explicitly. I.e., `1000-1600` symbol which is traded in Sunday...Friday , should have session `1000-1600:123456`
