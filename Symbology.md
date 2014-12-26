@@ -7,7 +7,7 @@ But there are some fine points you should know about:
 
 ##SymbolInfo Structure
 
-**This section is extremely important. 34.2% of all issues experienced by Charting Library users are caused by wrong/malformed SymbolInfo data.**
+**This section is extremely important. 72.2% of all issues experienced by Charting Library users are caused by wrong/malformed SymbolInfo data.**
 
 SymbolInfo is an object containing symbol metadata. This object is the result of resolving the symbol. SymbolInfo has following fields:
 
