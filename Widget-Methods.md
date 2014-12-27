@@ -19,6 +19,7 @@ widget.onChartReady(function() {
   * [[onAutoSaveNeeded(callback)|Widget-Methods#onautosaveneededcallback]]
   * [[onMarkClick(callback)|Widget-Methods#onmarkclickcallback]]
   * [[onGrayedObjectClicked(callback)|Widget-Methods#ongrayedobjectclickedcallback]]
+  * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]]
 * Chart Actions
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
