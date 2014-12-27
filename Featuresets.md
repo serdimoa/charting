@@ -8,6 +8,8 @@ It is a composite feature. it is **on** by default. Simple features included her
 * `header_widget_dom_node`
 * `header_symbol_search`
 * `header_resolutions`
+  * `header_interval_dialog_button`
+    * `show_interval_dialog_on_key_press`
 * `header_chart_type`
 * `header_settings`
 * `header_indicators`
@@ -23,6 +25,7 @@ It is a composite feature. it is **on** by default. Simple features included her
 * `scales_context_menu`
 * `legend_context_menu`
 
+
 #Standalone Features Not Belonging To Composite Ones
 
 Features switched **on** by default:
@@ -35,7 +38,6 @@ Features switched **on** by default:
 * `volume_force_overlay`
 * `create_volume_indicator_by_default`
 * `right_bar_stays_on_scroll`
-* `show_interval_dialog_on_key_press`
 * `right_bar_stays_on_scroll`
 * `border_around_the_chart`
 * `header_saveload` (yep, it's not a part of `header_widget`)
