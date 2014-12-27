@@ -91,6 +91,11 @@ The Library will call the callback provided every time when user clicks a [[mark
 
 The Library will call the callback provided every time when user clicks on grayed out object. Example:
 
+####onScreenshotReady(callback:
+1. `callback`: function(imageName)
+
+The Library will call the callback provided every time when user clicks on grayed out object. Example:
+
 ```javascript
 new TradingView.widget({
     drawings_access: {
