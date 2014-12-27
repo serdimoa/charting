@@ -1,8 +1,8 @@
 **version: 1.1 / stability: 2 (rather stable)**
 
-`Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below.
+`Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below. Default state (on/off) is shown in braces.
 
-* `header_widget` (**on** by default -- further marked as [on])
+* `header_widget` [on]
   * `header_widget_dom_node`
   * `header_symbol_search`
   * `header_resolutions`
@@ -24,16 +24,16 @@
 * `control_bar` [on]
 * `timeframes_toolbar` [on]
 * `edit_buttons_in_legend` [on]
-* `use_localstorage_for_settings` [on] (disabling this feature will hide all "Favorite this item" buttons )
+* `use_localstorage_for_settings` (disabling this feature will hide all "Favorite this item" buttons ) [on]
 * `volume_force_overlay` [on]
 * `create_volume_indicator_by_default` [on]
 * `right_bar_stays_on_scroll` [on]
 * `right_bar_stays_on_scroll` [on]
 * `border_around_the_chart` [on]
-* `header_saveload` [on] (yep, it's not a part of `header_widget`)
+* `header_saveload` (yep, it's not a part of `header_widget`) [on] 
 * `constraint_dialogs_movement` [on]
 * `adapt_onchart_logo_background` [on]
-* `charting_library_debug_mode` <off>
-* `narrow_chart_enabled` <off>
-* `trading_options` <off>
-* `move_logo_to_main_pane` <off>
+* `charting_library_debug_mode` [off]
+* `narrow_chart_enabled` [off]
+* `trading_options` [off]
+* `move_logo_to_main_pane` [off]
