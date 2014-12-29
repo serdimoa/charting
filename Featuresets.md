@@ -15,7 +15,6 @@
   * `header_undo_redo`
   * `header_screenshot`
   * `header_fullscreen_button`
-  * `header_saveload`
 * `context_menus` [on]
  * `pane_context_menu`
  * `scales_context_menu`
