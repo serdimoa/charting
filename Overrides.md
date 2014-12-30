@@ -36,7 +36,7 @@ scalesProperties.scaleSeriesOnly : false
 //		line = 2
 //		area = 3
 //		heiken ashi = 8
-//		candles = 9
+//		hollow candles = 9
 mainSeriesProperties.style: 1
 
 mainSeriesProperties.showCountdown: true
