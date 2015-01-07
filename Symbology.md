@@ -29,6 +29,7 @@ For now both of this fields are expected to have short name of exchange where th
 #####timezone
 Exchange timezone for this symbol. We expect to get name of time zone in olsondb format. Supported timezones are:
 ```
+UTC
 America/New_York
 America/Los_Angeles
 America/Chicago
