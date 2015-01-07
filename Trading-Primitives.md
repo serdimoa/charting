@@ -8,6 +8,7 @@ You can’t control visibility of specific object - generic properties for posit
 
 ###Colors and Fonts
 You can use following string formats for setting colors:
+
 1. "#RGB"
 2. "#RRGGBB"
 3. "rgb(red, green, blue)"
