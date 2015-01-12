@@ -62,6 +62,9 @@ MinimalPossiblePriceChange = minmov / pricescale
 PriceScaleInterval = 1 / pricescale
 ```
 
+#####fractional <false>
+Boolean showing whether this symbol wants to have complex price formatting (see `minmove2` below) or not.
+
 #####minmove2 <0>
 It's a magic number for complex price formatting cases. Here are some samples:
 ```
