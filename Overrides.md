@@ -17,6 +17,7 @@ editorFontsList: ['Verdana', 'Courier New', 'Times New Roman', 'Arial']
 
 paneProperties.background: "#ffffff"
 paneProperties.gridProperties.color: "#E6E6E6"
+paneProperties.crossHairProperties.color: "#B7B7B7"
 
 //	Margins (percent). Used for auto scaling.
 paneProperties.topMargin: 5
