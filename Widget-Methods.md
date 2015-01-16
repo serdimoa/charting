@@ -176,16 +176,16 @@ Creates the study on a main symbol. Examples:
   2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
   3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
 2. `options`: object `{shape, [text], [lock], [overrides]}`
-  1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line']. 'flag' is the default value.
+  1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line', 'horizontal_line']. 'flag' is the default value.
   2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text (for now, it's only 'arrow_up' and 'arrow_down').
   3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
   4. `overrides` (since version `1.2`). It is an object containing properties you'd like to set for your new shape.
 
 Supported overrides:
 
-* Shape: vertical_line
+* Shape: vertical_line, horizontal_line
   1. `linecolor` [#80CCDB]
-  2. `linewidth` [1.0]
+  2. `linewidth`: supported values: `[1, 2, 3, 4]` .Default: `1.0`
   3. `linestyle` [1]
   4. `showTime` [true]
 * Shape: arrow_up, arrow_down
