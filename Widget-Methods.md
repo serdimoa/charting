@@ -183,20 +183,39 @@ Creates the study on a main symbol. Examples:
 
 Supported overrides:
 
-* Shape: vertical_line, horizontal_line
+* Shape: vertical_line,
   1. `linecolor` [#80CCDB]
-  2. `linewidth`: supported values: `[1, 2, 3, 4]` .Default: `1.0`
-  3. `linestyle` [1]
+  2. `linewidth`: [1]
+  3. `linestyle`[0]
   4. `showTime` [true]
+* Shape: horizontal_line
+  1. `linecolor` [#80CCDB]
+  2. `linewidth` [1]
+  3. `linestyle` [0]
+  4. `showPrice` [true],
+  5. `showLabel` [false],
+  6. `text` [""],
+  7. `textcolor` ["#157760"],
+  8. `fontsize` [12],
+  9. `bold` [false],
+  10. `italic` [false],
+  11. `horzLabelsAlign` ["center"],
+  12. `vertLabelsAlign` ["top"]
 * Shape: arrow_up, arrow_down
-  1. `color` [#787878]
+  1. `color` ["#787878"]
   2. `text` [""]
   3. `fontsize` [20]
   4. `font` ["Verdana"]
 * Shape: flag
   1. `color` [#FF0000]
 
-This call creates a shape at specified point on main series.
+Supported values for particular overrides:
+  * `linestyle`: `[0 (solid), 1 (dotted), 2 (dashed), 3 (large dashed)]`
+  * `linewidth`: `[1, 2, 3, 4]`
+  * `horzLabelsAlign`: `["center", "left", "right"]`
+  * `vertLabelsAlign`: `["top", "middle", "bottom"]`
+
+This call creates a shape at specified point on main series. 
 
 ####createVerticalLine(point, options)
 1. `point`: object `{time}`
