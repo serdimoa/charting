@@ -63,6 +63,7 @@ Response: Response is expected to be an object with properties listed below. Eac
 * **exchange-listed** / **exchange-traded**
 * **minmov** / **minmovement**
 * **minmov2**
+* **fractional**
 * **pricescale**
 * **has-intraday**
 * **has-no-volume**
