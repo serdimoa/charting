@@ -169,6 +169,7 @@ Creates the study on a main symbol. Examples:
   * `createStudy('MACD', false, false, [14, 30, 9])`
   * `createStudy('Moving Average Exponential', false, false, [26])`
 
+**Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
 ####createShape(point, options)
 1. `point`: object `{time, [price], [channel]}`
