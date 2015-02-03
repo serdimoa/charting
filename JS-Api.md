@@ -4,7 +4,7 @@ To feed your data to the charts using JS API, create an object that has a specif
 
 #Methods
 
-1. [[onReady|JS-Api#onready-callback]]
+1. [[onReady|JS-Api#onreadycallback]]
 2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
 3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
 4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback]]
