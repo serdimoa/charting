@@ -4,7 +4,7 @@ To feed your data to the charts using JS API, create an object that has a specif
 
 #Methods
 
-1. [[setup|JS-Api#setupreserved-callback]]
+1. [[onReady|JS-Api#onready-callback]]
 2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
 3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
 4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback]]
@@ -14,9 +14,8 @@ To feed your data to the charts using JS API, create an object that has a specif
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 9. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
 
-###setup(reserved, callback)
-1. `reserved` is not used now
-2. `callback`: function(configurationData)
+###onReady(callback)
+1. `callback`: function(configurationData)
   1. `configurationData`: object (see below)
 
 This call is intended to provide the object filled with configuration data. This data affects some of chart behavior aspects so it is called [[server-side customization|Charts-Customization-101#customization-done-through-data-stream]]. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. Configuration data is an object; for now, following properties are supported:
