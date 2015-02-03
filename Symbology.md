@@ -37,6 +37,7 @@ America/Toronto
 America/Vancouver
 America/Argentina/Buenos_Aires
 America/Bogota
+America/Sao_Paulo
 Europe/Moscow
 Europe/Athens
 Europe/Berlin
