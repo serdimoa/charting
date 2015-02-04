@@ -26,6 +26,7 @@ widget.onChartReady(function() {
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
   * [[remove()|Widget-Methods#remove]]
   * [[executeAction(action)|Widget-Methods#executeactionaction]]
+  * [[refreshMarks()|Widget-Methods#refreshmarks]]
 * Studies And Shapes 
   * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createstudyname-forceoverlay-lock-inputs]]
   * [[createShape(point, options)|Widget-Methods#createshapepoint-options]]
@@ -162,6 +163,10 @@ widget.executeAction("Insert Indicator..."); // calling this will show `Insert S
 widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
 // < ... >
 ```
+
+###refreshMarks()
+
+Calling this method makes the Library to request visible marks once again.
 
 #Studies And Shapes
 
