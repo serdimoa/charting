@@ -20,6 +20,7 @@ widget.onChartReady(function() {
   * [[onMarkClick(callback)|Widget-Methods#onmarkclickcallback]]
   * [[onGrayedObjectClicked(callback)|Widget-Methods#ongrayedobjectclickedcallback]]
   * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]]
+  * [[onTick(callback)|Widget-Methods#ontickcallback]]
 * Chart Actions
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
@@ -126,6 +127,11 @@ widget.onChartReady(function() {
 1. `callback`: function(imageName)
 
 The Library will call the callback provided every time when user creates a screenshot and server returns the created image name.
+
+###onTick(callback)
+1. `callback`: function(data)
+
+The Library will call the callback provided every time when recent bar updates.
 
 
 #Chart Actions
