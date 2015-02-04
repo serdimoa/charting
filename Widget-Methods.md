@@ -129,7 +129,7 @@ widget.onChartReady(function() {
 
 The Library will call the callback provided every time when user creates a screenshot and server returns the created image name.
 
-###onTick(callback)
+####onTick(callback)
 1. `callback`: function(data)
 
 The Library will call the callback provided every time when recent bar updates.
@@ -164,7 +164,7 @@ widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes v
 // < ... >
 ```
 
-###refreshMarks()
+####refreshMarks()
 
 Calling this method makes the Library to request visible marks once again.
 
