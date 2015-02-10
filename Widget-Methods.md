@@ -232,7 +232,7 @@ Supported values for particular overrides:
 
 This call creates a shape at specified point on main series. 
 
-###removeEntity(entityId)
+####removeEntity(entityId)
 1. `entityId`: object. Value which was passed to your callback after the entity (shape of study) was created.
 
 Removes the specified entity.
