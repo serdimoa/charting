@@ -30,6 +30,7 @@ widget.onChartReady(function() {
 * Studies And Shapes 
   * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createstudyname-forceoverlay-lock-inputs]]
   * [[createShape(point, options)|Widget-Methods#createshapepoint-options]]
+  * [[removeEntity(entityId)|Widget-Methods#removeentityentityid]]
   * [[createVerticalLine(point, options)|Widget-Methods#createverticallinepoint-options]]
   * [[removeAllShapes()|Widget-Methods#removeallshapes]]
   * [[removeAllStudies()|Widget-Methods#removeallstudies]]
@@ -170,11 +171,12 @@ Calling this method makes the Library to request visible marks once again.
 
 #Studies And Shapes
 
-####createStudy(name, forceOverlay, lock, inputs)
+####createStudy(name, forceOverlay, lock, inputs, callback)
 1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
 2. `forceOverlay`: forces the Charting Library to place the created study on main pane
 3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
 4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
+5. `callback`: function(`entityId`)
 
 Creates the study on a main symbol. Examples: 
   * `createStudy('MACD', false, false, [14, 30, 9])`
@@ -182,7 +184,7 @@ Creates the study on a main symbol. Examples:
 
 **Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
-####createShape(point, options)
+####createShape(point, options, callback)
 1. `point`: object `{time, [price], [channel]}`
   1. `time`: unix time. The only mandatory argument.
   2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
@@ -192,6 +194,7 @@ Creates the study on a main symbol. Examples:
   2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text (for now, it's only 'arrow_up' and 'arrow_down').
   3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
   4. `overrides` (since version `1.2`). It is an object containing properties you'd like to set for your new shape.
+3. `callback`: function(`entityId`)
 
 Supported overrides:
 
@@ -228,6 +231,11 @@ Supported values for particular overrides:
   * `vertLabelsAlign`: `["top", "middle", "bottom"]`
 
 This call creates a shape at specified point on main series. 
+
+###removeEntity(entityId)
+1. `entityId`: object. Value which was passed to your callback after the entity (shape of study) was created.
+
+Removes the specified entity.
 
 ####createVerticalLine(point, options)
 1. `point`: object `{time}`
