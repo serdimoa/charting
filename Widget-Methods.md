@@ -22,6 +22,7 @@ widget.onChartReady(function() {
   * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]]
   * [[onTick(callback)|Widget-Methods#ontickcallback]]
 * Chart Actions
+  * [[setVisibleRange(range, callback)|Widget-Methods#setvisiblerangerange-callback]]
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
   * [[remove()|Widget-Methods#remove]]
@@ -137,6 +138,14 @@ The Library will call the callback provided every time when recent bar updates.
 
 
 #Chart Actions
+
+####setVisibleRange(range, callback)
+1. `range`: object, `{from to}`/
+  1. `from`, `to`: unix timestamps, UTC
+2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
+
+Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
+Neither `from`, nor `to` must not be in future.
 
 ####setLanguage(locale)
 1. `locale`: [[language code|Localization]]
