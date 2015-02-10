@@ -14,7 +14,6 @@ widget.onChartReady(function() {
   * [[onChartReady(callback)|Widget-Methods#onchartreadycallback]]
   * [[onSymbolChange(callback)|Widget-Methods#onsymbolchangecallback]]
   * [[onIntervalChange(callback)|Widget-Methods#onintervalchangecallback]]
-  * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[onRealtimeTick(callback)|Widget-Methods#onrealtimetickcallback]]
   * [[onAutoSaveNeeded(callback)|Widget-Methods#onautosaveneededcallback]]
   * [[onMarkClick(callback)|Widget-Methods#onmarkclickcallback]]
@@ -45,7 +44,9 @@ widget.onChartReady(function() {
   * [[createOrderLine()|Widget-Methods#createorderline]]
   * [[createPositionLine()|Widget-Methods#createpositionline]]
   * [[createExecutionShape()|Widget-Methods#createexecutionshape]]
-
+* Getters
+  * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
+  * [[getVisibleRange(callback)|Widget-Methods#getvisiblerangecallback]]
 
 #Subscribing To Chart Events
 
@@ -65,12 +66,6 @@ The Charting Library will call the callback provided every time the main series 
   1. `interval`: string
 
 The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
-
-####symbolInterval(callback)
-1. `callback`: function(result)
-  1. `result`: object `{symbol, interval}`
-
-Charting Library will call your callback passes some data about chart's symbol and interval.
 
 ####onRealtimeTick(callback)
 1. `callback`: function(barData)
@@ -504,6 +499,20 @@ widget.createExecutionShape()
     .setTime(1413559061758)
     .setPrice(15.5);
 ```
+
+#Getters
+
+####symbolInterval(callback)
+1. `callback`: function(result)
+  1. `result`: object `{symbol, interval}`
+
+Charting Library will call your callback with an object containing chart's symbol and interval.
+
+####getVisibleRange(callback)
+1. `callback`: function(range)
+  1. `range`: object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
+
+The Library will call your callback and pass the current visible time range.
 
 #See Also
 * [[Charts Customization 101]]
