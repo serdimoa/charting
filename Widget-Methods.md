@@ -28,8 +28,8 @@ widget.onChartReady(function() {
   * [[executeAction(action)|Widget-Methods#executeactionaction]]
   * [[refreshMarks()|Widget-Methods#refreshmarks]]
 * Studies And Shapes 
-  * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createstudyname-forceoverlay-lock-inputs]]
-  * [[createShape(point, options)|Widget-Methods#createshapepoint-options]]
+  * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createstudyname-forceoverlay-lock-inputs-callback]]
+  * [[createShape(point, options)|Widget-Methods#createshapepoint-options-callback]]
   * [[removeEntity(entityId)|Widget-Methods#removeentityentityid]]
   * [[createVerticalLine(point, options)|Widget-Methods#createverticallinepoint-options]]
   * [[removeAllShapes()|Widget-Methods#removeallshapes]]
