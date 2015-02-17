@@ -135,7 +135,7 @@ The Library will call the callback provided every time when recent bar updates.
 #Chart Actions
 
 ####setVisibleRange(range, callback)
-1. `range`: object, `{from to}`/
+1. `range`: object, `{from to}`
   1. `from`, `to`: unix timestamps, UTC
 2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
 
