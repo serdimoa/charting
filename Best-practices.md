@@ -42,27 +42,27 @@ Also, check the data you are passing to the Charting Library and make sure it ma
 
 You can watch the output of our demo data service and compare it to yours to ensure your backend behaves like it should.
 
-
-###14. Read the docs
+###9. Read the docs
 We spent a lot of time creating those docs for you to make your life easier. Please give it a try.
-###9. Choose an appropriate data transport for your solution
+
+###10. Choose an appropriate data transport for your solution
 
 Pay attention to differences between JS API and UDF, and choose the API that fits your needs best.
 Do not use UDF if you need really fast data updates or data streaming.
 Do not use UDF with data grouping (see `supports_group_request`) if your backend has more than a dozen symbols.
 
-###10. Do not try to sniff our code and use undocumented features
+###11. Do not try to sniff our code and use undocumented features
 
 All features not mentioned in our documentation are subjects for change without any warnings and backward compatibility. Also altering the source code is strictly prohibited by the legal agreement you signed.
 
-###11. Do not use our demo datafeed on your production website
+###12. Do not use our demo datafeed on your production website
 
 This datafeed is just a demo and is not intended for real usage. It may be unstable and can't bear significant load.
 
-###12. Use the API for customization. Avoid editing CSS.
+###13. Use the API for customization. Avoid editing CSS.
 
 We do not guarantee CSS selectors' backward compatibility.
 
-###13. Set up your server to gzip files when sending to client
+###14. Set up your server to gzip files when sending to client
 
 This is the common best practice for static HTML content. Gzipping the Library's HTML file will decrease your users' waiting time.
