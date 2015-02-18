@@ -42,6 +42,9 @@ Also, check the data you are passing to the Charting Library and make sure it ma
 
 You can watch the output of our demo data service and compare it to yours to ensure your backend behaves like it should.
 
+
+###14. Read the docs
+We spent a lot of time creating those docs for you to make your life easier. Please give it a try.
 ###9. Choose an appropriate data transport for your solution
 
 Pay attention to differences between JS API and UDF, and choose the API that fits your needs best.
@@ -63,6 +66,3 @@ We do not guarantee CSS selectors' backward compatibility.
 ###13. Set up your server to gzip files when sending to client
 
 This is the common best practice for static HTML content. Gzipping the Library's HTML file will decrease your users' waiting time.
-
-###14. Read the docs
-We spent a lot of time creating those docs for you to make your life easier. Please give it a try.
