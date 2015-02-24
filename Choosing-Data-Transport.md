@@ -17,7 +17,7 @@ The picture above illustrates the relationships between the [[default package|Pa
 
 ###Want Examples ?
 
-A sample implementation of **UDF-compatible** (case #2 described below) server-side wrapper is available [on github](https://github.com/drbeep/yahoo_datafeed). It uses Yahoo! data.
+A sample implementation of **UDF-compatible** (case #2 described below) server-side wrapper is available [on github](https://github.com/tradingview/yahoo_datafeed). It uses Yahoo! data.
 
 A sample of **JS API** implementation (and UDF client-side at the same time) is a part of Charting Library package (see *datafeed.js* file).
 
