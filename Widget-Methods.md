@@ -140,7 +140,7 @@ The Library will call the callback provided every time when recent bar updates.
 2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
 
 Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
-Neither `from`, nor `to` must not be in future.
+Neither `from`, nor `to` must not be in future. This method was introduced in version `1.2`.
 
 ####setLanguage(locale)
 1. `locale`: [[language code|Localization]]
@@ -512,7 +512,7 @@ Charting Library will call your callback with an object containing chart's symbo
 1. `callback`: function(range)
   1. `range`: object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
 
-The Library will call your callback and pass the current visible time range.
+The Library will call your callback and pass the current visible time range. This method was introduced in version `1.2`.
 
 #See Also
 * [[Charts Customization 101]]
