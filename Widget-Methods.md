@@ -139,8 +139,6 @@ The Library will call the callback provided every time when recent bar updates.
   1. `from`, `to`: unix timestamps, UTC
 2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
 
-**version: 1.2**
-
 Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
 Neither `from`, nor `to` must not be in future.
 
@@ -514,7 +512,6 @@ Charting Library will call your callback with an object containing chart's symbo
 1. `callback`: function(range)
   1. `range`: object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
 
-**version: 1.2**
 The Library will call your callback and pass the current visible time range.
 
 #See Also
