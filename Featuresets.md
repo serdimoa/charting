@@ -1,5 +1,3 @@
-**version: 1.1 / stability: 2 (rather stable)**
-
 `Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below. Default state (on/off) is shown in braces.
 
 * `header_widget` [on]
