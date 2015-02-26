@@ -59,8 +59,7 @@ Asia/Hong_Kong
 1. Minimal possible price change is determined by those values.
 2. PriceScale parameter determines interval between price lines on chart's price scale.
 ```
-MinimalPossiblePriceChange = minmov / pricescale
-PriceScaleInterval = 1 / pricescale
+PriceScaleInterval  = MinimalPossiblePriceChange = minmov / pricescale
 ```
 
 #####fractional <false>
