@@ -69,7 +69,7 @@ This property has the same structure as the `studies_access` described above. Us
 **Remark**: There is a special case for font-based drawings. Use "Font Icons" name for them. This group is a special case and its drawings cannot be enabled or disabled particularly -- one can either enable or disable the whole group.
 
 ####saved_data
-JS object containing saved chart content (see save/load calls below). Use this parameter if you already have chart's JSON when creating chart. If you want to load chart content to chart that is already initialized then use `loadData()` widget method. 
+JS object containing saved chart content (JSON, see save/load calls below). Use this parameter if you already have chart's JSON when creating chart. If you want to load chart content to chart that is already initialized then use `loadData()` widget method. 
 
 ####locale
 Locale to be used by Charting Library. See [[Localization]] section for details.
