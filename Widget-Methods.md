@@ -28,7 +28,7 @@ widget.onChartReady(function() {
   * [[executeAction(action)|Widget-Methods#executeactionaction]]
   * [[refreshMarks()|Widget-Methods#refreshmarks]]
 * Studies And Shapes 
-  * [[createStudy(name, forceOverlay, lock, inputs)|Widget-Methods#createstudyname-forceoverlay-lock-inputs-callback]]
+  * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides)|Widget-Methods#createstudyname-forceoverlay-lock-inputs-callback]]
   * [[createShape(point, options)|Widget-Methods#createshapepoint-options-callback]]
   * [[removeEntity(entityId)|Widget-Methods#removeentityentityid]]
   * [[createVerticalLine(point, options)|Widget-Methods#createverticallinepoint-options]]
@@ -175,16 +175,18 @@ Calling this method makes the Library to request visible marks once again.
 
 #Studies And Shapes
 
-####createStudy(name, forceOverlay, lock, inputs, callback)
+####createStudy(name, forceOverlay, lock, inputs, callback, overrides)
 1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
 2. `forceOverlay`: forces the Charting Library to place the created study on main pane
 3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
 4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
 5. `callback`: function(`entityId`)
+6. 'overrides': (since version `1.2`) an object containing properties you'd like to set for your new study.
 
 Creates the study on a main symbol. Examples: 
   * `createStudy('MACD', false, false, [14, 30, 9])`
   * `createStudy('Moving Average Exponential', false, false, [26])`
+  * `createStudy('Moving Average', false, false, [26], null, {"plot.color.0" : "#FF0000"})`
 
 **Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
