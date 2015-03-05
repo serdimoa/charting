@@ -34,3 +34,4 @@
 * `narrow_chart_enabled` [off]
 * `trading_options` [off]
 * `move_logo_to_main_pane` [off]
+* `show_dialog_on_snapshot_ready` [on]
