@@ -3,7 +3,7 @@
 To feed your data to the charts using JS API, create an object that has a specific public interface. It’s rather compact; your object needs a few functions. Data caching (history & symbol info) is implemented in Charting Library. When you create an object implementing described interface, just pass it to Library widget constructor through [[`datafeed` argument|Widget-Constructor#datafeed-mandatory]].
 
 #Methods
-
+0. setup
 1. [[onReady|JS-Api#onreadycallback]]
 2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
 3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
