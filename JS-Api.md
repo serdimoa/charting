@@ -14,6 +14,8 @@ To feed your data to the charts using JS API, create an object that has a specif
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 9. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
 
+###setup(studyEngineOptions, callback)
+
 ###onReady(callback)
 1. `callback`: function(configurationData)
   1. `configurationData`: object (see below)
