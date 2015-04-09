@@ -475,6 +475,7 @@ Price|Double|Double|0.0
 Time|Integer|Unix time|0
 Direction|String|"buy" or "sell"|"buy"
 Text|String|String|"execution"
+Tooltip|String|String|
 Arrow Height|Integer|Integer|8
 Arrow Spacing|Integer|Integer|1
 
