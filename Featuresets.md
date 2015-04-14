@@ -12,7 +12,7 @@
   * `header_compare`
   * `header_undo_redo`
   * `header_screenshot`
-  * `header_fullscreen_button`
+  * `header_fullsfcreen_button`
 * `context_menus` [on]
  * `pane_context_menu`
  * `scales_context_menu`
@@ -24,7 +24,6 @@
 * `use_localstorage_for_settings` (disabling this feature will hide all "Favorite this item" buttons ) [on]
 * `volume_force_overlay` [on]
 * `create_volume_indicator_by_default` [on]
-* `right_bar_stays_on_scroll` [on]
 * `right_bar_stays_on_scroll` [on]
 * `border_around_the_chart` [on]
 * `header_saveload` (yep, it's not a part of `header_widget`) [on] 
