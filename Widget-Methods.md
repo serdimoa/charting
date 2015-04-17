@@ -190,6 +190,7 @@ Creates the study on a main symbol. Examples:
 
 **Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
+**Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 ####createShape(point, options, callback)
 1. `point`: object `{time, [price], [channel]}`
   1. `time`: unix time. The only mandatory argument.
