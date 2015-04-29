@@ -341,6 +341,7 @@ Property|Type|Supported Values|Default Value
 ---|---|---|---
 Price|Double|Double|0.0
 Text|String|String|""
+Tooltip|String|String|""
 Quantity|String|String|""
 
 
@@ -408,6 +409,7 @@ Property|Type|Supported Values|Default Value
 ---|---|---|---
 Price|Double|Double|0.0
 Text|String|String|""
+Tooltip|String|String|""
 Quantity|String|String|""
 
 
@@ -498,6 +500,7 @@ Example:
 ```javascript
 widget.createExecutionShape()
     .setText("@1,320.75 Limit Buy 1")
+    .setTooltip("@1,320.75 Limit Buy 1")
     .setTextColor("rgba(0,255,0,0.5)")
     .setArrowColor("#0F0")
     .setDirection("buy")
