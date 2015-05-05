@@ -14,6 +14,8 @@ studies_overrides: {
 }
 ```
 
+In the example above, in example, all created Bollinger Bands will have upper line width = 7 (unless you create is through API and have specified another value for this line).
+
 ###How to set study name
 
 You should use studies names as-they-are in the Insert Study dialog, but in lower case. So if you want to override default EMA's length, try using `moving average exponential.length`. The same principle works for inputs names: use names as you can see them in Study Properties dialog (use lower case also). Example: `stochastic.smooth d`.
