@@ -14,7 +14,7 @@ studies_overrides: {
 }
 ```
 
-In the example above, in example, all created Bollinger Bands will have upper line width = 7 (unless you create is through API and have specified another value for this line).
+In the example above, in example, all created Bollinger Bands will have upper line width = 7 (unless you create it through API and have specified another value for this line).
 
 ###How to set study name
 
