@@ -1,4 +1,4 @@
-One may override default inputs values or style (color, line thickness e.t.c) of every indicator with `studies_overrides` parameter. `studies_overrides` is expected to be an object where key is a path to property being changed and value is the new value for it. Example:
+One can set default style and inputs values for newly created indicators using `studies_overrides` parameter. Its value is expected to be an object where key is a path to property being changed and value is the new value for it. Example:
 ```
 studies_overrides: {
     "volume.volume.color.0": "#00FFFF",
