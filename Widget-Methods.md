@@ -181,7 +181,7 @@ Calling this method makes the Library to request visible marks once again.
 3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
 4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
 5. `callback`: function(`entityId`)
-6. 'overrides': (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study.
+6. `overrides`: (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study.
 
 Creates the study on a main symbol. Examples: 
   * `createStudy('MACD', false, false, [14, 30, 9])`
