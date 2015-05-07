@@ -186,7 +186,7 @@ Calling this method makes the Library to request visible marks once again.
 Creates the study on a main symbol. Examples: 
   * `createStudy('MACD', false, false, [14, 30, 9])`
   * `createStudy('Moving Average Exponential', false, false, [26])`
-  * `createStudy('Moving Average', false, false, [26], null, {"plot.color.0" : "#FF0000"})`
+  * `createStudy('Stochastic', false, false, [26], null, {"%d.color" : "#FF0000"})`
 
 **Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
