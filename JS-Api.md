@@ -75,7 +75,7 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
 2. `resolution`: string
 3. `from`: unix timestamp, leftmost required bar time
 3. `to`: unix timestamp, rightmost required bar time
-4. `onHistoryCallback`: function(array of `bar`s, meta)
+4. `onHistoryCallback`: function(array of `bar`s, meta = {version = 2, noData = false})
   1. `bar`: object `{time, close, open, high, low, volume}`
   2. `meta`: object `{version = 2, noData = true | false, nextTime}`
 5. `onErrorCallback`: function(reason)
