@@ -192,7 +192,7 @@ Assume you watch the chart with resolution = 1 and Library asks you for data in 
 }
 ```
 
-So `nextTime` is a time of the bar which is next to the left (at the imaginary time line) of left boundary of Library's original request.
+So `nextTime` is a time of the bar which is next to the left (at the imaginary time line) from left boundary of Library's original request.
 
 All omitted prices will be treated as equal to `close`.
 
