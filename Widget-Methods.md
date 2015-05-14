@@ -41,7 +41,7 @@ widget.onChartReady(function() {
   * [[load(state)|Widget-Methods#loadstate]]
 * Custom UI Controls
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
-  * [[createButton()|Widget-Methods#createbutton]]
+  * [[createButton(options)|Widget-Methods#createbuttonoptions]]
 * Trading Primitives
   * [[createOrderLine()|Widget-Methods#createorderline]]
   * [[createPositionLine()|Widget-Methods#createpositionline]]
