@@ -182,7 +182,7 @@ Example:
    v: [12000, 18500, 24000, 45000]
 }
 ```
-##### How nextTiem works
+##### How `nextTime` works
 Assume you watch the chart with resolution = 1 and Library asks you for data in range `[3 Apr 2014 16:00 UTC+0, 3 Apr 2014 19:00 UTC+0]` for stock which is traded in NYSE. 3 Apr was a Good Friday so market was closed. Library assumes that you'll respond something like
 
 ```javascript
