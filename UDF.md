@@ -182,6 +182,17 @@ Example:
    v: [12000, 18500, 24000, 45000]
 }
 ```
+##### How nextTiem works
+Assume you watch the chart with resolution = 1 and Library asks you for data in range `[3 Apr 2014 16:00 UTC+0, 3 Apr 2014 19:00 UTC+0]` for stock which is traded in NYSE. 3 Apr was a Good Friday so market was closed. Library assumes that you'll respond something like
+
+```javascript
+{
+  s: "no_data",
+  nextTime: 1428001140000 // 2 Apr 2015 18:59:00 GMT+0
+}
+```
+
+So `nextTime` is a time of the bar which is next to the left (at the imaginary time line) of left boundary of Library's original request.
 
 All omitted prices will be treated as equal to `close`.
 
