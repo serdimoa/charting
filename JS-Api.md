@@ -75,8 +75,9 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
 2. `resolution`: string
 3. `from`: unix timestamp, leftmost required bar time
 3. `to`: unix timestamp, rightmost required bar time
-4. `onHistoryCallback`: function(array of `bar`s)
+4. `onHistoryCallback`: function(array of `bar`s, meta)
   1. `bar`: object `{time, close, open, high, low, volume}`
+  2. `meta`: object `{version = 2, noData = true | false, nextTime}`
 5. `onErrorCallback`: function(reason)
 
 This function is called when chart needs a history fragment defined by dates range. The charting library expects `onHistoryCallback` to be called **just once** after receiving all the requesting history. No further calls are expected.
