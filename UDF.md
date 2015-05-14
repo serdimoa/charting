@@ -145,7 +145,7 @@ Example: `GET /history?symbol=BEAM~0&resolution=D&from=1386493512&to=1395133512`
 
 Response: Response is expected to be an object with some properties listed below. Each property is treated as table column, like described above.
 
-* **s**: status code. Expected values: `ok` | `error`
+* **s**: status code. Expected values: `ok` | `error` | `no_data`
 * **errmsg**: error message. Should be present just if `s = 'error'`
 * **t**: bar time. unix timestamp (UTC)
 * **c**: close price
@@ -153,6 +153,7 @@ Response: Response is expected to be an object with some properties listed below
 * **h**: high price (optional)
 * **l**: low price (optional)
 * **v**: volume (optional)
+* **nextTime**: time of the next bar if there is no data (status code is `no_data`) in the requested period (optional)
 
 Example:
 ```javascript
@@ -160,6 +161,13 @@ Example:
    s: "ok",
    t: [1386493512, 1386493572, 1386493632, 1386493692],
    c: [42.1, 43.4, 44.3, 42.8]
+}
+```
+
+```javascript
+{
+   s: "no_data",
+   nextTime: 1386493512
 }
 ```
 
