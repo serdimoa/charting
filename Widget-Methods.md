@@ -320,7 +320,9 @@ widget.onChartReady(function() {
     });
 ```
 
-####createButton()
+####createButton(options)
+`options`: object `{ align: "left" }`
+ * `align`: "right" | "left". default: "left"
 
 Creates a new DOM element in chart top toolbar and returns **jQuery object** for this button. You can use it to append custom controls right on the chart. Example:
 
