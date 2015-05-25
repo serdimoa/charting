@@ -5,7 +5,7 @@
   1. [[Package Content]]
   2. [[Running Your Charting Library]]
 3. Data Binding
-  1. [[Choosing Data Transport]]
+  1. [[How To Connect My Data]]
   2. [[JS API|JS-Api]]
   3. [[UDF|UDF]]
   4. [[Symbology]]
