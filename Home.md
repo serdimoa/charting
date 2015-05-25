@@ -1,18 +1,16 @@
-The Charting Library consists of a charting component that you should host on your server, and a set of APIs. Flexible design lets you quickly and easily create a charting solution with your own data - which can be in real-time or refresh-only. 
+### What is Charting Library
 
-This solution is best for companies of any size that want to get top-notch HTML5 charting onto the corporate site, blog or portal as soon as possible, and for free. 
+The Charting Library is an HTML5 solution allowing you to create cutting-edge charting experience for your users easily. All you have to do is
 
-TradingView Charting Library allows you to implement your own high-end charting solution in a few steps.
+| What to do | What you'll get after |
+|---|---|
+|1. `git clone` your [[copy of Charting Library|Package-Content]] and then [[run it|Running-Your-Charting-Library]]|A working example of our chart running on your host|
+|2. Plug your data into Charting Library using [[one of our APIs|Choosing-Data-Transport]]. You can see some examples [[here|Choosing-Data-Transport#want-examples-]]|The complete and working charting tool with your own data|
 
-* Download your [[copy of Charting Library|Package-Content]] and then [[run it|Running-Your-Charting-Library]].
-* [[Decide how to provide the data for charts|Choosing-Data-Transport]].
-* Implement your own data source solution or use an existing one. [[Want samples|Choosing-Data-Transport#want-examples-]]?
-
-After step 3 you will have a complete and working charting tool. If you want your charts to have a custom appearance, then you may go further.
+If you want to customize your charts, then you may go further.
 
 * Investigate Charting Library [[customization possibilities|Charts-Customization-101]]
-
-If you need some more custom stuff, please refer to: 
-
 * [[Creating Custom Studies|Creating-Custom-Studies]]
-* [[Best Practices|Best-Practices]]
+
+### Best Practices
+Reading [[this article|Best-Practices]] will save you from making the most common mistakes. This will allow you to go live faster.
