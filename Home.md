@@ -1,6 +1,7 @@
 ### What is Charting Library
 
-The Charting Library is an HTML5 solution allowing you to create cutting-edge charting experience for your users easily. All you have to do is
+Downloadable charting library with an open data API. This is a standalone solution that you download,
+host on your servers, connect your own data & use in your site/app for free. All you have to do is
 
 | What to do | What you'll get after |
 |---|---|
