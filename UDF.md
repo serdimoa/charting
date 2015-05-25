@@ -1,4 +1,5 @@
-UDF is HTTP-based protocol designed to deliver data to Charting Library in a simple and efficient way. If you want to use UDF protocol you should create server-side HTTP service. 
+**What it is ?**: HTTP-based protocol designed to deliver data to Charting Library in a simple and efficient way.<br>
+**What should I do to use it ?**: You should create tiny server-side HTTP service which will get the data from your storage and respond to Charting Library requests. 
 
 #Response-as-a-table concept
 
