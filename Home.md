@@ -14,4 +14,4 @@ If you want to customize your charts, then you may go further.
 * [[Creating Custom Studies|Creating-Custom-Studies]]
 
 ### Best Practices
-Reading [[this article|Best-Practices]] will save you from making the most common mistakes. This will allow you to go live faster.
+Reading [[this article|Best-Practices]] will prevent you from making the most common mistakes and **save your time**.
