@@ -1,6 +1,6 @@
 #Wiki Content
 
-1. [[Overview|Home]]
+1. [[What is Charting Library|Home]]
 2. Getting Started
   1. [[Package Content]]
   2. [[Running Your Charting Library]]
