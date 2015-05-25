@@ -1,5 +1,3 @@
-#Overview
-
 **What it is ?**: A set of JS methods (specific public interface).<br>
 **What should I do to use it ?**: You should create a JS object which will receive the data by some way and respond to Charting Library requests.
 
