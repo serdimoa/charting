@@ -26,7 +26,7 @@ Assume you want to show user's equity curve on his charts. You will have to do t
        s = security("#EQUITY", period, close)
        plot(s, color=red)
 ```
-* Plug the compiled indocator into your Charting Library with [indicators_file_name](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#indicators_file_name) option.
+* Plug the compiled indicator into your Charting Library with [indicators_file_name](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#indicators_file_name) option.
 * Change your widget's intiialization code. Add something like this
 ```
     widget = new TradingView.Widget(/* ... */);
