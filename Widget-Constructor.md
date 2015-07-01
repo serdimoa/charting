@@ -35,9 +35,9 @@ A path to `static` folder
 ####width, height
 The desired size of a widget. Please make sure the widget has enough space to look smart.
 
-**Remark**: if you want the chart to occupy all the available space, do not use '100%' in those field. Use `autosize` parameter instead (see below). It's because of issues with DOM nodes resizing in different browsers.
+**Remark**: if you want the chart to occupy all the available space, do not use '100%' in those field. Use `fullscreen` parameter instead (see below). It's because of issues with DOM nodes resizing in different browsers.
 
-####autosize <false>
+####fullscreen <false>
 Boolean value showing whether chart should occupy all the available space and resize with the container.
 
 ####toolbar_bg
