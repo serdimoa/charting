@@ -35,3 +35,5 @@
 * `move_logo_to_main_pane` [off]
 * `show_dialog_on_snapshot_ready` [on]
 * `study_market_minimized` [on]
+* `side_toolbar_in_fullscreen_mode` [off]
+* `remove_library_container_border` [off]
