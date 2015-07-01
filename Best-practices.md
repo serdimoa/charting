@@ -36,7 +36,7 @@ The Charting Library is translated into a dozen of languages. Use the one that f
 
 ###8. If you are experiencing issues
 
-We are always eager to help you. But, unfortunately, we are really busy guys, so we don’t have much time. Please help us spend our time effectively and always update your Library's build to the latest `dev` version to check if the issue still happens. Contact us if it does.
+We are always eager to help you. But, unfortunately, we are really busy guys, so we don’t have much time. Please help us spend our time effectively and always update your Library's build to the latest `unstable` version to check if the issue still happens. Contact us if it does.
 
 Also, check the data you are passing to the Charting Library and make sure it matches our requirements as described in the documentation. Pay special attention to SymbolInfo content because it's the most common place to make an error (according to our statistics).
 
