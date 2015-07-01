@@ -300,6 +300,11 @@ The Library will call the callback provided every time when user opens context m
 * `text`: text of menu item
 * `click`: callback which will be called when user select your menu item
 
+To add a separator use minus sign. Example: `{ text: "-", position: "top" }`.
+
+To remove an existing item from a menu use minus sign in front of the item text. 
+Example: `{ text: "-Objects Tree..." }`
+
 Example: 
 ```javascript
 widget.onChartReady(function() {
@@ -308,7 +313,10 @@ widget.onChartReady(function() {
             position: "top",
             text: "First top menu item, time: " + unixtime + ", price: " + price,
             click: function() { alert("First clicked."); }
-        }, {
+        }, 
+        { text: "-", position: "top" },
+        { text: "-Objects Tree..." },
+        {
             position: "top",
             text: "Second top menu item 2",
             click: function() { alert("Second clicked."); }
