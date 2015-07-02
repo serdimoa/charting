@@ -23,6 +23,21 @@ paneProperties.crossHairProperties.color: "#B7B7B7"
 paneProperties.topMargin: 5
 paneProperties.bottomMargin: 5
 
+// leftAxisProperties & rightAxisProperties
+paneProperties.leftAxisProperties.autoScale:true
+paneProperties.leftAxisProperties.autoScaleDisabled:false
+paneProperties.leftAxisProperties.percentage:false
+paneProperties.leftAxisProperties.percentageDisabled:false
+paneProperties.leftAxisProperties.log:false
+paneProperties.leftAxisProperties.logDisabled:false
+paneProperties.leftAxisProperties.alignLabels:true
+
+paneProperties.legendProperties.showStudyArguments: true
+paneProperties.legendProperties.showStudyTitles: true
+paneProperties.legendProperties.showStudyValues: true
+paneProperties.legendProperties.showSeriesTitle: true
+paneProperties.legendProperties.showSeriesOHLC: true
+
 scalesProperties.showLeftScale : false
 scalesProperties.showRightScale : true
 scalesProperties.backgroundColor : "#ffffff"
