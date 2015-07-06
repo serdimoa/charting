@@ -40,8 +40,8 @@ widget.onChartReady(function() {
   * [[save(callback)|Widget-Methods#savecallback]]
   * [[load(state)|Widget-Methods#loadstate]]
 * Study Templates
-  * [[createStudyTemplate(options, callback)|Widget-Methods#createStudyTemplate]]
-  * [[applyStudyTemplate(template)|Widget-Methods#applyStudyTemplate]]
+  * [[createStudyTemplate(options, callback)|Widget-Methods#createstudytemplateoptions-callback]]
+  * [[applyStudyTemplate(template)|Widget-Methods#applystudytemplatetemplate]]
 * Custom UI Controls
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
   * [[createButton(options)|Widget-Methods#createbuttonoptions]]
