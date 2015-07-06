@@ -39,6 +39,9 @@ widget.onChartReady(function() {
 * Saving/Loading Charts
   * [[save(callback)|Widget-Methods#savecallback]]
   * [[load(state)|Widget-Methods#loadstate]]
+* Study Templates
+  * [[createStudyTemplate(options, callback)|Widget-Methods#createStudyTemplate]]
+  * [[applyStudyTemplate(template)|Widget-Methods#applyStudyTemplate]]
 * Custom UI Controls
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
   * [[createButton(options)|Widget-Methods#createbuttonoptions]]
@@ -281,6 +284,21 @@ Saves the chart state to JS object. Charting Library will call your callback and
 1. `state`: object
 
 Loads the chart from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
+
+#Study Templates
+
+
+####createStudyTemplate(options, callback)
+1. `options`: object `{saveInterval}`
+ 1. `saveInterval`: boolean
+2. `callback`: function(data)
+
+Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
+
+####applyStudyTemplate(template)
+1. `template`: object 
+
+Loads the study template from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
 
 #Custom UI Controls
