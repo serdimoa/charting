@@ -1,8 +1,8 @@
-Charting Library supports saving/loading charts on 2 levels of abstraction:
+Charting Library supports saving/loading charts and study templates (study templates are available in `unstable`) on 2 levels of abstraction:
 
-1. **Low-Level**: save/load functionality is present by widget's `save()` and `load()` [[methods|Widget-Methods#savecallback]]. One who uses them should take care of physical storage on his own. But you can save those JSONs where you want to --  in example, you may embed them to your saved pages or user's working area and so on.
+1. **Low-Level**: save/load functionality is present by widget's `save()` / `load()` [[methods|Widget-Methods#savecallback]] and `createStudyTemplate()` / `applyStudyTemplate()` [[methods|Widget-Methods#createStudyTemplate]]. One who uses them should take care of physical storage on his own. But you can save those JSONs where you want to --  in example, you may embed them to your saved pages or user's working area and so on.
 
-2. **High-Level**: Charting Library is able to save or load charts from storage you'll point to. We created a tiny storage sample with Python and PostgreSQL and put it on [our GitHub](https://github.com/tradingview/saveload_backend). You may grab it and run on your own server so you'll have control over all your users' saved data.
+2. **High-Level**: Charting Library is able to save / load charts and study templates from storage you'll point to. We created a tiny storage sample with Python and PostgreSQL and put it on [our GitHub](https://github.com/tradingview/saveload_backend). You may grab it and run on your own server so you'll have control over all your users' saved data.
 
 #Using High-Level Save/Load
 
@@ -21,7 +21,7 @@ Here are a few steps for those who want to have their own charts storage:
 
 **Remark**: Manual filling/editing database is not the desired usage for this stuff. Please avoid this because you may hurt Django.
 
-#Using Demo Charts Storage
+#Using Demo Charts and Study Templates Storage
 
 We're running demo charts storage service to let you try save/load as fast as you've got new Library's build. This storage URL is <http://saveload.tradingview.com>. It's just a demo so it is provided as-is. We do not guarantee its stability. Also, we drop all the data from this storage now and again.
 
