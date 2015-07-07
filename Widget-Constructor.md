@@ -135,6 +135,9 @@ Time frame is an object containing `text` and `resolution` property. Text must h
 ####charts_storage_url, client_id, user_id
 Those arguments are regarding high-level charts save/load. See more details [[here|Saving-and-Loading-Charts]].
 
+####charts_storage_api_version
+A version of your backend. Supported values: `"1.0"` | `"1.1"`. Study Templates are supported starting from `1.1` 
+
 ####favorites
 Items which should be favored by default. This option requires disabling localstorage usage(see [[featuresets |Featuresets]] list to know more). `favorites` property expects to be an object. Following properties are supported:
 
