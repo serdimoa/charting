@@ -40,3 +40,4 @@
 * `study_templates` [on]
 * `header_saveload_to_the_right` [off]
 * `display_market_status` [on]
+* `datasource_copypaste` [on]
