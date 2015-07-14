@@ -39,3 +39,4 @@
 * `remove_library_container_border` [off]
 * `study_templates` [on]
 * `header_saveload_to_the_right` [off]
+* `display_market_status` [on]
