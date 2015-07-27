@@ -26,6 +26,7 @@ widget.onChartReady(function() {
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
   * [[remove()|Widget-Methods#remove]]
   * [[executeAction(action)|Widget-Methods#executeactionaction]]
+  * [[executeActionById(action)|Widget-Methods#executeactionbyidactionid]]
   * [[refreshMarks()|Widget-Methods#refreshmarks]]
   * [[clearMarks()|Widget-Methods#clearmarks]]
   * [[setChartType(type)|Widget-Methods#setcharttypetype]]
@@ -163,6 +164,8 @@ Makes the chart to change its symbol and resolution. Callback is called after ne
 Removes chart widget from your page.
 
 ####executeAction(action)
+**_deprecated, use executeActionById instead_**
+
 1. `action`: string
 
 Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
@@ -171,6 +174,58 @@ Executes any action from chart's context menu (the menu which is popped up when 
 widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
 // < ... >
 widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
+// < ... >
+```
+
+####executeActionById(actionId)
+_**since version 1.3**_
+
+1. `actionId`: string
+
+Executes an action by its id.
+
+**Showing a dialog**
+
+	chartProperties 
+	compareOrAdd
+	scalesProperties
+	tmzProperties 
+	paneObjectTree
+	insertIndicator 
+	symbolSearch
+	changeInterval
+
+**Other actions**
+
+	timeScaleReset
+	chartReset
+	seriesHide
+	studyHide 
+	lineToggleLock
+	lineHide 
+	showLeftAxis
+	showRightAxis
+	scaleSeriesOnly
+	drawingToolbarAction
+	magnetAction
+	stayInDrawingModeAction
+	lockDrawingsAction
+	hideAllDrawingsAction 
+	hideAllMarks 
+	showCountdown 
+	showSeriesLastValue
+	showSymbolLabelsAction
+	showStudyLastValue
+	showStudyPlotNamesAction
+	undo
+	redo
+
+Examples:
+```javascript
+// < ... >
+widget.executeActionById("undo");
+// < ... >
+widget.executeActionById("drawingToolbarAction"); // hides or shows the drawing toolbar
 // < ... >
 ```
 
