@@ -219,6 +219,7 @@ Executes an action by its id.
 	showStudyPlotNamesAction
 	undo
 	redo
+	takeScreenshot
 
 Examples:
 ```javascript
