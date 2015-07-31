@@ -41,3 +41,4 @@
 * `header_saveload_to_the_right` [off]
 * `display_market_status` [on]
 * `datasource_copypaste` [on]
+* `save_chart_properties_to_local_storage` [on]
