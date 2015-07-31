@@ -20,6 +20,7 @@ widget.onChartReady(function() {
   * [[onGrayedObjectClicked(callback)|Widget-Methods#ongrayedobjectclickedcallback]]
   * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]]
   * [[onTick(callback)|Widget-Methods#ontickcallback]]
+  * [[onShortcut(shortcut, callback)|Widget-Methods#onshortcutshortcut-callback]]
 * Chart Actions
   * [[setVisibleRange(range, callback)|Widget-Methods#setvisiblerangerange-callback]]
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
@@ -137,6 +138,19 @@ The Library will call the callback provided every time when user creates a scree
 
 The Library will call the callback provided every time when recent bar updates.
 
+####onShortcut(shortcut, callback)
+1. `shortcut`
+2. `callback`: function(data)
+
+The Library will call the callback provided every time when shortcut is pressed.
+
+Example:
+
+```javascript
+widget.onShortcut("alt+s", function() {
+  widget.executeActionById("symbolSearch");
+});
+```
 
 #Chart Actions
 
