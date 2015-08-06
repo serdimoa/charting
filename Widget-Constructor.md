@@ -92,6 +92,16 @@ This override will make the watermark 100% opaque (invisible). All customizable 
 
 ####disabled_features, enabled_features
 The array containing names of features which should be enabled/disabled by default. `Feature` means a part of chart's functionality (more likely a part of UI/UX). Supported features are listed [[here|Featuresets]].
+Example:
+```javascript
+TradingView.onready(function()
+{
+	var widget = new TradingView.widget({
+		/* .... */
+		disabled_features: ["header_widget", "left_toolbar"],
+	});
+});
+```
 
 ####snapshot_url
 *experimental feature*
