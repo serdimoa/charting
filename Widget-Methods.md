@@ -31,6 +31,7 @@ widget.onChartReady(function() {
   * [[refreshMarks()|Widget-Methods#refreshmarks]]
   * [[clearMarks()|Widget-Methods#clearmarks]]
   * [[setChartType(type)|Widget-Methods#setcharttypetype]]
+  * [[closePopupsAndDialogs()|Widget-Methods#closepopupsanddialogs]]
 * Studies And Shapes 
   * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides)|Widget-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides]]
   * [[createShape(point, options, callback)|Widget-Methods#createshapepoint-options-callback]]
@@ -257,6 +258,10 @@ Calling this method makes the Library to remove all visible marks.
 1. `type`: `TradingView.BARS` | `TradingView.CANDLES` | `TradingView.AREA` | `TradingView.LINE` | `TradingView.HEIKEN_ASHI` | `TradingView.HOLLOW_CANDLES` 
 
 Sets the main series style.
+
+####closePopupsAndDialogs()
+
+Calling this method closes a context menu or a dialog if it is shown.
 
 #Studies And Shapes
 
