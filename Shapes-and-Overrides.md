@@ -1,10 +1,27 @@
 Using [[createMultipointShape(points, options, callback)|Widget-Methods#createmultipointshapepoints-options-callback]] you can create more than 50 different shapes. All of them are in this table with default properties that can be changed using `overrides`.
 
+| shape   | backgroundColor | backgroundTransparency | bold  | borderColor | color   | drawBorder | fillBackground | fixedSize | font    | fontsize | italic | text    | wordWrap | wordWrapWidth | markerColor | textColor | linewidth | transparency | fontWeight |
+|---------|-----------------|------------------------|-------|-------------|---------|------------|----------------|-----------|---------|----------|--------|---------|----------|---------------|-------------|-----------|-----------|--------------|------------|
+| text    | #9BBED5         | 70                     | FALSE | #667B8B     | #667B8B | FALSE      | FALSE          | TRUE      | Verdana | 20       | FALSE  | Text    | FALSE    | 400           |             |           |           |              |            |
+| note    | #FFFFFF         | 0                      | FALSE |             |         |            |                | TRUE      | Arial   | 12       | FALSE  | Text    |          |               | #2E66FF     | #000000   |           |              |            |
+| callout | #991515         |                        | FALSE | #991515     | #FFFFFF |            |                |           | Verdana | 12       | FALSE  | Text    | FALSE    | 400           |             |           | 2         | 50           |            |
+| balloon | #fffece         |                        |       | #8c8c8c     | #667b8b |            |                |           | Arial   | 12       |        | Comment |          |               |             |           |           | 30           | bold       |
+
+
+
+| shape       | backgroundColor | borderColor | color   | font    | fontsize | text | transparency | fontWeight |
+|-------------|-----------------|-------------|---------|---------|----------|------|--------------|------------|
+| arrow_up    |                 |             | #787878 | Verdana | 20       | text |              |            |
+| arrow_down  |                 |             | #787878 | Verdana | 20       | text |              |            |
+| arrow_left  |                 |             | #787878 | Verdana | 20       | text |              |            |
+| arrow_right |                 |             | #787878 | Verdana | 20       | text |              |            |
+| price_label | #ffffff         | #8c8c8c     | #667b8b | Arial   | 11       |      | 30           | bold       |
+| flag        |                 |             |         |         |          |      |              |            |
+
+
+
 | shape              | backgroundColor | bold  | color   | fillBackground | font    | fontsize | italic | linewidth | textcolor | transparency |
 |--------------------|-----------------|-------|---------|----------------|---------|----------|--------|-----------|-----------|--------------|
-| arrow_up           |                 |       | #787878 |                | Verdana | 20       |        |           |           |              |
-| arrow_down         |                 |       | #787878 |                | Verdana | 20       |        |           |           |              |
-| flag               |                 |       | #ff0000 |                |         |          |        |           |           |              |
 | xabcd_pattern      | #CC2895         | FALSE | #CC2895 | TRUE           | Verdana | 12       | FALSE  | 1         | #FFFFFF   | 50           |
 | abcd_pattern       |                 | FALSE | #009B00 |                | Verdana | 12       | FALSE  | 2         | #FFFFFF   |              |
 | triangle_pattern   | #9528CC         | FALSE | #9528FF | TRUE           | Verdana | 12       | FALSE  | 1         | #FFFFFF   | 50           |
