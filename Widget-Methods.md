@@ -289,9 +289,11 @@ Creates the study on a main symbol. Examples:
   3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
 2. `options`: object `{shape, [text], [lock], [overrides]}`
   1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line', 'horizontal_line']. 'flag' is the default value.
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text (for now, it's only 'arrow_up' and 'arrow_down').
+  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
   3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `overrides` (since version `1.2`). It is an object containing properties you'd like to set for your new shape.
+  4. `disableSelection` (since `1.3`) prevents selecting of the shape
+  5. `disableSave` (since `1.3`) prevents saving the shape with a chart
+  5. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
 3. `callback`: function(`entityId`)
 
 This call creates a shape at specified point on main series. 
@@ -303,9 +305,11 @@ This call creates a shape at specified point on main series.
   3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
 2. `options`: object `{shape, [text], [lock], [overrides]}`
   1. `shape` may be one of the [[identifiers|Shapes and Overrides]]
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text (for now, it's only 'arrow_up' and 'arrow_down').
+  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
   3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `overrides`. It is an object containing properties you'd like to set for your new shape.
+  4. `disableSelection` (since `1.3`) prevents selecting of the shape
+  5. `disableSave` (since `1.3`) prevents saving the shape with a chart
+  6. `overrides`. It is an object containing properties you'd like to set for your new shape.
 3. `callback`: function(`entityId`)
 
 Look [[Shapes and Overrides|Shapes and Overrides]] for more information.
