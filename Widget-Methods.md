@@ -56,6 +56,8 @@ widget.onChartReady(function() {
 * Getters
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[getVisibleRange(callback)|Widget-Methods#getvisiblerangecallback]]
+* Customization
+  * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
 
 #Subscribing To Chart Events
 
@@ -622,6 +624,14 @@ Charting Library will call your callback with an object containing chart's symbo
   1. `range`: object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
 
 The Library will call your callback and pass the current visible time range. This method was introduced in version `1.2`.
+
+#Customization
+
+
+####addCustomCSSFile(url)
+1. `url`should be absolute or relative path to 'static` folder
+
+This method was introduced in version `1.3`.
 
 #See Also
 * [[Charts Customization 101]]
