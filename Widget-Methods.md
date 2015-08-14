@@ -16,7 +16,8 @@ widget.onChartReady(function() {
   * [[onIntervalChange(callback)|Widget-Methods#onintervalchangecallback]]
   * [[onRealtimeTick(callback)|Widget-Methods#onrealtimetickcallback]]
   * [[onAutoSaveNeeded(callback)|Widget-Methods#onautosaveneededcallback]]
-  * [[onMarkClick(callback)|Widget-Methods#onmarkclickcallback]]
+  * [[onBarMarkClicked(callback)|Widget-Methods#onbarmarkclickedcallback]]
+  * [[onTimescaleMarkClicked(callback)|Widget-Methods#ontimescalemarkclickedcallback]]
   * [[onGrayedObjectClicked(callback)|Widget-Methods#ongrayedobjectclickedcallback]]
   * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]]
   * [[onTick(callback)|Widget-Methods#ontickcallback]]
@@ -89,10 +90,16 @@ The Charting Library will call the callback provided every time the new bar upda
 
 The Library will call the callback provided every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds.
 
-####onMarkClick(callback)
+####onBarMarkClicked(callback)
 1. `callback`: function(markId)
 
 The Library will call the callback provided every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument.
+
+####onTimescaleMarkClicked(callback)
+1. `callback`: function(markId)
+
+The Library will call the callback provided every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument.
+
 
 ####onGrayedObjectClicked(callback)
 1. `callback`: function(subject)
