@@ -98,7 +98,7 @@ The Library will call the callback provided every time when user clicks a [[mark
 ####onTimescaleMarkClicked(callback)
 1. `callback`: function(markId)
 
-The Library will call the callback provided every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument.
+The Library will call the callback provided every time when user clicks a timescale mark. Mark ID will be passed as an argument.
 
 
 ####onGrayedObjectClicked(callback)
