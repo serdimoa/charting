@@ -12,7 +12,8 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 6. [[unsubscribeBars|JS-Api#unsubscribebarssubscriberuid]]
 7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
-9. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
+9. [[getTimescaleMarks|JS-Api#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
+10. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
 
 ###onReady(callback)
 1. `callback`: function(configurationData)
@@ -150,7 +151,7 @@ This means when Charting Library will request the data for '1D' resolution, the 
 
 Library calls this function to get [[marks|Marks-On-Bars]] for visible bars range. Chart expects you to call `onDataCallback` only once per each `getMarks` call. `mark` is an object having following properties:
 
-* **id**: unique mark id. Will be passed to a [[respective callback|Widget-Methods#onmarkclickcallback]] when user clicks on a mark
+* **id**: unique mark id. Will be passed to a [[respective callback|Widget-Methods#onbarmarkclickedcallback]] when user clicks on a mark
 * **time**: unix time, UTC
 * **color**: `red` | `green` | `blue` | `yellow`
 * **text**: mark popup text. HTML supported
@@ -161,6 +162,25 @@ Library calls this function to get [[marks|Marks-On-Bars]] for visible bars rang
 A few marks per bar are allowed (for now, maximum is 10). Marks out of bars are not allowed.
 
 **Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_marks]].
+
+###getTimescaleMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
+1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
+2. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
+3. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
+4. `onDataCallback`: function(array of `mark`s)
+5. `resolution`: string
+
+Library calls this function to get timescale marks for visible bars range. Chart expects you to call `onDataCallback` only once per each `getTimescaleMarks` call. `mark` is an object having following properties:
+
+* **id**: unique mark id. Will be passed to a [[respective callback|Widget-Methods#ontimescalemarkclickedcallback]] when user clicks on a mark
+* **time**: unix time, UTC
+* **color**: `red` | `green` | `blue` | `yellow` | ... | #000000
+* **label**: a letter to be printed on a mark. Single character
+* **tooltip**: array of text strings. Each element of the array is a new text line of a tooltip.
+
+Only one mark per bar is allowed. Marks out of bars are not allowed.
+
+**Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_timescale_marks]].
 
 ###getQuotes(symbols, onDataCallback, onErrorCallback)
 1. `symbols`: array of symbols names
