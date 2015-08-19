@@ -86,6 +86,9 @@ resolutionAvailable  = resolution.isIntraday
     ? symbol.has_intraday && symbol.supports_resoluiton(resolution)
     : symbol.supports_resoluiton(resolution);
 ```
+
+In case of absence of `supported_resolutions` in a symbol info all DWM resolutions will be available. Intraday resolutions will be available if `has_intraday` is `true`.
+
 Supported resolutions affect available time frames too. The timeframe will not be available if it requires the resolution which is not supported.
 
 #####intraday_multipliers <[]>
