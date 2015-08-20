@@ -14,7 +14,6 @@ widget.onChartReady(function() {
   * [[onChartReady(callback)|Widget-Methods#onchartreadycallback]]
   * [[onSymbolChange(callback)|Widget-Methods#onsymbolchangecallback]]
   * [[onIntervalChange(callback)|Widget-Methods#onintervalchangecallback]]
-  * [[onRealtimeTick(callback)|Widget-Methods#onrealtimetickcallback]]
   * [[onAutoSaveNeeded(callback)|Widget-Methods#onautosaveneededcallback]]
   * [[onBarMarkClicked(callback)|Widget-Methods#onbarmarkclickedcallback]]
   * [[onTimescaleMarkClicked(callback)|Widget-Methods#ontimescalemarkclickedcallback]]
@@ -78,12 +77,6 @@ The Charting Library will call the callback provided every time the main series 
   1. `interval`: string
 
 The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
-
-####onRealtimeTick(callback)
-1. `callback`: function(barData)
-  1. `barData`: object `{time, open, high, low, close, volume}`
-
-The Charting Library will call the callback provided every time the new bar update comes.
 
 ####onAutoSaveNeeded(callback)
 1. `callback`: function()
