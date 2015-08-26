@@ -76,6 +76,7 @@ ZFM2014 (5 year t-note) with 1/4 of 1/32: minmov=1, pricescale=128, minmove2= 4
 
 #####has_intraday <false>
 Boolean showing whether symbol has intraday history data. If it's false then all buttons for intradays resolutions will be disabled when this symbol is active in chart.
+If it is set to true, all resolutions that are supplied directly by the datafeed must be provided in `intraday_multipliers` array.
 
 #####supported_resolutions
 An array of resolutions which should be enabled in resolutions picker for this symbol. Each item of an array is expected to be a string.
