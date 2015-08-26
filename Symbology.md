@@ -23,7 +23,7 @@ Description of a symbol. Will be printed in chart legend for this symbol.
 #####session
 Trading hours for this symbol. See the [[Trading Sessions|Trading Sessions]] article to know more details.
 
-#####exchange-traded, exchange-listed
+#####exchange, exchange_listed
 For now both of this fields are expected to have short name of exchange where this symbol is traded. This name will be printed in chart's legend for this symbol. This field is not used for other purposes now.
 
 #####timezone
