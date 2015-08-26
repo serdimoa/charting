@@ -576,6 +576,9 @@ Creates a new execution on the chart and returns an API-object which you can use
 
 API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
 
+API object methods:
+* `remove()`: Removes the execution shape from the chart. You can’t use API-object after this call.
+
 **General properties**:
 
 Property|Type|Supported Values|Default Value
