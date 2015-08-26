@@ -282,7 +282,11 @@ Creates the study on a main symbol. Examples:
 
 **Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
-**Remark 2**: You actually use `Overlay` study when choose to `Add` a series on the chart. This study has the single input -- `symbol`.
+**Remark 2**: You actually use `Overlay` study when choose to `Add` a series on the chart. This study has the single input -- `symbol`. Here is an example how to add a symbol:
+
+```javascript
+    widget.createStudy('Overlay', false, false, ['AAPL']);
+```
 
 ####createShape(point, options, callback)
 1. `point`: object `{time, [price], [channel]}`
