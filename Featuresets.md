@@ -37,7 +37,7 @@
 * `study_market_minimized` [on]
 * `side_toolbar_in_fullscreen_mode` [off]
 * `remove_library_container_border` [off]
-* `study_templates` [on]
+* `study_templates` [off]
 * `header_saveload_to_the_right` [off]
 * `display_market_status` [on]
 * `datasource_copypaste` [on]
