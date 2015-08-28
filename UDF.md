@@ -278,7 +278,7 @@ Example:
 
 ##Constructor
 
-Datafeeds.UDFCompatibleDatafeed = function(datafeedURL, updateFrequency, protocolVersion)
+`Datafeeds.UDFCompatibleDatafeed = function(datafeedURL, updateFrequency, protocolVersion)`
 
 ###datafeedURL
 
