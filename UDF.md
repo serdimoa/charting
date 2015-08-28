@@ -275,3 +275,21 @@ Example:
     }]
 }
 ```
+
+##Constructor
+
+Datafeeds.UDFCompatibleDatafeed = function(datafeedURL, updateFrequency, protocolVersion)
+
+###datafeedURL
+
+This is a URL of a data server which will get requests and return data.
+
+###updateFrequency
+
+This in an interval of real-time requests the datafeed will send to the server in milliseconds. Default is 10000 (10 sec).
+
+###protocolVersion
+
+`1` - outdated protocol which re-requests all data from the server every time the chart is scrolled.
+
+`2` (default) - the data requests are incremental. The same data is never requested again when symbol or resolution is not changed (except last 2 bars).
