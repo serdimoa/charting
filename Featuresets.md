@@ -1,6 +1,6 @@
 `Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below. Default state (on/off) shown in braces.
 
-### Switching on/off of controls and other visual elements
+### Visibility of controls and other visual elements
 
 * `header_widget` [on]
   * `header_widget_dom_node` (disabling this feature hides the header widget DOM element)
@@ -33,11 +33,6 @@
 * `move_logo_to_main_pane` [off]
 * `header_saveload_to_the_right` [off]
 
-
-
-* `adapt_onchart_logo_background` [on] (logo background color is changed to match the background)
-
-
 ### Behavior
 
 * `use_localstorage_for_settings` [on]
@@ -52,6 +47,7 @@
 * `show_dialog_on_snapshot_ready` [on] (disabling this feature allows you to make a snapshot silently)
 * `study_market_minimized` [on] (relates to Indicators dialog, determines whether it is compact or contains a search bar and categories)
 * `side_toolbar_in_fullscreen_mode` [off] (using this feature you can enable Drawings Toolbar in fullscreen mode)
+* `adapt_onchart_logo_background` [on] (logo background color is changed to match the background)
 
 ### "Big Rocks"
 
