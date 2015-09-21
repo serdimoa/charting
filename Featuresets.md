@@ -1,6 +1,6 @@
 `Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below. Default state (on/off) shown in braces.
 
-## Switching on/off of controls and other visual elements
+### Switching on/off of controls and other visual elements
 
 * `header_widget` [on]
   * `header_widget_dom_node` (disabling this feature hides the header widget DOM element)
@@ -28,7 +28,7 @@
 * `display_market_status` [on]
 * `remove_library_container_border` [off]
 
-## Elements placement
+### Elements placement
 
 * `move_logo_to_main_pane` [off]
 * `header_saveload_to_the_right` [off]
@@ -38,7 +38,7 @@
 * `adapt_onchart_logo_background` [on] (logo background color is changed to match the background)
 
 
-## Behavior
+### Behavior
 
 * `use_localstorage_for_settings` [on]
  * `items_favoriting` (disabling this feature hides all "Favorite this item" buttons)
@@ -50,11 +50,15 @@
 * `charting_library_debug_mode` [off] (enables logs)
 * `narrow_chart_enabled` [off] (allows to shrink the chart up to 240px horizontally)
 * `show_dialog_on_snapshot_ready` [on] (disabling this feature allows you to make a snapshot silently)
-* `study_market_minimized` [on] (relates to Indicators dialog, deter
-* `side_toolbar_in_fullscreen_mode` [off]
+* `study_market_minimized` [on] (relates to Indicators dialog, determines whether it is compact or contains a search bar and categories)
+* `side_toolbar_in_fullscreen_mode` [off] (using this feature you can enable Drawings Toolbar in fullscreen mode)
+
+### "Big Rocks"
+
 * `study_templates` [off]
-* `datasource_copypaste` [on]
+* `datasource_copypaste` [on] (enables copying of drawings and studies)
+
 
 ## Trading Terminal
 
-* `trading_options` [on]
+* `trading_options` [on] (related to the Properties dialog)
