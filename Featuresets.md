@@ -1,5 +1,7 @@
 `Feature` or `featureset` means a part of chart's functionality. There are simple (atomic) and complex (composite) features. Composite feature consists of simple features. Disabling composite feature makes all of its simple parts to be disabled. Supported features are listed below.
 
+Please note that the leading `-` characters are not a part of featureset name in the table below.
+
 ### Visibility of controls and other visual elements
 
 | ID                                      | Default State | Library Version | Description                                                |
