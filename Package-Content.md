@@ -1,6 +1,6 @@
 Charting Library package is available on GitHub. You may check out the latest stable version (`master` branch) or the most recent development build (`unstable` branch). To have an access to this repo please contact us.
 
-You can check Charting Library version by executing "TradingView.version()" in a browser console.
+You can check Charting Library version by executing `TradingView.version()` in a browser console.
 
 ###Package content
 
