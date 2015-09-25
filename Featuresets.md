@@ -28,7 +28,12 @@
 | - scales_context_menu                   | on            |                 |                                                            |
 | - legend_context_menu                   | on            |                 |                                                            |
 | display_market_status                   | on            |                 |                                                            |
-| remove_library_container_border         | off           |                 |                                           |
+| remove_library_container_border         | on            |                 |                                           |
+| chart_property_page_style               | on            |                 |                                           |
+| chart_property_page_scales              | on            |                 |                                           |
+| chart_property_page_background          | on            |                 |                                           |
+| chart_property_page_timezone_sessions   | on            |                 |                                           |
+| chart_property_page_trading             | on            |                 | it is for trading terminal only           |
 
 ### Elements placement
 
