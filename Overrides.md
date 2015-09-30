@@ -26,8 +26,8 @@ paneProperties.topMargin: 5
 paneProperties.bottomMargin: 5
 
 // leftAxisProperties & rightAxisProperties
-paneProperties.leftAxisProperties.autoScale:true                    (doesn't work, see #749)
-paneProperties.leftAxisProperties.autoScaleDisabled:false           (doesn't work, see #749)
+paneProperties.leftAxisProperties.autoScale:true                    (see #749)
+paneProperties.leftAxisProperties.autoScaleDisabled:false           (see #749)
 paneProperties.leftAxisProperties.percentage:false
 paneProperties.leftAxisProperties.percentageDisabled:false
 paneProperties.leftAxisProperties.log:false
@@ -66,8 +66,8 @@ mainSeriesProperties.lockScale: false
 mainSeriesProperties.minTick: "default"
 mainSeriesProperties.extendedHours: false
 
-mainSeriesProperties.priceAxisProperties.autoScale:true             (doesn't work, see #749)
-mainSeriesProperties.priceAxisProperties.autoScaleDisabled:false    (doesn't work, see #749)
+mainSeriesProperties.priceAxisProperties.autoScale:true             (see #749)
+mainSeriesProperties.priceAxisProperties.autoScaleDisabled:false    (see #749)
 mainSeriesProperties.priceAxisProperties.percentage:false
 mainSeriesProperties.priceAxisProperties.percentageDisabled:false
 mainSeriesProperties.priceAxisProperties.log:false
