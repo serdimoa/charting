@@ -299,8 +299,9 @@ Creates the study on a main symbol. Examples:
   3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
   4. `disableSelection` (since `1.3`) prevents selecting of the shape
   5. `disableSave` (since `1.3`) prevents saving the shape with a chart
-  6. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
-  7. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
+  6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
+  7. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
+  8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
 3. `callback`: function(`entityId`)
 
 This call creates a shape at specified point on main series. 
@@ -316,8 +317,9 @@ This call creates a shape at specified point on main series.
   3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
   4. `disableSelection` (since `1.3`) prevents selecting of the shape
   5. `disableSave` (since `1.3`) prevents saving the shape with a chart
-  6. `overrides`. It is an object containing properties you'd like to set for your new shape.
-  7. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
+  6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
+  7. `overrides`. It is an object containing properties you'd like to set for your new shape.
+  8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
 3. `callback`: function(`entityId`)
 
 Look [[Shapes and Overrides|Shapes and Overrides]] for more information.
