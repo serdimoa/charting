@@ -36,7 +36,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | chart_property_page_background          | on            |                 |                                           |
 | chart_property_page_timezone_sessions   | on            |                 |                                           |
 | chart_property_page_trading             | on            |                 | it is for trading terminal only           |
-
+| countdown                               | on            | 1.4             | countdown label on a price scale         |
 ### Elements placement
 
 | ID                           | Default State | Library Version | Description                                                        |
