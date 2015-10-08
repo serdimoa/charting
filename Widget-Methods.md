@@ -304,6 +304,8 @@ Creates the study on a main symbol. Examples:
   8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
 3. `callback`: function(`entityId`)
 
+**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
+
 This call creates a shape at specified point on main series. 
 
 ####createMultipointShape(points, options, callback)
@@ -321,6 +323,8 @@ This call creates a shape at specified point on main series.
   7. `overrides`. It is an object containing properties you'd like to set for your new shape.
   8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
 3. `callback`: function(`entityId`)
+
+**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
 
 Look [[Shapes and Overrides|Shapes and Overrides]] for more information.
 
@@ -364,6 +368,8 @@ Loads the chart from state object. This call is a part of low-level [[save/load 
 1. `options`: object `{saveInterval}`
  1. `saveInterval`: boolean
 2. `callback`: function(data)
+
+**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
 
 Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
@@ -628,11 +634,15 @@ widget.createExecutionShape()
 1. `callback`: function(result)
   1. `result`: object `{symbol, interval}`
 
+**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
+
 Charting Library will call your callback with an object containing chart's symbol and interval.
 
 ####getVisibleRange(callback)
 1. `callback`: function(range)
   1. `range`: object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
+
+**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
 
 The Library will call your callback and pass the current visible time range. This method was introduced in version `1.2`.
 
