@@ -83,7 +83,7 @@ You can override most of Charting Library properties (which also may be edited b
 
 ```javascript
 overrides: {
-    "symbolWatermarkProperties.transparency": 100
+    "symbolWatermarkProperties.color": "rgba(0, 0, 0, 0)"
 }
 ```
 
