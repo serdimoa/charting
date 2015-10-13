@@ -73,11 +73,7 @@ mainSeriesProperties.priceAxisProperties.percentageDisabled:false
 mainSeriesProperties.priceAxisProperties.log:false
 mainSeriesProperties.priceAxisProperties.logDisabled:false
 
-symbolWatermarkProperties.color : "#555"
-
-//	Percent
-symbolWatermarkProperties.transparency: 85
-
+symbolWatermarkProperties.color : "rgba(0, 0, 0, 0.05)"
 
 //	Different chart types defaults
 
@@ -132,5 +128,4 @@ mainSeriesProperties.areaStyle.linecolor: "#0094FF"
 mainSeriesProperties.areaStyle.linestyle: CanvasEx.LINESTYLE_SOLID
 mainSeriesProperties.areaStyle.linewidth: 1
 mainSeriesProperties.areaStyle.priceSource: "close"
-mainSeriesProperties.areaStyle.transparency: 50
 ```
