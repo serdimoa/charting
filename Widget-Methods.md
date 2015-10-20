@@ -50,9 +50,9 @@ widget.onChartReady(function() {
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
   * [[createButton(options)|Widget-Methods#createbuttonoptions]]
 * Trading Primitives
-  * [[createOrderLine()|Widget-Methods#createorderline-options]]
-  * [[createPositionLine()|Widget-Methods#createpositionline-options]]
-  * [[createExecutionShape()|Widget-Methods#createexecutionshape-options]]
+  * [[createOrderLine()|Widget-Methods#createorderlineoptions]]
+  * [[createPositionLine()|Widget-Methods#createpositionlineoptions]]
+  * [[createExecutionShape()|Widget-Methods#createexecutionshapeoptions]]
 * Getters
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[getVisibleRange(callback)|Widget-Methods#getvisiblerangecallback]]
