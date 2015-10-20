@@ -43,6 +43,11 @@ Boolean showing whether your datafeed supports marks on bars or not.
 #####supports_timescale_marks
 Boolean showing whether your datafeed supports timescale marks or not. 
 
+####supports_time
+Set this one to `true` if your datafeed provides server time (unix time). It is used to adjust Countdown on the Price scale.
+
+####
+
 ###searchSymbolsByName(userInput, exchange, symbolType, onResultReadyCallback)
 1. `userInput`: string. It is text entered by user in symbol search field
 2. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
