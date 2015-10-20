@@ -39,9 +39,6 @@ Response: Library expects to receive JSON of the same structure as for JS API [[
 
 Either `supports_search` or `supports_group_request` should be `true`.
 
-* **supports_time**: Set this one to `true` if your datafeed provides server time (unix time). It is used to adjust Countdown on the Price scale.
-
-
 **Remark**: If your datafeed does not implement this call (do not respond at all or send 404), default configuration is used. Here it is:
 ```javascript
 {
