@@ -14,6 +14,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 9. [[getTimescaleMarks|JS-Api#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 10. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
+11. [[getServerTime|JS-Api#getservertimecallback]]
 
 ###onReady(callback)
 1. `callback`: function(configurationData)
@@ -192,3 +193,8 @@ Only one mark per bar is allowed. Marks out of bars are not allowed.
 3. `onErrorCallback`: function(reason)
 
 This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
+
+###getServerTime(callback)
+1. `callback`: function(unixTime)
+
+This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time. The charting library expects callback to be called once. The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.
