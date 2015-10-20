@@ -75,7 +75,7 @@ ZFM2014 (5 year t-note) with 1/4 of 1/32: minmov=1, pricescale=128, minmove2= 4
 ```
 
 #####has_intraday <false>
-Boolean showing whether symbol has intraday history data. If it's false then all buttons for intradays resolutions will be disabled when this symbol is active in chart.
+Boolean showing whether symbol has intraday (minutes) history data. If it's false then all buttons for intradays resolutions will be disabled when this symbol is active in chart.
 If it is set to true, all resolutions that are supplied directly by the datafeed must be provided in `intraday_multipliers` array.
 
 #####supported_resolutions
@@ -83,9 +83,10 @@ An array of resolutions which should be enabled in resolutions picker for this s
 
 Resolutions treated as supported by datafeed (see datafeed configuration data) but not supported by the current symbol will be disabled in Resolution picker widget. If one changes the symbol and new symbol does not support the selected resolution then resolution will be switched to first one in supported resolutions list. Resolution availability logic (pseudocode):
 ```
-resolutionAvailable  = resolution.isIntraday
-    ? symbol.has_intraday && symbol.supports_resoluiton(resolution)
-    : symbol.supports_resoluiton(resolution);
+resolutionAvailable  = 
+    resolution.isIntraday ?
+       symbol.has_intraday && symbol.supports_resoluiton(resolution) :
+    symbol.supports_resoluiton(resolution);
 ```
 
 In case of absence of `supported_resolutions` in a symbol info all DWM resolutions will be available. Intraday resolutions will be available if `has_intraday` is `true`.
@@ -93,7 +94,14 @@ In case of absence of `supported_resolutions` in a symbol info all DWM resolutio
 Supported resolutions affect available time frames too. The timeframe will not be available if it requires the resolution which is not supported.
 
 #####intraday_multipliers <[]>
-It is an array containing intraday resolutions (in minutes) the datafeed wants to build by itself. E.g., if the datafeed reported he supports resolutions [1, 5, 15], but in fact it has only 1 minute bars for symbol X, it should set intraday_multipliers of X = [1]. This will make Charting Library to build 5 and 15 resolutions by itself.
+It is an array containing intraday resolutions (in minutes) the datafeed wants to build by itself. E.g., if the datafeed reported he supports resolutions ["1", "5", "15"], but in fact it has only 1 minute bars for symbol X, it should set intraday_multipliers of X = [1]. This will make Charting Library to build 5 and 15 resolutions by itself.
+
+#####has_seconds <false>
+Boolean showing whether symbol has sedonds history data. If it's false then all buttons for seconds resolutions will be disabled when this symbol is active in chart.
+If it is set to true, all resolutions that are supplied directly by the datafeed must be provided in `seconds_multipliers` array.
+
+#####seconds_multipliers <[]>
+It is an array containing seconds resolutions (in seconds without a postfix) the datafeed wants to build by itself. E.g., if the datafeed reported he supports resolutions ["1S", "5S", "15S"], but in fact it has only 1 second bars for symbol X, it should set seconds_multipliers of X = [1]. This will make Charting Library to build 5S and 15S resolutions by itself.
 
 #####has_daily <false>
 The boolean value showing whether datafeed has its own D resolution bars or not. If `has_daily` = false then Charting Library will build respective resolutions from intraday by itself. If not, then it will request those bars from datafeed.
