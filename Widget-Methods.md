@@ -161,7 +161,7 @@ widget.onShortcut("alt+s", function() {
 1. `event`: can be `toggle_sidebar`, `indicators_dialog`, `toggle_header`, `edit_object_dialog`
 2. `callback`: function(arguments)
 
-The library will call `callback` when `event` is triggered. Every event can have different set of arguments.
+The library will call `callback` when GUI `event` is happened. Every event can have different set of arguments.
 
 #Chart Actions
 
