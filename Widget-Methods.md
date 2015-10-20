@@ -50,9 +50,9 @@ widget.onChartReady(function() {
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
   * [[createButton(options)|Widget-Methods#createbuttonoptions]]
 * Trading Primitives
-  * [[createOrderLine()|Widget-Methods#createorderline]]
-  * [[createPositionLine()|Widget-Methods#createpositionline]]
-  * [[createExecutionShape()|Widget-Methods#createexecutionshape]]
+  * [[createOrderLine()|Widget-Methods#createorderline-options]]
+  * [[createPositionLine()|Widget-Methods#createpositionline-options]]
+  * [[createExecutionShape()|Widget-Methods#createexecutionshape-options]]
 * Getters
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[getVisibleRange(callback)|Widget-Methods#getvisiblerangecallback]]
@@ -442,8 +442,11 @@ widget.onChartReady(function() {
 #Trading Primitives
 
 
-####createOrderLine()
+####createOrderLine(options)
 Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
+
+Arguments (since 1.4):
+`options` is an object with one possible key: `disableUndo` which can be `true` or `false`. For compatability reasons the default value is `false`.
 
 API object methods:
 * `remove()`: Removes the position from the chart. You can’t use API-object after this call.
@@ -509,8 +512,11 @@ widget.createOrderLine()
     .setQuantity("2");
 ```
 
-####createPositionLine()
+####createPositionLine(options)
 Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior.  It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
+
+Arguments (since 1.4):
+`options` is an object with one possible key: `disableUndo` which can be `true` or `false`. For compatability reasons the default value is `false`.
 
 API object methods:
 * `remove()`: Removes the position from the chart. You can’t use API-object after this call.
@@ -583,8 +589,11 @@ widget.createPositionLine()
 .setLineStyle(0)
 .setLineLength(25);
 ```
-####createExecutionShape()
+####createExecutionShape(options)
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
+
+Arguments (since 1.4):
+`options` is an object with one possible key: `disableUndo` which can be `true` or `false`. For compatability reasons the default value is `false`.
 
 API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
 
