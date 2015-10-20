@@ -77,6 +77,10 @@ JS object containing saved chart content (JSON, see save/load calls below). Use 
 ####locale
 Locale to be used by Charting Library. See [[Localization]] section for details.
 
+####numeric_formatting
+The object containing formatting options for numbers. The only possible options is `decimal_sign` for now.
+Example: `numeric_formatting: { decimal_sign: "," }`
+
 ####overrides
 The object containing default Widget properties overrides. Overriding a property means assigning a default value to it.
 You can override most of Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` supposed to be an object having range of fields. Each field name is a name of overridden property and the field value is the desired value for those property. Example:
