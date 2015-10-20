@@ -39,13 +39,17 @@ Response: Library expects to receive JSON of the same structure as for JS API [[
 
 Either `supports_search` or `supports_group_request` should be `true`.
 
+* **supports_time**: Set this one to `true` if your datafeed provides server time (unix time). It is used to adjust Countdown on the Price scale.
+
+
 **Remark**: If your datafeed does not implement this call (do not respond at all or send 404), default configuration is used. Here it is:
 ```javascript
 {
 	supports_search: false,
 	supports_group_request: true,
 	supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
-	supports_marks: false
+	supports_marks: false,
+        supports_time: true
 }
 ```
 
@@ -220,6 +224,11 @@ Response: Response is expected to be an object with some properties listed below
 ```
 
 **Remark**: This call will be requested if your datafeed sent `supports_marks: true` in configuration data.
+
+###Server time
+Request: `GET /time`
+
+Response: Numeric unix time without milliseconds. Example: 1445324591
 
 ###Quotes
 Request: `GET /quotes?symbols=<ticker_name_1>,<ticker_name_2>,...,<ticker_name_n>`
