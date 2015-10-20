@@ -69,6 +69,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 |-------|---------------|-----------------|------------
 | study_templates | off | |
 | datasource_copypaste | on | | enables copying of drawings and studies
+| seconds_resolution| off | 1.4 | enables seconds resolution support
 
 
 ## Trading Terminal
