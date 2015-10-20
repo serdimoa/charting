@@ -21,6 +21,7 @@ widget.onChartReady(function() {
   * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]]
   * [[onTick(callback)|Widget-Methods#ontickcallback]]
   * [[onShortcut(shortcut, callback)|Widget-Methods#onshortcutshortcut-callback]]
+  * [[subscribe(event, callback)|Widget-Methods#subscribeevent-callback]]
 * Chart Actions
   * [[setVisibleRange(range, callback)|Widget-Methods#setvisiblerangerange-callback]]
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
@@ -155,6 +156,12 @@ widget.onShortcut("alt+s", function() {
   widget.executeActionById("symbolSearch");
 });
 ```
+
+####subscribe(event, callback)
+1. `event`: can be `toggle_sidebar`, `indicators_dialog`, `toggle_header`, `edit_object_dialog`
+2. `callback`: function(arguments)
+
+The library will call `callback` when `event` is triggered. Every event can have different set of arguments.
 
 #Chart Actions
 
