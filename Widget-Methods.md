@@ -668,7 +668,7 @@ The Library will call your callback and pass the current visible time range. Thi
 ####addCustomCSSFile(url)
 1. `url`should be absolute or relative path to 'static` folder
 
-This method was introduced in version `1.3`.
+This method was introduced in version `1.3`. Starting from `1.4` use [custom_css_url](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#custom_css_url) instead.
 
 #See Also
 * [[Charts Customization 101]]
