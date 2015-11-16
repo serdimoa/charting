@@ -155,7 +155,7 @@ Those arguments are regarding high-level charts save/load. See more details [[he
 ####charts_storage_api_version
 A version of your backend. Supported values: `"1.0"` | `"1.1"`. Study Templates are supported starting from `1.1` 
 
-####custom_css_url
+####custom_css_url (since 1.4)
 Adds your custom css to the chart. `url` should be absolute or relative path to 'static` folder
 
 ####favorites
