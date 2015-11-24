@@ -245,6 +245,7 @@ Executes an action by its id.
 	undo
 	redo
 	takeScreenshot
+	paneRemoveAllStudiesDrawingTools
 
 Examples:
 ```javascript
