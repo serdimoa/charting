@@ -164,6 +164,23 @@ Items which should be favored by default. This option requires disabling localst
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
 
+####rss_news_feed (Trading Platform only)
+
+Use this property to change rss feed for news. You can set a different rss for each symbol type or use one rss for every symbols. The object should have `default` property, the other properties are optional; their names are equal to symbol types. Each property is an object with the following properties:
+1. `url` - is an url to be requested. It can contain tags in curly braces which will be changed by the platform: `{SYMBOL}`, `{TYPE}`, `{EXCHANGE}`.
+2. `name` of a feed is displayed at the bottom of every news
+
+Here is an example:
+
+``````
+{
+  "default": {
+     url: "https://articlefeeds.nasdaq.com/nasdaq/symbols?symbol={SYMBOL}",
+     name: "NASDAQ"
+  }
+}
+`````
+
 ####trading_controller (Trading Platform only)
 The value is an object with functions:
 
