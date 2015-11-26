@@ -49,3 +49,5 @@ Since Trading Terminal is based on Charting Library, we decided to merge the doc
 
 #See Also
   * [[How to connect your trading to the charts|Trading Controller]] 
+  * [[Widget methods specific for Trading Terminal|Widget-Methods#chart-trading-platform]]
+  * [[Widget constructor parameters specific for Trading Terminal|Widget-Constructor#chart-trading-terminal-only]]
