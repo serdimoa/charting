@@ -1,5 +1,4 @@
-### What is Charting Library
-
+### What is Charting Librar
 Downloadable charting library with an open data API. This is a standalone solution that you download,
 host on your servers, connect your own data & use in your site/app for free. All you have to do is
 
@@ -12,6 +11,9 @@ If you want to customize your charts, then you may go further.
 
 * Investigate Charting Library [[customization possibilities|Charts-Customization-101]]
 * [[Creating Custom Studies|Creating-Custom-Studies]]
+
+### Having Trading Terminal ?
+Trading Terminal is a ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [[Read more|Trading-Terminal]].
 
 ### Best Practices
 Reading [[this article|Best-Practices]] will prevent you from making the most common mistakes and **save your time**.
