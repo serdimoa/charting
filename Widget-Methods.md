@@ -60,7 +60,7 @@ widget.onChartReady(function() {
   * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
-* :chart: Trading Platform 
+* :chart: [[Trading Terminal]] specific 
   * [[isFloatingTradingPanelVisible()|Widget-Methods#chart-isfloatingtradingpanelvisible]]
   * [[toggleFloatingTradingPanel()|Widget-Methods#chart-togglefloatingtradingpanel]]
   * [[isBottomTradingPanelVisible()|Widget-Methods#chart-isbottomtradingpanelvisible]]
