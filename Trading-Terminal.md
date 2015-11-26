@@ -44,7 +44,7 @@ This study will require some server-side support. We'll provide more detals when
 This fucntionality will require the support from your backend. We'll update our open-source data backend to support this feature also, so consider using it to minimize the efforts from your side.
 
 ##How To Work With The Docs
-Since Trading Terminal is based on Charting Library, we decided to merge the documentation into the single Wiki. So all the docs are in one place. The only thing you should remember is that features which are specific to Trading Terminal are marked with this cure green mark :chart:.
+Since Trading Terminal is based on Charting Library, we decided to merge the documentation into the single Wiki. So all the docs are in one place. The only thing you should remember is that features which are specific to Trading Terminal are marked with this cute green mark :chart:.
 
 
 #See Also
