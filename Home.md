@@ -1,4 +1,4 @@
-### What is Charting Librar
+### What is Charting Library
 Downloadable charting library with an open data API. This is a standalone solution that you download,
 host on your servers, connect your own data & use in your site/app for free. All you have to do is
 
