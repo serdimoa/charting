@@ -4,12 +4,12 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
-**1.4**
+**In version 1.4**
 
 * Override `transparency` is not supported anymore. We added transparency support to every color property. Use `rgba` form to define a color with transparency. Example: 
 `"symbolWatermarkProperties.color" : "rgba(60, 70, 80, 0.05)"`
 
-**1.3**
+**In version 1.3**
 
 * Override `paneProperties.gridProperties.*` is not supported anymore. 
 Please use `paneProperties.vertGridProperties.*` and `paneProperties.horzGridProperties.*`
