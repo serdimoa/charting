@@ -1,3 +1,5 @@
+:chart: All content on this page is relevant for [[Trading Terminal]] only.
+
 Trading Terminal is a ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. This product is based on Charting Library and includes all its functionality, but also contains a bunch of new features.
 
 The product is under development so some features are not there yet. They are marked with :clock4: along with our ETA.
@@ -10,9 +12,13 @@ You can trade right from the chart, and all you have to do to make this work is 
 <a href="https://www.dropbox.com/s/6ttw7a7tl6ipt27/tt_trading.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/6ttw7a7tl6ipt27/tt_trading.png?dl=1" width="300"/></a>
 
 ####Sidebar Quotes (Symbols Details & Watchlist)
+In Trading Terminal, you can have the Watchilsts and Details widget (see the snapshot below) functionality.
 
 <a href="https://www.dropbox.com/s/hrs6l0ejwgvw0mr/tt_top.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/hrs6l0ejwgvw0mr/tt_top.png?dl=1" width="300"/></a>
 
+######Read more about this feature:
+  * [[How to enable sidebar quotes|Widget-Constructor#chart-widgetbar]]
+  * How to provide the data for quotes: depends on what kind of data integration do you use --[[JS API|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]] or [[UDF|UDF#quotes]]
 
 ####Sidebar Market News Feed
 You can have 
