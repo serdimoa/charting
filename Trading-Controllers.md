@@ -1,3 +1,5 @@
+:chart: All content on this page is relevant for [[Trading Terminal]] only.
+
 Trading Controller is a thing which will make your trading live. Its main purpose is to connect our charts with your trading logic. In terms of `JS`, it is an `object` which is expected to expose the specific interface. Here is a list of Controller's **methods** which Terminal will expect to have.
 
 ##Required Methods 
