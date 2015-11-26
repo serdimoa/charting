@@ -38,7 +38,7 @@ You can have multiple charts inside if the same widget. This gives your user the
 These types of charts will be available out-of-the-box, just like Heikin Ashi is available in Charting Library.
 
 ####Volume Profile :clock4:
-This study will require soem server-side support. We'll provide more detals when it's ready.
+This study will require some server-side support. We'll provide more detals when it's ready.
 
 ####Drawing Tools Templates :clock4: 
 This fucntionality will require the support from your backend. We'll update our open-source data backend to support this feature also, so consider using it to minimize the efforts from your side.
