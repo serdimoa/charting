@@ -60,15 +60,15 @@ widget.onChartReady(function() {
   * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
-* :chart4: Trading Platform 
-  * [[isFloatingTradingPanelVisible()|Widget-Methods#chart4-isfloatingtradingpanelvisible]]
-  * [[toggleFloatingTradingPanel()|Widget-Methods#chart4-togglefloatingtradingpanel]]
-  * [[isBottomTradingPanelVisible()|Widget-Methods#chart4-isbottomtradingpanelvisible]]
-  * [[toggleBottomTradingPanel()|Widget-Methods#chart4-togglebottomtradingpanel]]
-  * [[showSampleOrderDialog(order)|Widget-Methods#chart4-showsampleorderdialogorder]]
-  * [[showSamplePositionDialog(position)|Widget-Methods#chart4-showsamplepositiondialogposition]]
-  * [[showSampleClosePositionDialog(position)|Widget-Methods#chart4-showsampleclosepositiondialogposition]]
-  * [[showSampleReversePositionDialog(position)|Widget-Methods#chart4-showsamplereversepositiondialogposition]]
+* :chart: Trading Platform 
+  * [[isFloatingTradingPanelVisible()|Widget-Methods#chart-isfloatingtradingpanelvisible]]
+  * [[toggleFloatingTradingPanel()|Widget-Methods#chart-togglefloatingtradingpanel]]
+  * [[isBottomTradingPanelVisible()|Widget-Methods#chart-isbottomtradingpanelvisible]]
+  * [[toggleBottomTradingPanel()|Widget-Methods#chart-togglebottomtradingpanel]]
+  * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]]
+  * [[showSamplePositionDialog(position)|Widget-Methods#chart-showsamplepositiondialogposition]]
+  * [[showSampleClosePositionDialog(position)|Widget-Methods#chart-showsampleclosepositiondialogposition]]
+  * [[showSampleReversePositionDialog(position)|Widget-Methods#chart-showsamplereversepositiondialogposition]]
 
 #Subscribing To Chart Events
 
@@ -686,30 +686,30 @@ Returns object with method `format` that you can use to format prices. Introduce
 
 This method was introduced in version `1.3`. Starting from `1.4` use [custom_css_url](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#custom_css_url) instead.
 
-#:chart4: Trading Platform
+#:chart: Trading Platform
 
 The following methods are available in [[Trading Terminal]] only.
 
-####:chart4: isFloatingTradingPanelVisible()
+####:chart: isFloatingTradingPanelVisible()
 
 This method returns `true` if the Floating Trading Panel is visible and `false` otherwise.
 
-####:chart4: toggleFloatingTradingPanel()
+####:chart: toggleFloatingTradingPanel()
 
 This method hides the Floating Trading Panel if it is visible and shows otherwise.
 
-####:chart4: isBottomTradingPanelVisible()
+####:chart: isBottomTradingPanelVisible()
 
 This method returns `true` if the Bottom Trading Panel is visible and `false` otherwise.
 
-####:chart4: toggleBottomTradingPanel()
+####:chart: toggleBottomTradingPanel()
 
 This method hides the Bottom Trading Panel if it is visible and shows otherwise.
 
-####:chart4: showSampleOrderDialog(order)
-####:chart4: showSamplePositionDialog(position)
-####:chart4: showSampleClosePositionDialog(position)
-####:chart4: showSampleReversePositionDialog(position)
+####:chart: showSampleOrderDialog(order)
+####:chart: showSamplePositionDialog(position)
+####:chart: showSampleClosePositionDialog(position)
+####:chart: showSampleReversePositionDialog(position)
 1. `order` or 'position': object 
 
 Displays a sample order/position dialog. These dialogs look like Trading View Paper Trading ones. Usually you don't need to use sample dialogs. These methods are used in the trading sample.
