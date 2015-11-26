@@ -215,7 +215,7 @@ One more example:
 `````
 
 ####:chart: trading_controller 
-Trading Controller is a thing which will make your trading live. [[Read more|Trading-Controllers]].
+Trading Controller is a thing which will make your trading live. [[Read more|Trading-Controller]].
 
 
 #See Also
