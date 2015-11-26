@@ -78,3 +78,6 @@ The function is invoked to get an order by its `id`.
 
 ####reversePosition(symbol)
 Create a reverse position order when this function is called.
+
+#See Also
+  * [[How to connect|Widget-Constructor#chart-trading_controller]] your trading controller to the chart
