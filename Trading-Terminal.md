@@ -21,9 +21,13 @@ In Trading Terminal, you can have the Watchilsts and Details widget (see the sna
   * How to provide the data for quotes: depends on what kind of data integration do you use --[[JS API|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]] or [[UDF|UDF#quotes]]
 
 ####Sidebar Market News Feed
-You can have 
+You can have the news feed right in the side bar of the chart. Our support for the news feeds is flexible: so, in example, you can have different feeds for different kinds of symbols and so on.
 
 <a href="https://www.dropbox.com/s/qa7f42mszeexf96/tt_bottom.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/qa7f42mszeexf96/tt_bottom.png?dl=1" width="300"/></a>
+
+######Read more about this feature:
+  * [[How to enable sidebar news|Widget-Constructor#chart-widgetbar]]
+  * [[How to set up which feeds to use|Widget-Constructor#chart-rss_news_feed]]
 
 ####Miltiple charts layout :clock4: early december
 You can have multiple charts inside if the same widget. This gives your user the ability to use wide range of the strategies, as well as the ability to have a broad view of the market. You don't have to do anythng to enable of tweak it: it will work out-of-the-box as soon as we'll publish it.
