@@ -1,10 +1,10 @@
-:chart: All content on this page is relevant for [[Trading Terminal]] only.
+:chart: All content on this page is relevant for Trading Terminal only.
 
 Trading Terminal is a ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. This product is based on Charting Library and includes all its functionality, but also contains a bunch of new features.
 
 The product is under development so some features are not there yet. They are marked with :clock4:.
 
-###Trading Terminal Features
+##Trading Terminal Features
 
 ####Trading capabilities
 You can trade right from the chart, and all you have to do to make this work is to implement your [[Trading Controller]] and plug it into the chart widget.
@@ -42,6 +42,10 @@ This study will require some server-side support. We'll provide more detals when
 
 ####Drawing Tools Templates :clock4: 
 This fucntionality will require the support from your backend. We'll update our open-source data backend to support this feature also, so consider using it to minimize the efforts from your side.
+
+##How To Work With The Docs
+Since Trading Terminal is based on Charting Library, we decided to merge the documentation into the single Wiki. So all the docs are in one place. The only thing you should remember is that features which are specific to Trading Terminal are market with this cure green mark :chart:.
+
 
 #See Also
   * [[How to connect your trading to the charts|Trading Controller]] 
