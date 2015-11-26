@@ -111,7 +111,7 @@ TradingView.onready(function()
 *experimental feature*
 URL for POST request with base64-encoded chart snapshots which will been sent when user press snapshot button. The service should return full URL to saved image in its response.
 
-####widgetbar | TradingTerminal only |
+####widgetbar | Trading Platform only |
 The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
 ```javascript
 widgetbar: {
