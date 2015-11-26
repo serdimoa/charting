@@ -2,7 +2,7 @@ We do our best to make every next version fully compartible with the previous on
 
 _Note: you can check Charting Library version by executing `TradingView.version()` in a browser console._
 
-Here is the list of incompatible changes:
+Here is the list of breaking changes:
 
 **1.4**
 
