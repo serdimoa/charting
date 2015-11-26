@@ -12,6 +12,7 @@ Function should return `true` for Bottom Trading Panel to be displayed.
 
 ####buttonDropdownItems()
 Bottom Trading Panel has a button with a list of dropdown items. This function is expected to return an array of objects, each of them representing one dropdown item. Objects should have the following properties:
+
 1. `text` - the only mandatory field. Use `'-'` to display a separator line.
 2. `checkable` - set it to `true` to have a checkbox
 3. `checked` - initial value of the checkbox
@@ -31,6 +32,7 @@ This function is called when it is needed to create a Bottom Trading Panel. You 
 
 ####showOrderDialog(order)
 This function is invoked by the Floating Trading Panel when user requests to create the order. Order is an object with the following properties:
+
 1. `type`: `"limit"` or `"market"`
 2. `side`: `"sell"` or `"buy"`
 3. `price`: price at the moment when a user clicks an order
@@ -48,6 +50,7 @@ And this is it !
 If you want to use our native "Create Order" dialog instead of creating your own, you also have to implement a few more functions.
 
 ####placeOrder(symbol, side, orderType, qty, price, stopLoss, takeProfit, expiration)
+
 1. `symbol` - symbol string
 2. `side`: `"sell"` or `"buy"`
 3. `orderType`: `"limit"`, `"market"` or `"stop"`
@@ -58,6 +61,7 @@ If you want to use our native "Create Order" dialog instead of creating your own
 8. `expiration`: object with the only valuable property `expiration` - UTC time of expiration
 
 The function is invoked to finish creating an order. It should return $.Deferred object. When it is resolved it should have an order data argument which is an object with the following properties:
+
 1. `symbol` - symbol string
 2. `side`: `"sell"` or `"buy"`
 3. `type`: `"limit"`, `"market"` or `"stop"`
