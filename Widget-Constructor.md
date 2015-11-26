@@ -13,6 +13,8 @@ new TradingView.widget({
 
 Find full supported parameters list below. Please remember that changing those parameters after chart is initialized **does not work**. If you want to change the state of a chart after it was initialized, use [[Widget methods|Widget-Methods]] instead.
 
+Properties marked :chart: are available in [[Trading Terminal|Trading-Terminal:-Brief-Intro]] only.
+
 ####symbol, interval [mandatory]
 Initial symbol & interval of your chart.
 
