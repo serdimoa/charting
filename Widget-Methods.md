@@ -57,8 +57,18 @@ widget.onChartReady(function() {
 * Getters
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[getVisibleRange(callback)|Widget-Methods#getvisiblerangecallback]]
+  * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
+* Trading Platform
+  * [[isFloatingTradingPanelVisible()|Widget-Methods#isfloatingtradingpanelvisible]]
+  * [[toggleFloatingTradingPanel()|Widget-Methods#togglefloatingtradingpanel]]
+  * [[isBottomTradingPanelVisible()|Widget-Methods#isbottomtradingpanelvisible]]
+  * [[toggleBottomTradingPanel()|Widget-Methods#togglebottomtradingpanel]]
+  * [[showSampleOrderDialog(order)|Widget-Methods#showsampleorderdialogorder]]
+  * [[showSamplePositionDialog(position)|Widget-Methods#showsamplepositiondialogposition]]
+  * [[showSampleClosePositionDialog(position)|Widget-Methods#showsampleclosepositiondialogposition]]
+  * [[showSampleReversePositionDialog(position)|Widget-Methods#showsamplereversepositiondialogposition]]
 
 #Subscribing To Chart Events
 
@@ -663,6 +673,11 @@ Charting Library will call your callback with an object containing chart's symbo
 
 The Library will call your callback and pass the current visible time range. This method was introduced in version `1.2`.
 
+####mainSeriesPriceFormatter()
+
+Returns object with method `format` that you can use to format prices. Introduced in 1.5.
+
+
 #Customization
 
 
@@ -670,6 +685,34 @@ The Library will call your callback and pass the current visible time range. Thi
 1. `url`should be absolute or relative path to 'static` folder
 
 This method was introduced in version `1.3`. Starting from `1.4` use [custom_css_url](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#custom_css_url) instead.
+
+#Trading Platform
+
+These methods are not available in the Charting Library.
+
+####isFloatingTradingPanelVisible()
+
+This method returns `true` if the Floating Trading Panel is visible and `false` otherwise.
+
+####toggleFloatingTradingPanel()
+
+This method hides the Floating Trading Panel if it is visible and shows otherwise.
+
+####isBottomTradingPanelVisible()
+
+This method returns `true` if the Bottom Trading Panel is visible and `false` otherwise.
+
+####toggleBottomTradingPanel()
+
+This method hides the Bottom Trading Panel if it is visible and shows otherwise.
+
+####showSampleOrderDialog(order)
+####showSamplePositionDialog(position)
+####showSampleClosePositionDialog(position)
+####showSampleReversePositionDialog(position)
+1. `order` or 'position': object 
+
+Displays a sample order/position dialog. These dialogs look like Trading View Paper Trading ones. Usually you don't need to use sample dialogs. These methods are used in the trading sample.
 
 #See Also
 * [[Charts Customization 101]]
