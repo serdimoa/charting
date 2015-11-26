@@ -113,23 +113,6 @@ TradingView.onready(function()
 *experimental feature*
 URL for POST request with base64-encoded chart snapshots which will been sent when user press snapshot button. The service should return full URL to saved image in its response.
 
-####:chart: widgetbar
-The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
-```javascript
-widgetbar: {
-    datawindow: true,
-    details: true,
-    watchlist: true,
-    watchlist_settings: {
-        default_symbols: ["NYSE:AA", "NYSE:AAL", "NASDAQ:AAPL"]
-    }
-}
-```
-* **datawindow <false>**: Enables data window widget in right-side widget bar.
-* **details <false>**: Enables details widget in right-side widget bar.
-* **watchlist <false>**: Enables watchlist widget in right-side widget bar.
-* **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
-
 ####indicators_file_name
 Path to file containing your compiled indicators. See more details [[here|Creating-Custom-Studies]].
 
@@ -165,6 +148,24 @@ Items which should be favored by default. This option requires disabling localst
 
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
+
+
+####:chart: widgetbar
+The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
+```javascript
+widgetbar: {
+    datawindow: true,
+    details: true,
+    watchlist: true,
+    watchlist_settings: {
+        default_symbols: ["NYSE:AA", "NYSE:AAL", "NASDAQ:AAPL"]
+    }
+}
+```
+* **datawindow <false>**: Enables data window widget in right-side widget bar.
+* **details <false>**: Enables details widget in right-side widget bar.
+* **watchlist <false>**: Enables watchlist widget in right-side widget bar.
+* **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
 
 ####:chart: rss_news_feed
 
