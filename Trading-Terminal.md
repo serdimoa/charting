@@ -1,6 +1,6 @@
 :chart: All content on this page is relevant for Trading Terminal only.
 
-Trading Terminal is a ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. This product is based on Charting Library and includes all its functionality, but also contains a bunch of new features. TRading Terminal repo is [[here|https://github.com/tradingview/trading_platform]] 
+Trading Terminal is a ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. This product is based on Charting Library and includes all its functionality, but also contains a bunch of new features. Trading Terminal repo is [[here|https://github.com/tradingview/trading_platform]].
 
 The product is under development so some features are not there yet. They are marked with :clock4:.
 
