@@ -166,7 +166,8 @@ Items which should be favored by default. This option requires disabling localst
 
 ####rss_news_feed (Trading Platform only)
 
-Use this property to change rss feed for news. You can set a different rss for each symbol type or use one rss for every symbols. The object should have `default` property, the other properties are optional; their names are equal to symbol types. Each property is an object with the following properties:
+Use this property to change rss feed for news. You can set a different rss for each symbol type or use one rss for every symbols. The object should have `default` property, the other properties are optional; their names are equal to symbol types. Each property is an object (or array of objects) with the following properties:
+
 1. `url` - is an url to be requested. It can contain tags in curly braces which will be changed by the platform: `{SYMBOL}`, `{TYPE}`, `{EXCHANGE}`.
 2. `name` of a feed is displayed at the bottom of every news
 
@@ -174,33 +175,62 @@ Here is an example:
 
 ``````
 {
-  "default": {
-     url: "https://articlefeeds.nasdaq.com/nasdaq/symbols?symbol={SYMBOL}",
-     name: "NASDAQ"
-  }
+    "default": [ {
+        url: "https://articlefeeds.nasdaq.com/nasdaq/symbols?symbol={SYMBOL}",
+        name: "NASDAQ"
+      }, {
+        url: "http://feeds.finance.yahoo.com/rss/2.0/headline?s={SYMBOL}&region=US&lang=en-US",
+        name: "Yahoo Finance"
+      } ]
+}
+`````
+
+Another example:
+
+``````
+{
+    "default": {
+        url: "https://articlefeeds.nasdaq.com/nasdaq/symbols?symbol={SYMBOL}",
+        name: "NASDAQ"
+    }
+}
+`````
+
+One more example:
+
+``````
+{
+    "default": {
+        url: "https://articlefeeds.nasdaq.com/nasdaq/symbols?symbol={SYMBOL}",
+        name: "NASDAQ"
+     },
+    "stock": {
+        url: "http://feeds.finance.yahoo.com/rss/2.0/headline?s={SYMBOL}&region=US&lang=en-US",
+        name: "Yahoo Finance"
+    }
 }
 `````
 
 ####trading_controller (Trading Platform only)
 The value is an object with functions:
 
-#####supportFloatingPanel
+#####supportFloatingPanel()
 Function should return `true` for Floating Trading Panel to be displayed.
 
-#####supportBottomWidget
+#####supportBottomWidget()
 Function should return `true` for Bottom Trading Panel to be displayed.
 
-#####buttonDropdownItems
+#####buttonDropdownItems()
 Bottom Trading Panel has a button with a list of dropdown items. Return an array of objects. Each object has the following properties:
 1. `text` - the only mandatory field. Use `'-'` to display a separator line.
 2. `checkable` - set it to `true` to have a checkbox
 3. `checked` - initial value of the checkbox
 4. `action` - function to perform when the item is clicked
 
-#####chartContextMenuItems
+#####chartContextMenuItems()
 Chart can have a sub-menu `Trading` in the context menu. Return list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.
 
-#####bottomContextMenuItems
+#####bottomContextMenuItems()
 Bottom Trading Panel can have a context menu. Return a list of items for this menu. Format is the same as for `buttonDropdownItems`.
 
 #####isTradable(symbol)
