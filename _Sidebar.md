@@ -21,4 +21,4 @@
 5. [[Saving/Loading Charts|Saving-and-Loading-Charts]]
 6. [[Creating Custom Studies]]
 7. [[Best Practices]]
-8. [[Breaking Changes]]
+8. [[Breaking changes in versions|Breaking Changes]]
