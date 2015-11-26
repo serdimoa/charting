@@ -45,7 +45,7 @@ And this is it !
 
 ##Additional Methods 
 
-If you want to use our sample "Create Order" dialog instead of creating your own, you also have to implement a few more functions.
+If you want to use our native "Create Order" dialog instead of creating your own, you also have to implement a few more functions.
 
 ####placeOrder(symbol, side, orderType, qty, price, stopLoss, takeProfit, expiration)
 1. `symbol` - symbol string
