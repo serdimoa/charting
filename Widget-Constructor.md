@@ -217,6 +217,12 @@ One more example:
 ####:chart: trading_controller 
 Trading Controller is a thing which will make your trading live. [[Read more|Trading-Controller]].
 
+```javascript
+new TradingView.widget({
+    /* ... */
+    trading_controller: new MyTradingController()
+});
+```
 
 #See Also
 * [[Charts Customization 101]]
