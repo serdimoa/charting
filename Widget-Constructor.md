@@ -155,7 +155,6 @@ Items which should be favored by default. This option requires disabling localst
 The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
 ```javascript
 widgetbar: {
-    datawindow: true,
     details: true,
     watchlist: true,
     watchlist_settings: {
@@ -163,7 +162,6 @@ widgetbar: {
     }
 }
 ```
-* **datawindow <false>**: Enables data window widget in right-side widget bar.
 * **details <false>**: Enables details widget in right-side widget bar.
 * **watchlist <false>**: Enables watchlist widget in right-side widget bar.
 * **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
