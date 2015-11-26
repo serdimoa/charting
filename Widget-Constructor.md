@@ -111,7 +111,7 @@ TradingView.onready(function()
 *experimental feature*
 URL for POST request with base64-encoded chart snapshots which will been sent when user press snapshot button. The service should return full URL to saved image in its response.
 
-####widgetbar | Trading Platform only |
+####:chart: widgetbar
 The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
 ```javascript
 widgetbar: {
@@ -164,7 +164,7 @@ Items which should be favored by default. This option requires disabling localst
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
 
-####rss_news_feed (Trading Platform only)
+####:chart: rss_news_feed
 
 Use this property to change rss feed for news. You can set a different rss for each symbol type or use one rss for every symbols. The object should have `default` property, the other properties are optional; their names are equal to symbol types. Each property is an object (or array of objects) with the following properties:
 
@@ -211,7 +211,7 @@ One more example:
 }
 `````
 
-####trading_controller :chart:
+####:chart: trading_controller 
 Trading Controller is a thing which will make your trading live. [[Read more|Trading-Controllers]].
 
 
