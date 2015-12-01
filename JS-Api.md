@@ -207,8 +207,8 @@ This function is called if configuration flag `supports_time` is set to `true` w
 This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
 
 ###:chart: subscribeQuotes(symbols, fastSymbols, onRealtimeCallback, listenerGUID)
-1. `symbols`: array of symbols to be updated once in a minute or more often
-2. `fastSymbols`: array of symbols to be updated once in 10 seconds or more often
+1. `symbols`: array of symbols to be updated rarely (suggested frequency is once per minute). These symbols are in the watch list but they are not visible at the moment.
+2. `fastSymbols`: array of symbols to be updated quite frequently (once in 10 seconds or more often)
 3. `onRealtimeCallback`: function(array of `data`)
   1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
 4. `listenerGUID`: unique identifier of the listener
