@@ -18,7 +18,7 @@ In Trading Terminal, you can have the Watchilsts and Details widget (see the sna
 
 ######Read more about this feature:
   * [[How to enable sidebar quotes|Widget-Constructor#chart-widgetbar]]
-  * How to provide the data for quotes: depends on what kind of data integration do you use --[[JS API|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]] or [[UDF|UDF#quotes]]
+  * How to provide the data for quotes: depends on what kind of data integration do you use --[[JS API|JS-Api#chart-trading-terminal-specific]] or [[UDF|UDF#quotes]]
 
 ####Sidebar Market News Feed
 You can have the news feed right in the side bar of the chart. Our support for the news feeds is flexible: so, in example, you can have different feeds for different kinds of symbols and so on.
