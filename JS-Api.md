@@ -14,9 +14,9 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 9. [[getTimescaleMarks|JS-Api#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 10. [[getServerTime|JS-Api#getservertimecallback]]
-11. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
-12. [[subscribeQuotes|JS-Api#subscribequotessymbols-fastsymbols-onrealtimecallback-listenerguid]]
-13. [[unsubscribeQuotes|JS-Api#unsubscribequoteslistenerguid]]
+11. [[getQuotes|JS-Api#chart-getquotessymbols-ondatacallback-onerrorcallback]]
+12. [[subscribeQuotes|JS-Api#chart-subscribequotessymbols-fastsymbols-onrealtimecallback-listenerguid]]
+13. [[unsubscribeQuotes|JS-Api#chart-unsubscribequoteslistenerguid]]
 
 ###onReady(callback)
 1. `callback`: function(configurationData)
