@@ -7,7 +7,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 1. [[onReady|JS-Api#onreadycallback]]
 2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
 3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
-4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback]]
+4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest]]
 5. [[subscribeBars|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid]]
 6. [[unsubscribeBars|JS-Api#unsubscribebarssubscriberuid]]
 7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
@@ -86,7 +86,7 @@ If no symbols are found, then callback should be called with an empty array. See
 
 Charting Library will call this function when it need to get [[SymbolInfo|Symbology#symbolinfo-structure]] by symbol's name.
 
-###getBars(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback)
+###getBars(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback, firstDataRequest)
 1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `resolution`: string
 3. `from`: unix timestamp, leftmost required bar time
@@ -95,6 +95,7 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
   1. `bar`: object `{time, close, open, high, low, volume}`
   2. `meta`: object `{version = 2, noData = true | false, nextTime}`
 5. `onErrorCallback`: function(reason)
+6. `firstDataRequest`: boolean to identify the first history call for this symbol/resulution. When it is `true` you can ignore `to` (which depends on browser's `Date.now()`) and return bars up to current bar (including it).
 
 This function is called when chart needs a history fragment defined by dates range. The charting library expects `onHistoryCallback` to be called **just once** after receiving all the requesting history. No further calls are expected.
 
