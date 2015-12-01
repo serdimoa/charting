@@ -13,8 +13,10 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 9. [[getTimescaleMarks|JS-Api#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
-10. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
-11. [[getServerTime|JS-Api#getservertimecallback]]
+10. [[getServerTime|JS-Api#getservertimecallback]]
+11. [[getQuotes|JS-Api#getquotessymbols-ondatacallback-onerrorcallback]]
+12. [[subscribeQuotes|JS-Api#subscribequotessymbols-fastsymbols-onrealtimecallback-listenerguid]]
+13. [[unsubscribeQuotes|JS-Api#unsubscribequoteslistenerguid]]
 
 ###onReady(callback)
 1. `callback`: function(configurationData)
@@ -191,7 +193,12 @@ Only one mark per bar is allowed. Marks out of bars are not allowed.
 
 **Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_timescale_marks]].
 
-###getQuotes(symbols, onDataCallback, onErrorCallback)
+###getServerTime(callback)
+1. `callback`: function(unixTime)
+
+This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time. The charting library expects callback to be called once. The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.
+
+###:chart: getQuotes(symbols, onDataCallback, onErrorCallback)
 1. `symbols`: array of symbols names
 2. `onDataCallback`: function(array of `data`)
   1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
@@ -199,7 +206,16 @@ Only one mark per bar is allowed. Marks out of bars are not allowed.
 
 This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
 
-###getServerTime(callback)
-1. `callback`: function(unixTime)
+###:chart: subscribeQuotes(symbols, fastSymbols, onRealtimeCallback, listenerGUID)
+1. `symbols`: array of symbols to be updated once in a minute or more often
+2. `fastSymbols`: array of symbols to be updated once in 10 seconds or more often
+3. `onRealtimeCallback`: function(array of `data`)
+  1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
+4. `listenerGUID`: unique identifier of the listener
 
-This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time. The charting library expects callback to be called once. The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.
+Charting Library calls this function when it wants to receive realtime quotes for a symbol. Chart expects you will call `onRealtimeCallback` every time you want to update quotes. 
+
+###:chart: unsubscribeQuotes(listenerGUID)
+1. `listenerGUID`: unique identifier of the listener
+
+Library calls this function when is doesn't want to receive updates for this listener any more. `listenerGUID` will be the same object which Library passed to `subscribeQuotes` before.
