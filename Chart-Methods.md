@@ -72,11 +72,11 @@ Neither `from`, nor `to` must not be in future. This method was introduced in ve
 
 Makes the chart to change its symbol. Callback is called after new symbol's data arrived.
 
-####setResolution(interval, callback)
-1. `interval`: string
+####setResolution(resolution, callback)
+1. `resolution`: string
 2. `callback`: function()
 
-Makes the chart to change its resolution. Callback is called after new interval's data arrived.
+Makes the chart to change its resolution. Callback is called after new data arrived.
 
 ####executeAction(action)
 **_deprecated, use executeActionById instead_**
