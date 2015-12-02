@@ -44,11 +44,11 @@ Here is a list of supported chart's methods.
 
 ####onDataLoaded()
 
-You can subscribe using [Subscription|Subscription] object returned by this function to be notified when new history bars are loaded and unsubscribe from the event.
+You can subscribe using [[Subscription]] object returned by this function to be notified when new history bars are loaded and unsubscribe from the event.
 
 ####onSymbolChanged()
 
-You can subscribe using [Subscription|Subscription] object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
+You can subscribe using [[Subscription]] object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
 
 ####dataReady(callback)
 1. `callback`: optional function(interval)
