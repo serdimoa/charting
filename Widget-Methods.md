@@ -169,15 +169,15 @@ widget.onShortcut("alt+s", function() {
 
 ####subscribe(event, callback)
 1. `event`: can be 
-  * `toggle_sidebar`
-  * `indicators_dialog`
-  * `toggle_header`
-  * `edit_object_dialog`
-  * `chart_load_requested`
+  * `toggle_sidebar` - drawing toolbar is shown/hidden
+  * `indicators_dialog` - Indicators dialog is shown
+  * `toggle_header` - chart header is shown/hidden
+  * `edit_object_dialog` - Chart/Study Properties dialog is shown
+  * `chart_load_requested` - new chart about to be loaded
   * `chart_loaded`
-  * :chart: `layout_about_to_be_changed`
-  * :chart: `layout_changed`
-  * :chart: `activeChartChanged`
+  * :chart: `layout_about_to_be_changed` - amount or placement of charts about to be changed
+  * :chart: `layout_changed` - amount or placement of charts is changed
+  * :chart: `activeChartChanged` - active chart is changed
 2. `callback`: function(arguments)
 
 The library will call `callback` when GUI `event` is happened. Every event can have different set of arguments.
