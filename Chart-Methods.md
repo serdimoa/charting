@@ -12,7 +12,7 @@ Here is a list of supported chart's methods.
   * [[dataReady(callback)|Chart-Methods#datareadycallback]]
 * Chart Actions
   * [[setVisibleRange(range, callback)|Chart-Methods#setvisiblerangerange-callback]]
-  * [[setSymbol(symbol, force, callback)|Chart-Methods#setsymbolsymbol-force-callback]]
+  * [[setSymbol(symbol, callback)|Chart-Methods#setsymbolsymbol-callback]]
   * [[setResolution(resolution, callback)|Chart-Methods#setresolutionresolution-callback]]
   * [[executeAction(action)|Chart-Methods#executeactionaction]]
   * [[executeActionById(action)|Chart-Methods#executeactionbyidactionid]]
