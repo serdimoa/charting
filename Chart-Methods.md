@@ -8,7 +8,7 @@ Here is a list of supported chart's methods.
 
 * Subscribing To Chart Events
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
-  * [[onSymbolChanged()(callback)|Chart-Methods#onsymbolchanged]]
+  * [[onSymbolChanged()|Chart-Methods#onsymbolchanged]]
   * [[dataReady(callback)|Chart-Methods#datareadycallback]]
 * Chart Actions
   * [[setVisibleRange(range, callback)|Chart-Methods#setvisiblerangerange-callback]]
