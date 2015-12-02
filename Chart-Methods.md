@@ -37,7 +37,7 @@ Here is a list of supported chart's methods.
 * Getters
   * [[symbol()|Chart-Methods#symbol]]
   * [[resolution()|Chart-Methods#resolution]]
-  * [[getVisibleRange(callback)|Chart-Methods#getvisiblerangecallback]]
+  * [[getVisibleRange()|Chart-Methods#getvisiblerange]]
   * [[priceFormatter()|Chart-Methods#priceformatter]]
 
 #Subscribing To Chart Events
