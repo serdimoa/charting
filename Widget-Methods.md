@@ -168,7 +168,16 @@ widget.onShortcut("alt+s", function() {
 ```
 
 ####subscribe(event, callback)
-1. `event`: can be `toggle_sidebar`, `indicators_dialog`, `toggle_header`, `edit_object_dialog`, 'chart_load_requested', 'chart_loaded'
+1. `event`: can be 
+  * `toggle_sidebar`
+  * `indicators_dialog`
+  * `toggle_header`
+  * `edit_object_dialog`
+  * `chart_load_requested`
+  * `chart_loaded`
+  * :chart: `layout_about_to_be_changed`
+  * :chart: `layout_changed`
+  * :chart: `activeChartChanged`
 2. `callback`: function(arguments)
 
 The library will call `callback` when GUI `event` is happened. Every event can have different set of arguments.
