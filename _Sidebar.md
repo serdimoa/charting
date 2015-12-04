@@ -16,7 +16,8 @@
   2. Client-Side Customization
     1. [[Widget Constructor|Widget-Constructor]]
     2. [[Widget Methods]]
-    3. [[Featuresets]]
+    3. [[Chart Methods]]
+    4. [[Featuresets]]
   3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
 5. Trading Terminal
   1. [[Brief Intro|Trading-Platform]]
