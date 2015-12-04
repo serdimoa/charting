@@ -29,8 +29,8 @@ You can have the news feed right in the side bar of the chart. Our support for t
   * [[How to enable sidebar news|Widget-Constructor#chart-widgetbar]]
   * [[How to set up which feeds to use|Widget-Constructor#chart-rss_news_feed]]
 
-####Miltiple charts layout :clock4:
-You can have multiple charts inside if the same widget. This gives your user the ability to use wide range of the strategies, as well as the ability to have a broad view of the market. You don't have to do anythng to enable or tweak it: it will work out-of-the-box as soon as we'll publish it.
+####Miltiple charts layout
+You can have multiple charts inside if the same widget. This gives your user the ability to use wide range of the strategies, as well as the ability to have a broad view of the market. You don't have to do anythng to enable or tweak it: it works out-of-the-box.
 
 <a href="https://www.dropbox.com/s/ev65w402f2n7hpw/tt_charts.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/ev65w402f2n7hpw/tt_charts.png?dl=1" width="300"/></a>
 
