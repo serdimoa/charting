@@ -13,7 +13,7 @@ new TradingView.widget({
 
 Find full supported parameters list below. Please remember that changing those parameters after chart is initialized **does not work**. If you want to change the state of a chart after it was initialized, use [[Widget methods|Widget-Methods]] instead.
 
-Properties marked :chart: are available in [[Trading Terminal]] only.
+Properties marked :chart: are available in [[Trading Platform]] only.
 
 ####symbol, interval [mandatory]
 Initial symbol & interval of your chart.
@@ -149,7 +149,7 @@ Items which should be favored by default. This option requires disabling localst
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
 
-##:chart: Trading Terminal only 
+##:chart: Trading Platform only 
 
 ####:chart: widgetbar
 The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
