@@ -19,7 +19,7 @@
     3. [[Chart Methods]]
     4. [[Featuresets]]
   3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
-5. Trading Terminal
+5. Trading Platform
   1. [[Brief Intro|Trading-Platform]]
   2. [[Trading Controller]]
 6. [[Saving/Loading Charts|Saving-and-Loading-Charts]]
