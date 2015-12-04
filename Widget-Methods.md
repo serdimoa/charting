@@ -10,7 +10,7 @@ widget.onChartReady(function() {
 
 #Methods
 
-**Before 1.5 [[Chart-Methods]] belonged to the Widget. Please see the full list of actions [[here|Chart-Methods]]**
+**Before 1.5 [[Chart Methods]] belonged to the Widget. Please see the full list of actions [[here|Chart-Methods]]**
 
 * Subscribing To Chart Events
   * [[onChartReady(callback)|Widget-Methods#onchartreadycallback]]
