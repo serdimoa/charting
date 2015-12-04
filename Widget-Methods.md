@@ -10,6 +10,8 @@ widget.onChartReady(function() {
 
 #Methods
 
+**Before 1.5 [[Chart-Methods]] belonged to the Widget. Please see the full list of actions [[here|Chart-Methods]]**
+
 * Subscribing To Chart Events
   * [[onChartReady(callback)|Widget-Methods#onchartreadycallback]]
   * [[onSymbolChange(callback)|Widget-Methods#onsymbolchangecallback]]
@@ -23,44 +25,24 @@ widget.onChartReady(function() {
   * [[onShortcut(shortcut, callback)|Widget-Methods#onshortcutshortcut-callback]]
   * [[subscribe(event, callback)|Widget-Methods#subscribeevent-callback]]
 * Chart Actions
-  * [[setVisibleRange(range, callback)|Widget-Methods#setvisiblerangerange-callback]]
+  * [[chart()|Widget-Methods#chart]]
+  * [[setLayout(layout)|Widget-Methods#setlayoutlayout]]
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
   * [[remove()|Widget-Methods#remove]]
-  * [[executeAction(action)|Widget-Methods#executeactionaction]]
-  * [[executeActionById(action)|Widget-Methods#executeactionbyidactionid]]
-  * [[refreshMarks()|Widget-Methods#refreshmarks]]
-  * [[clearMarks()|Widget-Methods#clearmarks]]
-  * [[setChartType(type)|Widget-Methods#setcharttypetype]]
   * [[closePopupsAndDialogs()|Widget-Methods#closepopupsanddialogs]]
-* Studies And Shapes 
-  * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides)|Widget-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides]]
-  * [[createShape(point, options, callback)|Widget-Methods#createshapepoint-options-callback]]
-  * [[createMultipointShape(points, options, callback)|Widget-Methods#createmultipointshapepoints-options-callback]]
-  * [[removeEntity(entityId)|Widget-Methods#removeentityentityid]]
-  * [[createVerticalLine(point, options)|Widget-Methods#createverticallinepoint-options]]
-  * [[removeAllShapes()|Widget-Methods#removeallshapes]]
-  * [[removeAllStudies()|Widget-Methods#removeallstudies]]
 * Saving/Loading Charts
   * [[save(callback)|Widget-Methods#savecallback]]
   * [[load(state)|Widget-Methods#loadstate]]
-* Study Templates
-  * [[createStudyTemplate(options, callback)|Widget-Methods#createstudytemplateoptions-callback]]
-  * [[applyStudyTemplate(template)|Widget-Methods#applystudytemplatetemplate]]
 * Custom UI Controls
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
   * [[createButton(options)|Widget-Methods#createbuttonoptions]]
-* Trading Primitives
-  * [[createOrderLine()|Widget-Methods#createorderlineoptions]]
-  * [[createPositionLine()|Widget-Methods#createpositionlineoptions]]
-  * [[createExecutionShape()|Widget-Methods#createexecutionshapeoptions]]
 * Getters
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
-  * [[getVisibleRange(callback)|Widget-Methods#getvisiblerangecallback]]
   * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
-* :chart: [[Trading Terminal]] specific 
+* :chart: [[Trading Platform]] specific 
   * [[isFloatingTradingPanelVisible()|Widget-Methods#chart-isfloatingtradingpanelvisible]]
   * [[toggleFloatingTradingPanel()|Widget-Methods#chart-togglefloatingtradingpanel]]
   * [[isBottomTradingPanelVisible()|Widget-Methods#chart-isbottomtradingpanelvisible]]
@@ -69,6 +51,12 @@ widget.onChartReady(function() {
   * [[showSamplePositionDialog(position)|Widget-Methods#chart-showsamplepositiondialogposition]]
   * [[showSampleClosePositionDialog(position)|Widget-Methods#chart-showsampleclosepositiondialogposition]]
   * [[showSampleReversePositionDialog(position)|Widget-Methods#chart-showsamplereversepositiondialogposition]]
+* :chart: Multiple Charts Layout
+  * [[chart(index)|Widget-Methods#chart-chartindex]]
+  * [[activeChart()|Widget-Methods#chart-activechart]]
+  * [[chartsCount()|Widget-Methods#chart-chartscount]]
+  * [[layout()|Widget-Methods#chart-layout]]
+  * [[setLayout(layout)|Widget-Methods#chart-setlayoutlayout]]
 
 #Subscribing To Chart Events
 
@@ -184,13 +172,9 @@ The library will call `callback` when GUI `event` is happened. Every event can h
 
 #Chart Actions
 
-####setVisibleRange(range, callback)
-1. `range`: object, `{from to}`
-  1. `from`, `to`: unix timestamps, UTC
-2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
+####chart()
 
-Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
-Neither `from`, nor `to` must not be in future. This method was introduced in version `1.2`.
+Returns a chart object that you can use to call [[Chart-Methods]]
 
 ####setLanguage(locale)
 1. `locale`: [[language code|Localization]]
@@ -207,173 +191,9 @@ Makes the chart to change its symbol and resolution. Callback is called after ne
 ####remove()
 Removes chart widget from your page.
 
-####executeAction(action)
-**_deprecated, use executeActionById instead_**
-
-1. `action`: string
-
-Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
-```javascript
-// < ... >
-widget.executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
-// < ... >
-widget.executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
-// < ... >
-```
-
-####executeActionById(actionId)
-_**since version 1.3**_
-
-1. `actionId`: string
-
-Executes an action by its id.
-
-**Showing a dialog**
-
-	chartProperties 
-	compareOrAdd
-	scalesProperties
-	tmzProperties 
-	paneObjectTree
-	insertIndicator 
-	symbolSearch
-	changeInterval
-
-**Other actions**
-
-	timeScaleReset
-	chartReset
-	seriesHide
-	studyHide 
-	lineToggleLock
-	lineHide 
-	showLeftAxis
-	showRightAxis
-	scaleSeriesOnly
-	drawingToolbarAction
-	magnetAction
-	stayInDrawingModeAction
-	lockDrawingsAction
-	hideAllDrawingsAction 
-	hideAllMarks 
-	showCountdown 
-	showSeriesLastValue
-	showSymbolLabelsAction
-	showStudyLastValue
-	showStudyPlotNamesAction
-	undo
-	redo
-	takeScreenshot
-	paneRemoveAllStudiesDrawingTools
-
-Examples:
-```javascript
-// < ... >
-widget.executeActionById("undo");
-// < ... >
-widget.executeActionById("drawingToolbarAction"); // hides or shows the drawing toolbar
-// < ... >
-```
-
-####refreshMarks()
-
-Calling this method makes the Library to request visible marks once again.
-
-####clearMarks()
-
-Calling this method makes the Library to remove all visible marks.
-
-####setChartType(type)
-1. `type`: `TradingView.BARS` | `TradingView.CANDLES` | `TradingView.AREA` | `TradingView.LINE` | `TradingView.HEIKEN_ASHI` | `TradingView.HOLLOW_CANDLES` 
-
-Sets the main series style.
-
 ####closePopupsAndDialogs()
 
 Calling this method closes a context menu or a dialog if it is shown.
-
-#Studies And Shapes
-
-####createStudy(name, forceOverlay, lock, inputs, callback, overrides)
-1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
-2. `forceOverlay`: forces the Charting Library to place the created study on main pane
-3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
-4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
-5. `callback`: function(`entityId`)
-6. `overrides`: (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study.
-
-Creates the study on a main symbol. Examples: 
-  * `createStudy('MACD', false, false, [14, 30, 9])`
-  * `createStudy('Moving Average Exponential', false, false, [26])`
-  * `createStudy('Stochastic', false, false, [26], null, {"%d.color" : "#FF0000"})`
-
-**Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
-
-**Remark 2**: You actually use `Overlay` study when choose to `Add` a series on the chart. This study has the single input -- `symbol`. Here is an example how to add a symbol:
-
-```javascript
-    widget.createStudy('Overlay', false, false, ['AAPL']);
-```
-
-####createShape(point, options, callback)
-1. `point`: object `{time, [price], [channel]}`
-  1. `time`: unix time. The only mandatory argument.
-  2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
-  3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
-2. `options`: object `{shape, [text], [lock], [overrides]}`
-  1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line', 'horizontal_line']. 'flag' is the default value.
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
-  3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `disableSelection` (since `1.3`) prevents selecting of the shape
-  5. `disableSave` (since `1.3`) prevents saving the shape with a chart
-  6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
-  7. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
-  8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
-3. `callback`: function(`entityId`)
-
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
-
-This call creates a shape at specified point on main series. 
-
-####createMultipointShape(points, options, callback)
-1. `points`: an array of objects `[{time, [price], [channel]},...]`
-  1. `time`: unix time. The only mandatory argument.
-  2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
-  3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
-2. `options`: object `{shape, [text], [lock], [overrides]}`
-  1. `shape` may be one of the [[identifiers|Shapes and Overrides]]
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
-  3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `disableSelection` (since `1.3`) prevents selecting of the shape
-  5. `disableSave` (since `1.3`) prevents saving the shape with a chart
-  6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
-  7. `overrides`. It is an object containing properties you'd like to set for your new shape.
-  8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
-3. `callback`: function(`entityId`)
-
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
-
-Look [[Shapes and Overrides|Shapes and Overrides]] for more information.
-
-This call creates a shape with specified points on main series.
-
-####removeEntity(entityId)
-1. `entityId`: object. Value which was passed to your callback after the entity (shape of study) was created.
-
-Removes the specified entity.
-
-####createVerticalLine(point, options)
-1. `point`: object `{time}`
-2. `options`: obejct `{lock}`
-
-This function is a synonym for `createShape` with shape = 'vertical_line'. It is treated as **obsolete**.
-
-####removeAllShapes()
-Removes all shapes (drawings) from the chart.
-
-####removeAllStudies()
-Removed all studies from the chart.
-
 
 #Saving/Loading Charts
 
@@ -387,24 +207,6 @@ Saves the chart state to JS object. Charting Library will call your callback and
 1. `state`: object
 
 Loads the chart from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
-
-#Study Templates
-
-
-####createStudyTemplate(options, callback)
-1. `options`: object `{saveInterval}`
- 1. `saveInterval`: boolean
-2. `callback`: function(data)
-
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
-
-Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
-
-####applyStudyTemplate(template)
-1. `template`: object 
-
-Loads the study template from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
-
 
 #Custom UI Controls
 
@@ -466,204 +268,6 @@ widget.onChartReady(function() {
 });
 ```
 
-#Trading Primitives
-
-
-####createOrderLine(options)
-Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
-
-Arguments (since 1.4):
-`options` is an object with one possible key: `disableUndo` which can be `true` or `false`. For compatability reasons the default value is `false`.
-
-API object methods:
-* `remove()`: Removes the position from the chart. You can’t use API-object after this call.
-* `onModify(callback)` / `onModify(data, callback)`
-* `onMove(callback)` / `onMove(data, callback)`
-
-API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
-
-**General properties**:
-
-Property|Type|Supported Values|Default Value
----|---|---|---
-Price|Double|Double|0.0
-Text|String|String|""
-Tooltip|String|String|""
-Quantity|String|String|""
-
-
-**Connection line properties**:
-
-Property|Type|Supported Values|Default Value
----|---|---|---
-Extend Left|Boolean|"inherit" or Boolean|True
-Line Length|Integer|"inherit" or 0 .. 100|0
-Line Style|Integer|"inherit" or 0 .. 2|2
-Line Width|Integer|"inherit" or 1 .. 4|1
-
-**Fonts**:
-
-Property|Type|Default Value
----|---|---
-Body Font|String|"bold 7pt Verdana"
-Quantity Font|String|"bold 7pt Verdana"
-
-**Colors**:
-
-Property|Type|Default Value
----|---|---
-Line Color|String|"rgb(255, 0, 0)"
-Body Border Color|String|"rgb(255, 0, 0)"
-Body Background Color|String|"rgba(255, 255, 255, 0.75)"
-Body Text Color|String|"rgb(255, 0, 0)"
-Quantity Border Color|String|"rgb(255, 0, 0)"
-Quantity Background Color|String|"rgba(255, 0, 0, 0.75)"
-Quantity Text Color|String|"rgb(255, 255, 255)"
-Cancel Button Border Color|String|"rgb(255, 0, 0)"
-Cancel Button Background Color|String|"rgba(255, 255, 255, 0.75)"
-Cancel Button Icon Color|String|"rgb(255, 0, 0)"
-
-Example:
-```javascript
-widget.createOrderLine()
-    .onMove(function() {
-        this.setText("onMove called");
-    })
-    .onModify("onModify called", function(text) {
-        this.setText(text);
-    })
-    .onCancel("onCancel called", function(text) {
-        this.setText(text);
-    })
-    .setText("STOP: 73.5 (5,64%)")
-    .setQuantity("2");
-```
-
-####createPositionLine(options)
-Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior.  It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
-
-Arguments (since 1.4):
-`options` is an object with one possible key: `disableUndo` which can be `true` or `false`. For compatability reasons the default value is `false`.
-
-API object methods:
-* `remove()`: Removes the position from the chart. You can’t use API-object after this call.
-* `onClose(callback)` / `onClose(data, callback)`
-* `onModify(callback)` / `onModify(data, callback)`
-* `onReverse(callback)` / `onReverse(data, callback)`
-
-API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
-
-**General properties**:
-
-Property|Type|Supported Values|Default Value
----|---|---|---
-Price|Double|Double|0.0
-Text|String|String|""
-Tooltip|String|String|""
-Quantity|String|String|""
-
-
-**Connection line properties**:
-
-Property|Type|Supported Values|Default Value
----|---|---|---
-Extend Left|Boolean|"inherit" or Boolean|True
-Line Length|Integer|"inherit" or 0 .. 100|0
-Line Style|Integer|"inherit" or 0 .. 2|2
-Line Width|Integer|"inherit" or 1 .. 4|1
-
-**Fonts**:
-
-Property|Type|Default Value
----|---|---
-Body Font|String|"bold 7pt Verdana"
-Quantity Font|String|"bold 7pt Verdana"
-
-**Colors**:
-
-Property|Type|Default Value
----|---|---
-Line Color|String|"rgb(0, 113, 224)"
-Body Border Color|String|"rgb(0, 113, 224)"
-Body Background Color|String|"rgba(255, 255, 255, 0.75)"
-Body Text Color|String|"rgb(0, 113, 224)"
-Quantity Border Color|String|"rgb(0, 113, 224)"
-Quantity Background Color|String|"rgba(0, 113, 224, 0.75)"
-Quantity Text Color|String|"rgb(255, 255, 255)"
-Reverse Button Border Color|String|"rgb(0, 113, 224)"
-Reverse Button Background Color|String|"rgba(255, 255, 255, 0.75)"
-Reverse Button Icon Color|String|"rgb(0, 113, 224)"
-Close Button Border Color|String|"rgb(0, 113, 224)"
-Close Button Background Color|String|"rgba(255, 255, 255, 0.75)"
-Close Button Icon Color|String|"rgb(0, 113, 224)"
-
-Example:
-```javascript
-widget.createPositionLine()
-    .onModify(function() {
-        this.setText("onModify called");
-    })
-    .onReverse("onReverse called", function(text) {
-        this.setText(text);
-    })
-    .onClose("onClose called", function(text) {
-        this.setText(text);
-    })
-    .setText("PROFIT: 71.1 (3.31%)")
-    .setQuantity("8.235")
-    .setPrice(15.5)
-    .setExtendLeft(false)
-.setLineStyle(0)
-.setLineLength(25);
-```
-####createExecutionShape(options)
-Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
-
-Arguments (since 1.4):
-`options` is an object with one possible key: `disableUndo` which can be `true` or `false`. For compatability reasons the default value is `false`.
-
-API object has a set of properties listed below. Each property should be used through respective accessors. I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
-
-API object methods:
-* `remove()`: Removes the execution shape from the chart. You can’t use API-object after this call.
-
-**General properties**:
-
-Property|Type|Supported Values|Default Value
----|---|---|---
-Price|Double|Double|0.0
-Time|Integer|Unix time|0
-Direction|String|"buy" or "sell"|"buy"
-Text|String|String|"execution"
-Tooltip|String|String|
-Arrow Height|Integer|Integer|8
-Arrow Spacing|Integer|Integer|1
-
-**Fonts**:
-
-Property|Type|Default Value
----|---|---
-Font|String|"8pt Verdana"
-
-**Colors**:
-
-Property|Type|Default Value
----|---|---
-Text Color|String|"rgb(0, 0, 0)""
-Arrow Color|String|"rgba(0, 0, 255)"
-
-Example:
-```javascript
-widget.createExecutionShape()
-    .setText("@1,320.75 Limit Buy 1")
-    .setTooltip("@1,320.75 Limit Buy 1")
-    .setTextColor("rgba(0,255,0,0.5)")
-    .setArrowColor("#0F0")
-    .setDirection("buy")
-    .setTime(1413559061758)
-    .setPrice(15.5);
-```
-
 #Getters
 
 ####symbolInterval(callback)
@@ -673,14 +277,6 @@ widget.createExecutionShape()
 **Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
 
 Charting Library will call your callback with an object containing chart's symbol and interval.
-
-####getVisibleRange(callback)
-1. `callback`: function(range)
-  1. `range`: object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
-
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
-
-The Library will call your callback and pass the current visible time range. This method was introduced in version `1.2`.
 
 ####mainSeriesPriceFormatter()
 
@@ -697,7 +293,7 @@ This method was introduced in version `1.3`. Starting from `1.4` use [custom_css
 
 #:chart: Trading Platform
 
-The following methods are available in [[Trading Terminal]] only.
+The following methods are available in [[Trading Platform]] only.
 
 ####:chart: isFloatingTradingPanelVisible()
 
@@ -723,7 +319,32 @@ This method hides the Bottom Trading Panel if it is visible and shows otherwise.
 
 Displays a sample order/position dialog. These dialogs look like Trading View Paper Trading ones. Usually you don't need to use sample dialogs. These methods are used in the trading sample.
 
+#:chart: Multiple Charts Layout
+
+####:chart: chart(index = 0)
+1. `index`: index of a chart starting from 0. `index` is 0 by default.
+
+Returns a chart object that you can use to call [[Chart-Methods]]
+
+####:chart: activeChart()
+
+Returns current active chart object that you can use to call [[Chart-Methods]]
+
+####:chart: chartsCount()
+
+Returns amount of charts in the current layout
+
+####:chart: layout()
+
+Returns current layout mode. Possible values: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
+
+####:chart: setLayout(layout)
+1. `layout`: Possible values: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
+
+Changes current chart layout.
+
 #See Also
+* [[Chart-Methods]]
 * [[Charts Customization 101]]
 * [[Widget Constructor]]
 * [[Saving and Loading Charts|Saving-and-Loading-Charts]]
