@@ -321,7 +321,7 @@ Displays a sample order/position dialog. These dialogs look like Trading View Pa
 
 #:chart: Multiple Charts Layout
 
-####:chart: chart(index = 0)
+####:chart: chart(index)
 1. `index`: index of a chart starting from 0. `index` is 0 by default.
 
 Returns a chart object that you can use to call [[Chart-Methods]]
