@@ -15,7 +15,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 9. [[getTimescaleMarks|JS-Api#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 10. [[getServerTime|JS-Api#getservertimecallback]]
 
-:chart: [[Trading Terminal]] specific:
+:chart: [[Trading Platform]] specific:
 
 1. [[getQuotes|JS-Api#chart-getquotessymbols-ondatacallback-onerrorcallback]]
 2. [[subscribeQuotes|JS-Api#chart-subscribequotessymbols-fastsymbols-onrealtimecallback-listenerguid]]
@@ -202,7 +202,7 @@ Only one mark per bar is allowed. Marks out of bars are not allowed.
 
 This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time. The charting library expects callback to be called once. The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.
 
-## :chart: [[Trading Terminal]] specific 
+## :chart: [[Trading Platform]] specific 
 
 ###:chart: getQuotes(symbols, onDataCallback, onErrorCallback)
 1. `symbols`: array of symbols names
