@@ -2,7 +2,7 @@ Here is a list of supported chart's methods.
 
 **Before 1.4 version.** You can call these methods using widget object returned to you by widget's constructor.
 
-**Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods `chart(index)` or `activeChart()`.
+**Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [[Widget-Methods#chart-chartindex]] or `activeChart()`.
 
 #Methods
 
