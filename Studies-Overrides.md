@@ -20,6 +20,15 @@ In the example above, in example, all created Bollinger Bands will have upper li
 
 You should use studies names as-they-are in the Insert Study dialog, but in lower case. So if you want to override default EMA's length, try using `moving average exponential.length`. The same principle works for inputs names: use names as you can see them in Study Properties dialog (use lower case also). Example: `stochastic.smooth d`.
 
+###Compare
+
+You can customize new series added via `Compare`. Use `compare.plot` to customize the line and `compare.source` to change the price source:
+
+```
+"compare.plot.color": "#000000",
+"compare.source": "high"
+```
+
 
 #Syntax
 
