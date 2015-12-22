@@ -120,7 +120,7 @@ Path to file containing your compiled indicators. See more details [[here|Creati
 `preset` is a name of a set of pre-defined widget settings. All settings used by preset also may be used directly by you in widget's constructor. For now, the only `mobile` preset is supported. The example of this preset is available online.
 
 ####studies_overrides
-Use this option to customize default indicators' style or inputs. See more details [[here|Studies-Overrides]]
+Use this option to customize default indicators' style or inputs. You can also customize `Compare` and `Add symbol` using this argument. See more details [[here|Studies-Overrides]]
 
 ####time_frames
 List of time frames visible in timeframes picker at the bottom of the chart. Example:
