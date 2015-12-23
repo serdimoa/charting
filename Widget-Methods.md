@@ -294,6 +294,7 @@ This method was introduced in version `1.3`. Starting from `1.4` use [custom_css
 
 ####applyOverrides(overrides)
 *Introduced in Charting Library 1.5*
+
 1. `overrides` is an object. It is the same as [overrides](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#overrides) in Widget Constructor.
 
 This method applies overrides to properties without reloading the chart.
