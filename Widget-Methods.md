@@ -42,6 +42,7 @@ widget.onChartReady(function() {
   * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
+  * [[applyOverrides(overrides)|Widget-Methods#applyoverridesoverrides]]
 * :chart: [[Trading Platform]] specific 
   * [[isFloatingTradingPanelVisible()|Widget-Methods#chart-isfloatingtradingpanelvisible]]
   * [[toggleFloatingTradingPanel()|Widget-Methods#chart-togglefloatingtradingpanel]]
@@ -287,9 +288,15 @@ Returns object with method `format` that you can use to format prices. Introduce
 
 
 ####addCustomCSSFile(url)
-1. `url`should be absolute or relative path to 'static` folder
+1. `url` should be absolute or relative path to 'static` folder
 
 This method was introduced in version `1.3`. Starting from `1.4` use [custom_css_url](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#custom_css_url) instead.
+
+####applyOverrides(overrides)
+*Introduced in Charting Library 1.5*
+1. `overrides` is an object. It is the same as [overrides](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#overrides) in Widget Constructor.
+
+This method applies overrides to properties without reloading the chart.
 
 #:chart: Trading Platform
 
