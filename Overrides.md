@@ -1,14 +1,11 @@
-```
-//
-//	This file contains some chart properties description. These properties are treated
-//	as customizable ones. Other properties customization is not supported. 
-//	See the documentation for details.
-//
-//	This file format:
-//
-//		<property_path>: <default Charting Library value>
-//
+This topic contains chart properties description. These properties are treated
+as customizable ones. Other properties customization is not supported. 
 
+This file format:
+
+	<property_path>: <default Charting Library value>
+
+```
 //	supported values: large, medium, small, tiny
 volumePaneSize: "large"
 
@@ -128,4 +125,50 @@ mainSeriesProperties.areaStyle.linecolor: "#0094FF"
 mainSeriesProperties.areaStyle.linestyle: CanvasEx.LINESTYLE_SOLID
 mainSeriesProperties.areaStyle.linewidth: 1
 mainSeriesProperties.areaStyle.priceSource: "close"
+```
+
+####Customization of Overlay Symbols
+
+```
+study_Overlay@tv-basicstudies.style: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)
+study_Overlay@tv-basicstudies.showPriceLine: boolean
+
+study_Overlay@tv-basicstudies.candleStyle.upColor: color
+study_Overlay@tv-basicstudies.candleStyle.downColor: color
+study_Overlay@tv-basicstudies.candleStyle.drawWick: boolean
+study_Overlay@tv-basicstudies.candleStyle.drawBorder: boolean
+study_Overlay@tv-basicstudies.candleStyle.borderColor: color
+study_Overlay@tv-basicstudies.candleStyle.borderUpColor: color
+study_Overlay@tv-basicstudies.candleStyle.borderDownColor: color
+study_Overlay@tv-basicstudies.candleStyle.wickColor: color
+study_Overlay@tv-basicstudies.candleStyle.barColorsOnPrevClose: boolean
+
+study_Overlay@tv-basicstudies.hollowCandleStyle.upColor: color
+study_Overlay@tv-basicstudies.hollowCandleStyle.downColor: color
+study_Overlay@tv-basicstudies.hollowCandleStyle.drawWick: boolean
+study_Overlay@tv-basicstudies.hollowCandleStyle.drawBorder: boolean
+study_Overlay@tv-basicstudies.hollowCandleStyle.borderColor: color
+study_Overlay@tv-basicstudies.hollowCandleStyle.borderUpColor: color
+study_Overlay@tv-basicstudies.hollowCandleStyle.borderDownColor: color
+study_Overlay@tv-basicstudies.hollowCandleStyle.wickColor: color
+study_Overlay@tv-basicstudies.hollowCandleStyle.barColorsOnPrevClose: boolean
+
+study_Overlay@tv-basicstudies.barStyle.upColor: color
+study_Overlay@tv-basicstudies.barStyle.downColor: color
+study_Overlay@tv-basicstudies.barStyle.barColorsOnPrevClose: boolean
+study_Overlay@tv-basicstudies.barStyle.dontDrawOpen: boolean
+
+
+study_Overlay@tv-basicstudies.lineStyle.color: color
+study_Overlay@tv-basicstudies.lineStyle.linestyle: (solid = 0; dotted = 1; dashed = 2; large dashed = 3)
+study_Overlay@tv-basicstudies.lineStyle.linewidth: integer
+study_Overlay@tv-basicstudies.lineStyle.priceSource: open/high/low/close
+study_Overlay@tv-basicstudies.lineStyle.styleType: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)
+
+study_Overlay@tv-basicstudies.areaStyle.color1: color
+study_Overlay@tv-basicstudies.areaStyle.color2: color
+study_Overlay@tv-basicstudies.areaStyle.linecolor: color
+study_Overlay@tv-basicstudies.areaStyle.linestyle: (solid = 0; dotted = 1; dashed = 2; large dashed = 3)
+study_Overlay@tv-basicstudies.areaStyle.linewidth: integer
+study_Overlay@tv-basicstudies.areaStyle.priceSource: open/high/low/close
 ```
