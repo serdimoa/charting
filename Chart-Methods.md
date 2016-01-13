@@ -323,7 +323,7 @@ Cancel Button Icon Color|String|"rgb(255, 0, 0)"
 
 Example:
 ```javascript
-widget.createOrderLine()
+widget.chart().createOrderLine()
     .onMove(function() {
         this.setText("onMove called");
     })
@@ -397,7 +397,7 @@ Close Button Icon Color|String|"rgb(0, 113, 224)"
 
 Example:
 ```javascript
-widget.createPositionLine()
+widget.chart().createPositionLine()
     .onModify(function() {
         this.setText("onModify called");
     })
@@ -452,7 +452,7 @@ Arrow Color|String|"rgba(0, 0, 255)"
 
 Example:
 ```javascript
-widget.createExecutionShape()
+widget.chart().createExecutionShape()
     .setText("@1,320.75 Limit Buy 1")
     .setTooltip("@1,320.75 Limit Buy 1")
     .setTextColor("rgba(0,255,0,0.5)")
