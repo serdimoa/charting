@@ -26,7 +26,6 @@ widget.onChartReady(function() {
   * [[subscribe(event, callback)|Widget-Methods#subscribeevent-callback]]
 * Chart Actions
   * [[chart()|Widget-Methods#chart]]
-  * [[setLayout(layout)|Widget-Methods#setlayoutlayout]]
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
   * [[setSymbol(symbol, interval, callback)|Widget-Methods#setsymbolsymbol-interval-callback]]
   * [[remove()|Widget-Methods#remove]]
