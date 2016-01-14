@@ -186,6 +186,13 @@ Creates the study on a main symbol. Examples:
     widget.chart().createStudy('Overlay', false, false, ['AAPL']);
 ```
 
+**Remark 3**: You actually also use `Compare` study when choose to compare a series. This study has two inputs -- `source` and `symbol`. Here is an example how to add a compare series:
+
+```javascript
+    widget.chart().createStudy('Compare', false, false, ["open", 'AAPL']);
+```
+
+
 ####createShape(point, options, callback)
 1. `point`: object `{time, [price], [channel]}`
   1. `time`: unix time. The only mandatory argument.
