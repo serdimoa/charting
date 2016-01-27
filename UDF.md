@@ -72,15 +72,15 @@ Response: Response is expected to be an object with properties listed below. Eac
 * **type**
 * **ticker**
 * **timezone**
-* **session-regular** (mapped to `SymbolInfo.session`)
-* **supported-resolutions**
-* **force-session-rebuild**
-* **has-daily**
-* **intraday-multipliers**
-* **has-fractional-volume** (obsolete)
-* **volume-precision**
-* **has-weekly-and-monthly**
-* **has-empty-bars**
+* **session_regular** (mapped to `SymbolInfo.session`)
+* **supported_resolutions**
+* **force_session_rebuild**
+* **has_daily**
+* **intraday_multipliers**
+* **has_fractional_volume** (obsolete)
+* **volume_precision**
+* **has_weekly_and_monthly**
+* **has_empty_bars**
 
 Example: Here is the example of datafeed response to `GET /symbol_info?group=NYSE` (all data is artificial):
 ```javascript
