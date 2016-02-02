@@ -81,3 +81,4 @@ Please note that the leading `-` characters are not a part of featureset name in
 |-------|---------------|-----------------|------------
 | support_multicharts | on | | enables context menu actions (Clone, Sync) related to Multiple Chart Layout
 | header_layouttoggle | on | | shows Select Layout button in the header
+| show_logo_on_all_charts | off | shows logo on every chart of multichart layout
