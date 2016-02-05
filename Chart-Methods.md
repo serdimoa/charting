@@ -58,6 +58,7 @@ The Charting Library will call the callback provided immediately if bars are alr
 The function returns `true` if bars are already loaded and `false` otherwise.
 
 ####crossHairMoved(callback)
+**Since 1.5 version.**
 1. `callback`: function({time, price})
 
 The Charting Library will call the callback every time the crosshair position is changed.
