@@ -18,7 +18,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | - header_compare                        | on            |                 |                                                            |
 | - header_undo_redo                      | on            |                 |                                                            |
 | - header_screenshot                     | on            |                 |                                                            |
-| - header_fullsfcreen_button             | on            |                 |                                                            |
+| - header_fullscreen_button             | on            |                 |                                                            |
 | compare_symbol                          | on            |       1.5       | You can remove Compare/Overlay dialog from context menues using this featureset |
 | border_around_the_chart                 | on            |                 |                                                            |
 | header_saveload                         | on            |                 | yep, it's not a part of `header_widget`                    |
