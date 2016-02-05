@@ -10,6 +10,7 @@ Here is a list of supported chart's methods.
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
   * [[onSymbolChanged()|Chart-Methods#onsymbolchanged]]
   * [[dataReady(callback)|Chart-Methods#datareadycallback]]
+  * [[crossHairMoved(callback)|Chart-Methods#crosshairmovedcallback]]
 * Chart Actions
   * [[setVisibleRange(range, callback)|Chart-Methods#setvisiblerangerange-callback]]
   * [[setSymbol(symbol, callback)|Chart-Methods#setsymbolsymbol-callback]]
@@ -51,10 +52,15 @@ You can subscribe using [[Subscription]] object returned by this function to be 
 You can subscribe using [[Subscription]] object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
 
 ####dataReady(callback)
-1. `callback`: optional function(interval)
+1. `callback`: function(interval)
 
 The Charting Library will call the callback provided immediately if bars are already loaded or when the bars are received.
 The function returns `true` if bars are already loaded and `false` otherwise.
+
+####crossHairMoved(callback)
+1. `callback`: function({time, price})
+
+The Charting Library will call the callback every time the crosshair position is changed.
 
 #Chart Actions
 
