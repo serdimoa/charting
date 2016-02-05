@@ -48,6 +48,9 @@ Boolean value showing whether chart should occupy all the available space in the
 ####toolbar_bg
 Toolbars background color
 
+####study_count_limit
+Maximum amount of studies on a chart or multichart layout. Minimum value is 2.
+
 ####studies_access
 *version: 1.1*
 An object with following structure:
