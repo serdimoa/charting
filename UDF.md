@@ -185,7 +185,7 @@ Example:
 }
 ```
 ##### How `nextTime` works
-Assume you watch the chart with resolution = 1 and Library asks you for data in range `[3 Apr 2014 16:00 UTC+0, 3 Apr 2014 19:00 UTC+0]` for stock which is traded in NYSE. 3 Apr was a Good Friday so market was closed. Library assumes that you'll respond something like
+Assume you watch the chart with resolution = 1 and Library asks you for data in range `[3 Apr 2015 16:00 UTC+0, 3 Apr 2015 19:00 UTC+0]` for stock which is traded in NYSE. 3 Apr was a Good Friday so market was closed. Library assumes that you'll respond something like
 
 ```javascript
 {
