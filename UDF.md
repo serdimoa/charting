@@ -157,7 +157,7 @@ Response: Response is expected to be an object with some properties listed below
 * **v**: volume (optional)
 * **nextTime**: time of the next bar if there is no data (status code is `no_data`) in the requested period (optional)
 
-**Remark**: bar time for daily bars is expected to be a trading day (not session start day) at 00:00 UTC. Charting Library aligns time according to [Session](https://github.com/tradingview/charting_library/wiki/Trading-Sessions) from SymbolInfo
+**Remark**: bar time for daily bars is expected to be a trading day (not session start day) at 00:00 UTC. Charting Library aligns time according to [Session](https://github.com/tradingview/charting_library/wiki/Symbology#session) from SymbolInfo
 
 Example:
 ```javascript
