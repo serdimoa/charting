@@ -48,7 +48,6 @@ widget.onChartReady(function() {
   * [[isBottomTradingPanelVisible()|Widget-Methods#chart-isbottomtradingpanelvisible]]
   * [[toggleBottomTradingPanel()|Widget-Methods#chart-togglebottomtradingpanel]]
   * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]]
-  * [[showSamplePositionDialog(position)|Widget-Methods#chart-showsamplepositiondialogposition]]
   * [[showSampleClosePositionDialog(position)|Widget-Methods#chart-showsampleclosepositiondialogposition]]
   * [[showSampleReversePositionDialog(position)|Widget-Methods#chart-showsamplereversepositiondialogposition]]
 * :chart: Multiple Charts Layout
@@ -319,7 +318,6 @@ This method returns `true` if the Bottom Trading Panel is visible and `false` ot
 This method hides the Bottom Trading Panel if it is visible and shows otherwise.
 
 ####:chart: showSampleOrderDialog(order)
-####:chart: showSamplePositionDialog(position)
 ####:chart: showSampleClosePositionDialog(position)
 ####:chart: showSampleReversePositionDialog(position)
 1. `order` or 'position': object 
