@@ -25,9 +25,11 @@ Here are a few steps for those who want to have their own charts storage:
 * Charting Library sends HTTP/HTTPS commands to `charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id`. `charts_storage_url`, `charts_storage_api_version`, `client_id` and `user_id` are the arguments of the [widget constructor](https://github.com/tradingview/charting_library/wiki/Widget-Constructor).
 * You should implement processing of 4 requests: save chart / load chart / delete chart / list charts.
 
-#### List Charts
+#### LIST CHARTS
 GET REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id
+
 RESPONSE: JSON Object
+
 1. status: "ok" or "error"
 2. data: Array of Objects
   1. "timestamp": UNIX time when the chart was saved (example, 1449084321)
@@ -37,19 +39,24 @@ RESPONSE: JSON Object
   5. "name": chart name (example, "Test")
 
 #### SAVE CHART
+
 POST REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id
+
 1. "name": name of the chart
 2. "content": content of the chart
 3. "symbol": chart symbol (example, "AA")
 4. "resolution: chart resolution (example, "D")
 
 RESPONSE: JSON Object
+
 1. "status": "ok" or "error"
 2. "id": unique integer identifier of the chart (example, 9163)
 
 #### LOAD CHART
 GET REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id&chart=chart_id
+
 RESPONSE: JSON Object
+
 1. "status": "ok" or "error"
 2. "data": Object
   1. "content": saved content of the chart
@@ -59,7 +66,9 @@ RESPONSE: JSON Object
 
 #### DELETE CHART
 DELETE REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id&chart=chart_id
+
 RESPONSE: JSON Object
+
 1. "status": "ok" or "error"
 
 #Using Demo Charts and Study Templates Storage
