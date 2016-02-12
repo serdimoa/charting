@@ -24,6 +24,7 @@ Here are a few steps for those who want to have their own charts storage:
 ## Developing your own backend
 * Charting Library sends HTTP/HTTPS commands to `charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id`. `charts_storage_url`, `charts_storage_api_version`, `client_id` and `user_id` are the arguments of the [widget constructor](https://github.com/tradingview/charting_library/wiki/Widget-Constructor).
 * You should implement processing of 4 requests: save chart / load chart / delete chart / list charts.
+
 #### List Charts
 GET REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id
 RESPONSE: JSON Object
