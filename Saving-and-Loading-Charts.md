@@ -21,6 +21,46 @@ Here are a few steps for those who want to have their own charts storage:
 
 **Remark**: Manual filling/editing database is not the desired usage for this stuff. Please avoid this because you may hurt Django.
 
+## Developing your own backend
+* Charting Library sends HTTP/HTTPS commands to `charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id`. `charts_storage_url`, `charts_storage_api_version`, `client_id` and `user_id` are the arguments of the [widget constructor](https://github.com/tradingview/charting_library/wiki/Widget-Constructor).
+* You should implement processing of 4 requests: save chart / load chart / delete chart / list charts.
+#### List Charts
+GET REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id
+RESPONSE: JSON Object
+1. status: "ok" or "error"
+2. data: Array of Objects
+  1. "timestamp": UNIX time when the chart was saved (example, 1449084321)
+  2. "symbol": base symbol of the chart (example, "AA")
+  3. "resolution": resolution of the chart (example, "D")
+  4. "id": unique integer identifier of the chart (example, 9163)
+  5. "name": chart name (example, "Test")
+
+#### SAVE CHART
+POST REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id
+1. "name": name of the chart
+2. "content": content of the chart
+3. "symbol": chart symbol (example, "AA")
+4. "resolution: chart resolution (example, "D")
+
+RESPONSE: JSON Object
+1. "status": "ok" or "error"
+2. "id": unique integer identifier of the chart (example, 9163)
+
+#### LOAD CHART
+GET REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id&chart=chart_id
+RESPONSE: JSON Object
+1. "status": "ok" or "error"
+2. "data": Object
+  1. "content": saved content of the chart
+  2. "timestamp": UNIX time when the chart was saved (example, 1449084321)
+  3. "id": unique integer identifier of the chart (example, 9163)
+  4. "name": name of the chart
+
+#### DELETE CHART
+DELETE REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id&chart=chart_id
+RESPONSE: JSON Object
+1. "status": "ok" or "error"
+
 #Using Demo Charts and Study Templates Storage
 
 We're running demo charts storage service to let you try save/load as fast as you've got new Library's build. This storage URL is <http://saveload.tradingview.com>. It's just a demo so it is provided as-is. We do not guarantee its stability. Also, we drop all the data from this storage now and again.
