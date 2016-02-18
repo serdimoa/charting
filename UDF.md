@@ -224,6 +224,24 @@ Response: Response is expected to be an object with some properties listed below
 
 **Remark**: This call will be requested if your datafeed sent `supports_marks: true` in configuration data.
 
+###Timescale marks
+Request: `GET /timescale_marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
+
+1. `symbol`: symbol name or ticker.
+2. `from`: unix timestamp (UTC) or leftmost visible bar
+3. `to`: unix timestamp (UTC) or rightmost visible bar
+4. `resolution`: string 
+
+Response: Response is expected to be an array of objects with properties listed below. 
+
+1. `id`: unique identifier of a mark
+2. `color`: rgba color
+3. `label`: a letter to be displayed in a circle
+4. `time`: unix time
+5. `tooltip`: tooltip text
+
+**Remark**: This call will be requested if your datafeed sent `supports_timescale_marks: true` in configuration data.
+
 ###Server time
 Request: `GET /time`
 
