@@ -13,3 +13,6 @@ Here is the list of breaking changes:
 
 * Override `paneProperties.gridProperties.*` is not supported anymore. 
 Please use `paneProperties.vertGridProperties.*` and `paneProperties.horzGridProperties.*`
+
+* Override `mainSeriesProperties.candleStyle.wickColor` is not supported anymore.
+Use `mainSeriesProperties.candleStyle.wickUpColor` and `mainSeriesProperties.candleStyle.wickDownColor`
