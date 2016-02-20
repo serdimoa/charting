@@ -82,7 +82,8 @@ mainSeriesProperties.candleStyle.drawBorder: true
 mainSeriesProperties.candleStyle.borderColor: "#378658"
 mainSeriesProperties.candleStyle.borderUpColor: "#225437"
 mainSeriesProperties.candleStyle.borderDownColor: "#5b1a13"
-mainSeriesProperties.candleStyle.wickColor: "#737375"
+mainSeriesProperties.candleStyle.wickUpColor: 'rgba( 115, 115, 117, 1)'
+mainSeriesProperties.candleStyle.wickDownColor: 'rgba( 115, 115, 117, 1)'
 mainSeriesProperties.candleStyle.barColorsOnPrevClose: false
 
 //	Hollow Candles styles
