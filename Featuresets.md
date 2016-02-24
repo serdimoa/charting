@@ -7,7 +7,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | ID                                      | Default State | Library Version | Description                                                |
 |-----------------------------------------|---------------|-----------------|-------------|
 | **header_widget**                       | on            |                 |                                                            |
-| - header_widget_dom_node                | on            |                 | disabling this feature hides the header widget DOM element |
+| - <a name="abcd">header_widget_dom_node</a>                 | on            |                 | disabling this feature hides the header widget DOM element |
 | - header_symbol_search                  | on            |                 |                                                            |
 | - header_resolutions                    | on            |                 |                                                            |
 | - - header_interval_dialog_button       | on            |                 |                                                            |
