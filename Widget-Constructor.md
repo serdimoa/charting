@@ -45,6 +45,9 @@ Boolean value showing whether chart should occupy all the available space in the
 ####autosize <false>
 Boolean value showing whether chart should occupy all the available space in the container and resize with it is resized. This parameter is introduced in version 1.3.
 
+####symbol_search_request_delay
+Delay in milliseconds to wait after key is pressed before making a symbol search request.
+
 ####toolbar_bg
 Toolbars background color
 
