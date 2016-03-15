@@ -626,7 +626,7 @@ linetoolghostfeed: {
 linetoolpitchfork: {
 	fillBackground:true,
 	transparency:80,
-	style:LineToolPitchfork.STYLE_ORIGINAL,
+	style:PITCHFORK_STYLE_ORIGINAL,
 	median: {
 		visible: true,
 		color: 'rgba( 165, 0, 0, 1)',
@@ -907,7 +907,7 @@ linetooltrendbasedfibtime: {
 linetoolschiffpitchfork: {
 	fillBackground:true,
 	transparency:80,
-	style:LineToolPitchfork.STYLE_SCHIFF,
+	style:PITCHFORK_STYLE_SCHIFF,
 	median: {
 		visible: true,
 		color: 'rgba( 165, 0, 0, 1)',
@@ -919,7 +919,7 @@ linetoolschiffpitchfork: {
 linetoolschiffpitchfork2: {
 	fillBackground:true,
 	transparency:80,
-	style:LineToolPitchfork.STYLE_SCHIFF2,
+	style:PITCHFORK_STYLE_SCHIFF2,
 	median: {
 		visible: true,
 		color: 'rgba( 165, 0, 0, 1)',
@@ -931,7 +931,7 @@ linetoolschiffpitchfork2: {
 linetoolinsidepitchfork: {
 	fillBackground:true,
 	transparency:80,
-	style:LineToolPitchfork.STYLE_INSIDE,
+	style:PITCHFORK_STYLE_INSIDE,
 	median: {
 		visible: true,
 		color: 'rgba( 165, 0, 0, 1)',
@@ -1023,4 +1023,8 @@ LEVELS_TYPE_F = {
 	linestyle: linestyle,
 	linewidth: linewidth
 };
+PITCHFORK_STYLE_ORIGINAL = 0;
+PITCHFORK_STYLE_SCHIFF = 1;
+PITCHFORK_STYLE_SCHIFF2 = 2;
+PITCHFORK_STYLE_INSIDE = 3;
 ```
