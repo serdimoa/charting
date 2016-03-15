@@ -962,7 +962,7 @@ linetoolvisibilities: {
 
 ###Constants
 
-These constants are used in the drawings defaults. You cannot use it directly. Use the values instead.
+These constants are used in the drawings defaults. You cannot use their names directly. Use the values instead.
 
 ```
 LINESTYLE_SOLID = 0;
