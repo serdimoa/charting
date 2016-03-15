@@ -437,7 +437,6 @@ linetoolflagmark: {
 },
 
 linetoolnote: {
-	clonable: true,
 	markerColor: 'rgba( 46, 102, 255, 1)',
 	textColor: 'rgba( 0, 0, 0, 1)',
 	backgroundColor: 'rgba( 255, 255, 255, 1)',
@@ -453,7 +452,6 @@ linetoolnote: {
 
 linetoolnoteabsolute: {
 	singleChartOnly: true,
-	clonable: true,
 	markerColor: 'rgba( 46, 102, 255, 1)',
 	textColor: 'rgba( 0, 0, 0, 1)',
 	backgroundColor: 'rgba( 255, 255, 255, 1)',
