@@ -41,6 +41,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | caption_buttons_text_if_possible        | off           | 1.4             | shows text instead of icons on Indicators and Compare buttons in header when possible|
 | dont_show_boolean_study_arguments       | off           | 1.4             | hides true/false studies arguments |
 | hide_last_na_study_output               | off           | 1.4             | hides last n/a study output        |
+| symbol_info                             | on            | 1.5             | Symbol Info dialog                 |
 
 ### Elements placement
 
