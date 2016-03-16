@@ -101,7 +101,7 @@ overrides: {
 }
 ```
 
-This override will make the watermark 100% opaque (invisible). All customizable properties are listed in [[separate article|Overrides]]
+This override will make the watermark 100% opaque (invisible). All customizable properties are listed in [[separate article|Overrides]]. Since 1.5 you can use [[Drawings-Overrides]].
 
 
 ####disabled_features, enabled_features
