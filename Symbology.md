@@ -136,3 +136,9 @@ Boolean showing whether this symbol is expired futures contract or not.
 
 #####expiration_date
 Unix timestamp of expiration date. One must set this value if `expired` = true. Charting Library will request data for this symbol starting from that time point instead of actual moment.
+
+#####sector
+Sector for stocks to be displayed in Symbol Info.
+
+#####industry
+Industry for stocks to be displayed in Symbol Info.
