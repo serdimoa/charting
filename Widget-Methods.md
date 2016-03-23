@@ -80,6 +80,7 @@ The Charting Library will call the callback provided every time the main series 
 1. `callback`: function()
 
 The Library will call the callback provided every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds.
+See also [auto_save_delay](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#auto_save_delay).
 
 ####onBarMarkClicked(callback)
 1. `callback`: function(markId)
