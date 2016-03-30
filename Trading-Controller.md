@@ -30,11 +30,17 @@ Implement this method to provide configuration flags object. The result is an ob
 
 * supportBrackets
 
-    Broker supports brackets (take profit and stop loss orders).
+    Broker supports brackets (take profit and stop loss orders). If this flag is `true` the Chart will display an Edit button for positions and add `Edit position...` to the context menu of a position.
 
 * supportMultiposition
 
     Supporting multiposition prevents creating default implementation for reverse position.
+
+####positions : [Deferred](https://api.jquery.com/category/deferred-object/)
+####orders : [Deferred](https://api.jquery.com/category/deferred-object/)
+####executions(symbol) : [Deferred](https://api.jquery.com/category/deferred-object/)
+These methods are called by the Chart to request positions/orders/executions and display them on a chart.
+You should return the appropriate lists of [[positions|Trading-Objects-and-Constants#position]], [[orders|Trading-Objects-and-Constants#order]] or [[executions|Trading-Objects-and-Constants#execution]]
 
 ####supportFloatingPanel()
 Function should return `true` for Floating Trading Panel to be displayed.
@@ -43,12 +49,7 @@ Function should return `true` for Floating Trading Panel to be displayed.
 Function should return `true` for Bottom Trading Panel to be displayed.
 
 ####buttonDropdownItems()
-Bottom Trading Panel has a button with a list of dropdown items. This function is expected to return an array of objects, each of them representing one dropdown item. Objects should have the following properties:
-
-1. `text` - the only mandatory field. Use `'-'` to display a separator line.
-2. `checkable` - set it to `true` to have a checkbox
-3. `checked` - initial value of the checkbox
-4. `action` - function to perform when the item is clicked
+Bottom Trading Panel has a button with a list of dropdown items. This function is expected to return an array of [[ActionMetainfo|Trading-Objects-and-Constants#actionmetainfo]], each of them representing one dropdown item.
 
 ####chartContextMenuItems()
 Chart can have a sub-menu `Trading` in the context menu. Return the list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.
@@ -62,24 +63,10 @@ This function is required for the Floating Trading Panel. Ability to trade via t
 ####createBottomWidget(container)
 This function is called when it is needed to create a Bottom Trading Panel. You should create DOM object and append it to the `container`. The container shows a vertical scroll bar when it is needed.
 
-####showOrderDialog(order)
-This function is invoked by the Floating Trading Panel when user requests to create the order. Order is an object with the following properties:
+####showOrderDialog([[order|Trading-Objects-and-Constants#order]])
+This function is invoked by the Floating Trading Panel when user requests to create or modify an order. 
 
-1. `type`: `"limit"` or `"market"`
-2. `side`: `"sell"` or `"buy"`
-3. `price`: price at the moment when a user clicks an order
-4. `symbol`: current symbol string
-5. `qty`: quantity
-6. `limit_price`: is used when a user clicks on a bid/ask order
-7. `formatted_limit_price`: is a limit_price formatted for displaying in an edit field
-
-So we give you the ability to use your own dialog and it's 100% up to you how to manage it. But also you can use our default "Create Order" dialog . In this case you won't have to mess with the UI, but also you'll have to implement a few additional methods (see below).
-
-And this is it !
-
-##Additional Methods 
-
-If you want to use our native "Create Order" dialog instead of creating your own, you also have to implement a few more functions.
+So we give you the ability to use your own dialog and it's 100% up to you how to manage it.
 
 ####placeOrder(symbol, side, orderType, qty, price, stopLoss, takeProfit, expiration)
 
@@ -92,22 +79,21 @@ If you want to use our native "Create Order" dialog instead of creating your own
 7. `takeProfit`: entered take profit price
 8. `expiration`: object with the only valuable property `expiration` - UTC time of expiration
 
-The function is invoked to finish creating an order. It should return $.Deferred object. When it is resolved it should have an order data argument which is an object with the following properties:
-
-1. `symbol` - symbol string
-2. `side`: `"sell"` or `"buy"`
-3. `type`: `"limit"`, `"market"` or `"stop"`
-4. `qty`: quantity
-5. `price`: price
-6. `status`: possible values: `working`, `filled`, `rejected`, `invalid`
-7. `misc.reject_reason`: reason text
-8. `id` - mandatory unique identified of the order
-
 ####modifyOrder(id, qty, price, stopLoss, takeProfit, expiration)
-The function is invoked to modify an order.
+This method is invoked to modify an order if orders confirmation is off when a user drags the order.
 
-####closePosition(symbol)
-The function is invoked to create a close position order.
+####editPositionBrackets(positionId)
+This method is invoked if `supportBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.
+
+####closePosition(positionId)
+This method is invoked if `supportClosePosition` configuration flag is on to close the position by id.
+And this is it !
+
+####reversePosition(positionId)
+This method is invoked if `supportReversePosition` configuration flag is on to reverse the position by id.
+
+
+And this is it !
 
 ####getOrder(id)
 The function is invoked to get an order by its `id`.
