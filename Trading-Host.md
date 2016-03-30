@@ -4,7 +4,7 @@ Trading Host is API for interaction between [[Trading Controller]] and the Chart
 
 ##Commands
 
-####showCancelOrderDialog(orderId, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showCancelOrderDialog(orderId, handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
 ####showClosePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
