@@ -47,9 +47,7 @@ widget.onChartReady(function() {
   * [[toggleFloatingTradingPanel()|Widget-Methods#chart-togglefloatingtradingpanel]]
   * [[isBottomTradingPanelVisible()|Widget-Methods#chart-isbottomtradingpanelvisible]]
   * [[toggleBottomTradingPanel()|Widget-Methods#chart-togglebottomtradingpanel]]
-  * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]]
-  * [[showSampleClosePositionDialog(position)|Widget-Methods#chart-showsampleclosepositiondialogposition]]
-  * [[showSampleReversePositionDialog(position)|Widget-Methods#chart-showsamplereversepositiondialogposition]]
+  * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]] 
 * :chart: Multiple Charts Layout
   * [[chart(index)|Widget-Methods#chart-chartindex]]
   * [[activeChart()|Widget-Methods#chart-activechart]]
