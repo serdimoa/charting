@@ -22,6 +22,7 @@
 5. Trading Platform
   1. [[Brief Intro|Trading-Platform]]
   2. [[Trading Controller]]
+  3. [[Trading Host]]
 6. [[Saving/Loading Charts|Saving-and-Loading-Charts]]
 7. [[Creating Custom Studies]]
 8. [[Best Practices]]
