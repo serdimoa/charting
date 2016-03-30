@@ -42,6 +42,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | dont_show_boolean_study_arguments       | off           | 1.4             | hides true/false studies arguments |
 | hide_last_na_study_output               | off           | 1.4             | hides last n/a study output        |
 | symbol_info                             | on            | 1.5             | Symbol Info dialog                 |
+| timezone_menu                           | on            | 1.5             | Disables time zone context menu    |
 
 ### Elements placement
 
