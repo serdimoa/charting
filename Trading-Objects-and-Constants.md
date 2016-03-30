@@ -8,7 +8,7 @@ Describes a single order.
 * symbol : String
 * brokerSymbol : String
 * Can be empty if broker symbol is the same as TV symbol.
-* type : OrderType
+* type : [OrderType|Trading-Objects-and-Constants#ordertype]
 * side : Side
 * qty : Double
 * status : OrderStatus
