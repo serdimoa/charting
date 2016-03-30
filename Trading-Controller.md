@@ -28,7 +28,7 @@ Chart can have a sub-menu `Trading` in the context menu. Return the list of item
 Bottom Trading Panel can have a context menu. Return a list of items for this menu. Format is the same as for `buttonDropdownItems`.
 
 ####isTradable(symbol)
-This function is required for the Floating Trading Panel. Ability to trade via the panel depends on the result of this function: `true` or `false`.
+This function is required for the Floating Trading Panel. Ability to trade via the panel depends on the result of this function: `true` or `false`. You don't need to imlement this method if all the symbols can be traded.
 
 ####createBottomWidget(container)
 This function is called when it is needed to create a Bottom Trading Panel. You should create DOM object and append it to the `container`. The container shows a vertical scroll bar when it is needed.
