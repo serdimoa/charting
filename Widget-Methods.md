@@ -319,11 +319,9 @@ This method returns `true` if the Bottom Trading Panel is visible and `false` ot
 This method hides the Bottom Trading Panel if it is visible and shows otherwise.
 
 ####:chart: showSampleOrderDialog(order)
-####:chart: showSampleClosePositionDialog(position)
-####:chart: showSampleReversePositionDialog(position)
-1. `order` or 'position': object 
+1. `order`: object 
 
-Displays a sample order/position dialog. These dialogs look like Trading View Paper Trading ones. Usually you don't need to use sample dialogs. These methods are used in the trading sample.
+Displays a sample order dialog. This dialog looks like Trading View Paper Trading one. Usually you don't need to use the sample dialog. This method is used in the trading sample.
 
 #:chart: Multiple Charts Layout
 
