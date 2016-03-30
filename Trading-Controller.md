@@ -95,11 +95,6 @@ This method is invoked if `supportReversePosition` configuration flag is on to r
 
 And this is it !
 
-####getOrder(id)
-The function is invoked to get an order by its `id`.
-
-####reversePosition(symbol)
-Create a reverse position order when this function is called.
-
 #See Also
   * [[How to connect|Widget-Constructor#chart-trading_controller]] your trading controller to the chart
+  * [[Trading Host]]
