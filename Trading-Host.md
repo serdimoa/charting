@@ -7,16 +7,16 @@ Trading Host is API for interaction between [[Trading Controller]] and the Chart
 ####showCancelOrderDialog(orderId, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showClosePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showClosePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showReversePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showReversePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showEditBracketsDialog([[position|Trading-Objects-and-Constants#position]], handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showEditBracketsDialog([[position|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
 
-####activateBottomWidget : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####activateBottomWidget : [Deferred](https://api.jquery.com/category/deferred-object/)
 Opens bottom panel and switches tab to Trading.
 
 ####showTradingProperties()
