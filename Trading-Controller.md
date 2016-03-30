@@ -7,6 +7,35 @@ Trading Controller is a thing which will make your trading live. Its main purpos
 ####setHost(host)
 This methods is called on initialization to pass a [[Trading Host]] to the controller.
 
+####configFlags()
+Implement this method to provide configuration flags object. The result is an object with the following keys, that can be `true`/`false`:
+
+* supportReversePosition
+
+    Broker supports reverse of a position.
+    If it is not supported by broker, Chart will have the reverse button, but it will place a reverse order.
+
+* supportClosePosition
+
+    Broker supports close of a position.
+    If it is not supported by broker, Chart will have the close button, but it will place a close order.
+
+* supportReducePosition
+
+    Broker supports changing of a position without orders.
+
+* supportPLUpdate
+
+    Broker provides PL for a position. If the broker calculates profit/loss by itself it should call [[plUpdate|Trading-Host#plupdatepositionid-pl]] as soon as PL is changed. Otherwise Chart will calculate PL as a difference between current trade and an average price of the position.
+
+* supportBrackets
+
+    Broker supports brackets (take profit and stop loss orders).
+
+* supportMultiposition
+
+    Supporting multiposition prevents creating default implementation for reverse position.
+
 ####supportFloatingPanel()
 Function should return `true` for Floating Trading Panel to be displayed.
 
