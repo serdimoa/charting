@@ -49,13 +49,13 @@ Provides default buy/sell, show properties actions to be returned as a default b
 ##Data Updates
 Using of these methods is required to notify the chart that it needs to update information.
 
-####orderUpdate([[position|Trading-Objects-and-Constants#order]])
+####orderUpdate([[order|Trading-Objects-and-Constants#order]])
 Call this method when an order is added or changed.
 
 ####positionUpdate ([[position|Trading-Objects-and-Constants#position]])
 Call this method when a position is added or changed.
 
-####executionUpdate([[position|Trading-Objects-and-Constants#execution]])
+####executionUpdate([[execution|Trading-Objects-and-Constants#execution]])
 Call this method when an execution is added.
 
 ####fullUpdate()
