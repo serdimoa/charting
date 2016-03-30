@@ -9,15 +9,15 @@ Describes a single order.
 * brokerSymbol : String
 * Can be empty if broker symbol is the same as TV symbol.
 * type : [[OrderType|Trading-Objects-and-Constants#ordertype]]
-* side : Side
+* side : [[Side|Trading-Objects-and-Constants#side]]
 * qty : Double
-* status : OrderStatus
+* status : [[OrderStatus|Trading-Objects-and-Constants#orderstatus]]
 * stopPrice : double
 * limitPrice : double
 * avgPrice : double
 * filledQty : double
 * parentId : String. If order is a bracket parentOrderId should contain base order/position id.
-* parentType: ParentType
+* parentType: [[ParentType|Trading-Objects-and-Constants#parenttype]]
 
 ##Position
 
@@ -27,7 +27,7 @@ Describes a single position.
 * symbol : String
 * brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
 * qty : Double positive
-* side: Side
+* side: [[Side|Trading-Objects-and-Constants#side]]
 * avgPrice : Double
 
 ##Execution
@@ -38,7 +38,7 @@ Describes a single execution.
 * brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
 * price : double
 * time: time_t
-* side : Side
+* side : [[Side|Trading-Objects-and-Constants#side]]
 * qty : double
  
 
