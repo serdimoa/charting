@@ -52,17 +52,17 @@ Provides default buy/sell, show properties actions to be returned as a default b
 ##Data Updates
 Using of these methods is required to notify the chart that it needs to update information.
 
-##orderUpdate(order)
+####orderUpdate(order)
 Call this method when an order is added or changed.
 
-##positionUpdate (position)
+####positionUpdate (position)
 Call this method when a position is added or changed.
 
-##executionUpdate(execution)
+####executionUpdate(execution)
 Call this method when an execution is added.
 
-##fullUpdate()
+####fullUpdate()
 Call this method when an data is invalidated. For example, user account has been changed.
 
-##plUpdate(positionId, pl)
+####plUpdate(positionId, pl)
 Call this method when a broker connection has received a PL update. This method should be used when `supportPLUpdate` flag is set in `configFlags`.
