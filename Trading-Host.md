@@ -4,22 +4,22 @@ Trading Host is API for interaction between [[Trading Controller]] and the Chart
 
 ##Methods
 
-####showOrderDialog(symbol, orderOptionsWidget) : JQuery::Deferred
+####showOrderDialog(symbol, orderOptionsWidget) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a default order dialog, embeds orderOptionsWidget and executes handler if buy/sell is pressed. 
 
-####showCancelOrderDialog(orderId, handler) : JQuery::Deferred
+####showCancelOrderDialog(orderId, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showClosePositionDialog(position, handler) : JQuery::Deferred
+####showClosePositionDialog(position, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showReversePositionDialog(position, handler) : JQuery::Deferred
+####showReversePositionDialog(position, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showEditBracketsDialog(position, handler) : JQuery::Deferred
+####showEditBracketsDialog(position, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
 
-####activateBottomWidget : JQuery::Deferred
+####activateBottomWidget : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Opens bottom panel and switches tab to Trading.
 
 ####showTradingProperties()
