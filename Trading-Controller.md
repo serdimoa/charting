@@ -4,6 +4,9 @@ Trading Controller is a thing which will make your trading live. Its main purpos
 
 ##Required Methods 
 
+####setHost(host)
+This methods is called on initialization to pass a [[Trading Host]] to the controller.
+
 ####supportFloatingPanel()
 Function should return `true` for Floating Trading Panel to be displayed.
 
