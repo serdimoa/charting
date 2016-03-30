@@ -4,19 +4,16 @@ Trading Host is API for interaction between [[Trading Controller]] and the Chart
 
 ##Commands
 
-####showOrderDialog(symbol, orderOptionsWidget) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
-Shows a default order dialog, embeds orderOptionsWidget and executes handler if buy/sell is pressed. 
-
 ####showCancelOrderDialog(orderId, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showClosePositionDialog(position, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showClosePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showReversePositionDialog(position, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showReversePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-####showEditBracketsDialog(position, handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
+####showEditBracketsDialog([[position|Trading-Objects-and-Constants#position]], handler) : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
 Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
 
 ####activateBottomWidget : [JQuery::Deferred](https://api.jquery.com/category/deferred-object/)
@@ -52,13 +49,13 @@ Provides default buy/sell, show properties actions to be returned as a default b
 ##Data Updates
 Using of these methods is required to notify the chart that it needs to update information.
 
-####orderUpdate(order)
+####orderUpdate([[position|Trading-Objects-and-Constants#order]])
 Call this method when an order is added or changed.
 
-####positionUpdate (position)
+####positionUpdate ([[position|Trading-Objects-and-Constants#position]])
 Call this method when a position is added or changed.
 
-####executionUpdate(execution)
+####executionUpdate([[position|Trading-Objects-and-Constants#execution]])
 Call this method when an execution is added.
 
 ####fullUpdate()
