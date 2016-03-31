@@ -23,7 +23,7 @@ Describes a single order.
 
 Describes a single position. 
 
-* id: String
+* id: String. Usually id should be equal to brokerSymbol
 * symbol : String
 * brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
 * qty : Double positive
