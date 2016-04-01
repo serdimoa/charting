@@ -6,8 +6,7 @@ Describes a single order.
 
 * id : String
 * symbol : String
-* brokerSymbol : String
-* Can be empty if broker symbol is the same as TV symbol.
+* brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
 * type : [[OrderType|Trading-Objects-and-Constants#ordertype]]
 * side : [[Side|Trading-Objects-and-Constants#side]]
 * qty : Double
