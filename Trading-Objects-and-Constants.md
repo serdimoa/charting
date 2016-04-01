@@ -12,9 +12,8 @@ Describes a single order.
 * side : [[Side|Trading-Objects-and-Constants#side]]
 * qty : Double
 * status : [[OrderStatus|Trading-Objects-and-Constants#orderstatus]]
-* stopPrice : double
-* limitPrice : double
-* avgPrice : double
+* price : double
+* avg_price : double
 * filledQty : double
 * parentId : String. If order is a bracket parentOrderId should contain base order/position id.
 * parentType: [[ParentType|Trading-Objects-and-Constants#parenttype]]
