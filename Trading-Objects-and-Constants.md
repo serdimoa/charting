@@ -26,7 +26,7 @@ Describes a single position.
 * brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
 * qty : Double positive
 * side: [[Side|Trading-Objects-and-Constants#side]]
-* avgPrice : Double
+* avg_price : Double
 
 ##Execution
 
