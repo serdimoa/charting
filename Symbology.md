@@ -33,11 +33,13 @@ UTC
 America/New_York
 America/Los_Angeles
 America/Chicago
+America/Phoenix
 America/Toronto
 America/Vancouver
 America/Argentina/Buenos_Aires
-America/Bogota
+America/El_Salvador
 America/Sao_Paulo
+America/Bogota
 Europe/Moscow
 Europe/Athens
 Europe/Berlin
@@ -46,14 +48,29 @@ Europe/Madrid
 Europe/Paris
 Europe/Warsaw
 Australia/Sydney
-Asia/Bangkok
+Australia/Brisbane
+Australia/Adelaide
+Australia/ACT
+Asia/Almaty
+Asia/Ashkhabad
 Asia/Tokyo
 Asia/Taipei
 Asia/Singapore
 Asia/Shanghai
 Asia/Seoul
+Asia/Tehran
+Asia/Dubai
 Asia/Kolkata
 Asia/Hong_Kong
+Asia/Bangkok
+Pacific/Auckland
+Pacific/Chatham
+Pacific/Fakaofo
+Pacific/Honolulu
+America/Mexico_City
+Africa/Johannesburg
+Asia/Kathmandu
+US/Mountain
 ```
 #####pricescale, minmov
 1. Minimal possible price change is determined by those values.
