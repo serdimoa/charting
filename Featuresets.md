@@ -33,7 +33,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | display_market_status                   | on            |                 |                                                            |
 | remove_library_container_border         | on            |                 |                                           |
 | chart_property_page_style               | on            |                 |                                           |
-| chart_property_page             | on            | 1.6                |            |
+| show_chart_property_page                | on            | 1.6             | Turning it off disables Properties        |
 | chart_property_page_scales              | on            |                 |                                           |
 | chart_property_page_background          | on            |                 |                                           |
 | chart_property_page_timezone_sessions   | on            |                 |                                           |
