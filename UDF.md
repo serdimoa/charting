@@ -72,7 +72,7 @@ Response: Response is expected to be an object with properties listed below. Eac
 * **type**
 * **ticker**
 * **timezone**
-* **session_regular** (mapped to `SymbolInfo.session`)
+* **session-regular** (mapped to `SymbolInfo.session`)
 * **supported_resolutions**
 * **force_session_rebuild**
 * **has_daily**
