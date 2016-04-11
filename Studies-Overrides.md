@@ -90,3 +90,7 @@ Format: `indicator_name.options.option_name`
   * **showLastValue**: boolean, controls visibility of price scale labels
 
 Examples: `volume.options.showStudyArguments`, `volume.options.showLastValue`
+
+###Default precision
+Since 1.6 you can change default precision of studies using `name.precision` format. Example:
+`"average true range.precision": 8`
