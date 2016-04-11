@@ -1,4 +1,4 @@
-Using [[createMultipointShape(points, options, callback)|Widget-Methods#createmultipointshapepoints-options-callback]] you can create more than 50 different shapes. All of them are in this table with default properties that can be changed using `overrides`.
+Using [[createMultipointShape(points, options, callback)|Chart-Methods#createmultipointshapepoints-options-callback]] you can create more than 50 different shapes. All of them are in this table with default properties that can be changed using `overrides`.
 
 | shape   | backgroundColor | backgroundTransparency | bold  | borderColor | color   | drawBorder | fillBackground | fixedSize | font    | fontsize | italic | text    | wordWrap | wordWrapWidth | markerColor | textColor | linewidth | transparency | fontWeight |
 |---------|-----------------|------------------------|-------|-------------|---------|------------|----------------|-----------|---------|----------|--------|---------|----------|---------------|-------------|-----------|-----------|--------------|------------|
