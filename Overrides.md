@@ -44,6 +44,8 @@ scalesProperties.lineColor : "#555"
 scalesProperties.textColor : "#555"
 scalesProperties.scaleSeriesOnly : false
 
+timeScale.rightOffset: 5
+
 
 //	Series style. See the supported values below
 //		bars = 0
