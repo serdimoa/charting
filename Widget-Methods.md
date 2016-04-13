@@ -161,6 +161,8 @@ widget.onShortcut("alt+s", function() {
   * `edit_object_dialog` - Chart/Study Properties dialog is shown
   * `chart_load_requested` - new chart about to be loaded
   * `chart_loaded`
+  * `mouse_down`
+  * `mouse_up`
   * :chart: `layout_about_to_be_changed` - amount or placement of charts about to be changed
   * :chart: `layout_changed` - amount or placement of charts is changed
   * :chart: `activeChartChanged` - active chart is changed
