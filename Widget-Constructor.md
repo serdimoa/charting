@@ -26,7 +26,7 @@ JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed
 
 ####timezone <UTC>
 Initial timezone of the chart. Numbers on time scale depend on this timezone.
-See [[supported timezones list|Symbology#timezone]] for available values. Set it to `exchange` to use the exchange timezone.
+See [[supported timezones list|Symbology#timezone]] for available values. Set it to `exchange` to use the exchange timezone. For overriding default value you should use [[overrides|Widget-Constructor#overrides]] section
 
 ####debug
 Setting this property to `true` makes the chart to write detailed API logs to console. Feature `charting_library_debug_mode` is a synonym for this field usage.
