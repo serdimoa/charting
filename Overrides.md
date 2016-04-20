@@ -46,6 +46,8 @@ scalesProperties.scaleSeriesOnly : false
 
 timeScale.rightOffset: 5
 
+timezone: "Etc/UTC" # See supported timezones list (at Symbology#timezone page) for available values
+
 
 //	Series style. See the supported values below
 //		bars = 0
