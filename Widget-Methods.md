@@ -36,6 +36,9 @@ widget.onChartReady(function() {
 * Custom UI Controls
   * [[onContextMenu(callback)|Widget-Methods#oncontextmenucallback]]
   * [[createButton(options)|Widget-Methods#createbuttonoptions]]
+* Dialogs
+  * [[showNoticeDialog(params)|Widget-Methods#shownoticedialogparams]]
+  * [[showConfirmDialog(params)|Widget-Methods#showconfirmdialogparams]]
 * Getters
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
@@ -267,6 +270,26 @@ widget.onChartReady(function() {
         .append($('<span>My custom button caption</span>'));
 });
 ```
+
+#Dialogs
+
+**Since 1.6 version**
+
+####showNoticeDialog(params)
+1. `params`: object:
+  1. title: text to be shown in the title
+  2. body: text to be shown in the body
+  3. callback: function to be called when ok button is pressed
+
+This method shows a dialog with custom title and text and "OK" button.
+
+####showConfirmDialog(params)
+1. `params`: object:
+  1. title: text to be shown in the title
+  2. body: text to be shown in the body
+  3. callback(result): function to be called when ok button is pressed. `result` is `true` if `OK` is pressed, otherwise it is `false`.
+
+This method shows a dialog with custom title and text and "OK", "CANCEL" buttons.
 
 #Getters
 
