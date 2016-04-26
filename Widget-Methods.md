@@ -277,17 +277,17 @@ widget.onChartReady(function() {
 
 ####showNoticeDialog(params)
 1. `params`: object:
-  1. title: text to be shown in the title
-  2. body: text to be shown in the body
-  3. callback: function to be called when ok button is pressed
+  1. `title`: text to be shown in the title
+  2. `body`: text to be shown in the body
+  3. `callback`: function to be called when ok button is pressed
 
 This method shows a dialog with custom title and text and "OK" button.
 
 ####showConfirmDialog(params)
 1. `params`: object:
-  1. title: text to be shown in the title
-  2. body: text to be shown in the body
-  3. callback(result): function to be called when ok button is pressed. `result` is `true` if `OK` is pressed, otherwise it is `false`.
+  1. `title`: text to be shown in the title
+  2. `body`: text to be shown in the body
+  3. `callback(result)`: function to be called when ok button is pressed. `result` is `true` if `OK` is pressed, otherwise it is `false`.
 
 This method shows a dialog with custom title and text and "OK", "CANCEL" buttons.
 
