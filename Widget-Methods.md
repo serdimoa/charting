@@ -46,10 +46,6 @@ widget.onChartReady(function() {
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
   * [[applyOverrides(overrides)|Widget-Methods#applyoverridesoverrides]]
 * :chart: [[Trading Platform]] specific 
-  * [[isFloatingTradingPanelVisible()|Widget-Methods#chart-isfloatingtradingpanelvisible]]
-  * [[toggleFloatingTradingPanel()|Widget-Methods#chart-togglefloatingtradingpanel]]
-  * [[isBottomTradingPanelVisible()|Widget-Methods#chart-isbottomtradingpanelvisible]]
-  * [[toggleBottomTradingPanel()|Widget-Methods#chart-togglebottomtradingpanel]]
   * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]] 
 * :chart: Multiple Charts Layout
   * [[chart(index)|Widget-Methods#chart-chartindex]]
@@ -324,22 +320,6 @@ This method applies overrides to properties without reloading the chart.
 #:chart: Trading Platform
 
 The following methods are available in [[Trading Platform]] only.
-
-####:chart: isFloatingTradingPanelVisible()
-
-This method returns `true` if the Floating Trading Panel is visible and `false` otherwise.
-
-####:chart: toggleFloatingTradingPanel()
-
-This method hides the Floating Trading Panel if it is visible and shows otherwise.
-
-####:chart: isBottomTradingPanelVisible()
-
-This method returns `true` if the Bottom Trading Panel is visible and `false` otherwise.
-
-####:chart: toggleBottomTradingPanel()
-
-This method hides the Bottom Trading Panel if it is visible and shows otherwise.
 
 ####:chart: showSampleOrderDialog(order)
 1. `order`: object 
