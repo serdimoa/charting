@@ -6,7 +6,7 @@ Here is a list of supported chart's methods.
 
 #Methods
 
-* Subscribing To Chart Events
+* Subscribing To Chart Eventsc
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
   * [[onSymbolChanged()|Chart-Methods#onsymbolchanged]]
   * [[dataReady(callback)|Chart-Methods#datareadycallback]]
@@ -215,6 +215,7 @@ Creates the study on a main symbol. Examples:
   6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
   7. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
   8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
+  9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
 3. `callback`: function(`entityId`)
 
 **Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
@@ -235,6 +236,7 @@ This call creates a shape at specified point on main series.
   6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
   7. `overrides`. It is an object containing properties you'd like to set for your new shape.
   8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
+  9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
 3. `callback`: function(`entityId`)
 
 **Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
