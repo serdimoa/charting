@@ -4,6 +4,11 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
+**In version 1.5**
+
+* Added `source` argument to MACD. You should change MACD creation code to pass `source` also.
+`chartWidget.chart().createStudy('MACD', false, false, [12, 26, "close", 9])`
+
 **In version 1.4**
 
 * Override `transparency` is not supported anymore. We added transparency support to every color property. Use `rgba` form to define a color with transparency. Example: 
