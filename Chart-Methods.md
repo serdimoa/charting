@@ -4,7 +4,7 @@ Here is a list of supported chart's methods.
 
 **Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [[chart(index)|Widget-Methods#chart-chartindex]] or [[activeChart()|Widget-Methods#chart-activechart]].
 
-#Methodsc
+#Methods
 
 * Subscribing To Chart Eventsc
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
