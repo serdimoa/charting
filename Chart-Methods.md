@@ -4,7 +4,7 @@ Here is a list of supported chart's methods.
 
 **Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [[chart(index)|Widget-Methods#chart-chartindex]] or [[activeChart()|Widget-Methods#chart-activechart]].
 
-#Methods
+#Methodsc
 
 * Subscribing To Chart Eventsc
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
@@ -182,7 +182,7 @@ Calling this method closes a context menu or a dialog if it is shown.
 6. `overrides`: (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
 
 Creates the study on a main symbol. Examples: 
-  * `createStudy('MACD', false, false, [14, 30, 9])`
+  * `createStudy('MACD', false, false, [14, 30, "close", 9])`
   * `createStudy('Moving Average Exponential', false, false, [26])`
   * `createStudy('Stochastic', false, false, [26], null, {"%d.color" : "#FF0000"})`
 
