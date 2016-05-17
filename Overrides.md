@@ -13,9 +13,10 @@ volumePaneSize: "large"
 editorFontsList: ['Verdana', 'Courier New', 'Times New Roman', 'Arial']
 
 paneProperties.background: "#ffffff"
-paneProperties.gridProperties.color: "#E6E6E6"
 paneProperties.vertGridProperties.color: "#E6E6E6"
+paneProperties.vertGridProperties.style: LINESTYLE_SOLID
 paneProperties.horzGridProperties.color: "#E6E6E6"
+paneProperties.horzGridProperties.style: LINESTYLE_SOLID
 paneProperties.crossHairProperties.color: "#B7B7B7"
 
 //	Margins (percent). Used for auto scaling.
@@ -119,7 +120,7 @@ mainSeriesProperties.barStyle.dontDrawOpen: false
 
 //	Line styles
 mainSeriesProperties.lineStyle.color: "#0303F7"
-mainSeriesProperties.lineStyle.linestyle: CanvasEx.LINESTYLE_SOLID
+mainSeriesProperties.lineStyle.linestyle: LINESTYLE_SOLID
 mainSeriesProperties.lineStyle.linewidth: 1
 mainSeriesProperties.lineStyle.priceSource: "close"
 
@@ -127,10 +128,19 @@ mainSeriesProperties.lineStyle.priceSource: "close"
 mainSeriesProperties.areaStyle.color1: "#606090"
 mainSeriesProperties.areaStyle.color2: "#01F6F5"
 mainSeriesProperties.areaStyle.linecolor: "#0094FF"
-mainSeriesProperties.areaStyle.linestyle: CanvasEx.LINESTYLE_SOLID
+mainSeriesProperties.areaStyle.linestyle: LINESTYLE_SOLID
 mainSeriesProperties.areaStyle.linewidth: 1
 mainSeriesProperties.areaStyle.priceSource: "close"
 ```
+
+#####LineStyles
+LINESTYLE_SOLID = 0
+
+LINESTYLE_DOTTED = 1
+
+LINESTYLE_DASHED = 2
+
+LINESTYLE_LARGE_DASHED = 3
 
 ####Customization of Overlay Symbols
 
