@@ -1,6 +1,5 @@
 ### What is Charting Library
-Charting Library is interactive JavsScript component which allows you to use UX/UI of TradignView with your own data. Download it,
-put our HTML/JS/CSS files to your web server, then connect your own data. So here's step-by-step guide:
+Charting Library is interactive JavsScript component which allows you to use UX/UI of TradingView with your own data. Download it, put our HTML/JS/CSS files to your web server, then connect your own data. So here's step-by-step guide:
 
 | What to do | What you'll get after |
 |---|---|
