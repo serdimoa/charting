@@ -4,7 +4,7 @@ Here is a list of supported chart's methods.
 
 **Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [[chart(index)|Widget-Methods#chart-chartindex]] or [[activeChart()|Widget-Methods#chart-activechart]].
 
-#Methods
+# Methods
 
 * Subscribing To Chart Eventsc
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
@@ -41,32 +41,32 @@ Here is a list of supported chart's methods.
   * [[getVisibleRange()|Chart-Methods#getvisiblerange]]
   * [[priceFormatter()|Chart-Methods#priceformatter]]
 
-#Subscribing To Chart Events
+# Subscribing To Chart Events
 
-####onDataLoaded()
+#### onDataLoaded()
 
 You can subscribe using [[Subscription]] object returned by this function to be notified when new history bars are loaded and unsubscribe from the event.
 
-####onSymbolChanged()
+#### onSymbolChanged()
 
 You can subscribe using [[Subscription]] object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
 
-####dataReady(callback)
+#### dataReady(callback)
 1. `callback`: function(interval)
 
 The Charting Library will call the callback provided immediately if bars are already loaded or when the bars are received.
 The function returns `true` if bars are already loaded and `false` otherwise.
 
-####crossHairMoved(callback)
+#### crossHairMoved(callback)
 **Since 1.5 version.**
 
 1. `callback`: function({time, price})
 
 The Charting Library will call the callback every time the crosshair position is changed.
 
-#Chart Actions
+# Chart Actions
 
-####setVisibleRange(range, callback)
+#### setVisibleRange(range, callback)
 1. `range`: object, `{from to}`
   1. `from`, `to`: unix timestamps, UTC
 2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
@@ -74,19 +74,19 @@ The Charting Library will call the callback every time the crosshair position is
 Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
 Neither `from`, nor `to` must not be in future. This method was introduced in version `1.2`.
 
-####setSymbol(symbol, callback)
+#### setSymbol(symbol, callback)
 1. `symbol`: string
 2. `callback`: function()
 
 Makes the chart to change its symbol. Callback is called after new symbol's data arrived.
 
-####setResolution(resolution, callback)
+#### setResolution(resolution, callback)
 1. `resolution`: string
 2. `callback`: function()
 
 Makes the chart to change its resolution. Callback is called after new data arrived.
 
-####executeAction(action)
+#### executeAction(action)
 **_deprecated, use executeActionById instead_**
 
 1. `action`: string
@@ -100,7 +100,7 @@ widget.chart().executeAction("Hide All Drawing Tools"); // this will toggle all 
 // < ... >
 ```
 
-####executeActionById(actionId)
+#### executeActionById(actionId)
 _**since version 1.3**_
 
 1. `actionId`: string
@@ -154,26 +154,26 @@ widget.chart().executeActionById("drawingToolbarAction"); // hides or shows the 
 // < ... >
 ```
 
-####refreshMarks()
+#### refreshMarks()
 
 Calling this method makes the Library to request visible marks once again.
 
-####clearMarks()
+#### clearMarks()
 
 Calling this method makes the Library to remove all visible marks.
 
-####setChartType(type)
+#### setChartType(type)
 1. `type`: `TradingView.BARS` | `TradingView.CANDLES` | `TradingView.AREA` | `TradingView.LINE` | `TradingView.HEIKEN_ASHI` | `TradingView.HOLLOW_CANDLES` 
 
 Sets the main series style.
 
-####closePopupsAndDialogs()
+#### closePopupsAndDialogs()
 
 Calling this method closes a context menu or a dialog if it is shown.
 
-#Studies And Shapes
+# Studies And Shapes
 
-####createStudy(name, forceOverlay, lock, inputs, callback, overrides)
+#### createStudy(name, forceOverlay, lock, inputs, callback, overrides)
 1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
 2. `forceOverlay`: forces the Charting Library to place the created study on main pane
 3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
@@ -201,7 +201,7 @@ Creates the study on a main symbol. Examples:
 ```
 
 
-####createShape(point, options, callback)
+#### createShape(point, options, callback)
 1. `point`: object `{time, [price], [channel]}`
   1. `time`: unix time. The only mandatory argument.
   2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
@@ -222,7 +222,7 @@ Creates the study on a main symbol. Examples:
 
 This call creates a shape at specified point on main series. 
 
-####createMultipointShape(points, options, callback)
+#### createMultipointShape(points, options, callback)
 1. `points`: an array of objects `[{time, [price], [channel]},...]`
   1. `time`: unix time. The only mandatory argument.
   2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
@@ -245,28 +245,28 @@ Look [[Shapes and Overrides|Shapes and Overrides]] for more information.
 
 This call creates a shape with specified points on main series.
 
-####removeEntity(entityId)
+#### removeEntity(entityId)
 1. `entityId`: object. Value which was passed to your callback after the entity (shape of study) was created.
 
 Removes the specified entity.
 
-####createVerticalLine(point, options)
+#### createVerticalLine(point, options)
 1. `point`: object `{time}`
 2. `options`: obejct `{lock}`
 
 This function is a synonym for `createShape` with shape = 'vertical_line'. It is treated as **obsolete**.
 
-####removeAllShapes()
+#### removeAllShapes()
 Removes all shapes (drawings) from the chart.
 
-####removeAllStudies()
+#### removeAllStudies()
 Removed all studies from the chart.
 
 
-#Study Templates
+# Study Templates
 
 
-####createStudyTemplate(options, callback)
+#### createStudyTemplate(options, callback)
 1. `options`: object `{saveInterval}`
  1. `saveInterval`: boolean
 2. `callback`: function(data)
@@ -275,16 +275,16 @@ Removed all studies from the chart.
 
 Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
-####applyStudyTemplate(template)
+#### applyStudyTemplate(template)
 1. `template`: object 
 
 Loads the study template from state object. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
 
-#Trading Primitives
+# Trading Primitives
 
 
-####createOrderLine(options)
+#### createOrderLine(options)
 Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
 Arguments (since 1.4):
@@ -354,7 +354,7 @@ widget.chart().createOrderLine()
     .setQuantity("2");
 ```
 
-####createPositionLine(options)
+#### createPositionLine(options)
 Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior.  It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
 Arguments (since 1.4):
@@ -431,7 +431,7 @@ widget.chart().createPositionLine()
 .setLineStyle(0)
 .setLineLength(25);
 ```
-####createExecutionShape(options)
+#### createExecutionShape(options)
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties. It's strongly recommended to read [[this article|Trading-Primitives]] before using this call.
 
 Arguments (since 1.4):
@@ -479,25 +479,25 @@ widget.chart().createExecutionShape()
     .setPrice(15.5);
 ```
 
-#Getters
+# Getters
 
-####symbol()
+#### symbol()
 
 Returns chart's symbol.
 
-####resolution()
+#### resolution()
 
 Returns chart's resolution.
 
-####getVisibleRange()
+#### getVisibleRange()
 
 Returns object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
 
-####priceFormatter()
+#### priceFormatter()
 
 Returns object with `format` function that you can use to format prices. Introduced in 1.5.
 
-#See Also
+# See Also
 * [[Widget Methods]]
 * [[Charts Customization 101]]
 * [[Widget Constructor]]

@@ -7,7 +7,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | ID                                      | Default State | Library Version | Description                                                |
 |-----------------------------------------|---------------|-----------------|-------------|
 | **header_widget**                       | on            |                 |                                                            |
-| - <a name="abcd">header_widget_dom_node</a>                 | on            |                 | disabling this feature hides the header widget DOM element |
+| - <a name="abcd">header_widget_dom_node</a>                 | on          |                 | disabling this feature hides the header widget DOM element |
 | - header_symbol_search                  | on            |                 |                                                            |
 | - header_resolutions                    | on            |                 |                                                            |
 | - - header_interval_dialog_button       | on            |                 |                                                            |
@@ -18,7 +18,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | - header_compare                        | on            |                 |                                                            |
 | - header_undo_redo                      | on            |                 |                                                            |
 | - header_screenshot                     | on            |                 |                                                            |
-| - header_fullscreen_button             | on            |                 |                                                            |
+| - header_fullscreen_button              | on            |                 |                                                            |
 | compare_symbol                          | on            |       1.5       | You can remove Compare/Overlay dialog from context menues using this featureset |
 | border_around_the_chart                 | on            |                 |                                                            |
 | header_saveload                         | on            |                 | yep, it's not a part of `header_widget`                    |
@@ -86,7 +86,8 @@ Please note that the leading `-` characters are not a part of featureset name in
 ## :chart: Trading Platform
 
 | ID	| Default State	| Platform Version | Description
-|-------|---------------|-----------------|------------
+|-------|---------------|------------------|------------
 | support_multicharts | on | | enables context menu actions (Clone, Sync) related to Multiple Chart Layout
 | header_layouttoggle | on | | shows Select Layout button in the header
-| show_logo_on_all_charts | off | shows logo on every chart of multichart layout
+| show_logo_on_all_charts | off | |shows logo on every chart of multichart layout
+| chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading 

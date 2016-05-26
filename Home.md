@@ -1,5 +1,6 @@
 ### What is Charting Library
-Charting Library is interactive JavaScript component which allows you to use UX/UI of TradingView charts with your own data. Download it, put our HTML/JS/CSS files to your web server, then connect your own data. Here's step-by-step guide:
+Downloadable charting library with an open data API. This is a standalone solution that you download,
+host on your servers, connect your own data & use in your site/app for free. All you have to do is
 
 | What to do | What you'll get after |
 |---|---|
