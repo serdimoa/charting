@@ -4,6 +4,10 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
+**In version 1.7**
+Obsolete chart methods in the widget were removed. Please use `widget.chart().method` instead.
+Example: `widget.createStudy()` in 1.6 becomes `widget.chart().createStudy()` in 1.7.
+
 **In version 1.5**
 
 * Added `source` argument to MACD. You should change MACD creation code to pass `source` also.
