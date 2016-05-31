@@ -168,7 +168,7 @@ Library calls this function to get [[marks|Marks-On-Bars]] for visible bars rang
 
 * **id**: unique mark id. Will be passed to a [[respective callback|Widget-Methods#onbarmarkclickedcallback]] when user clicks on a mark
 * **time**: unix time, UTC
-* **color**: `red` | `green` | `blue` | `yellow`
+* **color**: `red` | `green` | `blue` | `yellow` | `{ border: '#ff0000', background: '#00ff00' }`
 * **text**: mark popup text. HTML supported
 * **label**: a letter to be printed on a mark. Single character
 * **labelFontColor**: color of a letter on a mark

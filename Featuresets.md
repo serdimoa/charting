@@ -4,6 +4,8 @@ Please note that the leading `-` characters are not a part of featureset name in
 
 ### Visibility of controls and other visual elements
 
+[**Interactive Map of Featuresets**](http://tradingview.github.io/featuresets.html)
+
 | ID                                      | Default State | Library Version | Description                                                |
 |-----------------------------------------|---------------|-----------------|-------------|
 | **header_widget**                       | on            |                 |                                                            |
