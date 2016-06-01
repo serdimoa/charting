@@ -6,9 +6,10 @@ Here is a list of supported chart's methods.
 
 # Methods
 
-* Subscribing To Chart Eventsc
+* Subscribing To Chart Events
   * [[onDataLoaded()|Chart-Methods#ondataloaded]]
   * [[onSymbolChanged()|Chart-Methods#onsymbolchanged]]
+  * [[onIntervalChanged()|Chart-Methods#onintervalchanged]]
   * [[dataReady(callback)|Chart-Methods#datareadycallback]]
   * [[crossHairMoved(callback)|Chart-Methods#crosshairmovedcallback]]
 * Chart Actions
@@ -40,6 +41,7 @@ Here is a list of supported chart's methods.
   * [[resolution()|Chart-Methods#resolution]]
   * [[getVisibleRange()|Chart-Methods#getvisiblerange]]
   * [[priceFormatter()|Chart-Methods#priceformatter]]
+  * [[chartType()|Chart-Methods#charttype]]
 
 # Subscribing To Chart Events
 
@@ -50,6 +52,10 @@ You can subscribe using [[Subscription]] object returned by this function to be 
 #### onSymbolChanged()
 
 You can subscribe using [[Subscription]] object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
+
+#### onIntervalChanged()
+
+You can subscribe using [[Subscription]] object returned by this function to be notified when the interval is changed and unsubscribe from the event.
 
 #### dataReady(callback)
 1. `callback`: function(interval)
@@ -496,6 +502,10 @@ Returns object `{from, to}`. `from` and `to` are Unit timestamps **in the timezo
 #### priceFormatter()
 
 Returns object with `format` function that you can use to format prices. Introduced in 1.5.
+
+#### chartType()
+
+Returns the main series style.
 
 # See Also
 * [[Widget Methods]]

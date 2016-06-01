@@ -76,7 +76,7 @@ The Charting Library will call the callback provided once when chart is initiali
 
 The Charting Library will call the callback provided every time the main series symbol changes. New symbol info will be passed as argument.
 
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onSymbolChange` event instead.
+**Obsolete. Will be removed in 1.8.** Use [[onSymbolChanged|Chart-Methods#onsymbolchanged]] subscription method of `chart` instead.
 
 #### onIntervalChange(callback)
 1. `callback`: function(interval)
@@ -84,7 +84,7 @@ The Charting Library will call the callback provided every time the main series 
 
 The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
 
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onIntervalChange` event instead.
+**Obsolete. Will be removed in 1.8.** Use [[onIntervalChanged|Chart-Methods#onintervalchanged]] subscription method of `chart` instead.
 
 #### onAutoSaveNeeded(callback)
 1. `callback`: function()
@@ -184,8 +184,6 @@ widget.onShortcut("alt+s", function() {
   * `chart_loaded`
   * `mouse_down`
   * `mouse_up`
-  * `onSymbolChange` - callback will be called every time the main series symbol changes. New symbol info will be passed as argument
-  * `onIntervalChange` - callback will be called every time the main series interval changes. New interval will be passed as argument
   * `onTick` - callback will be called every time when recent bar updates
   * `onAutoSaveNeeded` - callback will be called every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds. See also [auto_save_delay](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#auto_save_delay)
   * `onScreenshotReady` - callback will be called every time when user creates a screenshot and server returns the created image name
