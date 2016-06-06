@@ -51,6 +51,7 @@ widget.onChartReady(function() {
   * [[symbolInterval(callback)|Widget-Methods#symbolintervalcallback]]
   * [[mainSeriesPriceFormatter()|Widget-Methods#mainseriespriceformatter]]
   * [[getIntervals()|Widget-Methods#getintervals]]
+  * [[getStudiesList()|Widget-Methods#getstudieslist]]
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
   * [[applyOverrides(overrides)|Widget-Methods#applyoverridesoverrides]]
@@ -390,6 +391,10 @@ Returns object with method `format` that you can use to format prices. Introduce
 #### getIntervals()
 
 Returns an array of supported resolutions. Introduced in 1.7.
+
+#### getStudiesList()
+
+Returns an array of all studies ids. They can be used to create a study.
 
 # Customization
 
