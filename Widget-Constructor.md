@@ -95,6 +95,34 @@ Locale to be used by Charting Library. See [[Localization]] section for details.
 The object containing formatting options for numbers. The only possible options is `decimal_sign` for now.
 Example: `numeric_formatting: { decimal_sign: "," }`
 
+#### customFormatters
+It is an object that contains the following fields:
+
+1. timeFormatter
+2. dateFormatter
+
+You can use these formatters to customize displaying of date and time values.
+Both values are objects with the only field `format` which is a function:
+
+```javascript
+function format(date)
+```
+
+This function should return text representing date or time.
+
+Example:
+
+```javascript
+customFormatters: {
+  timeFormatter: {
+    format: function(date) { var _format_str = '%h:%m'; return _format_str.replace('%h', date.getUTCHours(), 2). replace('%m', date.getUTCMinutes(), 2). replace('%s', date.getUTCSeconds(), 2); }
+  },
+  dateFormatter: {
+    format: function(date) { return date.getUTCFullYear() + '/' + date.getUTCMonth() + '/' + date.getUTCDate(); }
+  }
+}
+```
+
 ####overrides
 The object containing default Widget properties overrides. Overriding a property means assigning a default value to it.
 You can override most of Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` supposed to be an object having range of fields. Each field name is a name of overridden property and the field value is the desired value for those property. Example:
