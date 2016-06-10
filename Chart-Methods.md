@@ -21,7 +21,10 @@ Here is a list of supported chart's methods.
   * [[refreshMarks()|Chart-Methods#refreshmarks]]
   * [[clearMarks()|Chart-Methods#clearmarks]]
   * [[setChartType(type)|Chart-Methods#setcharttypetype]]
-* Studies And Shapes 
+* Studies And Shapes
+  * [[getAllShapes()|Chart-Methods#getallshapes]]
+  * [[getAllStudies()|Chart-Methods#getallstudies]]
+  * [[setEntityVisibility(id, isVisible)|Chart-Methods#setentityvisibilityid-isvisible]]
   * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides)|Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides]]
   * [[createShape(point, options, callback)|Chart-Methods#createshapepoint-options-callback]]
   * [[createMultipointShape(points, options, callback)|Chart-Methods#createmultipointshapepoints-options-callback]]
@@ -178,6 +181,21 @@ Sets the main series style.
 Calling this method closes a context menu or a dialog if it is shown.
 
 # Studies And Shapes
+
+#### getAllShapes()
+Returns an array of all created shapes objects. Each object has following fields:
+
+- `id`: id of a shape
+- `name`: name of a shape
+
+#### getAllStudies()
+Returns an array of all created shapes objects. Each object has following fields:
+
+- `id`: id of a study
+- `name`: name of a study
+
+#### setEntityVisibility(id, isVisible)
+Sets visibility of an entity with passed id.
 
 #### createStudy(name, forceOverlay, lock, inputs, callback, overrides)
 1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
