@@ -41,6 +41,7 @@ Here is a list of supported chart's methods.
   * [[createExecutionShape()|Chart-Methods#createexecutionshapeoptions]]
 * Getters
   * [[symbol()|Chart-Methods#symbol]]
+  * [[symbolExt()|Chart-Methods#symbolExt]]
   * [[resolution()|Chart-Methods#resolution]]
   * [[getVisibleRange()|Chart-Methods#getvisiblerange]]
   * [[priceFormatter()|Chart-Methods#priceformatter]]
@@ -329,6 +330,7 @@ Price|Double|Double|0.0
 Text|String|String|""
 Tooltip|String|String|""
 Quantity|String|String|""
+Editable|Boolean|Boolean|true
 
 
 **Connection line properties**:
@@ -508,6 +510,16 @@ widget.chart().createExecutionShape()
 #### symbol()
 
 Returns chart's symbol.
+
+#### symbolExt()
+
+Returns chart's symbol information object. The object has the following fields:
+
+- `symbol`: the same as [[symbol()|Chart-Methods#symbol]] method result
+- `full_name`: full symbol name
+- `exchange`: symbol's exchange
+- `description`: symbol's description
+- `type`: symbol's type
 
 #### resolution()
 
