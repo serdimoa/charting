@@ -16,11 +16,11 @@ studies_overrides: {
 
 In the example above, in example, all created Bollinger Bands will have upper line width = 7 (unless you create it through API and have specified another value for this line).
 
-###How to set study name
+### How to set study name
 
 You should use studies names as-they-are in the Insert Study dialog, but in lower case. So if you want to override default EMA's length, try using `moving average exponential.length`. The same principle works for inputs names: use names as you can see them in Study Properties dialog (use lower case also). Example: `stochastic.smooth d`.
 
-###Compare
+### Compare
 
 You can customize new series added via `Compare`. Use `compare.plot` to customize the line and `compare.source` to change the price source:
 
@@ -30,11 +30,13 @@ You can customize new series added via `Compare`. Use `compare.plot` to customiz
 ```
 
 
-#Syntax
+# Syntax
 
 Property path is a set of lower-case identifiers splitted with dot (`.`). Path formats are described below.
 
-###Study input
+**Remark**: If a plot/band/area/input name is the same you can get an error. In this case you can specify an exact destination that you want to change by adding `:plot`, `:band`, `:area` or `:input` to the path. (e.g. `short:plot.color`)
+
+### Study input
 Format: `indicator_name.input_name`
 
 * **indicator_name**: use name as you can see it in `Indicators` dialog.  
@@ -42,7 +44,7 @@ Format: `indicator_name.input_name`
 
 Examples: `volume.show ma`, `bollinger bands.length`
 
-###Plot property
+### Plot property
 Format: `indicator_name.plot_name.property_name`
 
 * **indicator_name**:  < ... >
@@ -63,7 +65,7 @@ Format: `indicator_name.plot_name.property_name`
 
 Examples: `volume.volume.transparency`, `bollinger bands.median.linewidth`
 
-###Plot colors
+### Plot colors
 Format: `indicator_name.plot_name.color<.color_index>`
 
 * **indicator_name**:  < ... >
@@ -80,7 +82,7 @@ Format: `indicator_name.plot_name.color<.color_index>`
 * Transparency varies in [0..100] range. 100 means plot is fully opaque.
 * Thickness is an integer.
 
-###Study options
+### Study options
 Format: `indicator_name.options.option_name`
 
 * **indicator_name**:  < ... >
@@ -91,6 +93,6 @@ Format: `indicator_name.options.option_name`
 
 Examples: `volume.options.showStudyArguments`, `volume.options.showLastValue`
 
-###Default precision
+### Default precision
 Since 1.6 you can change default precision of studies using `name.precision` format. Example:
 `"average true range.precision": 8`
