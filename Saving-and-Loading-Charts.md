@@ -8,7 +8,7 @@ Charting Library supports saving/loading charts and study templates (study templ
 
 Here are a few steps for those who want to have their own charts storage:
 
-1. Clone our [save-load backend repo](https://github.com/tradingview/saveload_backend) to your host
+1. Clone our repo to your host
 2. Run the data service or use our demo service.Here are a short todo list for those who's not familiar with Django.
   1. Install Python 3.x and Pip.
   2. Install PostgreSQL or some other Django-friendly database engine.
