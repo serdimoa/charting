@@ -60,6 +60,17 @@ You can subscribe using [[Subscription]] object returned by this function to be 
 #### onIntervalChanged()
 
 You can subscribe using [[Subscription]] object returned by this function to be notified when the interval is changed and unsubscribe from the event.
+When the event is fired it will provide the following arguments:
+1. `interval`: new interval
+2. `timeframeParameters`: object with the only field `timeframe`. It contains a timeframe if the interval is changed as a result of a user click on a timeframe panel.
+Otherwise `timeframe` is `undefined` and you can change it to display a certain range of bars. Valid timeframe is a number with letter `D` for days and `M` for months.
+
+Example:
+```
+widget.chart().onIntervalChanged().subscribe(null, function(interval, obj) {
+    obj.timeframe = "12M";
+})
+```
 
 #### dataReady(callback)
 1. `callback`: function(interval)
