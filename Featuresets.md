@@ -27,7 +27,11 @@ Please note that the leading `-` characters are not a part of featureset name in
 | left_toolbar                            | on            |                 |                                                            |
 | control_bar                             | on            |                 | relates to the navigation buttons at the bottom            |
 | timeframes_toolbar                      | on            |                 |                                                            |
-| edit_buttons_in_legend                  | on            |                 |                                                            |
+| **edit_buttons_in_legend**              | on            |                 |                                                            |
+| - show_hide_button_in_legend            | on            |       1.7       |                                                            |
+| - format_button_in_legend               | on            |       1.7       |                                                            |
+| - study_buttons_in_legend               | on            |       1.7       |                                                            |
+| - delete_button_in_legend               | on            |       1.7       |                                                            |
 | **context_menus**                       | on            |                 |                                                            |
 | - pane_context_menu                     | on            |                 |                                                            |
 | - scales_context_menu                   | on            |                 |                                                            |
