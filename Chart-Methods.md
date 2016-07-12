@@ -18,6 +18,7 @@ Here is a list of supported chart's methods.
   * [[setResolution(resolution, callback)|Chart-Methods#setresolutionresolution-callback]]
   * [[executeAction(action)|Chart-Methods#executeactionaction]]
   * [[executeActionById(action)|Chart-Methods#executeactionbyidactionid]]
+  * [[getCheckableActionState(action)|Chart-Methods#getcheckableactionstateactionid]]
   * [[refreshMarks()|Chart-Methods#refreshmarks]]
   * [[clearMarks()|Chart-Methods#clearmarks]]
   * [[setChartType(type)|Chart-Methods#setcharttypetype]]
@@ -174,6 +175,13 @@ widget.chart().executeActionById("undo");
 widget.chart().executeActionById("drawingToolbarAction"); // hides or shows the drawing toolbar
 // < ... >
 ```
+
+#### getCheckableActionState(actionId)
+_**since version 1.7**_
+
+1. `actionId`: string
+
+Get checkable action (e.g. `lockDrawingsAction`, `stayInDrawingModeAction`, `magnetAction`) state by its id (see ids of actions above)
 
 #### refreshMarks()
 
