@@ -36,6 +36,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | - pane_context_menu                     | on            |                 |                                                            |
 | - scales_context_menu                   | on            |                 |                                                            |
 | - legend_context_menu                   | on            |                 |                                                            |
+| main_series_scale_menu                  | on            |       1.7       | Displays settings button in the bottom right corner of the chart |
 | display_market_status                   | on            |                 |                                                            |
 | remove_library_container_border         | on            |                 |                                           |
 | chart_property_page_style               | on            |                 |                                           |
