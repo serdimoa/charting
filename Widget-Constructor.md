@@ -22,7 +22,7 @@ Initial symbol & interval of your chart.
 `id` attribute of a DOM element you want to contain the widget.
 
 ####datafeed [mandatory]
-JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed the chart width data.
+JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed the chart with data.
 
 ####timezone <UTC>
 Initial timezone of the chart. Numbers on time scale depend on this timezone.
