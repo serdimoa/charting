@@ -18,6 +18,10 @@ Properties marked :chart: are available in [[Trading Platform]] only.
 ####symbol, interval [mandatory]
 Initial symbol & interval of your chart.
 
+#### timeframe
+Sets initial timeframe for the chart. Timeframe is period of bars that will be loaded and shown on a screen.
+Valid timeframe is a number with letter D for days and M for months.
+
 ####container_id [mandatory]
 `id` attribute of a DOM element you want to contain the widget.
 

@@ -72,7 +72,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | right_bar_stays_on_scroll	| on	|                 | determines zoom behavior: bar under cursor is kept if disabled
 | constraint_dialogs_movement	| on	|                 | prevents moving dialogs out of the chart
 | charting_library_debug_mode	| off	|                 | enables logs
-| narrow_chart_enabled	| off	|                 | allows to shrink the chart up to 240px horizontally
+| narrow_chart_enabled	| on	|                 | allows to shrink the chart up to 240px horizontally
 | show_dialog_on_snapshot_ready	| on	|                 | disabling this feature allows you to make a snapshot silently
 | study_market_minimized	| on	|                 | relates to Indicators dialog, determines whether it is compact or contains a search bar and categories
 | study_dialog_search_control   | on    | 1.6             | displays search control in the indicators dialog
