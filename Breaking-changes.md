@@ -4,6 +4,10 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
+**In version 1.7**
+- Since this version it is not enough to call `setSymbol` with the same symbol. You should call `onResetCacheNeededCallback` from `subscribeBars` first. Then you can use `setSymbol` or new `resetData` method of the chart.
+- JSAPI protocol version 1 is not supported any more. `nextTime` and `noData` must be provided.
+
 **In version 1.5**
 
 * Added `source` argument to MACD. You should change MACD creation code to pass `source` also.

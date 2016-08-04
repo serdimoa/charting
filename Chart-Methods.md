@@ -16,6 +16,7 @@ Here is a list of supported chart's methods.
   * [[setVisibleRange(range, callback)|Chart-Methods#setvisiblerangerange-callback]]
   * [[setSymbol(symbol, callback)|Chart-Methods#setsymbolsymbol-callback]]
   * [[setResolution(resolution, callback)|Chart-Methods#setresolutionresolution-callback]]
+  * [[resetData()|Chart-Methods#resetData]]
   * [[executeAction(action)|Chart-Methods#executeactionaction]]
   * [[executeActionById(action)|Chart-Methods#executeactionbyidactionid]]
   * [[getCheckableActionState(action)|Chart-Methods#getcheckableactionstateactionid]]
@@ -107,6 +108,11 @@ Makes the chart to change its symbol. Callback is called after new symbol's data
 2. `callback`: function()
 
 Makes the chart to change its resolution. Callback is called after new data arrived.
+
+#### resetData
+
+Makes the chart to rerequest data from the data feed. Usually you need to call it when chart's data has changed.
+Before calling this you should call [[onResetCacheNeededCallback|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback]].
 
 #### executeAction(action)
 **_deprecated, use executeActionById instead_**

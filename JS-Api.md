@@ -8,7 +8,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
 3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
 4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest]]
-5. [[subscribeBars|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid]]
+5. [[subscribeBars|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback]]
 6. [[unsubscribeBars|JS-Api#unsubscribebarssubscriberuid]]
 7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
 8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
@@ -91,24 +91,28 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
 2. `resolution`: string
 3. `from`: unix timestamp, leftmost required bar time
 3. `to`: unix timestamp, rightmost required bar time
-4. `onHistoryCallback`: function(array of `bar`s, `meta` = _{version = 2, noData = false}_)
+4. `onHistoryCallback`: function(array of `bar`s, `meta` = _{ noData = false }_)
   1. `bar`: object `{time, close, open, high, low, volume}`
-  2. `meta`: object `{version = 2, noData = true | false, nextTime}`
+  2. `meta`: object `{noData = true | false, nextTime - unix time}`
 5. `onErrorCallback`: function(reason)
 6. `firstDataRequest`: boolean to identify the first history call for this symbol/resulution. When it is `true` you can ignore `to` (which depends on browser's `Date.now()`) and return bars up to current bar (including it).
 
 This function is called when chart needs a history fragment defined by dates range. The charting library expects `onHistoryCallback` to be called **just once** after receiving all the requesting history. No further calls are expected.
 
+`nextTime` is a time of the next bar in the history. It should be set when there is no data in the requested period only.
+`noData` should be set when there is no data in the requested period and earlier only.
+
 **Remark**: each bar object must have `time` and `close` properties. Others are optional.
 **Remark 2**: `bar.time` is expected to be the amount of milliseconds since Unix epoch start in **UTC** timezone.
 
 
-###subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID)
+###subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback)
 1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `resolution`: string
 3. `onRealtimeCallback`: function(bar)
   1. `bar`: object `{time, close, open, high, low, volume}`
 4. `subscriberUID`: object
+5. `onResetCacheNeededCallback` (since 1.7): function() to be executed when bars data has changed
 
 Charting Library calls this function when it wants to receive realtime updates for a symbol. Chart expects you will call `onRealtimeCallback` every time you want to update the most recent bar or to append a new one. 
 
