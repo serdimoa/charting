@@ -170,13 +170,14 @@ Use this option to customize default indicators' style or inputs. You can also c
 List of time frames visible in timeframes picker at the bottom of the chart. Example:
 ```javascript
 time_frames: [
-    { text: "50y", resolution: "6M" },
-    { text: "3y", resolution: "W" },
-    { text: "8m", resolution: "D" },
-    { text: "3d", resolution: "5" },
+    { text: "50y", resolution: "6M", description: "50 Years" },
+    { text: "3y", resolution: "W", description: "3 Years" },
+    { text: "8m", resolution: "D", description: "8 Month" },
+    { text: "3d", resolution: "5", description: "3 Days" },
 ]
 ```
 Time frame is an object containing `text` and `resolution` property. Text must have following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string having the common resolutions format. See [[this topic|Time-Frames]] to learn more about time frames.
+The `description` property was added in 1.7 and it is displayed in the popup menu. This parameter is optional (if the time frame descriptor does not contain this property, `text` is used).
 
 ####charts_storage_url, client_id, user_id
 Those arguments are regarding high-level charts save/load. See more details [[here|Saving-and-Loading-Charts]].
