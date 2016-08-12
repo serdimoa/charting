@@ -8,7 +8,11 @@
 
 [[images/udf_or_jsapi.png]]
 
+##UDF scheme
+
 [[images/udf.png]]
+
+##JSAPI scheme
 
 [[images/jsapi.png]]
 
