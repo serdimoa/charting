@@ -128,8 +128,7 @@ customFormatters: {
 ```
 
 ####overrides
-The object containing default Widget properties overrides. Overriding a property means assigning a default value to it. That said, if you load the chart, then all the properties' values from this chart will have the priority.
- 
+The object containing default Widget properties overrides. Overriding a property means assigning a default value to it.
 You can override most of Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` supposed to be an object having range of fields. Each field name is a name of overridden property and the field value is the desired value for those property. Example:
 
 ```javascript
