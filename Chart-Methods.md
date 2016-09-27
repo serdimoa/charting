@@ -46,6 +46,7 @@ Here is a list of supported chart's methods.
   * [[symbolExt()|Chart-Methods#symbolExt]]
   * [[resolution()|Chart-Methods#resolution]]
   * [[getVisibleRange()|Chart-Methods#getvisiblerange]]
+  * [[getVisiblePriceRange()|Chart-Methods#getvisiblepricerange]]
   * [[priceFormatter()|Chart-Methods#priceformatter]]
   * [[chartType()|Chart-Methods#charttype]]
 
@@ -553,6 +554,12 @@ Returns chart's resolution.
 #### getVisibleRange()
 
 Returns object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
+
+#### getVisiblePriceRange()
+
+**Since 1.7**
+
+Returns object `{from, to}`. `from` and `to` are boundaries of main series price scale visible range.
 
 #### priceFormatter()
 
