@@ -106,13 +106,14 @@ It is an object that contains the following fields:
 2. dateFormatter
 
 You can use these formatters to customize displaying of date and time values.
-Both values are objects with the only field `format` which is a function:
+Both values are objects with functions `format` and `formatLocal`:
 
 ```javascript
 function format(date)
+function formatLocal(date)
 ```
 
-This function should return text representing date or time.
+These functions should return text representing date or time. `formatLocal` should convert date and time to local timezone.
 
 Example:
 

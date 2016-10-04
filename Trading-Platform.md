@@ -6,15 +6,32 @@ The product is under development so some features are not there yet. They are ma
 
 ##Trading Platform Features
 
-####Trading capabilities
+#### Trading Capabilities
 You can trade right from the chart, and all you have to do to make this work is to implement your [[Trading Controller]] and plug it into the chart widget.
 
-<a href="https://www.dropbox.com/s/6ttw7a7tl6ipt27/tt_trading.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/6ttw7a7tl6ipt27/tt_trading.png?dl=1" width="300"/></a>
+[[images/tt_trading.png]]
+
+#### Advanced Order Dialog
+Fully customizable order dialog allows to place Market/Limit/Stop/Stop Limit orders, enter Stop Loss and Take Profit prices,
+choose expiration and calculate risks.
+
+[[images/tt_orderdialog.png]]
+
+#### Account Manager
+You can display orders/positions and account information in an interactive table at the bottom or embed any other widget there.
+
+######Read more about this feature:
+  * [[How to enable Account Manager|Account-Manager]]
+
+#### DOM Widget
+You can display orders/positions and Level 2 data in an interactive DOM.
+
+[[images/tt_dom.png]]
 
 ####Sidebar Quotes (Symbols Details & Watchlist)
 In Trading Platform, you can have the Watchilsts and Details widget (see the snapshot below) functionality.
 
-<a href="https://www.dropbox.com/s/hrs6l0ejwgvw0mr/tt_top.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/hrs6l0ejwgvw0mr/tt_top.png?dl=1" width="300"/></a>
+[[images/tt_top.png]]
 
 ######Read more about this feature:
   * [[How to enable sidebar quotes|Widget-Constructor#chart-widgetbar]]
@@ -23,7 +40,7 @@ In Trading Platform, you can have the Watchilsts and Details widget (see the sna
 ####Sidebar Market News Feed
 You can have the news feed right in the side bar of the chart. Our support for the news feeds is flexible: so, in example, you can have different feeds for different kinds of symbols and so on.
 
-<a href="https://www.dropbox.com/s/qa7f42mszeexf96/tt_bottom.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/qa7f42mszeexf96/tt_bottom.png?dl=1" width="300"/></a>
+[[images/tt_bottom.png]]
 
 ######Read more about this feature:
   * [[How to enable sidebar news|Widget-Constructor#chart-widgetbar]]
@@ -32,7 +49,7 @@ You can have the news feed right in the side bar of the chart. Our support for t
 ####Miltiple charts layout
 You can have multiple charts inside if the same widget. This gives your user the ability to use wide range of the strategies, as well as the ability to have a broad view of the market. You don't have to do anythng to enable or tweak it: it works out-of-the-box.
 
-<a href="https://www.dropbox.com/s/ev65w402f2n7hpw/tt_charts.png?dl=0" target="_blank"><img src="https://www.dropbox.com/s/ev65w402f2n7hpw/tt_charts.png?dl=1" width="300"/></a>
+[[images/tt_charts.png]]
 
 ####Japanese charts types: Kagi, Renko, Point & Figure, Line Break :clock4:
 These types of charts will be available out-of-the-box, just like Heikin Ashi is available in Charting Library.

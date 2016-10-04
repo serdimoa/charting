@@ -36,6 +36,22 @@ Implement this method to provide configuration flags object. The result is an ob
 
     Supporting multiposition prevents creating default implementation for reverse position.
 
+* supportCustomBottomWidget
+
+    This flag can be used to change default account manager widget with a custom one.
+
+* showQuantityInsteadOfAmount
+
+	This flag can be used to change "Amount" to "Quantity" in the order dialog
+
+* supportDOME
+
+    This flag enables DOM widget. If `supportLevel2Data` is `false` only `last price` and orders will be shown.
+
+* supportLevel2Data
+
+    Level2 data is used for DOM widget. `subscribeDOME` and `unsubscribeDOME` should be implemented.
+
 ####positions : [Deferred](https://api.jquery.com/category/deferred-object/)
 ####orders : [Deferred](https://api.jquery.com/category/deferred-object/)
 ####executions(symbol) : [Deferred](https://api.jquery.com/category/deferred-object/)
@@ -51,8 +67,10 @@ Function should return `true` for Bottom Trading Panel to be displayed.
 ####buttonDropdownItems()
 Bottom Trading Panel has a button with a list of dropdown items. This function is expected to return an array of [[ActionMetainfo|Trading-Objects-and-Constants#actionmetainfo]], each of them representing one dropdown item.
 
-####chartContextMenuItems()
+####chartContextMenuItems(e)
 Chart can have a sub-menu `Trading` in the context menu. Return the list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.
+
+`e` is a context object passed by a broswer
 
 ####bottomContextMenuItems()
 Bottom Trading Panel can have a context menu. Return a list of items for this menu. Format is the same as for `buttonDropdownItems`.
@@ -63,35 +81,88 @@ This function is required for the Floating Trading Panel. Ability to trade via t
 ####createBottomWidget(container)
 This function is called when it is needed to create a Bottom Trading Panel. You should create DOM object and append it to the `container`. The container shows a vertical scroll bar when it is needed.
 
+####accountManagerInfo()
+This function is called when supportCustomBottomWidget is false. It should return information that will be used to build an account manager.
+See [[Account Manager]] for more information.
+
 ####showOrderDialog([[order|Trading-Objects-and-Constants#order]])
-This function is invoked by the Floating Trading Panel when user requests to create or modify an order. 
+This function is invoked by the chart when user requests to create or modify an order.
 
 So we give you the ability to use your own dialog and it's 100% up to you how to manage it.
 
-####placeOrder(symbol, side, orderType, qty, price, stopLoss, takeProfit, expiration)
+####placeOrder([[order|Trading-Objects-and-Constants#order]], silently)
 
+Method is invoked when a user want to place an order. Order is pre-filled with partial or full information.
+If `silently` is `true` no order dialog show be shown.
+
+####modifyOrder([[order|Trading-Objects-and-Constants#order]], silently, focus)
+1. `order` is an order object to modify 
+2. `silently` - if it is `true` no order dialog show be shown
+3. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]]. It can be already initialized by the chart.
+
+Method is invoked when a user want to modify an existing order.
+
+#### cancelOrder(orderId, silently)
+This method is invoked to cancel single order with given `id`.
+If `silently` is `true` no dialogs show be shown.
+
+#### cancelOrders(symbol, side, ordersIds, silently)
 1. `symbol` - symbol string
 2. `side`: `"sell"` or `"buy"`
-3. `orderType`: `"limit"`, `"market"` or `"stop"`
-4. `qty`: quantity
-5. `price`: entered price
-6. `stopLoss`: entered stop loss price
-7. `takeProfit`: entered take profit price
-8. `expiration`: object with the only valuable property `expiration` - UTC time of expiration
+3. `ordersIds` - ids already collected by `symbol` and `side`
+If `silently` is `true` no dialogs show be shown.
 
-####modifyOrder(id, qty, price, stopLoss, takeProfit, expiration)
-This method is invoked to modify an order if orders confirmation is off when a user drags the order.
+This method is invoked to cancel multiple orders for a `symbol` and `side`.
 
-####editPositionBrackets(positionId)
+####editPositionBrackets(positionId, focus)
 This method is invoked if `supportBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.
+1. `positionId` is ID of existing position to be modified
+2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
 
-####closePosition(positionId)
+####closePosition(positionId, silently)
 This method is invoked if `supportClosePosition` configuration flag is on to close the position by id.
-And this is it !
+If `silently` is `true` no dialogs show be shown.
 
-####reversePosition(positionId)
+####reversePosition(positionId, silently)
 This method is invoked if `supportReversePosition` configuration flag is on to reverse the position by id.
+If `silently` is `true` no dialogs show be shown.
 
+#### symbolInfo(symbol) : Deferred (or Promise)
+1. `symbol` - symbol string
+
+This method is invoked by the internal Order Dialog, DOM panel and floating trading panel to get symbol information.
+Result is an object with the following data:
+- `qty` - object with fields `min`, `max` and `step` that specifies Quantity field step and boundaries.
+- `pipSize` - size of 1 pip (e.g., 0.0001 for EURUSD)
+- `pipValue` - values of 1 pip in account currency (e.g., 1 for EURUSD for an account in USD)
+- `minTick` - minimal price change (e.g., 0.00001 for EURUSD). It is used for price fields.
+- `description` - a description to be displayed in the dialog
+
+#### accountInfo() : Deferred (or Promise)
+
+This method is invoked by the internal Order Dialog to get account information.
+It should return only one field for now:
+1. currencySign: string - which is a sign of acccount currency
+
+#### subscribePL(positionId)
+
+Method should be implemented if `supportPLUpdate` config flag is `true`.
+Since this method is called the broker should provide profit/loss via [[plUpdate|Trading-Host#plupdatepositionid-pl]] method.
+
+#### unsubscribePL(positionId)
+
+Method should be implemented if `supportPLUpdate` config flag is `true`.
+Since this method is called the broker should stop providing profit/loss.
+
+#### subscribeEquity()
+
+Method should be implemented if you use standard order dialog and support stop loss.
+Since this method is called the broker should provide equity updates via [[equityUpdate|Trading-Host#equityupdateequity]] method.
+
+#### unsubscribeEquity()
+
+Method should be implemented if you use standard order dialog and support stop loss.
+Since this method is called the broker should stop providing equity updates.
 
 And this is it !
 

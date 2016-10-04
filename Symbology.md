@@ -159,3 +159,6 @@ Sector for stocks to be displayed in Symbol Info.
 
 #####industry
 Industry for stocks to be displayed in Symbol Info.
+
+#####currency_code
+Currency to be displayed in Symbol Info.

@@ -1,4 +1,4 @@
-Here is a list of supported chart's methods. 
+Here is a list of supported chart's methods.
 
 **Before 1.4 version.** You can call these methods using widget object returned to you by widget's constructor.
 
@@ -27,7 +27,7 @@ Here is a list of supported chart's methods.
   * [[getAllShapes()|Chart-Methods#getallshapes]]
   * [[getAllStudies()|Chart-Methods#getallstudies]]
   * [[setEntityVisibility(id, isVisible)|Chart-Methods#setentityvisibilityid-isvisible]]
-  * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides)|Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides]]
+  * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides, options)|Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides-options]]
   * [[createShape(point, options, callback)|Chart-Methods#createshapepoint-options-callback]]
   * [[createMultipointShape(points, options, callback)|Chart-Methods#createmultipointshapepoints-options-callback]]
   * [[removeEntity(entityId)|Chart-Methods#removeentityentityid]]
@@ -224,13 +224,14 @@ Returns an array of all created shapes objects. Each object has following fields
 #### setEntityVisibility(id, isVisible)
 Sets visibility of an entity with passed id.
 
-#### createStudy(name, forceOverlay, lock, inputs, callback, overrides)
+#### createStudy(name, forceOverlay, lock, inputs, callback, overrides, options)
 1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
 2. `forceOverlay`: forces the Charting Library to place the created study on main pane
 3. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
 4. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
 5. `callback`: function(`entityId`)
 6. `overrides`: (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
+7. `options`: object with the only possible key `checkLimit`. If it is `true` study limit dialog will be shown if the limit if exceeded.
 
 Creates the study on a main symbol. Examples: 
   * `createStudy('MACD', false, false, [14, 30, "close", 9])`

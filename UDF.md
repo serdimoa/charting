@@ -32,7 +32,7 @@ GOOG|0.1|Google
 ###Datafeed configuration data
 Request: `GET /config`
 
-Response: Library expects to receive JSON of the same structure as for JS API [[setup() call|JS-Api#onreadycallback]]. Also there should be 2 additional properties:
+Response: Library expects to receive JSON of the same structure as for JS API [[setup() call|JS-Api#setupreserved-callback]]. Also there should be 2 additional properties:
 
 * **supports_search**: Set this one to `true` if your datafeed supports symbol search and individual symbol resolve logic.
 * **supports_group_request**: Set this one to `true`  if your datafeed provides full info about symbols group only and is not able to perform symbol search or individual symbol resolve.

@@ -176,24 +176,36 @@ widget.onShortcut("alt+s", function() {
 ```
 
 #### subscribe(event, callback)
-1. `event`: can be 
-  * `toggle_sidebar` - drawing toolbar is shown/hidden
-  * `indicators_dialog` - Indicators dialog is shown
-  * `toggle_header` - chart header is shown/hidden
-  * `edit_object_dialog` - Chart/Study Properties dialog is shown
-  * `chart_load_requested` - new chart about to be loaded
-  * `chart_loaded`
-  * `mouse_down`
-  * `mouse_up`
-  * `onTick` - callback will be called every time when recent bar updates
-  * `onAutoSaveNeeded` - callback will be called every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds. See also [auto_save_delay](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#auto_save_delay)
-  * `onScreenshotReady` - callback will be called every time when user creates a screenshot and server returns the created image name
-  * `onMarkClick` - callback will be called every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument
-  * `onTimescaleMarkClick` - callback will be called every time when user clicks a timescale mark. Mark ID will be passed as an argument
-  * `onSelectedLineToolChanged` - callback will be called every time when selected line tool changes
-  * :chart: `layout_about_to_be_changed` - amount or placement of charts about to be changed
-  * :chart: `layout_changed` - amount or placement of charts is changed
-  * :chart: `activeChartChanged` - active chart is changed
+1. `event`: can be
+
+ | Event name | Library Version | Description |
+ |------------|-----------------|-------------|
+ | toggle_sidebar | | drawing toolbar is shown/hidden |
+ | indicators_dialog | | Indicators dialog is shown |
+ | toggle_header | | chart heder is shown/hidden |
+ | edit_object_dialog | | Chart/Study Properties dialog is shown |
+ | chart_load_requested | | new chart about to be loaded |
+ | chart_loaded | | |
+ | mouse_down | | |
+ | mouse_up | | |
+ | drawing | 1.7 | a drawing is added to a chart. Arguments contains an object with  `value` field that is the name of the drawing. |
+ | study | 1.7 | an indicator is added to a chart. Arguments contains an object with  `value` field that is the name of the indicator. |
+ | undo | 1.7 | |
+ | redo | 1.7 | |
+ | reset_scales | 1.7 | reset scales button is clicked |
+ | compare_add | 1.7 | Compare dialog is shown |
+ | add_compare | 1.7 | Compare instrument is added |
+ | load_study template | 1.7 | A study template is loaded |
+ | onTick | | callback will be called every time when recent bar updates |
+ | onAutoSaveNeeded | | callback will be called every time when user changes the chart.  `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds. See also [auto_save_delay](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#auto_save_delay) |
+ | onScreenshotReady | | callback will be called every time when user creates a screenshot and server returns the created image name |
+ | onMarkClick | | callback will be called every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument |
+ | onTimescaleMarkClick | | callback will be called every time when user clicks a timescale mark. Mark ID will be passed as an argument |
+ | onSelectedLineToolChanged | | callback will be called every time when selected line tool changes |
+ | :chart: layout_about_to_be_changed | | amount or placement of charts about to be changed |
+ | :chart: layout_changed | | amount or placement of charts is changed |
+ | :chart: activeChartChanged | | active chart is changed |
+
 2. `callback`: function(arguments)
 
 The library will call `callback` when GUI `event` is happened. Every event can have different set of arguments.

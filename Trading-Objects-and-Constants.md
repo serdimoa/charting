@@ -11,7 +11,8 @@ Describes a single order.
 * side : [[Side|Trading-Objects-and-Constants#side]]
 * qty : Double
 * status : [[OrderStatus|Trading-Objects-and-Constants#orderstatus]]
-* price : double
+* limitPrice : double
+* stopPrice : double
 * avg_price : double
 * filledQty : double
 * parentId : String. If order is a bracket parentOrderId should contain base order/position id.
@@ -72,8 +73,8 @@ String constants to describe an order/execution side.
 
 String constants to describe a bracket owner.
 
-order
-position
+* ORDER_PARENT
+* POSITION_PARENT
 
 
 ##OrderStatus
@@ -86,3 +87,29 @@ String constants to describe an order status.
 * rejected	order is rejected for some reason
 * filled	order is fully executed
 * canceled	order is canceled
+
+## DOMEObject
+
+An object that describes a single DOME response.
+
+* `snapshot`: Boolean
+Positive value means that previous data should be cleaned
+
+* `asks`: array of DOMELevel sorted by price ascendingly
+* `bids`: array of DOMELevel sorted by price ascendingly
+
+## DOMELevel
+
+Single DOME price level object.
+
+* `price`: double
+* `volume`: double
+
+
+## FocusOptions
+
+String constants to set focus when you open standard Order dialog or Position dialog.
+
+* STOP_PRICE_FIELD     focus stop price for StopLimit orders
+* TAKE_PROFIT_FIELD    focus take profit control
+* STOP_LOSS_FIELD      focus stop loss control

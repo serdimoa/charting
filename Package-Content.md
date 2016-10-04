@@ -6,7 +6,6 @@ You can check Charting Library version by executing `TradingView.version()` in a
 
 	+/charting_library
 		- charting_library.min.js
-		- customization.txt
 	+ /datafeed
 	+ /udf
 		- datafeed.js
@@ -16,7 +15,6 @@ You can check Charting Library version by executing `TradingView.version()` in a
 
 * /charting_library contains all the library files
 * /charting_library/charting_library.min.js contains an external Charting Library widget interface. This file is not supposed to be edited.
-* /charting_library/customization.txt contains the description of customizable Widget properties
 * /charting_library/datafeeds/udf/datafeed.js contains [UDF-compatible](UDF) datafeed wrapper (implements [JS API](JS-API) to connect to Charting Library and UDF to connect to datafeed) . Sample datafeed wrapper implement pulse realtime emulation. You are free to edit this file.
 * /charting_library/static folder stores Charting Library internal content and is not intended for other purposes.
 * /index.html is an example of using Charting Library widget on your web page

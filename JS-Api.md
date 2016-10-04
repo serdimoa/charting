@@ -20,6 +20,8 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 1. [[getQuotes|JS-Api#chart-getquotessymbols-ondatacallback-onerrorcallback]]
 2. [[subscribeQuotes|JS-Api#chart-subscribequotessymbols-fastsymbols-onrealtimecallback-listenerguid]]
 3. [[unsubscribeQuotes|JS-Api#chart-unsubscribequoteslistenerguid]]
+4. :chart: [[subscribeDepth|JS-Api#subscribedepthsymbolinfo-callback]]
+5. :chart: [[unsubscribeDepth|JS-Api#unsubscribedepthsubscriberuid]]
 
 ###onReady(callback)
 1. `callback`: function(configurationData)
@@ -223,9 +225,25 @@ This function is called when chart needs quotes data. The charting library expec
   1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
 4. `listenerGUID`: unique identifier of the listener
 
-Charting Library calls this function when it wants to receive realtime quotes for a symbol. Chart expects you will call `onRealtimeCallback` every time you want to update quotes. 
+Trading Platform calls this function when it wants to receive realtime quotes for a symbol. Chart expects you will call `onRealtimeCallback` every time you want to update quotes. 
 
 ###:chart: unsubscribeQuotes(listenerGUID)
 1. `listenerGUID`: unique identifier of the listener
 
-Library calls this function when is doesn't want to receive updates for this listener any more. `listenerGUID` will be the same object which Library passed to `subscribeQuotes` before.
+Trading Platform calls this function when is doesn't want to receive updates for this listener any more. `listenerGUID` will be the same object which Library passed to `subscribeQuotes` before.
+
+###subscribeDepth(symbolInfo, callback): String
+1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
+2. `callback`: function(depth)
+    1. `depth`: object `{snapshot, asks, bids}`
+        1. `snapshot`: Boolean - if `true` `asks` and `bids` have full set of depth, otherwise they contain only updated levels.
+        2. `asks`: Array of `{price, volume}`
+        3. `bids`: Array of `{price, volume}`
+
+Trading Platform calls this function when it wants to receive realtime level 2 (DOM) for a symbol. Chart expects you will call `callback` every time you want to update depth data.
+This method should return unique identified (subscriberUID) that will be used to unsubscribe data.
+
+###unsubscribeDepth(subscriberUID)
+1. `subscriberUID`: String
+
+Trading Platform calls this function when is doesn't want to receive updates for this listener any more. `subscriberUID` will be the same object which you have returned from `subscribeDepth`.

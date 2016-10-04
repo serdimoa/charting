@@ -14,4 +14,4 @@ Sets new value.
 
 ###unsubscribe(callback)
 
-Use the came function which you used in `subscribe` function to unsubscribe from the updates.
+Use the same function which you used in `subscribe` function to unsubscribe from the updates.
