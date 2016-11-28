@@ -15,6 +15,7 @@ Charting Library uses the same data structures for quotes in both [[JS API|JS Ap
   * `lp`: last deal price
   * `ask`: ask price
   * `bid`: bid price
+  * `spread`: spread
   * `open_price`: today's open
   * `high_price`: today's high
   * `low_price`: today's low
