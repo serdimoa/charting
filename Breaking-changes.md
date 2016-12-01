@@ -4,30 +4,32 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
+**Version 1.9**
+- We don't compile Pine scripts anymore. You can still use scripts compiled before.
 
-**In version 1.8 of Trading Platform**
+**Version 1.8 of Trading Platform**
 -  Chart has no option to show only actual orders anymore. Appropriate methods have been removed.
 - `showOrderDialog` receives an object instead of arguments list
 - `showSampleOrderDialog` removed, use [[showOrderDialog|Trading-Host#showorderdialogorder-handler]] instead
 - `showOrderDialog` removed from [[Trading Controller|Trading-Controller]], use `placeOrder` and `modifyOrder` receive `silently` argument instead
 - `reversePosition`, `closePosition`, `cancelOrder` have an additional argument `silently`. They should should appropriate dialogs by themselves from now.
 
-**In version 1.7**
+**Version 1.7**
 
 - Since this version it is not enough to call `setSymbol` with the same symbol. You should call `onResetCacheNeededCallback` from `subscribeBars` first. Then you can use `setSymbol` or new `resetData` method of the chart.
 - JSAPI protocol version 1 is not supported any more. `nextTime` and `noData` must be provided.
 
-**In version 1.5**
+**Version 1.5**
 
 * Added `source` argument to MACD. You should change MACD creation code to pass `source` also.
 `chartWidget.chart().createStudy('MACD', false, false, [12, 26, "close", 9])`
 
-**In version 1.4**
+**Version 1.4**
 
 * Override `transparency` is not supported anymore. We added transparency support to every color property. Use `rgba` form to define a color with transparency. Example: 
 `"symbolWatermarkProperties.color" : "rgba(60, 70, 80, 0.05)"`
 
-**In version 1.3**
+**Version 1.3**
 
 * Override `paneProperties.gridProperties.*` is not supported anymore. 
 Please use `paneProperties.vertGridProperties.*` and `paneProperties.horzGridProperties.*`
