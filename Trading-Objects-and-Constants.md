@@ -81,12 +81,14 @@ String constants to describe a bracket owner.
 
 String constants to describe an order status.
 
-* placing 	order is not created on a broker side yet
-* inactive 	bracket order is created but waiting for a base order to be filled
-* working	order is created but not executed yet
-* rejected	order is rejected for some reason
-* filled	order is fully executed
-* canceled	order is canceled
+| Status    | Description |
+|-----------|-------------|
+| pending 	| order is not created on a broker side yet |
+| inactive 	| bracket order is created but waiting for a base order to be filled |
+| working	| order is created but not executed yet |
+| rejected	| order is rejected for some reason |
+| filled	| order is fully executed |
+| canceled	| order is canceled |
 
 ## DOMEObject
 
