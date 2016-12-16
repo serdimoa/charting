@@ -9,8 +9,9 @@ Please note that the leading `-` characters are not a part of featureset name in
 | ID                                      | Default State | Library Version | Description                                                |
 |-----------------------------------------|---------------|-----------------|-------------|
 | **header_widget**                       | on            |                 |                                                            |
-| - <a name="abcd">header_widget_dom_node</a>                 | on          |                 | disabling this feature hides the header widget DOM element |
+| - header_widget_dom_node                | on            |                 | disabling this feature hides the header widget DOM element |
 | - header_symbol_search                  | on            |                 |                                                            |
+| - symbol_search_hot_key                 | on            |       1.9       | symbol search by a key press                               |
 | - header_resolutions                    | on            |                 |                                                            |
 | - - header_interval_dialog_button       | on            |                 |                                                            |
 | - - - show_interval_dialog_on_key_press | on            |                 |                                                            |
