@@ -55,6 +55,7 @@ widget.onChartReady(function() {
 * Customization
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
   * [[applyOverrides(overrides)|Widget-Methods#applyoverridesoverrides]]
+  * [[applyStudiesOverrides(overrides)|Widget-Methods#applystudiesoverridesoverrides]]
 * :chart: [[Trading Platform]] specific 
   * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]] 
 * :chart: Multiple Charts Layout
@@ -422,6 +423,13 @@ This method was introduced in version `1.3`. Starting from `1.4` use [custom_css
 1. `overrides` is an object. It is the same as [overrides](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#overrides) in Widget Constructor.
 
 This method applies overrides to properties without reloading the chart.
+
+#### applyStudiesOverrides(overrides)
+*Introduced in Charting Library 1.9*
+
+1. `overrides` is an object. It is the same as [studies_overrides](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#studies_overrides) in Widget Constructor.
+
+This method applies studies overrides to indicators' style or inputs without reloading the chart.
 
 #:chart: Trading Platform
 
