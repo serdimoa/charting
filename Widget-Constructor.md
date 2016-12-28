@@ -172,13 +172,15 @@ List of time frames visible in timeframes picker at the bottom of the chart. Exa
 ```javascript
 time_frames: [
     { text: "50y", resolution: "6M", description: "50 Years" },
-    { text: "3y", resolution: "W", description: "3 Years" },
+    { text: "3y", resolution: "W", description: "3 Years", title: "3yr" },
     { text: "8m", resolution: "D", description: "8 Month" },
     { text: "3d", resolution: "5", description: "3 Days" },
+    { text: "1000y", resolution: "W", description: "All", title: "All" },
 ]
 ```
 Time frame is an object containing `text` and `resolution` property. Text must have following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string having the common resolutions format. See [[this topic|Time-Frames]] to learn more about time frames.
-The `description` property was added in 1.7 and it is displayed in the popup menu. This parameter is optional (if the time frame descriptor does not contain this property, `text` is used).
+The `description` property was added in 1.7 and it is displayed in the popup menu. This parameter is optional (if the time frame descriptor does not contain this property: `title` (if it is specified) or `text` is used).
+The `title` property was added in 1.9 and this value will override default title generated from `text` property. This parameter is optional.
 
 ####charts_storage_url, client_id, user_id
 Those arguments are regarding high-level charts save/load. See more details [[here|Saving-and-Loading-Charts]].
