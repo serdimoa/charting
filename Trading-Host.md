@@ -73,6 +73,9 @@ Returns quotes of a symbol.
 #### floatingTradingPanelVisibility: [[WatchedValue]]
 Returns whether floatingTradingPanel is visible or not.
 
+#### showPricesWithZeroVolume: [[WatchedValue]]
+Returns whether levels with empty volume (between min and max volume levels) are collapsed or not.
+
 ####suggestedQty() : Object
 Returned object properties:
 1. value - use it to get current value. It returns Promise.
