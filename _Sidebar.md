@@ -19,6 +19,7 @@
     3. [[Chart Methods]]
     4. [[Featuresets]]
   3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
+  4. [[Customization Use Cases]]
 5. Trading Platform
   1. [[Brief Intro|Trading-Platform]]
   2. [[Trading Controller]]
