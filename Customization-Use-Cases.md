@@ -22,9 +22,13 @@ Change time range of bars when the resolution is changed by a user. Look at the 
 
 #### Initial timezone
 
+You can set what time zone is used by default. It can be changed by the user in the menu.
+
 [[documentation|Widget-Constructor#timezone-]]
 
 #### Size of the chart
+
+You can place the chart as en element on your web page or use fullscreen mode.
 
 [[Width and Height|Widget-Constructor#width-height]]
 
@@ -34,13 +38,10 @@ Change time range of bars when the resolution is changed by a user. Look at the 
 
 #### Chart colors
 
-1. Color of toolbars 
+Customize colors of the chart so it perfectly fits in your site.
 
-[[documentation|Widget-Constructor#toolbar_bg]]
-
-2. Color of the chart 
-
-[[documentation|Widget-Constructor#overrides]]
+1. Color of toolbars - [[documentation|Widget-Constructor#toolbar_bg]]
+2. Color of the chart - [[documentation|Widget-Constructor#overrides]]
 
 #### Indicators
 
@@ -72,23 +73,33 @@ Note: Language is set when the chart is created. It cannot be changed without re
 
 #### Default properties of a chart
 
+You can change any properties that present in the properties dialog.
+
 1. Initially - [[documentation|Widget-Constructor#overrides]]
 2. On the fly - [[documentation|Widget-Methods#applyoverridesoverrides]]
 
 #### Server for snapshots
 
+TradingView allows you to save snapshot on its servers, but if you wish you can change it.
+
 [[documentation|Widget-Constructor#snapshot_url]]
 
 #### Show/hide elements of the chart
 
-1. Most of the chart elements can be shown/hid by using [[documentation|Featuresets]]
+If you don't need some elements of the chart (toolbars, buttons, other controls), you can hide them:
+
+1. Most of the chart elements can be shown/hid by using [[Featuresets]]
 2. You can add your own CSS - [[documentation|Widget-Constructor#custom_css_url-since-14]]
 
 #### Time frames at the bottom of the chart
 
+Time frame is a time period of bars and a resolution preferred for displaying of the period. You can customize the list.
+
 [[documentation|Widget-Constructor#time_frames]]
 
 #### Initial list of favorite intervals / chart styles
+
+You can select what intervals and chart styles should be shown on the top toolbar by default. A user can change it if `items_favoriting` is enabled in the [[Featuresets]].
 
 [[documentation|Widget-Constructor#favorites]]
 
@@ -105,13 +116,19 @@ You can disable this behaviour using [[documentation|Featuresets]].
 
 #### Context menu
 
+You can add new elements to the context menu or hide existing items.
+
 [[documentation|Widget-Methods#oncontextmenucallback]]
 
 #### Custom buttons in the toolbar
 
+You can add your own buttons to the top toolbar of the chart.
+
 [[documentation|Widget-Methods#createbuttonoptions]]
 
 #### :chart: Watch list
+
+It is possible to choose default symbols for the watch list and set read-only state if needed.
 
 [[documentation|Widget-Constructor#chart-widgetbar]]
 
