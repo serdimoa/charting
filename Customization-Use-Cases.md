@@ -1,14 +1,18 @@
 Charting Library allows you to customize its appearance, the way it displays data, default properties and lots of other things.
-Customizations are client-side and server-side. Some of them are made through the constructor, other ones can be made using widget/chart methods. 
+
+Customizations are client-side and server-side. Some of them are made through the constructor, other ones can be made using widget/chart methods.
+
 Here is the single place where you can find most used customizations and links to their descriptions.
 
 #### Default instrument and resolution
 
-Change default symbol (instrument) and resolution (interval). Minimum supported resolution is 1 second.
+Change default symbol (instrument) and resolution (interval).
+
+Minimum supported resolution is 1 second.
 
 [[documentation|Widget-Constructor#symbol-interval-mandatory]]
 
-#### Default visible range (timeframe)
+#### Default visible range (time frame)
 
 Change time range of bars for the default resolution
 
@@ -88,7 +92,7 @@ TradingView allows you to save snapshot on its servers, but if you wish you can 
 
 If you don't need some elements of the chart (toolbars, buttons, other controls), you can hide them:
 
-1. Most of the chart elements can be shown/hid by using [[Featuresets]]
+1. Most of the chart elements can be shown/hidden by using [[Featuresets]]
 2. You can add your own CSS - [[documentation|Widget-Constructor#custom_css_url-since-14]]
 
 #### Time frames at the bottom of the chart
@@ -120,7 +124,7 @@ You can add new elements to the context menu or hide existing items.
 
 [[documentation|Widget-Methods#oncontextmenucallback]]
 
-#### Custom buttons in the toolbar
+#### Custom buttons on the toolbar
 
 You can add your own buttons to the top toolbar of the chart.
 
@@ -134,4 +138,6 @@ It is possible to choose default symbols for the watch list and set read-only st
 
 #### :chart: News feed
 
-You can attach to any RSS feed - [[documentation|Widget-Constructor#chart-rss_news_feed]]
+You can attach to any RSS feed and even select the feed depending on the instrument type.
+
+[[documentation|Widget-Constructor#chart-rss_news_feed]]

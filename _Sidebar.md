@@ -12,13 +12,13 @@
   5. [[Trading Sessions]]
   6. [[Quotes]]
 4. Chart Customization
-  1. [[Charts Customization 101]]
+  1. [[Customization Overview]]
   2. Client-Side Customization
     1. [[Widget Constructor|Widget-Constructor]]
     2. [[Widget Methods]]
     3. [[Chart Methods]]
     4. [[Featuresets]]
-  3. [[Server-Side Customization|Charts Customization 101#customization-done-through-data-stream]]
+  3. [[Server-Side Customization|Customization Overview#customization-done-through-data-stream]]
   4. [[Customization Use Cases]]
 5. Trading Platform
   1. [[Brief Intro|Trading-Platform]]

@@ -272,7 +272,7 @@ new TradingView.widget({
 ```
 
 #See Also
-* [[Charts Customization 101]]
+* [[Customization Overview]]
 * [[Widget Methods]]
 * [[Featuresets]]
 * [[Saving and Loading Charts|Saving-and-Loading-Charts]]

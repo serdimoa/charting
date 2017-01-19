@@ -572,7 +572,7 @@ Returns the main series style.
 
 # See Also
 * [[Widget Methods]]
-* [[Charts Customization 101]]
+* [[Customization Overview]]
 * [[Widget Constructor]]
 * [[Saving and Loading Charts|Saving-and-Loading-Charts]]
 * [[Overriding Studies' Defaults|Studies-Overrides]]

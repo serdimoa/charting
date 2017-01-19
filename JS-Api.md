@@ -27,7 +27,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 1. `callback`: function(configurationData)
   1. `configurationData`: object (see below)
 
-This call is intended to provide the object filled with configuration data. This data affects some of chart behavior aspects so it is called [[server-side customization|Charts-Customization-101#customization-done-through-data-stream]]. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. Configuration data is an object; for now, following properties are supported:
+This call is intended to provide the object filled with configuration data. This data affects some of chart behavior aspects so it is called [[server-side customization|Customization Overview#customization-done-through-data-stream]]. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. Configuration data is an object; for now, following properties are supported:
 
 #####exchanges
 An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument  to searchSymbolsByName (see below).

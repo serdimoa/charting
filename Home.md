@@ -9,7 +9,7 @@ host on your servers, connect your own data & use in your site/app for free. All
 
 If you want to customize your charts, then you may go further.
 
-* Investigate Charting Library [[customization possibilities|Charts-Customization-101]]
+* Investigate Charting Library [[Customization Overview|Customization Overview]] and [[Customization Possibilities|Customization Use Cases]]
 * [[Creating Custom Studies|Creating-Custom-Studies]]
 
 ### Having Trading Platform ?
