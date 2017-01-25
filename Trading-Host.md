@@ -84,15 +84,7 @@ Returned object properties:
 It is to synchronize quantity in Trading Floating Panel and in the dialogs.
 
 #### defaultContextMenuActions()
-Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuItems](Trading-Controller#chartcontextmenuitemse).
-
-#### defaultDropdownMenuActions(options)
-Provides default dropdown list of actions. Dropdown actions are requested by [bottomContextMenuItems](Trading-Controller#bottomcontextmenuitems).
-You can show/hide action using options:
-1. `showFloatingToolbar`: boolean;
-2. `tradingProperties`: boolean;
-3. `selectAnotherBroker`: boolean;
-4. `disconnect`: boolean;
+Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuItems](https://github.com/tradingview/charting_library/wiki/Trading-Controller#chartcontextmenuitems).
 
 ## Data Updates
 Using of these methods is required to notify the chart that it needs to update information.

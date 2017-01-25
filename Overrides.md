@@ -17,7 +17,7 @@ paneProperties.vertGridProperties.color: "#E6E6E6"
 paneProperties.vertGridProperties.style: LINESTYLE_SOLID
 paneProperties.horzGridProperties.color: "#E6E6E6"
 paneProperties.horzGridProperties.style: LINESTYLE_SOLID
-paneProperties.crossHairProperties.color: "#989898"
+paneProperties.crossHairProperties.color: "#B7B7B7"
 
 //	Margins (percent). Used for auto scaling.
 paneProperties.topMargin: 5
@@ -75,7 +75,7 @@ mainSeriesProperties.priceAxisProperties.percentageDisabled:false
 mainSeriesProperties.priceAxisProperties.log:false
 mainSeriesProperties.priceAxisProperties.logDisabled:false
 
-symbolWatermarkProperties.color : "rgba(0, 0, 0, 0.00)"
+symbolWatermarkProperties.color : "rgba(0, 0, 0, 0.05)"
 
 //	Different chart types defaults
 

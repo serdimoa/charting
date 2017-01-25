@@ -99,3 +99,4 @@ Please note that the leading `-` characters are not a part of featureset name in
 | header_layouttoggle | on | | shows Select Layout button in the header
 | show_logo_on_all_charts | off | |shows logo on every chart of multichart layout
 | chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading 
+| add_to_watchlist | on | 1.9 | Enabled "Add symbol to Watchlist" item in the menu
