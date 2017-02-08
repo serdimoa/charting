@@ -58,7 +58,7 @@ widget.onChartReady(function() {
   * [[applyStudiesOverrides(overrides)|Widget-Methods#applystudiesoverridesoverrides]]
 * :chart: [[Trading Platform]] specific 
   * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]]
-  * [[watchList()|Widget-Methods#chart-watchList]]
+  * [[watchList()|Widget-Methods#chart-watchlist]]
 * :chart: Multiple Charts Layout
   * [[chart(index)|Widget-Methods#chart-chartindex]]
   * [[activeChart()|Widget-Methods#chart-activechart]]
@@ -445,7 +445,9 @@ Displays a sample order dialog. This dialog looks like Trading View Paper Tradin
 *Introduced in Charting Library 1.9*
 
 Returns an object to manipulate the watchlist. The object has the following methods:
+
 1. `getList()` - allows you to get current list of the symbols.
+
 2. `setSymbols(symbols)` - allows you to set a list of symbols into the watchlist. It will replace the whole list.
 
 #:chart: Multiple Charts Layout
