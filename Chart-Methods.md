@@ -110,7 +110,7 @@ Makes the chart to change its symbol. Callback is called after new symbol's data
 
 Makes the chart to change its resolution. Callback is called after new data arrived.
 
-#### resetData
+#### resetData()
 
 Makes the chart to rerequest data from the data feed. Usually you need to call it when chart's data has changed.
 Before calling this you should call [[onResetCacheNeededCallback|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback]].
@@ -199,9 +199,24 @@ Calling this method makes the Library to request visible marks once again.
 Calling this method makes the Library to remove all visible marks.
 
 #### setChartType(type)
-1. `type`: `TradingView.BARS` | `TradingView.CANDLES` | `TradingView.AREA` | `TradingView.LINE` | `TradingView.HEIKEN_ASHI` | `TradingView.HOLLOW_CANDLES` 
+1. `type`: number
 
 Sets the main series style.
+
+```
+STYLE_BARS = 0;
+STYLE_CANDLES = 1;
+STYLE_LINE = 2;
+STYLE_AREA = 3;
+STYLE_HEIKEN_ASHI = 8;
+STYLE_HOLLOW_CANDLES = 9;
+
+STYLE_RENKO* = 4;
+STYLE_KAGI* = 5;
+STYLE_PNF* = 6;
+STYLE_PB* = 7;
+```
+*- :chart: available in Trading Platform  
 
 #### closePopupsAndDialogs()
 

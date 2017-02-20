@@ -232,7 +232,7 @@ Trading Platform calls this function when it wants to receive realtime quotes fo
 
 Trading Platform calls this function when is doesn't want to receive updates for this listener any more. `listenerGUID` will be the same object which Library passed to `subscribeQuotes` before.
 
-###subscribeDepth(symbolInfo, callback): String
+###:chart: subscribeDepth(symbolInfo, callback): String
 1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `callback`: function(depth)
     1. `depth`: object `{snapshot, asks, bids}`
@@ -243,7 +243,7 @@ Trading Platform calls this function when is doesn't want to receive updates for
 Trading Platform calls this function when it wants to receive realtime level 2 (DOM) for a symbol. Chart expects you will call `callback` every time you want to update depth data.
 This method should return unique identified (subscriberUID) that will be used to unsubscribe data.
 
-###unsubscribeDepth(subscriberUID)
+###:chart: unsubscribeDepth(subscriberUID)
 1. `subscriberUID`: String
 
 Trading Platform calls this function when is doesn't want to receive updates for this listener any more. `subscriberUID` will be the same object which you have returned from `subscribeDepth`.

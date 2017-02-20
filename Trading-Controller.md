@@ -50,7 +50,21 @@ Implement this method to provide configuration flags object. The result is an ob
 
 * supportLevel2Data
 
-    Level2 data is used for DOM widget. `subscribeDOME` and `unsubscribeDOME` should be implemented.
+    Level2 data is used for DOM widget. `subscribeDepth` and `unsubscribeDepth` should be implemented.
+    
+* supportStopLimitOrders
+
+    This flag adds stop-limit orders type to the order dialog.
+
+####durations(): array of objects
+List of expiration options of orders. It is optional. Do not implement it if you don't want the durations to be displayed in the order ticket.
+The objects have two kes: `{ name, value }`.
+
+Example:
+
+```
+return [{ name: 'DAY', value: 'DAY' }, { name: 'GTC', value: 'GTC' }];
+```
 
 ####positions : [Deferred](https://api.jquery.com/category/deferred-object/)
 ####orders : [Deferred](https://api.jquery.com/category/deferred-object/)
@@ -137,6 +151,7 @@ Result is an object with the following data:
 - `pipValue` - values of 1 pip in account currency (e.g., 1 for EURUSD for an account in USD)
 - `minTick` - minimal price change (e.g., 0.00001 for EURUSD). It is used for price fields.
 - `description` - a description to be displayed in the dialog
+- `type` - instrument type, only `forex` matters - it enables negative pips check in the order dialog
 
 #### accountInfo() : Deferred (or Promise)
 
