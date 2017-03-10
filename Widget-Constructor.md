@@ -263,6 +263,47 @@ One more example:
 }
 `````
 
+#### :chart: get_news
+
+Use this property to set own news getter function. The `symbol` and `callback` will be passed to the function.
+
+The callback can give an array of news objects the following structure:
+
+1. `title` (required) - News item title.
+1. `published` (required) - News item time in ms (UTC).
+1. `source` (optional) - Title of news item source.
+1. `shortDescription` (optional) - Short description of a news item that will be displayed under the title.
+1. `link` (optional) - URL to the news story
+1. `fullDescription` (optional) - Full description (body) of a news item
+
+**NOTE:** When a user clicks on a news item a new tab with `link` URL will be opened. If `link` is not specified a dialog popup with `fullDescription` will be shown.
+
+**NOTE 2:** If it is set `rss_news_feed` will be ignored.
+
+Example:
+```javascript
+get_news: function(symbol, callback) {
+    callback([
+        {
+            title: 'It is news for symbol ' + symbol,
+            shortDescription: 'Short description of the news item',
+            fullDescription: 'Full description of the news item',
+            published: new Date(),
+            source: 'My own news source',
+            link: 'https://www.tradingview.com/'
+        },
+        {
+            title: 'Another news for symbol ' + symbol,
+            shortDescription: 'Short description of the news item',
+            fullDescription: 'Full description of the news item. Very long long long long long long long long text.',
+            published: new Date(),
+            source: 'My own news source',
+        }
+    ]);
+}
+
+```
+
 ####:chart: trading_controller 
 Trading Controller is a thing which will make your trading live. [[Read more|Trading-Controller]].
 
