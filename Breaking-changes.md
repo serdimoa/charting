@@ -7,7 +7,7 @@ Here is the list of breaking changes:
 **Version 1.9**
 - We don't compile Pine scripts anymore. You can still use scripts compiled before.
 
-**Version 1.8 of Trading Platform**
+**Version 1.8 of Trading Terminal**
 -  Chart has no option to show only actual orders anymore. Appropriate methods have been removed.
 - `showOrderDialog` receives an object instead of arguments list
 - `showSampleOrderDialog` removed, use [[showOrderDialog|Trading-Host#showorderdialogorder-handler]] instead

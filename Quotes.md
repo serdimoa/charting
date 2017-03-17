@@ -2,7 +2,7 @@ Quote is a short set of data describing trades briefly. Charting Library support
 
 Charting Library uses the same data structures for quotes in both [[JS API|JS Api]] and [[UDF]]. Here is the description of response object:
 
-#Symbol Quote Data
+# Symbol Quote Data
 
 * `s`: Status code for symbol. Expected values: `ok` | `error`
 * `n`: Symbol name. This value must be **exactly the same** as in the request

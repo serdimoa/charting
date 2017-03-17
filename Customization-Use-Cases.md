@@ -63,7 +63,7 @@ Customize colors of the chart so it perfectly fits in your site.
 
 #### Language
 
-Choose one of more than 20 translations of the library 
+Choose one of more than 20 translations of the library
 
 [[documentation|Widget-Constructor#locale]]
 

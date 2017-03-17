@@ -39,7 +39,7 @@ Property path is a set of lower-case identifiers splitted with dot (`.`). Path f
 ### Study input
 Format: `indicator_name.input_name`
 
-* **indicator_name**: use name as you can see it in `Indicators` dialog.  
+* **indicator_name**: use name as you can see it in `Indicators` dialog.
 * **input_name**: use name as you can see it in indicator's properties dialog (see figure 1 below) -- i.e., `show ma`
 
 Examples: `volume.show ma`, `bollinger bands.length`

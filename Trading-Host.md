@@ -1,4 +1,4 @@
-:chart: All content on this page is relevant for [[Trading Platform]] only.
+:chart: All content on this page is relevant for [[Trading Terminal]] only.
 
 Trading Host is API for interaction between [[Trading Controller]] and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts with your trading logic. In terms of `JS`, it is an `object` with a set of functions. Here is a list of Hosts's **methods**.
 
@@ -76,7 +76,7 @@ Returns whether floatingTradingPanel is visible or not.
 #### showPricesWithZeroVolume: [[WatchedValue]]
 Returns whether levels with empty volume (between min and max volume levels) are collapsed or not.
 
-####suggestedQty() : Object
+#### suggestedQty() : Object
 Returned object properties:
 1. value - use it to get current value. It returns Promise.
 2. setValue - use it to set new value

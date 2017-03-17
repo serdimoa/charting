@@ -56,7 +56,7 @@ widget.onChartReady(function() {
   * [[addCustomCSSFile(url)|Widget-Methods#addcustomcssfileurl]]
   * [[applyOverrides(overrides)|Widget-Methods#applyoverridesoverrides]]
   * [[applyStudiesOverrides(overrides)|Widget-Methods#applystudiesoverridesoverrides]]
-* :chart: [[Trading Platform]] specific 
+* :chart: [[Trading Terminal]] specific
   * [[showSampleOrderDialog(order)|Widget-Methods#chart-showsampleorderdialogorder]]
   * [[watchList()|Widget-Methods#chart-watchlist]]
 * :chart: Multiple Charts Layout
@@ -248,11 +248,11 @@ Calling this method closes a context menu or a dialog if it is shown.
     7. `brush`
 
 Selection of a drawing or cursor which is identical to a single click on a drawing button.
-    
+
 #### selectedLineTool()
 
 Returns an [[identifier|Shapes and Overrides]] of the selected drawing or cursor (see above).
-    
+
 
 # Saving/Loading Charts
 
@@ -306,7 +306,7 @@ Removes chart from the server.
 1. `callback`: function(unixtime, price). This callback is expected to return a value (see below).
 
 The Library will call the callback provided every time when user opens context menu on the chart. Unix time and price of context menu point will be provided as arguments. To customize context menu items you have to return array of items descriptors. Item descriptor has following structure:
-```
+```javascript
 {
     position: 'top' | 'bottom',
     text: 'Menu item text',
@@ -319,10 +319,10 @@ The Library will call the callback provided every time when user opens context m
 
 To add a separator use minus sign. Example: `{ text: "-", position: "top" }`.
 
-To remove an existing item from a menu use minus sign in front of the item text. 
+To remove an existing item from a menu use minus sign in front of the item text.
 Example: `{ text: "-Objects Tree..." }`
 
-Example: 
+Example:
 ```javascript
 widget.onChartReady(function() {
     widget.onContextMenu(function(unixtime, price) {
@@ -330,7 +330,7 @@ widget.onChartReady(function() {
             position: "top",
             text: "First top menu item, time: " + unixtime + ", price: " + price,
             click: function() { alert("First clicked."); }
-        }, 
+        },
         { text: "-", position: "top" },
         { text: "-Objects Tree..." },
         {
@@ -432,16 +432,16 @@ This method applies overrides to properties without reloading the chart.
 
 This method applies studies overrides to indicators' style or inputs without reloading the chart.
 
-#:chart: Trading Platform
+# :chart: Trading Terminal
 
-The following methods are available in [[Trading Platform]] only.
+The following methods are available in [[Trading Terminal]] only.
 
-####:chart: showSampleOrderDialog(order)
-1. `order`: object 
+#### :chart: showSampleOrderDialog(order)
+1. `order`: object
 
 Displays a sample order dialog. This dialog looks like Trading View Paper Trading one. Usually you don't need to use the sample dialog. This method is used in the trading sample.
 
-####:chart: watchList()
+#### :chart: watchList()
 *Introduced in Charting Library 1.9*
 
 Returns an object to manipulate the watchlist. The object has the following methods:
@@ -450,26 +450,26 @@ Returns an object to manipulate the watchlist. The object has the following meth
 
 2. `setList(symbols)` - allows you to set a list of symbols into the watchlist. It will replace the whole list.
 
-#:chart: Multiple Charts Layout
+# :chart: Multiple Charts Layout
 
-####:chart: chart(index)
+#### :chart: chart(index)
 1. `index`: index of a chart starting from 0. `index` is 0 by default.
 
 Returns a chart object that you can use to call [[Chart-Methods]]
 
-####:chart: activeChart()
+#### :chart: activeChart()
 
 Returns current active chart object that you can use to call [[Chart-Methods]]
 
-####:chart: chartsCount()
+#### :chart: chartsCount()
 
 Returns amount of charts in the current layout
 
-####:chart: layout()
+#### :chart: layout()
 
 Returns current layout mode. Possible values: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
 
-####:chart: setLayout(layout)
+#### :chart: setLayout(layout)
 1. `layout`: Possible values: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
 
 Changes current chart layout.

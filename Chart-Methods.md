@@ -216,7 +216,7 @@ STYLE_KAGI* = 5;
 STYLE_PNF* = 6;
 STYLE_PB* = 7;
 ```
-*- :chart: available in Trading Platform  
+*- :chart: available in Trading Terminal
 
 #### closePopupsAndDialogs()
 

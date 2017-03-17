@@ -960,7 +960,7 @@ linetoolvisibilities: {
 }
 ```
 
-###Constants
+### Constants
 
 These constants are used in the drawings defaults. You cannot use their names directly. Use the values instead.
 

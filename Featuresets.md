@@ -68,7 +68,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | **use_localstorage_for_settings**	| on	|                 | allows to save user settings to the local storage
 | - items_favoriting	| on	|                 | disabling this feature hides all "Favorite this item" buttons
 | - save_chart_properties_to_local_storage	| on	|                 | disabling this feature prevents saving of chart properties (colors, styles, fonts) to the local storage, but still keeps saving of favorite items
-| create_volume_indicator_by_default	| on	|                 | 
+| create_volume_indicator_by_default	| on	|                 |
 | volume_force_overlay	| on	|                 | places Volume indicator on the same pane with the main series
 | right_bar_stays_on_scroll	| on	|                 | determines zoom behavior: bar under cursor is kept if disabled
 | constraint_dialogs_movement	| on	|                 | prevents moving dialogs out of the chart
@@ -90,12 +90,12 @@ Please note that the leading `-` characters are not a part of featureset name in
 | seconds_resolution| off | 1.4 | enables seconds resolution support
 
 
-## :chart: Trading Platform
+## :chart: Trading Terminal
 
-| ID	| Default State	| Platform Version | Description
+| ID	| Default State	| Terminal Version | Description
 |-------|---------------|------------------|------------
 | support_multicharts | on | | enables context menu actions (Clone, Sync) related to Multiple Chart Layout
 | header_layouttoggle | on | | shows Select Layout button in the header
 | show_logo_on_all_charts | off | |shows logo on every chart of multichart layout
-| chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading 
+| chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading
 | add_to_watchlist | on | 1.9 | Enabled "Add symbol to Watchlist" item in the menu

@@ -2,7 +2,7 @@ Charting Library package is available on GitHub. You may check out the latest st
 
 You can check Charting Library version by executing `TradingView.version()` in a browser console.
 
-###Package content
+### Package content
 
 	+/charting_library
 		- charting_library.min.js

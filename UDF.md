@@ -1,7 +1,7 @@
 **What it is ?**: HTTP-based protocol designed to deliver data to Charting Library in a simple and efficient way.<br>
-**What should I do to use it ?**: You should create tiny server-side HTTP service which will get the data from your storage and respond to Charting Library requests. 
+**What should I do to use it ?**: You should create tiny server-side HTTP service which will get the data from your storage and respond to Charting Library requests.
 
-#Response-as-a-table concept
+# Response-as-a-table concept
 
 Datafeeed responses often may be treated as tables. I.e., response about exchange’s symbols list may be treated as a table where each symbol represents a row, and there are some columns (minimal_price_movement, description, has_intraday e.t.c.). Each column may be an array (thus, it will provide separate value for each table’s row). But there may be a situation when all table’s rows has the same values of the column. In this case, the column’s value may be a single value in JSON response .
 
@@ -27,9 +27,9 @@ FB|0.1|Facebook
 GOOG|0.1|Google
 
 
-#API Calls
+# API Calls
 
-###Datafeed configuration data
+### Datafeed configuration data
 Request: `GET /config`
 
 Response: Library expects to receive JSON of the same structure as for JS API [[setup() call|JS-Api#onreadycallback]]. Also there should be 2 additional properties:
@@ -50,7 +50,7 @@ Either `supports_search` or `supports_group_request` should be `true`.
 }
 ```
 
-###Group symbols info
+### Group symbols info
 Request: `GET /symbol_info?group=<group_name>`
 
 1. `group_name`: string
@@ -109,7 +109,7 @@ Example: Here is the example of datafeed response to `GET /symbol_info?group=NYS
 **Remark 3**: using this mode (getting large bulks of symbols data) makes the browser to store data which user even wasn't asking for. So if your symbols list has more than a few items, please consider supporting symbol search / individual symbol resolve instead.
 
 
-###Symbol resolve
+### Symbol resolve
 Request: `GET /symbols?symbol=<symbol>`
 
 1. `symbol`: string. Symbol name or ticker.
@@ -120,7 +120,7 @@ Response: JSON containing object **exactly** similar to [[SymbolInfo|Symbology#s
 
 **Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
 
-###Symbol search
+### Symbol search
 Request: `GET /search?query=<query>&type=<type>&exchange=<exchange>&limit=<limit>`
 
 1. `query`: string. Text typed by user in Symbol Search edit box
@@ -135,13 +135,13 @@ Response: Response is expected to be an array of symbol records as in [[respecti
 **Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
 
 
-###Bars
+### Bars
 Request: `GET /history?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
 
 1. `symbol`: symbol name or ticker.
 2. `from`: unix timestamp (UTC) or leftmost required bar
 3. `to`: unix timestamp (UTC) or rightmost required bar
-4. `resolution`: string 
+4. `resolution`: string
 
 Example: `GET /history?symbol=BEAM~0&resolution=D&from=1386493512&to=1395133512`
 
@@ -202,13 +202,13 @@ So `nextTime` is a time of the bar which is next to the left (at the imaginary t
 
 All omitted prices will be treated as equal to `close`.
 
-###Marks
+### Marks
 Request: `GET /marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
 
 1. `symbol`: symbol name or ticker.
 2. `from`: unix timestamp (UTC) or leftmost visible bar
 3. `to`: unix timestamp (UTC) or rightmost visible bar
-4. `resolution`: string 
+4. `resolution`: string
 
 Response: Response is expected to be an object with some properties listed below. This object is similar to [[respective response|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]] in JS API, but each property is treated as table column, like described above.
 
@@ -226,15 +226,15 @@ Response: Response is expected to be an object with some properties listed below
 
 **Remark**: This call will be requested if your datafeed sent `supports_marks: true` in configuration data.
 
-###Timescale marks
+### Timescale marks
 Request: `GET /timescale_marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
 
 1. `symbol`: symbol name or ticker.
 2. `from`: unix timestamp (UTC) or leftmost visible bar
 3. `to`: unix timestamp (UTC) or rightmost visible bar
-4. `resolution`: string 
+4. `resolution`: string
 
-Response: Response is expected to be an array of objects with properties listed below. 
+Response: Response is expected to be an array of objects with properties listed below.
 
 1. `id`: unique identifier of a mark
 2. `color`: rgba color
@@ -244,12 +244,12 @@ Response: Response is expected to be an array of objects with properties listed 
 
 **Remark**: This call will be requested if your datafeed sent `supports_timescale_marks: true` in configuration data.
 
-###Server time
+### Server time
 Request: `GET /time`
 
 Response: Numeric unix time without milliseconds. Example: 1445324591
 
-###Quotes
+### Quotes
 Request: `GET /quotes?symbols=<ticker_name_1>,<ticker_name_2>,...,<ticker_name_n>`
 
 Example: `GET /quotes?symbols=NYSE%3AAA%2CNYSE%3AF%2CNasdaqNM%3AAAPL`
@@ -304,19 +304,19 @@ Example:
 }
 ```
 
-##Constructor
+## Constructor
 
 `Datafeeds.UDFCompatibleDatafeed = function(datafeedURL, updateFrequency, protocolVersion)`
 
-###datafeedURL
+### datafeedURL
 
 This is a URL of a data server which will get requests and return data.
 
-###updateFrequency
+### updateFrequency
 
 This in an interval of real-time requests the datafeed will send to the server in milliseconds. Default is 10000 (10 sec).
 
-###protocolVersion
+### protocolVersion
 
 `1` - outdated protocol which re-requests all data from the server every time the chart is scrolled.
 

@@ -1,5 +1,5 @@
 This topic contains chart properties description. These properties are treated
-as customizable ones. Other properties customization is not supported. 
+as customizable ones. Other properties customization is not supported.
 
 This file format:
 
@@ -133,7 +133,7 @@ mainSeriesProperties.areaStyle.linewidth: 1
 mainSeriesProperties.areaStyle.priceSource: "close"
 ```
 
-#####LineStyles
+##### LineStyles
 LINESTYLE_SOLID = 0
 
 LINESTYLE_DOTTED = 1
@@ -142,7 +142,7 @@ LINESTYLE_DASHED = 2
 
 LINESTYLE_LARGE_DASHED = 3
 
-####Customization of Overlay Symbols
+#### Customization of Overlay Symbols
 
 ```
 study_Overlay@tv-basicstudies.style: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)

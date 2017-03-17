@@ -1,6 +1,6 @@
 Customization is rather a vague concept so there are a few articles about it.
 
-#Customization done through data stream.
+# Customization done through data stream.
 They are most about data-related stuff. Those customizations are done through datafeed configuration response. The example of configuration response:
 
 ```javascript
@@ -24,8 +24,8 @@ They are most about data-related stuff. Those customizations are done through da
 
 One may find more detailed description of this parameters on [[JS API page|JS-Api#onreadycallback]].
 
-#Customizations done on client-side. 
-These ones allow you to affect most of UI/UX. These customizations are done through chart widget constructor arguments. The example of widget constructor call: 
+# Customizations done on client-side.
+These ones allow you to affect most of UI/UX. These customizations are done through chart widget constructor arguments. The example of widget constructor call:
 
 ```javascript
 var widget = new TradingView.widget({
@@ -67,7 +67,7 @@ var widget = new TradingView.widget({
 
 See the details in [[Widget Constructor Arguments article|Widget-Constructor]].
 
-#See Also
+# See Also
 * [[Widget's Constructor Arguments|Widget-Constructor]]
 * [[Widget's Methods|Widget-Methods]]
 * [[Customization Use Cases]]

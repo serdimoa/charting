@@ -1,4 +1,4 @@
-:chart: All content on this page is relevant for [[Trading Platform]] only.
+:chart: All content on this page is relevant for [[Trading Terminal]] only.
 
 Account Manager is an interactive table that displays trading information.
 Usually it has 3 pages: orders/positions and account information.

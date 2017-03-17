@@ -1,13 +1,13 @@
-:chart: All content on this page is relevant for [[Trading Platform]] only.
+:chart: All content on this page is relevant for [[Trading Terminal]] only.
 
-Trading Controller is a thing which will make your trading live. Its main purpose is to connect our charts with your trading logic. In terms of `JS`, it is an `object` which is expected to expose the specific interface. Here is a list of Controller's **methods** which Platform will expect to have.
+Trading Controller is a thing which will make your trading live. Its main purpose is to connect our charts with your trading logic. In terms of `JS`, it is an `object` which is expected to expose the specific interface. Here is a list of Controller's **methods** which Terminal will expect to have.
 
-##Required Methods 
+## Required Methods
 
-####setHost(host)
+#### setHost(host)
 This methods is called on initialization to pass a [[Trading Host]] to the controller.
 
-####configFlags()
+#### configFlags()
 Implement this method to provide configuration flags object. The result is an object with the following keys, that can be `true`/`false`:
 
 * supportReversePosition
@@ -51,12 +51,12 @@ Implement this method to provide configuration flags object. The result is an ob
 * supportLevel2Data
 
     Level2 data is used for DOM widget. `subscribeDepth` and `unsubscribeDepth` should be implemented.
-    
+
 * supportStopLimitOrders
 
     This flag adds stop-limit orders type to the order dialog.
 
-####durations(): array of objects
+#### durations(): array of objects
 List of expiration options of orders. It is optional. Do not implement it if you don't want the durations to be displayed in the order ticket.
 The objects have two kes: `{ name, value }`.
 
@@ -66,51 +66,51 @@ Example:
 return [{ name: 'DAY', value: 'DAY' }, { name: 'GTC', value: 'GTC' }];
 ```
 
-####positions : [Deferred](https://api.jquery.com/category/deferred-object/)
-####orders : [Deferred](https://api.jquery.com/category/deferred-object/)
-####executions(symbol) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### positions : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### orders : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### executions(symbol) : [Deferred](https://api.jquery.com/category/deferred-object/)
 These methods are called by the Chart to request positions/orders/executions and display them on a chart.
 You should return the appropriate lists of [[positions|Trading-Objects-and-Constants#position]], [[orders|Trading-Objects-and-Constants#order]] or [[executions|Trading-Objects-and-Constants#execution]]
 
-####supportFloatingPanel()
+#### supportFloatingPanel()
 Function should return `true` for Floating Trading Panel to be displayed.
 
-####supportBottomWidget()
+#### supportBottomWidget()
 Function should return `true` for Bottom Trading Panel to be displayed.
 
-####buttonDropdownItems()
+#### buttonDropdownItems()
 Bottom Trading Panel has a button with a list of dropdown items. This function is expected to return an array of [[ActionMetainfo|Trading-Objects-and-Constants#actionmetainfo]], each of them representing one dropdown item.
 
-####chartContextMenuItems(e)
+#### chartContextMenuItems(e)
 Chart can have a sub-menu `Trading` in the context menu. Return the list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.
 
 `e` is a context object passed by a broswer
 
-####bottomContextMenuItems()
+#### bottomContextMenuItems()
 Bottom Trading Panel can have a context menu. Return a list of items for this menu. Format is the same as for `buttonDropdownItems`.
 
-####isTradable(symbol)
+#### isTradable(symbol)
 This function is required for the Floating Trading Panel. Ability to trade via the panel depends on the result of this function: `true` or `false`. You don't need to imlement this method if all the symbols can be traded.
 
-####createBottomWidget(container)
+#### createBottomWidget(container)
 This function is called when it is needed to create a Bottom Trading Panel. You should create DOM object and append it to the `container`. The container shows a vertical scroll bar when it is needed.
 
-####accountManagerInfo()
+#### accountManagerInfo()
 This function is called when supportCustomBottomWidget is false. It should return information that will be used to build an account manager.
 See [[Account Manager]] for more information.
 
-####showOrderDialog([[order|Trading-Objects-and-Constants#order]])
+#### showOrderDialog([[order|Trading-Objects-and-Constants#order]])
 This function is invoked by the chart when user requests to create or modify an order.
 
 So we give you the ability to use your own dialog and it's 100% up to you how to manage it.
 
-####placeOrder([[order|Trading-Objects-and-Constants#order]], silently)
+#### placeOrder([[order|Trading-Objects-and-Constants#order]], silently)
 
 Method is invoked when a user want to place an order. Order is pre-filled with partial or full information.
 If `silently` is `true` no order dialog show be shown.
 
-####modifyOrder([[order|Trading-Objects-and-Constants#order]], silently, focus)
-1. `order` is an order object to modify 
+#### modifyOrder([[order|Trading-Objects-and-Constants#order]], silently, focus)
+1. `order` is an order object to modify
 2. `silently` - if it is `true` no order dialog show be shown
 3. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]]. It can be already initialized by the chart.
 
@@ -128,16 +128,16 @@ If `silently` is `true` no dialogs show be shown.
 
 This method is invoked to cancel multiple orders for a `symbol` and `side`.
 
-####editPositionBrackets(positionId, focus)
+#### editPositionBrackets(positionId, focus)
 This method is invoked if `supportBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.
 1. `positionId` is ID of existing position to be modified
 2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
 
-####closePosition(positionId, silently)
+#### closePosition(positionId, silently)
 This method is invoked if `supportClosePosition` configuration flag is on to close the position by id.
 If `silently` is `true` no dialogs show be shown.
 
-####reversePosition(positionId, silently)
+#### reversePosition(positionId, silently)
 This method is invoked if `supportReversePosition` configuration flag is on to reverse the position by id.
 If `silently` is `true` no dialogs show be shown.
 
@@ -181,6 +181,6 @@ Since this method is called the broker should stop providing equity updates.
 
 And this is it !
 
-#See Also
+# See Also
   * [[How to connect|Widget-Constructor#chart-trading_controller]] your trading controller to the chart
   * [[Trading Host]]

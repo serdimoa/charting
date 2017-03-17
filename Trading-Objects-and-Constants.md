@@ -1,8 +1,8 @@
-:chart: All content on this page is relevant for [[Trading Platform]] only.
+:chart: All content on this page is relevant for [[Trading Terminal]] only.
 
-##Order
+## Order
 
-Describes a single order. 
+Describes a single order.
 
 * id : String
 * symbol : String
@@ -18,9 +18,9 @@ Describes a single order.
 * parentId : String. If order is a bracket parentOrderId should contain base order/position id.
 * parentType: [[ParentType|Trading-Objects-and-Constants#parenttype]]
 
-##Position
+## Position
 
-Describes a single position. 
+Describes a single position.
 
 * id: String. Usually id should be equal to brokerSymbol
 * symbol : String
@@ -29,7 +29,7 @@ Describes a single position.
 * side: [[Side|Trading-Objects-and-Constants#side]]
 * avg_price : Double
 
-##Execution
+## Execution
 
 Describes a single execution.
 
@@ -39,9 +39,9 @@ Describes a single execution.
 * time: time_t
 * side : [[Side|Trading-Objects-and-Constants#side]]
 * qty : double
- 
 
-##ActionMetainfo
+
+## ActionMetainfo
 
 Describes a single action to put it into a dropdown or a context menu. It is a structure.
 
@@ -52,7 +52,7 @@ Describes a single action to put it into a dropdown or a context menu. It is a s
 * enabled: Boolean
 * action: function. Action is executed when user clicks the item. It has 1 argument - value of the checkbox if exists.
 
-##OrderType
+## OrderType
 
 String constants to describe an order status.
 
@@ -61,7 +61,7 @@ String constants to describe an order status.
 * stop
 * stoplimit
 
-##Side
+## Side
 
 String constants to describe an order/execution side.
 
@@ -69,7 +69,7 @@ String constants to describe an order/execution side.
 * Sell
 
 
-##ParentType
+## ParentType
 
 String constants to describe a bracket owner.
 
@@ -77,7 +77,7 @@ String constants to describe a bracket owner.
 * POSITION_PARENT
 
 
-##OrderStatus
+## OrderStatus
 
 String constants to describe an order status.
 

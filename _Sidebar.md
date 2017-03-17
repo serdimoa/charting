@@ -20,8 +20,8 @@
         4. [[Featuresets]]
     3. [[Server-Side Customization|Customization Overview#customization-done-through-data-stream]]
     4. [[Customization Use Cases]]
-5. Trading Platform
-    1. [[Brief Intro|Trading-Platform]]
+5. Trading Terminal
+    1. [[Brief Intro|Trading-Terminal]]
     2. [[Trading Controller]]
     3. [[Trading Host]]
 6. [[Saving/Loading Charts|Saving-and-Loading-Charts]]

@@ -12,8 +12,8 @@ If you want to customize your charts, then you may go further.
 * Investigate Charting Library [[Customization Overview|Customization Overview]] and [[Customization Possibilities|Customization Use Cases]]
 * [[Creating Custom Studies|Creating-Custom-Studies]]
 
-### Having Trading Platform ?
-:chart: Trading Platform is the ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [[Read more|Trading-Platform]].
+### Having Trading Terminal ?
+:chart: Trading Terminal is the ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [[Read more|Trading-Terminal]].
 
 ### Best Practices
 Reading [[this article|Best-Practices]] will prevent you from making the most common mistakes and **save your time**.
