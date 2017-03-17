@@ -448,7 +448,7 @@ Returns an object to manipulate the watchlist. The object has the following meth
 
 1. `getList()` - allows you to get current list of the symbols.
 
-2. `setSymbols(symbols)` - allows you to set a list of symbols into the watchlist. It will replace the whole list.
+2. `setList(symbols)` - allows you to set a list of symbols into the watchlist. It will replace the whole list.
 
 #:chart: Multiple Charts Layout
 
