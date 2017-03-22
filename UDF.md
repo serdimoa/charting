@@ -159,6 +159,8 @@ Response: Response is expected to be an object with some properties listed below
 
 **Remark**: bar time for daily bars is expected to be a trading day (not session start day) at 00:00 UTC. Charting Library aligns time according to [Session](https://github.com/tradingview/charting_library/wiki/Symbology#session) from SymbolInfo
 
+**Remark**: bar time for monthly bars is the first trading day of the month without the time part
+
 **Remark**: prices should be passed as numbers, not quoted string
 
 Example:

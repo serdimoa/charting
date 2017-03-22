@@ -69,6 +69,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | - items_favoriting	| on	|                 | disabling this feature hides all "Favorite this item" buttons
 | - save_chart_properties_to_local_storage	| on	|                 | disabling this feature prevents saving of chart properties (colors, styles, fonts) to the local storage, but still keeps saving of favorite items
 | create_volume_indicator_by_default	| on	|                 |
+| create_volume_indicator_by_default_once | on |                  |
 | volume_force_overlay	| on	|                 | places Volume indicator on the same pane with the main series
 | right_bar_stays_on_scroll	| on	|                 | determines zoom behavior: bar under cursor is kept if disabled
 | constraint_dialogs_movement	| on	|                 | prevents moving dialogs out of the chart

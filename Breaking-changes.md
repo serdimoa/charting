@@ -4,6 +4,13 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
+**Version 1.10**
+- Default behavior of Volume indicator is changed.
+
+Previous behavior: Volume indicator is added/removed when an instrument or a resolution is switched depending on volume support by the instrument. You can get back to this behavior by disabling `create_volume_indicator_by_default_once` featureset.
+
+New behavior: Volume indicator is added on first load of an empty chart if it is supported by an active instrument.
+
 **Version 1.9**
 - We don't compile Pine scripts anymore. You can still use scripts compiled before.
 

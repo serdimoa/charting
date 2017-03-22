@@ -104,8 +104,11 @@ This function is called when chart needs a history fragment defined by dates ran
 `nextTime` is a time of the next bar in the history. It should be set when there is no data in the requested period only.
 `noData` should be set when there is no data in the requested period and earlier only.
 
-**Remark**: each bar object must have `time` and `close` properties. Others are optional.
-**Remark 2**: `bar.time` is expected to be the amount of milliseconds since Unix epoch start in **UTC** timezone.
+**Remark**: `bar.time` is expected to be the amount of milliseconds since Unix epoch start in **UTC** timezone.
+
+**Remark**: `bar.time` for daily bars is expected to be a trading day (not session start day) at 00:00 UTC. Charting Library aligns time according to [Session](https://github.com/tradingview/charting_library/wiki/Symbology#session) from SymbolInfo
+
+**Remark**: `bar.time` for monthly bars is the first trading day of the month without the time part
 
 
 ### subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback)

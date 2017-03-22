@@ -450,6 +450,8 @@ Returns an object to manipulate the watchlist. The object has the following meth
 
 2. `setList(symbols)` - allows you to set a list of symbols into the watchlist. It will replace the whole list.
 
+3. `onListChanged()` - you can subscribe using [[Subscription]] object returned by this function to be notified when the watchlist is changed and unsubscribe from the event. If there is no WatchList `null` will be returned.
+
 # :chart: Multiple Charts Layout
 
 #### :chart: chart(index)
