@@ -75,7 +75,7 @@ The Charting Library will call the callback provided once when chart is initiali
 
 #### onSymbolChange(callback)
 1. `callback`: function(symbolData)
-  1.  `symbolData`: object `{name, exchange, description, type, interval}`
+    1. `symbolData`: object `{name, exchange, description, type, interval}`
 
 The Charting Library will call the callback provided every time the main series symbol changes. New symbol info will be passed as argument.
 
@@ -83,7 +83,7 @@ The Charting Library will call the callback provided every time the main series 
 
 #### onIntervalChange(callback)
 1. `callback`: function(interval)
-  1. `interval`: string
+    1. `interval`: string
 
 The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
 
@@ -113,9 +113,9 @@ The Library will call the callback provided every time when user clicks a timesc
 
 #### onGrayedObjectClicked(callback)
 1. `callback`: function(subject)
-  1. `subject`: object `{type, name}`
-    1. `type`: `drawing` | `study`
-    2. `name`: string, name of a subject which was clicked
+    1. `subject`: object `{type, name}`
+        1. `type`: `drawing` | `study`
+        2. `name`: string, name of a subject which was clicked
 
 The Library will call the callback provided every time when user clicks on grayed out object. Example:
 
@@ -347,7 +347,7 @@ widget.onChartReady(function() {
 
 #### createButton(options)
 1. `options`: object `{ align: "left" }`
-  1. `align`: "right" | "left". default: "left"
+    1. `align`: "right" | "left". default: "left"
 
 Creates a new DOM element in chart top toolbar and returns **jQuery object** for this button. You can use it to append custom controls right on the chart. Example:
 
@@ -366,17 +366,17 @@ widget.onChartReady(function() {
 
 #### showNoticeDialog(params)
 1. `params`: object:
-  1. `title`: text to be shown in the title
-  2. `body`: text to be shown in the body
-  3. `callback`: function to be called when ok button is pressed
+    1. `title`: text to be shown in the title
+    2. `body`: text to be shown in the body
+    3. `callback`: function to be called when ok button is pressed
 
 This method shows a dialog with custom title and text and "OK" button.
 
 #### showConfirmDialog(params)
 1. `params`: object:
-  1. `title`: text to be shown in the title
-  2. `body`: text to be shown in the body
-  3. `callback(result)`: function to be called when ok button is pressed. `result` is `true` if `OK` is pressed, otherwise it is `false`.
+    1. `title`: text to be shown in the title
+    2. `body`: text to be shown in the body
+    3. `callback(result)`: function to be called when ok button is pressed. `result` is `true` if `OK` is pressed, otherwise it is `false`.
 
 This method shows a dialog with custom title and text and "OK", "CANCEL" buttons.
 
@@ -392,7 +392,7 @@ Displays Save As... chart dialog.
 
 #### symbolInterval(callback)
 1. `callback`: function(result)
-  1. `result`: object `{symbol, interval}`
+    1. `result`: object `{symbol, interval}`
 
 **Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
 

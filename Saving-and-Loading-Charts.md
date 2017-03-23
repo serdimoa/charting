@@ -1,6 +1,6 @@
 Charting Library supports saving/loading charts and study templates (study templates are available in `unstable`) on 2 levels of abstraction:
 
-1. **Low-Level**: save/load functionality is present by widget's `save()` / `load()` [[methods|Widget-Methods#savecallback]] and `createStudyTemplate()` / `applyStudyTemplate()` [[methods|Widget-Methods#createstudytemplateoptions-callback]]. One who uses them should take care of physical storage on his own. But you can save those JSONs where you want to --  in example, you may embed them to your saved pages or user's working area and so on.
+1. **Low-Level**: save/load functionality is present by widget's `save()` / `load()` [[methods|Widget-Methods#savecallback]] and `createStudyTemplate()` / `applyStudyTemplate()` [[methods|Widget-Methods#createstudytemplateoptions-callback]]. One who uses them should take care of physical storage on his own. But you can save those JSONs where you want to -- in example, you may embed them to your saved pages or user's working area and so on.
 
 2. **High-Level**: Charting Library is able to save / load charts and study templates from storage you'll point to. We created a tiny storage sample with Python and PostgreSQL and put it on [our GitHub](https://github.com/tradingview/saveload_backend). You may grab it and run on your own server so you'll have control over all your users' saved data.
 
@@ -10,12 +10,12 @@ Here are a few steps for those who want to have their own charts storage:
 
 1. Clone our repo to your host
 2. Run the data service or use our demo service.Here are a short todo list for those who's not familiar with Django.
-  1. Install Python 3.x and Pip.
-  2. Install PostgreSQL or some other Django-friendly database engine.
-  3. go to you charts storage folder and run `pip install -r requirements.txt`
-  4. go to charting_library_charts folder and set up your database connection in settings.py (see `DATABASES` @ line #12). Please remember to create appropriate database in your PostgreSQL.
-  5. run `python manage.py migrate` . This will create database schema without any data.
-  6. run `python manage.py runserver` to run TEST instance of your database. don't use the command above on production environment. Use some other stuff (i.e., Gunicorn)
+    1. Install Python 3.x and Pip.
+    2. Install PostgreSQL or some other Django-friendly database engine.
+    3. go to you charts storage folder and run `pip install -r requirements.txt`
+    4. go to charting_library_charts folder and set up your database connection in settings.py (see `DATABASES` @ line #12). Please remember to create appropriate database in your PostgreSQL.
+    5. run `python manage.py migrate` . This will create database schema without any data.
+    6. run `python manage.py runserver` to run TEST instance of your database. don't use the command above on production environment. Use some other stuff (i.e., Gunicorn)
 3. Set up your Charting Library page: set `charts_storage_url = url-of-your-charts-storage`, also set `client_id` and `user_id` (see details below) in widget's .ctor.
 4. Enjoy !
 
@@ -32,11 +32,11 @@ RESPONSE: JSON Object
 
 1. status: "ok" or "error"
 2. data: Array of Objects
-  1. "timestamp": UNIX time when the chart was saved (example, 1449084321)
-  2. "symbol": base symbol of the chart (example, "AA")
-  3. "resolution": resolution of the chart (example, "D")
-  4. "id": unique integer identifier of the chart (example, 9163)
-  5. "name": chart name (example, "Test")
+    1. "timestamp": UNIX time when the chart was saved (example, 1449084321)
+    2. "symbol": base symbol of the chart (example, "AA")
+    3. "resolution": resolution of the chart (example, "D")
+    4. "id": unique integer identifier of the chart (example, 9163)
+    5. "name": chart name (example, "Test")
 
 #### SAVE CHART
 
@@ -72,10 +72,10 @@ RESPONSE: JSON Object
 
 1. "status": "ok" or "error"
 2. "data": Object
-  1. "content": saved content of the chart
-  2. "timestamp": UNIX time when the chart was saved (example, 1449084321)
-  3. "id": unique integer identifier of the chart (example, 9163)
-  4. "name": name of the chart
+    1. "content": saved content of the chart
+    2. "timestamp": UNIX time when the chart was saved (example, 1449084321)
+    3. "id": unique integer identifier of the chart (example, 9163)
+    4. "name": name of the chart
 
 #### DELETE CHART
 DELETE REQUEST: charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id&chart=chart_id

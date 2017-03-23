@@ -25,7 +25,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 
 ### onReady(callback)
 1. `callback`: function(configurationData)
-  1. `configurationData`: object (see below)
+    1. `configurationData`: object (see below)
 
 This call is intended to provide the object filled with configuration data. This data affects some of chart behavior aspects so it is called [[server-side customization|Customization Overview#customization-done-through-data-stream]]. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. Configuration data is an object; for now, following properties are supported:
 
@@ -60,7 +60,7 @@ Set this one to `true` if your datafeed provides server time (unix time). It is 
 2. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
 3. `symbolType`: string. The requested symbol type: index, stock, forex e.t.c. (chosen by user). Empty value means no filter was specified.
 4. `onResultReadyCallback`: function(result)
-  1. `result`: array (see below)
+    1. `result`: array (see below)
 
 This call is intended to provide the list of symbols matching to user's search query. `result` is expected to be smth like this:
 
@@ -94,8 +94,8 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
 3. `from`: unix timestamp, leftmost required bar time
 3. `to`: unix timestamp, rightmost required bar time
 4. `onHistoryCallback`: function(array of `bar`s, `meta` = _{ noData = false }_)
-  1. `bar`: object `{time, close, open, high, low, volume}`
-  2. `meta`: object `{noData = true | false, nextTime - unix time}`
+    1. `bar`: object `{time, close, open, high, low, volume}`
+    2. `meta`: object `{noData = true | false, nextTime - unix time}`
 5. `onErrorCallback`: function(reason)
 6. `firstDataRequest`: boolean to identify the first history call for this symbol/resulution. When it is `true` you can ignore `to` (which depends on browser's `Date.now()`) and return bars up to current bar (including it).
 
@@ -115,7 +115,7 @@ This function is called when chart needs a history fragment defined by dates ran
 1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `resolution`: string
 3. `onRealtimeCallback`: function(bar)
-  1. `bar`: object `{time, close, open, high, low, volume}`
+    1. `bar`: object `{time, close, open, high, low, volume}`
 4. `subscriberUID`: object
 5. `onResetCacheNeededCallback` (since 1.7): function() to be executed when bars data has changed
 
@@ -216,7 +216,7 @@ This function is called if configuration flag `supports_time` is set to `true` w
 ### :chart: getQuotes(symbols, onDataCallback, onErrorCallback)
 1. `symbols`: array of symbols names
 2. `onDataCallback`: function(array of `data`)
-  1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
+    1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
 3. `onErrorCallback`: function(reason)
 
 This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
@@ -225,7 +225,7 @@ This function is called when chart needs quotes data. The charting library expec
 1. `symbols`: array of symbols to be updated rarely (suggested frequency is once per minute). These symbols are in the watch list but they are not visible at the moment.
 2. `fastSymbols`: array of symbols to be updated quite frequently (once in 10 seconds or more often)
 3. `onRealtimeCallback`: function(array of `data`)
-  1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
+    1. `data`: [[symbol quote data|Quotes#symbol-quote-data]]
 4. `listenerGUID`: unique identifier of the listener
 
 Trading Terminal calls this function when it wants to receive realtime quotes for a symbol. Chart expects you will call `onRealtimeCallback` every time you want to update quotes.

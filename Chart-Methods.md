@@ -92,7 +92,7 @@ The Charting Library will call the callback every time the crosshair position is
 
 #### setVisibleRange(range, callback)
 1. `range`: object, `{from to}`
-  1. `from`, `to`: unix timestamps, UTC
+    1. `from`, `to`: unix timestamps, UTC
 2. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
 
 Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
@@ -270,19 +270,19 @@ Creates the study on a main symbol. Examples:
 
 #### createShape(point, options, callback)
 1. `point`: object `{time, [price], [channel]}`
-  1. `time`: unix time. The only mandatory argument.
-  2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
-  3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
+    1. `time`: unix time. The only mandatory argument.
+    2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
+    3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
 2. `options`: object `{shape, [text], [lock], [overrides]}`
-  1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line', 'horizontal_line']. 'flag' is the default value.
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
-  3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `disableSelection` (since `1.3`) prevents selecting of the shape
-  5. `disableSave` (since `1.3`) prevents saving the shape with a chart
-  6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
-  7. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
-  8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
-  9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
+    1. `shape` may be one of the ['arrow_up', 'arrow_down', 'flag', 'vertical_line', 'horizontal_line']. 'flag' is the default value.
+    2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
+    3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
+    4. `disableSelection` (since `1.3`) prevents selecting of the shape
+    5. `disableSave` (since `1.3`) prevents saving the shape with a chart
+    6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
+    7. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
+    8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
+    9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
 3. `callback`: function(`entityId`)
 
 **Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
@@ -291,19 +291,19 @@ This call creates a shape at specified point on main series.
 
 #### createMultipointShape(points, options, callback)
 1. `points`: an array of objects `[{time, [price], [channel]},...]`
-  1. `time`: unix time. The only mandatory argument.
-  2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
-  3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
+    1. `time`: unix time. The only mandatory argument.
+    2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
+    3. `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`). If no channel is specified, 'open' is a default.
 2. `options`: object `{shape, [text], [lock], [overrides]}`
-  1. `shape` may be one of the [[identifiers|Shapes and Overrides]]
-  2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
-  3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
-  4. `disableSelection` (since `1.3`) prevents selecting of the shape
-  5. `disableSave` (since `1.3`) prevents saving the shape with a chart
-  6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
-  7. `overrides`. It is an object containing properties you'd like to set for your new shape.
-  8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
-  9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
+    1. `shape` may be one of the [[identifiers|Shapes and Overrides]]
+    2. `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
+    3. `lock` shows whether a user will be able to remove/change/hide your shape or not.
+    4. `disableSelection` (since `1.3`) prevents selecting of the shape
+    5. `disableSave` (since `1.3`) prevents saving the shape with a chart
+    6. `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
+    7. `overrides`. It is an object containing properties you'd like to set for your new shape.
+    8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
+    9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
 3. `callback`: function(`entityId`)
 
 **Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
