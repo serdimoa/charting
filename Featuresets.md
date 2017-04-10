@@ -81,6 +81,8 @@ Please note that the leading `-` characters are not a part of featureset name in
 | adapt_onchart_logo_background	| on	|                 | logo background color is changed to match the background
 | same_data_requery             | off   |                 | allows you to call `setSymbol` with the same symbol to refresh the data
 | disable_resolution_rebuild    | off   |                 | Shows bars time exactly as it is provided by a datafeed without aligning. Strictly not recommended if you expect the chart to build some resolutions.
+| chart_scroll                  | on    |   1.10          | Allows scrolling of a chart
+| chart_zoom                    | on    |   1.10          | Allows zooming of a chart
 
 ### "Big Rocks"
 
