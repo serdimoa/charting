@@ -291,6 +291,7 @@ Loads and displays a chart from a server.
 3. `saveAsSnapshot`: should be always `false`
 4. `options`: object `{ chartName }`
     1. `chartName`: name of a chart. Should be specified for new charts and renaming.
+    2. `defaultChartName`: default name of a chart. It will be used if current chart has no name.
 
 Saves current chart to the server.
 
