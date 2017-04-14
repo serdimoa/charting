@@ -50,8 +50,8 @@ Opens bottom panel and switches tab to Trading.
 #### showTradingProperties()
 Shows the properties dialog, switches current tab to Trading.
 
-#### showNotification(title, text, type, time)
-Displays a notification. Type can be ‘success’ or ‘error’. Time is set in milliseconds. Default time is 10000.
+#### showNotification(title, text, type)
+Displays a notification. Type can be ‘success’ or ‘error’. 
 
 #### triggerShowActiveOrders()
 Triggers show active orders.
