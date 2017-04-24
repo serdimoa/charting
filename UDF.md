@@ -3,7 +3,7 @@
 
 # Response-as-a-table concept
 
-Datafeed responses often may be treated as tables. I.e., response about exchange’s symbols list may be treated as a table where each symbol represents a row, and there are some columns (minimal_price_movement, description, has_intraday e.t.c.). Each column may be an array (thus, it will provide separate value for each table’s row). But there may be a situation when all table’s rows has the same values of the column. In this case, the column’s value may be a single value in JSON response .
+Datafeeed responses often may be treated as tables. I.e., response about exchange’s symbols list may be treated as a table where each symbol represents a row, and there are some columns (minimal_price_movement, description, has_intraday e.t.c.). Each column may be an array (thus, it will provide separate value for each table’s row). But there may be a situation when all table’s rows has the same values of the column. In this case, the column’s value may be a single value in JSON response .
 
 Example:
 
