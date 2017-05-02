@@ -20,6 +20,9 @@ It's an unique identifier for this symbol in your symbology. If you specify this
 ##### description
 Description of a symbol. Will be printed in chart legend for this symbol.
 
+##### type
+Optional type of the instrument. Possible values: `stock`, `index`, `forex`, `futures`, `bitcoin`, `expression`, `spread`, `cfd` or another string value. Some types has specific processing in the chart.
+
 ##### session
 Trading hours for this symbol. See the [[Trading Sessions|Trading Sessions]] article to know more details.
 
