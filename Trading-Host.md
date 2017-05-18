@@ -100,8 +100,14 @@ Using of these methods is required to notify the chart that it needs to update i
 #### orderUpdate([[order|Trading-Objects-and-Constants#order]])
 Call this method when an order is added or changed.
 
+#### orderPartialUpdate([[order|Trading-Objects-and-Constants#order]])
+Call this method when an order is not changed, but fields that you added to the order object to display in the Account Manager are changed.
+
 #### positionUpdate ([[position|Trading-Objects-and-Constants#position]])
 Call this method when a position is added or changed.
+
+#### positionPartialUpdate ([[position|Trading-Objects-and-Constants#position]])
+Call this method when a position is not changed, but fields that you added to the position object to display in the Account Manager are changed.
 
 #### executionUpdate([[execution|Trading-Objects-and-Constants#execution]])
 Call this method when an execution is added.
