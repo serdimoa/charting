@@ -44,7 +44,7 @@ Implement this method to provide configuration flags object. The result is an ob
 
 	This flag can be used to change "Amount" to "Quantity" in the order dialog
 
-* supportDOME
+* supportDOM
 
     This flag enables DOM widget. If `supportLevel2Data` is `false` only `last price` and orders will be shown.
 
@@ -55,6 +55,9 @@ Implement this method to provide configuration flags object. The result is an ob
 * supportStopLimitOrders
 
     This flag adds stop-limit orders type to the order dialog.
+    
+* supportMarketBrackets
+	Using this flag you can disable brackets for market orders. By default it is enabled.
 
 #### durations(): array of objects
 List of expiration options of orders. It is optional. Do not implement it if you don't want the durations to be displayed in the order ticket.
@@ -77,9 +80,6 @@ Function should return `true` for Floating Trading Panel to be displayed.
 
 #### supportBottomWidget()
 Function should return `true` for Bottom Trading Panel to be displayed.
-
-#### buttonDropdownItems()
-Bottom Trading Panel has a button with a list of dropdown items. This function is expected to return an array of [[ActionMetainfo|Trading-Objects-and-Constants#actionmetainfo]], each of them representing one dropdown item.
 
 #### chartContextMenuItems(e)
 Chart can have a sub-menu `Trading` in the context menu. Return the list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.

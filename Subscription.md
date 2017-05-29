@@ -8,3 +8,7 @@ Subscription object is returned by [[Chart Methods|Chart-Methods#Chart-Methods]]
 ### unsubscribe(object, method)
 
 Use the same `object` and `method` which you used in `subscribe` function to unsubscribe from the event.
+
+### unsubscribeAll(object)
+
+Use the same `object` which you used in `subscribe` function to unsubscribe `object` from all events.

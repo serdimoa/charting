@@ -4,6 +4,13 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
+**Version 1.11**
+The following stuff is still supported in Trading Terminal, but will be deprecated in future versions:
+- `supportDOME` renamed to `supportDOM`
+- Changed signature of `showClosePositionDialog
+- `showEditBracketsDialog` renamed to `showPositionBracketsDialog`, changed signature
+
+
 **Version 1.10**
 - Default behavior of Volume indicator is changed.
 

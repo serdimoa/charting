@@ -78,7 +78,6 @@ Please note that the leading `-` characters are not a part of featureset name in
 | study_market_minimized	| on	|                 | relates to Indicators dialog, determines whether it is compact or contains a search bar and categories
 | study_dialog_search_control   | on    | 1.6             | displays search control in the indicators dialog
 | side_toolbar_in_fullscreen_mode	| off	|                 | using this feature you can enable Drawings Toolbar in fullscreen mode
-| adapt_onchart_logo_background	| on	|                 | logo background color is changed to match the background
 | same_data_requery             | off   |                 | allows you to call `setSymbol` with the same symbol to refresh the data
 | disable_resolution_rebuild    | off   |                 | Shows bars time exactly as it is provided by a datafeed without aligning. Strictly not recommended if you expect the chart to build some resolutions.
 | chart_scroll                  | on    |   1.10          | Allows scrolling of a chart

@@ -115,3 +115,12 @@ String constants to set focus when you open standard Order dialog or Position di
 * STOP_PRICE_FIELD     focus stop price for StopLimit orders
 * TAKE_PROFIT_FIELD    focus take profit control
 * STOP_LOSS_FIELD      focus stop loss control
+
+## Brackets
+
+# `stopLoss`: double
+# `takeProfit`: double
+
+## Formatter
+
+An object with `format` method that can be used to format number to string.

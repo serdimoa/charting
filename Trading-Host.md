@@ -25,8 +25,8 @@ Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-#### showClosePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
-1. `position` to be closed
+#### showClosePositionDialog([[positionId|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
+1. `positionId` identifier of a position to be closed
 2. `handler` is a function to process position close. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
@@ -37,10 +37,11 @@ Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-#### showEditBracketsDialog([[position|Trading-Objects-and-Constants#position]], handler, focus) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showPositionBracketsDialog([[position|Trading-Objects-and-Constants#position]], [[brackets|Trading-Objects-and-Constants#brackets]], focus, handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
 1. `position` to be modified
-2. `handler` is a function to process modification of brackets. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
-3. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
+2. `brackets` (optional) new [brackets|Trading-Objects-and-Constants#Brackets]
+2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
+3. `handler` is a function to process modification of brackets. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
 
 Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
 
@@ -50,11 +51,17 @@ Opens bottom panel and switches tab to Trading.
 #### showTradingProperties()
 Shows the properties dialog, switches current tab to Trading.
 
-#### showNotification(title, text, type, time)
-Displays a notification. Type can be ‘success’ or ‘error’. Time is set in milliseconds. Default time is 10000.
+#### showNotification(title, text, type)
+Displays a notification. Type can be ‘success’ or ‘error’.
 
 #### triggerShowActiveOrders()
 Triggers show active orders.
+
+#### numericFormatter(decimalPlaces)
+Returns a [[Formatter|Trading-Objects-and-Constants#focusoptions]] with the specified number of decimal places.
+ 
+#### defaultFormatter(symbol)
+Returns a default [[Formatter|Trading-Objects-and-Constants#focusoptions]] formatter for the specified instrument. This formatter is created based on [[SymbolInfo|Symbology#symbolinfo-structure].
 
 #### factory
 `factory` is an object property. Its members are described below.
@@ -83,12 +90,16 @@ Returned object properties:
 3. changed : [[Subscription]]
 It is to synchronize quantity in Trading Floating Panel and in the dialogs.
 
+#### setButtonDropdownActions(actions)
+Bottom Trading Panel has a button with a list of dropdown items. This method can be used to replace existing items. 
+1. `actions` is an array of [[ActionMetainfo|Trading-Objects-and-Constants#actionmetainfo]], each of them representing one dropdown item.
+
 #### defaultContextMenuActions()
 Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuItems](Trading-Controller#chartcontextmenuitemse).
 
 #### defaultDropdownMenuActions(options)
-Provides default dropdown list of actions. Dropdown actions are requested by [bottomContextMenuItems](Trading-Controller#bottomcontextmenuitems).
-You can show/hide action using options:
+Provides default dropdown list of actions. You can use default actions in [setButtonDropdownActions](Trading-Host#setButtonDropdownActionsactions).
+You can add/remove default action from the result using `options`:
 1. `showFloatingToolbar`: boolean;
 2. `tradingProperties`: boolean;
 3. `selectAnotherBroker`: boolean;
@@ -102,12 +113,15 @@ Call this method when an order is added or changed.
 
 #### orderPartialUpdate([[order|Trading-Objects-and-Constants#order]])
 Call this method when an order is not changed, but fields that you added to the order object to display in the Account Manager are changed.
+It should be used only if you want to display custom fields in the [[Account Manager]].
 
 #### positionUpdate ([[position|Trading-Objects-and-Constants#position]])
 Call this method when a position is added or changed.
 
 #### positionPartialUpdate ([[position|Trading-Objects-and-Constants#position]])
 Call this method when a position is not changed, but fields that you added to the position object to display in the Account Manager are changed.
+It should be used only if you want to display custom fields in the [[Account Manager]].
+
 
 #### executionUpdate([[execution|Trading-Objects-and-Constants#execution]])
 Call this method when an execution is added.

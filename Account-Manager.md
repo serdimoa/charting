@@ -7,7 +7,7 @@ To create an account manager you will need to describe columns of each page and 
 
 Remark 1. [[supportCustomBottomWidget|Trading-Controller#configFlags]] flag should be disabled to display an Account Manager.
 
-Remark 2. [[Trading Controller]] should implement [[accountManagerInfo|Trading-Controller#accountManagerInfo]]
+Remark 2. [[Trading Controller]] should implement [[accountManagerInfo|Trading-Controller#accountmanagerinfo]]
 
 ## Account Manager Meta Information
 
@@ -26,22 +26,21 @@ Account Manager's header consists of broker's title and an account name or a lis
 ### Orders Page
 
 ##### orderColumns: array of [[Column|Account-Manager#columndescription]]
-##### orderPartialUpdate: [[Delegate]]
+
+Description of columns that you want to be displayed in the Orders page. 
+You can display any field of an [[order|Trading-Objects-and-Constants#order]] or add your own fields to an order object and display them.
 
 ##### possibleOrderStatuses: array of [[OrderStatus|Trading-Objects-and-Constants#orderstatus]]
 Optional list of statuses to be used in the orders filter. If it is not set default list is used.
 
-This delegate is optional and should be used only if there are other fields except PL that are updated frequently.
-
 #### hasHistory
-If it is `true` History page will be displayed. All orders from previous sessions will be shown in History.
+If it is `true` History page will be displayed. All orders from previous sessions will be shown in the History.
 
 ### Positions Page
 
 ##### positionColumns: array of [[Column|Account-Manager#columndescription]]
-##### positionPartialUpdate: [[Delegate]]
 
-This delegate is optional and should be used only if there are other fields except PL that are updated frequently.
+You can display any field of a [[position|Trading-Objects-and-Constants#position]] or add your own fields to a position object and display them.
 
 ### Additional Pages (e.g. Account Summary)
 
@@ -144,7 +143,8 @@ Here is a list of default formatters:
 | status | Is is used to format `status`. |
 | date | Displays date or time. |
 | localDate | Displays date or time in local timezone. |
-| fixed | Displays a number with 2 desimal places. |
+| fixed | Displays a number with 2 decimal places. |
+| pips | Displays a number with 1 decimal place. |
 | profit | Displays profit. It also adds `+`, separates thousands and colors the cell text in red or green. |
 
 ##### property

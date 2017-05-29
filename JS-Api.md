@@ -27,7 +27,10 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 1. `callback`: function(configurationData)
     1. `configurationData`: object (see below)
 
-This call is intended to provide the object filled with configuration data. This data affects some of chart behavior aspects so it is called [[server-side customization|Customization Overview#customization-done-through-data-stream]]. Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. Configuration data is an object; for now, following properties are supported:
+This call is intended to provide the object filled with configuration data. 
+This data affects some of chart behavior aspects so it is called [[server-side customization|Customization Overview#customization-done-through-data-stream]]. 
+Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument. 
+Configuration data is an object; for now, following properties are supported:
 
 ##### exchanges
 An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument  to searchSymbolsByName (see below).
@@ -52,6 +55,10 @@ Boolean showing whether your datafeed supports timescale marks or not.
 
 ##### supports_time
 Set this one to `true` if your datafeed provides server time (unix time). It is used to adjust Countdown on the Price scale.
+
+#####futures_regex
+Set it if you want to group futures in the symbol search. This REGEX should divide an instrument name in 2 parts: a root and an expiration.
+Sample regex: : `/^(.+)([12]!|[FGHJKMNQUVXZ]\d{1,2})$/`. It will be applied to the instruments whose `type` is `futures`.
 
 ####
 
