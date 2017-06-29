@@ -82,6 +82,8 @@ Please note that the leading `-` characters are not a part of featureset name in
 | disable_resolution_rebuild    | off   |                 | Shows bars time exactly as it is provided by a datafeed without aligning. Strictly not recommended if you expect the chart to build some resolutions.
 | chart_scroll                  | on    |   1.10          | Allows scrolling of a chart
 | chart_zoom                    | on    |   1.10          | Allows zooming of a chart
+| high_density_bars             | off   |   1.11          | Allows zooming out to show more than 60000 bars on 1 screen
+| cl_feed_return_all_data       | off   |   1.11          | Allows you to return more bars from the feed and display it on a chart at once
 
 ### "Big Rocks"
 
