@@ -23,10 +23,14 @@ symbol: "BTCUSD"
 ```
 
 #### interval [mandatory]
-Initial interval of your chart.
+Interval is the width of a single candle.
 
 ```
-interval: "D"
+interval: "5" // 5 minutes
+```
+
+```
+interval: "D" // 1 day
 ```
 
 #### timeframe
