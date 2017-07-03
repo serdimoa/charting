@@ -15,12 +15,28 @@ Find full supported parameters list below. Please remember that changing those p
 
 Properties marked :chart: are available in [[Trading Terminal]] only.
 
-#### symbol, interval [mandatory]
-Initial symbol & interval of your chart.
+#### symbol [mandatory]
+Initial symbol of your chart.
+
+```
+symbol: "BTCUSD"
+```
+
+#### interval [mandatory]
+Initial interval of your chart.
+
+```
+interval: "D"
+```
 
 #### timeframe
-Sets initial timeframe for the chart. Timeframe is period of bars that will be loaded and shown on a screen.
+Timeframe is period of bars that will be loaded and shown on a screen.
+
 Valid timeframe is a number with letter D for days and M for months.
+
+```
+timeframe: "1D"
+```
 
 #### container_id [mandatory]
 `id` attribute of a DOM element you want to contain the widget.
