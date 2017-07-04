@@ -23,7 +23,7 @@ symbol: "BTCUSD"
 ```
 
 #### interval [mandatory]
-Interval is the width of a single candle.
+Interval is the width of a single candle (same as "resolution").
 
 ```
 interval: "5" // 5 minutes
