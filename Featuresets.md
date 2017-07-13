@@ -53,6 +53,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | symbol_info                             | on            | 1.5             | Symbol Info dialog                 |
 | timezone_menu                           | on            | 1.5             | Disables time zone context menu    |
 | snapshot_trading_drawings               | off           | 1.6             | Includes orders/positions/executions in the screenshot |
+| source_selection_markers                | on            | 1.11            | Disables selection markers for series and indicators |
 
 ### Elements placement
 
@@ -103,3 +104,4 @@ Please note that the leading `-` characters are not a part of featureset name in
 | show_logo_on_all_charts | off | |shows logo on every chart of multichart layout
 | chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading
 | add_to_watchlist | on | 1.9 | Enabled "Add symbol to Watchlist" item in the menu
+| footer_screenshot | on | 1.11 | Shows a screenshot button in the footer (account manager)

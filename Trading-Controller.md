@@ -58,7 +58,10 @@ Implement this method to provide configuration flags object. The result is an ob
     
 * supportMarketBrackets
 	Using this flag you can disable brackets for market orders. By default it is enabled.
-
+	
+* supportEditAmount
+    This flag can help you to disable amount control when editing existing orders.
+    
 #### durations(): array of objects
 List of expiration options of orders. It is optional. Do not implement it if you don't want the durations to be displayed in the order ticket.
 The objects have two kes: `{ name, value }`.
