@@ -105,3 +105,4 @@ Please note that the leading `-` characters are not a part of featureset name in
 | chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading
 | add_to_watchlist | on | 1.9 | Enabled "Add symbol to Watchlist" item in the menu
 | footer_screenshot | on | 1.11 | Shows a screenshot button in the footer (account manager)
+| open_account_manager | on | 1.11 | Keeps Account Manager opened by default
