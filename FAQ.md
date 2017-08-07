@@ -1,7 +1,8 @@
 ## Data Questions
 
-#### 1. How do I connect my data? How to add new ticker symbols?
 <details>
+<summary><h7>How do I connect my data? How to add new ticker symbols?</h7></summary>
+
 <p>
 
 We’ve done lot of work to make the process of connecting data simple and clear.
