@@ -1,7 +1,7 @@
 ## Data Questions
 
 <details>
-<summary>1. How do I connect my data? How to add new ticker symbols?</summary>
+<summary><b>1. How do I connect my data? How to add new ticker symbols?</b></summary>
 <p>
 
 We’ve done lot of work to make the process of connecting data simple and clear.
@@ -14,7 +14,7 @@ If you still have questions, open [[Demo Chart|https://demo_chart.tradingview.co
 </details>
 
 <details>
-<summary>2. Do you have an example of JS API implementation?</summary>
+<summary><b>2. Do you have an example of JS API implementation?</b></summary>
 <p>
 
 <p>
@@ -24,7 +24,7 @@ If you still have questions, open [[Demo Chart|https://demo_chart.tradingview.co
 </details>
 
 <details>
-<summary>3. Do you have an example of a WebSocket data transport?</summary>
+<summary><b>3. Do you have an example of a WebSocket data transport?</b></summary>
 <p>
 
 <p>
@@ -32,7 +32,7 @@ If you still have questions, open [[Demo Chart|https://demo_chart.tradingview.co
 
 </details>
 <details>
-<summary>4. Do you have an example of a back-end data feed on ASP.NET, Python, PHP etc. ?</summary>
+<summary><b>4. Do you have an example of a back-end data feed on ASP.NET, Python, PHP etc. ?</b></summary>
 <p>
 
 <p>
@@ -40,7 +40,7 @@ If you still have questions, open [[Demo Chart|https://demo_chart.tradingview.co
 
 </details>
 <details>
-<summary>5. How can I display my data stored in a TXT/CSV/Excel file?</summary>
+<summary><b>5. How can I display my data stored in a TXT/CSV/Excel file?</b></summary>
 
 <p>
 
@@ -54,7 +54,7 @@ Note: You can provide data in another format or use websocket to transfer it, bu
 
 </details>
 <details>
-<summary>6. Why my data is not displayed / displayed incorrectly / incorrectly fetched from a server?</summary>
+<summary><b>6. Why my data is not displayed / displayed incorrectly / incorrectly fetched from a server?</b></summary>
 <p>
 
 <p>
@@ -66,7 +66,7 @@ Please read [[Symbology]] thoroughly. Most of errors with data happen because of
 
 </details>
 <details>
-<summary>7. Charting Library is constantly asking for data. How to tell it that data is finished?</summary>
+<summary><b>7. Charting Library is constantly asking for data. How to tell it that data is finished?</b></summary>
 <p>
 
 <p>
@@ -75,7 +75,7 @@ Specifically for this purpose there is a flag that can be added to the responses
 
 </details>
 <details>
-<summary>8. How to change the number of decimal places of prices on a chart?</summary>
+<summary><b>8. How to change the number of decimal places of prices on a chart?</b></summary>
 <p>
 
 <p>
@@ -84,7 +84,7 @@ Please read [[Symbology]] thoroughly. Number of decimal places is calculated bas
 
 </details>
 <details>
-<summary>9. What if I have a single price for each timestamp?</summary>
+<summary><b>9. What if I have a single price for each timestamp?</b></summary>
 <p>
 
 <p>
@@ -95,7 +95,7 @@ You still can display your data if you have only one price for each timestamp, b
 ## GUI Questions
 
 <details>
-<summary>1. How can I subscribe to chart events?</summary>
+<summary><b>1. How can I subscribe to chart events?</b></summary>
 <p>
 
 <p>
@@ -112,7 +112,7 @@ Check the result value of subscription methods. Some of them return a [[Subscrip
 
 </details>
 <details>
-<summary>2. How to change default bars style from Candles to another one?</summary>
+<summary><b>2. How to change default bars style from Candles to another one?</b></summary>
 <p>
 
 <p>
@@ -121,7 +121,7 @@ You need to use [[overrides|https://github.com/tradingview/charting_library/wiki
 
 </details>
 <details>
-<summary>3. How can I change the list of resolutions (time intervals) on a chart / make them grayed?</summary>
+<summary><b>3. How can I change the list of resolutions (time intervals) on a chart / make them grayed?</b></summary>
 
 * List of the resolutions displayed in a pop-up on a chart is defined by [[supported_resolutions|https://github.com/tradingview/charting_library/wiki/JS-Api#supported_resolutions]] from the data feed configuration.
 
@@ -141,7 +141,7 @@ You need to use [[overrides|https://github.com/tradingview/charting_library/wiki
 
 </details>
 <details>
-<summary>4. How to hide a GUI Element (symbol, interval, button etc.)?</summary>
+<summary><b>4. How to hide a GUI Element (symbol, interval, button etc.)?</b></summary>
 
 * Most of GUI elements can be hidden using [[Featuresets]]. Please look at the [Interactive map of featuresets](http://tradingview.github.io/featuresets.html) to find what you need.
 
@@ -151,7 +151,7 @@ You need to use [[overrides|https://github.com/tradingview/charting_library/wiki
 ## Other Questions
 
 <details>
-<summary>1. What is the the difference between [[Widget|http://tradingview.com/widget/]], [[Charting Library|https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/]] and [[Trading Terminal|https://www.tradingview.com/trading-terminal/]] ?</summary>
+<summary><b>1. What is the the difference between [[Widget|http://tradingview.com/widget/]], [[Charting Library|https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/]] and [[Trading Terminal|https://www.tradingview.com/trading-terminal/]] ?</b></summary>
 <p>
 
 <p>
@@ -164,7 +164,7 @@ You need to use [[overrides|https://github.com/tradingview/charting_library/wiki
 </details>
 
 <details>
-<summary>2. How do I add a custom indicator?</summary>
+<summary><b>2. How do I add a custom indicator?</b></summary>
 <p>
 
 <p>
