@@ -1,7 +1,7 @@
 ## Data Questions
 
 <details>
-<summary><h6>How do I connect my data? How to add new ticker symbols?</h6></summary>
+<summary>1. How do I connect my data? How to add new ticker symbols?</summary>
 
 <p>
 
