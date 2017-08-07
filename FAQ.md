@@ -1,7 +1,7 @@
 ## Data Questions
 
+#### 1. How do I connect my data? How to add new ticker symbols?
 <details>
-<summary><b>1. How do I connect my data? How to add new ticker symbols?</b></summary>
 <p>
 
 We’ve done lot of work to make the process of connecting data simple and clear.
@@ -11,7 +11,12 @@ First, you need to read and understand this article: [[How to connect my data|ht
 <p>
 
 If you still have questions, open [[Demo Chart|https://demo_chart.tradingview.com]], then open Debugger-Network and filter requests by `demo_feed`. You will see all requests and corresponding responses in the [[UDF]] format.
+
+#### link
+
 </details>
+
+<p>
 
 <details>
 <summary><b>2. Do you have an example of JS API implementation?</b></summary>
