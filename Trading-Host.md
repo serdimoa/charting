@@ -52,7 +52,7 @@ Opens bottom panel and switches tab to Trading.
 Shows the properties dialog, switches current tab to Trading.
 
 #### showNotification(title, text, type)
-Displays a notification. Type can be ‘success’ or ‘error’.
+Displays a notification. Type can be `1` - success or `0` - error.
 
 #### triggerShowActiveOrders()
 Triggers show active orders.
