@@ -55,6 +55,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | timezone_menu                           | on            | 1.5             | Disables time zone context menu    |
 | snapshot_trading_drawings               | off           | 1.6             | Includes orders/positions/executions in the screenshot |
 | source_selection_markers                | on            | 1.11            | Disables selection markers for series and indicators |
+| keep_left_toolbar_visible_on_small_screens | off            | 1.11            | Prevents left toolbar disappearing on small screens |
 
 ### Elements placement
 
