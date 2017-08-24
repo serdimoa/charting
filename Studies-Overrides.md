@@ -40,7 +40,7 @@ Property path is a set of lower-case identifiers splitted with dot (`.`). Path f
 Format: `indicator_name.input_name`
 
 * **indicator_name**: use name as you can see it in `Indicators` dialog.
-* **input_name**: use name as you can see it in indicator's properties dialog (see figure 1 below) -- i.e., `show ma`
+* **input_name**: use name as you can see it in indicator's properties dialog (for example, `show ma`)
 
 Examples: `volume.show ma`, `bollinger bands.length`
 
@@ -48,7 +48,7 @@ Examples: `volume.show ma`, `bollinger bands.length`
 Format: `indicator_name.plot_name.property_name`
 
 * **indicator_name**:  < ... >
-* **plot_name**: as you can see it in indicator's properties dialog (see figure 2 below) -- i.e., `Volume`
+* **plot_name**: as you can see it in indicator's properties dialog (for example, `Volume` or `Plot`)
 * **property_name**: one of the following:
   * **transparency**
   * **linewidth**

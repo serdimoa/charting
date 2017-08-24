@@ -105,7 +105,7 @@ Neither `from`, nor `to` must not be in future. This method was introduced in ve
 Makes the chart to change its symbol. Callback is called after new symbol's data arrived.
 
 #### setResolution(resolution, callback)
-1. `resolution`: string
+1. `resolution`: string. Format is described in another [[article|Resolution]].
 2. `callback`: function()
 
 Makes the chart to change its resolution. Callback is called after new data arrived.
@@ -565,7 +565,7 @@ Returns chart's symbol information object. The object has the following fields:
 
 #### resolution()
 
-Returns chart's resolution.
+Returns chart's resolution. Format is described in another [[article|Resolution]].
 
 #### getVisibleRange()
 

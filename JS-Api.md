@@ -43,7 +43,7 @@ An array of filter descriptors. Filter descriptor is an object `{name, value}`. 
 `symbolsTypes` = []  leads to types filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all types)
 
 ##### supported_resolutions
-An array of supported resolutions. Resolution may be a number or a string. If the resolution is a number, it is treated as minutes count. Strings may be "*D", "*W", "*M" (* means any number).
+An array of supported resolutions. Resolution may be a number or a string. If the resolution is a number, it is treated as minutes count. Format is described in another [[article|Resolution]].
 
 'resolutions'=undefined or [] leads to resolutons widget having its default content (see <http://tradingview.com/e/> ). Example: `[1, 15, 240, "D", "6M"]` will give you "1 minute, 15 minutes, 4 hours, 1 day, 6 months" in resolution widget.
 
@@ -75,7 +75,7 @@ This call is intended to provide the list of symbols matching to user's search q
 [
     {
         "symbol": <short symbol name>,
-        "full_name": <full symbol name -- e.g., BTCE:BTCUSD>,
+        "full_name": <full symbol name> // e.g., BTCE:BTCUSD
         "description": <symbol description>,
         "exchange": <symbol exchange name>,
         "ticker": <symbol ticker name, optional>,
@@ -108,8 +108,9 @@ Charting Library will call this function when it need to get [[SymbolInfo|Symbol
 
 This function is called when chart needs a history fragment defined by dates range. The charting library expects `onHistoryCallback` to be called **just once** after receiving all the requesting history. No further calls are expected.
 
-`nextTime` is a time of the next bar in the history. It should be set when there is no data in the requested period only.
-`noData` should be set when there is no data in the requested period and earlier only.
+**Important**: `nextTime` is a time of the next bar in the history. It should be set when there is no data in the requested period only.
+
+**Important**: `noData` should be set when there is no data in the requested period and earlier only.
 
 **Remark**: `bar.time` is expected to be the amount of milliseconds since Unix epoch start in **UTC** timezone.
 
@@ -144,7 +145,7 @@ Charting Library calls this function when it wants to receive realtime updates f
 
 Library calls this function when is doesn't want to receive updates for this subscriber any more. `subscriberUID` will be the same object which Library passed to `subscribeBars` before.
 
-### calculateHistoryDepth(resolution, resolutionBack, intervalBack)
+### calculateHistoryDepth(resolution, resolutionBack, intervalBack). Optional.
 1. `resolution`: requested symbol's resolution
 2. `resolutionBack`: desired history period dimension. Supported values: `D` | `M`
 3. `intervalBack`: amount or `resolutionBack` periods which Library is going to request
@@ -173,7 +174,7 @@ Datafeed.prototype.calculateHistoryDepth = function(resolution, resolutionBack, 
 This means when Charting Library will request the data for '1D' resolution, the history will be 6 months in depth. In all other cases the history depth will have the default value.
 
 
-### getMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
+### getMarks(symbolInfo, startDate, endDate, onDataCallback, resolution). Optional.
 1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
 3. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
@@ -194,7 +195,7 @@ A few marks per bar are allowed (for now, maximum is 10). Marks out of bars are 
 
 **Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_marks]].
 
-### getTimescaleMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
+### getTimescaleMarks(symbolInfo, startDate, endDate, onDataCallback, resolution). Optional.
 1. `symbolInfo`: [[SymbolInfo|Symbology#symbolinfo-structure]] object
 2. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
 3. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
@@ -213,7 +214,7 @@ Only one mark per bar is allowed. Marks out of bars are not allowed.
 
 **Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_timescale_marks]].
 
-### getServerTime(callback)
+### getServerTime(callback). Optional.
 1. `callback`: function(unixTime)
 
 This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time. The charting library expects callback to be called once. The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.

@@ -3,7 +3,7 @@ as customizable ones. Other properties customization is not supported.
 
 This file format:
 
-	<property_path>: <default Charting Library value>
+    <property_path>: <default Charting Library value>
 
 ```
 //	supported values: large, medium, small, tiny
@@ -51,12 +51,16 @@ timezone: "Etc/UTC" # See supported timezones list (at Symbology#timezone page) 
 
 
 //	Series style. See the supported values below
-//		bars = 0
-//		candles = 1
-//		line = 2
-//		area = 3
-//		heiken ashi = 8
-//		hollow candles = 9
+//		Bars = 0
+//		Candles = 1
+//		Line = 2
+//		Area = 3
+//		Heiken Ashi = 8
+//		Hollow Candles = 9
+//		Renko = 4
+//		Kagi = 5
+//		Point&Figure = 6
+//		Line Break = 7
 mainSeriesProperties.style: 1
 
 mainSeriesProperties.showCountdown: true

@@ -32,7 +32,6 @@ For now both of this fields are expected to have short name of exchange where th
 ##### timezone
 Exchange timezone for this symbol. We expect to get name of time zone in olsondb format. Supported timezones are:
 ```
-UTC
 America/New_York
 America/Los_Angeles
 America/Chicago
@@ -43,6 +42,7 @@ America/Argentina/Buenos_Aires
 America/El_Salvador
 America/Sao_Paulo
 America/Bogota
+America/Caracas
 Europe/Moscow
 Europe/Athens
 Europe/Berlin
@@ -50,6 +50,8 @@ Europe/London
 Europe/Madrid
 Europe/Paris
 Europe/Warsaw
+Europe/Istanbul
+Europe/Zurich
 Australia/Sydney
 Australia/Brisbane
 Australia/Adelaide
@@ -75,20 +77,51 @@ Africa/Johannesburg
 Asia/Kathmandu
 US/Mountain
 ```
-##### pricescale, minmov
-1. Minimal possible price change is determined by those values.
-2. PriceScale parameter determines interval between price lines on chart's price scale.
+
+##### minmov, pricescale, minmove2, fractional
+
+These three keys have different meaning when using for common prices and for fractional prices.
+
+###### Common prices
+
 ```
-PriceScaleInterval  = MinimalPossiblePriceChange = minmov / pricescale
+ MinimalPossiblePriceChange = minmov / pricescale
 ```
 
-##### fractional <false>
-Boolean showing whether this symbol wants to have complex price formatting (see `minmove2` below) or not.
+`minmov` is a number of units that make up one tick. For example, U.S. equities are quotes in decimals, and tick in decimals, and can go up +/- 0.01.
+So the tick increment is 1. But the e-mini S&P futures contract, though quoted in decimals, goes up in 0.25 increments, so the tick increment is 25.
+`pricescale` defines number of decimal places. Actually it is 10^number-of-decimal-places. If a price is displayed as 1.01, `pricescale` is `100`; If it is displayed as 1.005, `pricescale` is `1000`.
+`minmove2` for common prices is `0` or it can be skipped.
+`fractional` for common prices is `false` or it can be skipped.
 
-##### minmove2 <0>
-It's a magic number for complex price formatting cases. Here are some samples:
+Example:
 ```
-typical stock with 0.01 price increment: minmov = 1, pricescale = 100, minmove2 = 0
+Typical stock with 0.01 price increment: minmov = 1, pricescale = 100, minmove2 = 0
+```
+
+###### Fractional prices
+
+Fractional prices are displayed as form 1 - `xx'yy` (for example, `133'21`) or form 2 - `xx'yy'zz` (for example, `133'21'5`).
+
+`xx` is an integer part.
+
+`minmov/pricescale` is a Fraction.
+
+`minmove2` is used in form 2.
+
+`fractional` is `true`
+
+Example:
+```
+If minmov = 1, pricescale = 128 and minmove2 = 4
+119'16'0 represents 119 + 16/32
+119'16'2 represents 119 + 16.25/32
+119'16'5 represents 119 + 16.5/32
+119'16'7 represents 119 + 16.75/32
+```
+
+More examples:
+```
 ZBM2014 (T-Bond) with 1/32: minmov = 1, pricescale = 32, minmove2 = 0
 ZCM2014 (Corn) with 2/8: minmov = 2, pricescale = 8, minmove2 = 0
 ZFM2014 (5 year t-note) with 1/4 of 1/32: minmov=1, pricescale=128, minmove2= 4
@@ -99,7 +132,7 @@ Boolean showing whether symbol has intraday (minutes) history data. If it's fals
 If it is set to true, all resolutions that are supplied directly by the datafeed must be provided in `intraday_multipliers` array.
 
 ##### supported_resolutions
-An array of resolutions which should be enabled in resolutions picker for this symbol. Each item of an array is expected to be a string.
+An array of resolutions which should be enabled in resolutions picker for this symbol. Each item of an array is expected to be a string. Format is described in another [[article|Resolution]].
 
 Resolutions treated as supported by datafeed (see datafeed configuration data) but not supported by the current symbol will be disabled in Resolution picker widget. If one changes the symbol and new symbol does not support the selected resolution then resolution will be switched to first one in supported resolutions list. Resolution availability logic (pseudocode):
 ```
@@ -130,16 +163,13 @@ The boolean value showing whether datafeed has its own D resolution bars or not.
 The boolean value showing whether datafeed has its own W and M resolution bars or not. If has_weekly_and_monthly = false then Charting Library will build respective resolutions from D by itself. If not, then it will request those bars from datafeed.
 
 ##### has_empty_bars <false>
-The boolean value showing whether library should generate empty bars in session when there is no data from datafeed for this time. I.e., if your session is `0900-1600` and your real data lacks of trades between `11:00` and `12:00` and your `has_empty_bars` is true, then Library will paste degenerate bars in this time.
+The boolean value showing whether the library should generate empty bars in session when there is no data from datafeed for this time. I.e., if your session is `0900-1600` and your real data lacks of trades between `11:00` and `12:00` and your `has_empty_bars` is true, then Library will paste degenerate bars in this time.
 
 ##### force_session_rebuild <true>
-The boolean value showing whether library should filter bars with current session. If false, bars will filtered when library builds data from other resolution or if has_empty_bars was set to true. If true, Library will remove from your data those bars who does not belong to trading session.
+The boolean value showing whether library should filter bars using current session. If `false`, bars will be filtered only when the library builds data from another resolution or if `has_empty_bars` was set to true. If `true`, the Library will remove from your data those bars that does not belong to the trading session.
 
 ##### has_no_volume <false>
 Boolean showing whether symbol has volume data or not.
-
-##### has_fractional_volume <false> | obsolete (1.1 - 1.5), use volume_precision instead
-If has_fractional_volume=true, `Volume` indicator values will not be rounded to integer values.
 
 ##### volume_precision <0>
 Integer showing typical volume value decimal places for this symbol. 0 means volume always in an integer. 1 means there may be 1 numeric character after comma and so on.

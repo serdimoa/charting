@@ -8,7 +8,6 @@ We know all about our charts and about how to create the best user experience on
 
 Charting Library is a charting component able to show prices, charts & technical analysis tools. Library does the chart magic, and nothing more. If you want some additional functionality (like chats, special symbols list, hottest deals, ads, etc) the best approach is to implement them outside of the chart. However, if you want to link your outside functionality with the library, you can use the library’s API to link them.
 
-
 ### 2. Return exactly as many bars as the Library requests
 
 Library will ask your backend for data and provide the required data range bounds with each request. Respect these bounds and return data filling this range as fully as possible. Do not return more bars. Do not return bars out of the requested range. If you want to extend the default data range requested by the Library, use our JS API (see calculateHistoryDepth).
@@ -16,7 +15,6 @@ Library will ask your backend for data and provide the required data range bound
 ### 3. Return exactly as many marks as the Library requests
 
 The same as for the bars above. Send only marks matching the requested range.
-
 
 ### 4. Do not override calculateHistoryDepth() to get more than 2 screens of data
 
@@ -40,7 +38,9 @@ We are always eager to help you. But, unfortunately, we are really busy guys, so
 
 Also, check the data you are passing to the Charting Library and make sure it matches our requirements as described in the documentation. Pay special attention to SymbolInfo content because it's the most common place to make an error (according to our statistics).
 
-You can watch the output of our demo data service and compare it to yours to ensure your backend behaves like it should.
+You can watch the output of our [demo data service](https://demo_feed.tradingview.com/quotes?symbols=AAPL) and compare it to yours to ensure your backend behaves like it should.
+
+Always use `debug: true` in the Widget constructor options during the development and always remove it in the production to make the code work faster.
 
 ### 9. Read the docs
 We spent a lot of time creating those docs for you to make your life easier. Please give it a try.

@@ -16,7 +16,7 @@ Find full supported parameters list below. Please remember that changing those p
 Properties marked :chart: are available in [[Trading Terminal]] only.
 
 #### symbol, interval [mandatory]
-Initial symbol & interval of your chart.
+Initial symbol & interval of your chart. Format of `interval` is described in another [[article|Resolution]].
 
 #### timeframe
 Sets initial timeframe for the chart. Timeframe is period of bars that will be loaded and shown on a screen.

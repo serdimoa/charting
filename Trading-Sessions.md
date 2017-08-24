@@ -23,8 +23,10 @@ Fragment | Meaning
 One can specify the first trading day of a week using semicolon. Examples:
 ```
 "1;0900-1630|0900-1400:2" : first day of week is Sunday
-"0900-1630|0900-1400:2;6" : first day of week is Friday
+"0900-1630|0900-1400:2;6" : first day of week is Saturday
 "0900-1630|0900-1400:2"   : first day of week is Monday (default value)
 ```
 
 **Remark**: By default, all non-`24x7` symbols are treated to be non-tradable in Saturday and Sunday. So if your symbol is traded on weekends, you should specify trading days explicitly. I.e., `1000-1600` symbol which is traded in Sunday...Friday , should have session `1000-1600:123456`
+
+**Use this parser to check your session string**: http://tradingview.github.io/checksession.html

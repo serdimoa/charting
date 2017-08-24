@@ -139,8 +139,8 @@ Response: Response is expected to be an array of symbol records as in [[respecti
 Request: `GET /history?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
 
 1. `symbol`: symbol name or ticker.
-2. `from`: unix timestamp (UTC) or leftmost required bar
-3. `to`: unix timestamp (UTC) or rightmost required bar
+2. `from`: unix timestamp (UTC) of leftmost required bar
+3. `to`: unix timestamp (UTC) of rightmost required bar
 4. `resolution`: string
 
 Example: `GET /history?symbol=BEAM~0&resolution=D&from=1386493512&to=1395133512`
@@ -208,8 +208,8 @@ All omitted prices will be treated as equal to `close`.
 Request: `GET /marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timestamp>&resolution=<resolution>`
 
 1. `symbol`: symbol name or ticker.
-2. `from`: unix timestamp (UTC) or leftmost visible bar
-3. `to`: unix timestamp (UTC) or rightmost visible bar
+2. `from`: unix timestamp (UTC) of leftmost visible bar
+3. `to`: unix timestamp (UTC) of rightmost visible bar
 4. `resolution`: string
 
 Response: Response is expected to be an object with some properties listed below. This object is similar to [[respective response|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]] in JS API, but each property is treated as table column, like described above.
