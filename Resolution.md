@@ -46,7 +46,7 @@ Example: 12M - one year, 24M - two year, 48 - four years.
 
 [[How to set a list of resolutions supported by an instrument|Symbology#supported_resolutions]]
 
-[[Set initial resolution on a chart#Widget-Constructor#interval|]]
+[[Set initial resolution on a chart|Widget-Constructor#interval|]]
 
 [[Get current chart resolution|Chart-Methods#resolution]]
 
