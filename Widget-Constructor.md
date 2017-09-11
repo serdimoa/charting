@@ -28,7 +28,7 @@ Valid timeframe is a number with letter D for days and M for months.
 #### datafeed [mandatory]
 JavaScript object implementing appropriate interface ([[JS API|JS-Api]]) to feed the chart width data.
 
-#### timezone <UTC>
+#### timezone
 Initial timezone of the chart. Numbers on time scale depend on this timezone.
 See [[supported timezones list|Symbology#timezone]] for available values. Set it to `exchange` to use the exchange timezone. For overriding default value you should use [[overrides|Widget-Constructor#overrides]] section
 

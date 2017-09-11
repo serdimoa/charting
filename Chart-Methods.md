@@ -23,6 +23,7 @@ Here is a list of supported chart's methods.
   * [[refreshMarks()|Chart-Methods#refreshmarks]]
   * [[clearMarks()|Chart-Methods#clearmarks]]
   * [[setChartType(type)|Chart-Methods#setcharttypetype]]
+  * [[setTimezone(timezone)|Chart-Methods#settimezone]]
 * Studies And Shapes
   * [[getAllShapes()|Chart-Methods#getallshapes]]
   * [[getAllStudies()|Chart-Methods#getallstudies]]
@@ -221,6 +222,18 @@ STYLE_PB* = 7;
 #### closePopupsAndDialogs()
 
 Calling this method closes a context menu or a dialog if it is shown.
+
+#### setTimezone(timezone)
+1. `timezone`: string
+
+See [timezone](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#timezone) for more information.
+
+Example:
+```javascript
+widget.activeChart().setTimezone('Asia/Singapore');
+```
+
+Makes the chart to change its timezone.
 
 # Studies And Shapes
 
