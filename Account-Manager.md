@@ -21,7 +21,7 @@ Account Manager's header consists of broker's title and an account name or a lis
 ##### accountsList: array of AccountInfo
 ##### account: [[WatchedValue]] of AccountInfo
 
-`AccountInfo` is an object with the only `name` required key and corresponding value.
+`AccountInfo` is an object with the only `name` required key and corresponding value. If `currency` key is not set, default value `USD` will be used.
 
 ### Orders Page
 

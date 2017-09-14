@@ -200,6 +200,18 @@ Items which should be favored by default. This option requires disabling localst
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
 
+#### settings_adapter (since 1.11)
+Object containing set/remove functions. Use it to save chart settings to your preferred storage, including server-side. If it is set, it should have the following methods:
+
+1. `initialSettings: Object`
+Object with initial settings
+
+1. `setValue(key: string, value: string): void`
+Function that is called to store key/value pair.
+
+1. `removeValue(key: string): void`
+Function that is called to remove a key.
+
 ## :chart: Trading Terminal only
 
 #### :chart: widgetbar
