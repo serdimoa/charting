@@ -24,6 +24,7 @@ widget.onChartReady(function() {
   * [[onTick(callback)|Widget-Methods#ontickcallback]] [obsolete]
   * [[onShortcut(shortcut, callback)|Widget-Methods#onshortcutshortcut-callback]]
   * [[subscribe(event, callback)|Widget-Methods#subscribeevent-callback]]
+  * [[unsubscribe(event, callback)|Widget-Methods#unsubscribeevent-callback]]
 * Chart Actions
   * [[chart()|Widget-Methods#chart]]
   * [[setLanguage(locale)|Widget-Methods#setlanguagelocale]]
@@ -211,6 +212,9 @@ widget.onShortcut("alt+s", function() {
 2. `callback`: function(arguments)
 
 The library will call `callback` when GUI `event` is happened. Every event can have different set of arguments.
+
+#### unsubscribe(event, callback)
+Unsubscribe a previously subscribed `callback` listener from a given `event` (which is one of the events in the table above).
 
 # Chart Actions
 
