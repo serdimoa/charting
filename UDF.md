@@ -46,7 +46,7 @@ Either `supports_search` or `supports_group_request` should be `true`.
 	supports_group_request: true,
 	supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
 	supports_marks: false,
-        supports_time: true
+	supports_time: true,
 }
 ```
 
@@ -63,8 +63,8 @@ Response: Response is expected to be an object with properties listed below. Eac
 * **symbol**
 * **description**
 * **exchange-listed** / **exchange-traded**
-* **minmov** / **minmovement**
-* **minmov2**
+* **minmovement** / **minmov** (NOTE: `minmov` is deprecated and will be removed in future releases)
+* **minmovement2** / **minmov2** (NOTE: `minmov2` is deprecated and will be removed in future releases)
 * **fractional**
 * **pricescale**
 * **has-intraday**
@@ -77,7 +77,6 @@ Response: Response is expected to be an object with properties listed below. Eac
 * **force-session-rebuild**
 * **has-daily**
 * **intraday-multipliers**
-* **has-fractional-volume** (obsolete)
 * **volume_precision**
 * **has-weekly-and-monthly**
 * **has-empty-bars**
@@ -89,8 +88,8 @@ Example: Here is the example of datafeed response to `GET /symbol_info?group=NYS
    description: ["Apple Inc", "Microsoft corp", "S&P 500 index"],
    exchange-listed: "NYSE",
    exchange-traded: "NYSE",
-   minmov: 1,
-   minmov2: 0,
+   minmovement: 1,
+   minmovement2: 0,
    pricescale: [1, 1, 100],
    has-dwm: true,
    has-intraday: true,
@@ -308,7 +307,7 @@ Example:
 
 ## Constructor
 
-`Datafeeds.UDFCompatibleDatafeed = function(datafeedURL, updateFrequency, protocolVersion)`
+`Datafeeds.UDFCompatibleDatafeed = function(datafeedURL, updateFrequency)`
 
 ### datafeedURL
 
@@ -317,9 +316,3 @@ This is a URL of a data server which will get requests and return data.
 ### updateFrequency
 
 This in an interval of real-time requests the datafeed will send to the server in milliseconds. Default is 10000 (10 sec).
-
-### protocolVersion
-
-`1` - outdated protocol which re-requests all data from the server every time the chart is scrolled.
-
-`2` (default) - the data requests are incremental. The same data is never requested again when symbol or resolution is not changed (except last 2 bars).

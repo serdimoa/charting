@@ -7,7 +7,7 @@ The product is under development so some features are not there yet. They are ma
 ## Trading Terminal Features
 
 #### Trading Capabilities
-You can trade right from the chart, and all you have to do to make this work is to implement your [[Trading Controller]] and plug it into the chart widget.
+You can trade right from the chart, and all you have to do to make this work is to implement your [[Broker API]] and plug it into the chart widget.
 
 [[images/tt_trading.png]]
 
@@ -18,7 +18,7 @@ choose expiration and calculate risks.
 [[images/tt_orderdialog.png]]
 
 #### Account Manager
-You can display orders/positions and account information in an interactive table at the bottom or embed any other widget there.
+You can display orders/positions and account information in an interactive table at the bottom.
 
 ###### Read more about this feature:
   * [[How to enable Account Manager|Account-Manager]]
@@ -65,6 +65,6 @@ Since Trading Terminal is based on Charting Library, we decided to merge the doc
 
 
 # See Also
-  * [[How to connect your trading to the charts|Trading Controller]]
+  * [[How to connect your trading to the charts|Broker API]]
   * [[Widget methods specific for Trading Terminal|Widget-Methods#chart-trading-terminal]]
   * [[Widget constructor parameters specific for Trading Terminal|Widget-Constructor#chart-trading-terminal-only]]

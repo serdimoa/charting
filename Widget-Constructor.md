@@ -194,11 +194,91 @@ Set this param to `true` if you want the library to load the last chart for a us
 #### custom_css_url (since 1.4)
 Adds your custom css to the chart. `url` should be absolute or relative path to 'static` folder
 
+#### loading_screen (since 1.12)
+Customization of the loading spinner. Value is an object with the following possible keys:
+- `backgroundColor`
+- `foregroundColor`
+
+Example:
+```javascript
+loading_screen: { backgroundColor: "#000000" }
+```
+
 #### favorites
 Items which should be favored by default. This option requires disabling localstorage usage(see [[featuresets |Featuresets]] list to know more). `favorites` property expects to be an object. Following properties are supported:
 
 * **intervals**: an array of favored intervals. Example: `["D", "2D"]`
 * **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
+
+#### save_load_adapter (since 1.12)
+Object containing save/load functions. If it is set, it should have the following methods:
+
+**Chart layouts**
+
+ 1. `getAllCharts(): Promise<ChartMetaInfo[]>` 
+ 
+    Function to get all saved charts.
+
+    `ChartMetaInfo` is an object with the following fields:
+      - `id` - unique id of the chart.
+      - `name` - name of the chart.
+      - `symbol` - symbol of the chart.
+      - `resolution` - resolution of the chart.
+      - `timestamp` - last modified date (number of milliseconds since midnight `01/01/1970` UTC) of the chart.
+
+ 1. `removeChart(chartId): Promise<void>`
+     
+     Function to remove a chart. `chartId` is unique id of the chart (see `getAllCharts` above).
+
+ 1. `saveChart(chartData: ChartData): Promise<ChartId>`
+     
+     Function to save a chart.
+
+    `ChartData` is object with the following fields:
+      - `id` - unique id of the chart (may be `undefined` if it wasn't save before).
+      - `name` - name of the chart.
+      - `symbol` - symbol of the chart.
+      - `resolution` - resolution of the chart.
+      - `content` - content of the chart.
+
+    `ChartId` - unique id of the chart (string)
+
+ 1. `getChartContent(chartId): Promise<ChartContent>`
+     
+     Function to load chart from the server.
+
+    `ChartContent` is a string with the chart content (see `ChartData::content` field in `saveChart` function).
+
+**Study Templates**
+
+ 1. `getAllStudyTemplates(): Promise<StudyTemplateMetaInfo[]>`
+     
+     Function to get all saved study templates.
+     
+    `StudyTemplateMetaInfo` is an object with the following fields:
+      - `name` - name of the study template.
+
+ 1. `removeStudyTemplate(studyTemplateInfo: StudyTemplateMetaInfo): Promise<void>`
+     
+     Function to remove a study template.
+
+ 1. `saveStudyTemplate(studyTemplateData: StudyTemplateData): Promise<void>`
+     
+     Function to save a study template.
+     
+    `StudyTemplateData` is an object with the following fields:
+      - `name` - name of the study template.
+      - `content` - content of the study template.
+
+ 1. `getStudyTemplateContent(studyTemplateInfo: StudyTemplateMetaInfo): Promise<StudyTemplateContent>`
+ 
+     Function to load a study template from the server.
+     
+    `StudyTemplateContent` - content of the study template (string)
+
+ If both `charts_storage_url` and `save_load_adapter` are set - `save_load_adapter` will be used.
+
+ **IMPORTANT:** All functions should return a `Promise` (or `Promise`-like objects).
 
 #### settings_adapter (since 1.11)
 Object containing set/remove functions. Use it to save chart settings to your preferred storage, including server-side. If it is set, it should have the following methods:
@@ -324,15 +404,11 @@ news_provider: {
 
 ```
 
-#### :chart: trading_controller
-Trading Controller is a thing which will make your trading live. [[Read more|Trading-Controller]].
+#### :chart: brokerFactory
+Use this field to pass the function that constructs implementation of [[Broker API]]. This is a function that accepts [[Trading Host]] and returns [[Broker API|Broker API]].
 
-```javascript
-new TradingView.widget({
-    /* ... */
-    trading_controller: new MyTradingController()
-});
-```
+#### :chart: brokerConfig
+Use this field to set the configuration flags for the Trading Terminal. [[Read more|Broker API#tradingconfiguration]].
 
 # See Also
 * [[Customization Overview]]

@@ -8,7 +8,6 @@ studies_overrides: {
     "volume.volume ma.transparency": 30,
     "volume.volume ma.linewidth": 5,
     "volume.show ma": true,
-    "volume.options.showStudyArguments": false,
     "bollinger bands.median.color": "#33FF88",
     "bollinger bands.upper.linewidth": 7
 }
@@ -27,6 +26,52 @@ You can customize new series added via `Compare`. Use `compare.plot` to customiz
 ```
 "compare.plot.color": "#000000",
 "compare.source": "high"
+```
+
+#### Overlay
+
+Since 1.11 to customize `Overlay` you may use the following properties:
+
+```
+Overlay.style: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)
+Overlay.showPriceLine: boolean
+
+Overlay.candleStyle.upColor: color
+Overlay.candleStyle.downColor: color
+Overlay.candleStyle.drawWick: boolean
+Overlay.candleStyle.drawBorder: boolean
+Overlay.candleStyle.borderColor: color
+Overlay.candleStyle.borderUpColor: color
+Overlay.candleStyle.borderDownColor: color
+Overlay.candleStyle.wickColor: color
+Overlay.candleStyle.barColorsOnPrevClose: boolean
+
+Overlay.hollowCandleStyle.upColor: color
+Overlay.hollowCandleStyle.downColor: color
+Overlay.hollowCandleStyle.drawWick: boolean
+Overlay.hollowCandleStyle.drawBorder: boolean
+Overlay.hollowCandleStyle.borderColor: color
+Overlay.hollowCandleStyle.borderUpColor: color
+Overlay.hollowCandleStyle.borderDownColor: color
+Overlay.hollowCandleStyle.wickColor: color
+Overlay.hollowCandleStyle.barColorsOnPrevClose: boolean
+
+Overlay.barStyle.upColor: color
+Overlay.barStyle.downColor: color
+Overlay.barStyle.barColorsOnPrevClose: boolean
+Overlay.barStyle.dontDrawOpen: boolean
+
+Overlay.lineStyle.color: color
+Overlay.lineStyle.linewidth: integer
+Overlay.lineStyle.priceSource: open/high/low/close
+Overlay.lineStyle.styleType: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)
+
+Overlay.areaStyle.color1: color
+Overlay.areaStyle.color2: color
+Overlay.areaStyle.linecolor: color
+Overlay.areaStyle.linestyle: (solid = 0; dotted = 1; dashed = 2; large dashed = 3)
+Overlay.areaStyle.linewidth: integer
+Overlay.areaStyle.priceSource: open/high/low/close
 ```
 
 
@@ -81,17 +126,6 @@ Format: `indicator_name.plot_name.color<.color_index>`
 * Only `#RRGGBB` format is supported for colors. Do not use short format `#RGB`.
 * Transparency varies in [0..100] range. 100 means plot is fully opaque.
 * Thickness is an integer.
-
-### Study options
-Format: `indicator_name.options.option_name`
-
-* **indicator_name**:  < ... >
-* **options**:  Keyword
-* **option_name**: name of option you want to assign. Supported values are:
-  * **showStudyArguments**: boolean, controls arguments visibility in header
-  * **showLastValue**: boolean, controls visibility of price scale labels
-
-Examples: `volume.options.showStudyArguments`, `volume.options.showLastValue`
 
 ### Default precision
 Since 1.6 you can change default precision of studies using `name.precision` format. Example:

@@ -5,13 +5,11 @@ Usually it has 3 pages: orders/positions and account information.
 
 To create an account manager you will need to describe columns of each page and provide data.
 
-Remark 1. [[supportCustomBottomWidget|Trading-Controller#configFlags]] flag should be disabled to display an Account Manager.
-
-Remark 2. [[Trading Controller]] should implement [[accountManagerInfo|Trading-Controller#accountmanagerinfo]]
+Remark 1. [[Broker API]] should implement [[accountManagerInfo|Broker API#accountmanagerinfo]]
 
 ## Account Manager Meta Information
 
-This information should be returned by [[accountManagerInfo|Trading-Controller#accountManagerInfo]].
+This information should be returned by [[accountManagerInfo|Broker API#accountManagerInfo]].
 
 ### Account Manager header
 
@@ -21,7 +19,12 @@ Account Manager's header consists of broker's title and an account name or a lis
 ##### accountsList: array of AccountInfo
 ##### account: [[WatchedValue]] of AccountInfo
 
-`AccountInfo` is an object with the only `name` required key and corresponding value. If `currency` key is not set, default value `USD` will be used.
+`AccountInfo` is an object with the following keys:
+1. `id` - account id
+2. `name` - account name
+3. `currency` - account currency
+
+If `currency` key is not set, default value `USD` will be used.
 
 ### Orders Page
 
@@ -33,8 +36,8 @@ You can display any field of an [[order|Trading-Objects-and-Constants#order]] or
 ##### possibleOrderStatuses: array of [[OrderStatus|Trading-Objects-and-Constants#orderstatus]]
 Optional list of statuses to be used in the orders filter. If it is not set default list is used.
 
-#### hasHistory
-If it is `true` History page will be displayed. All orders from previous sessions will be shown in the History.
+##### historyColumns: array of [[Column|Account-Manager#columndescription]]
+If it exists History page will be displayed. All orders from previous sessions will be shown in the History.
 
 ### Positions Page
 
@@ -146,6 +149,14 @@ Here is a list of default formatters:
 | fixed | Displays a number with 2 decimal places. |
 | pips | Displays a number with 1 decimal place. |
 | profit | Displays profit. It also adds `+`, separates thousands and colors the cell text in red or green. |
+
+There are some special formatters that are used to add buttons to the table:
+
+`orderSettings` adds Modify/Cancel buttons to the orders tab. Always set `modificationProperty` value to `status` for this formatter.
+
+`posSettings` adds Edit/Close buttons to the Positions/Net Positions tab
+
+`tradeSettings` adds Edit/Close buttons to the Individual Positions tab. Always set `modificationProperty` value to `canBeClosed` for this formatter.
 
 ##### property
 

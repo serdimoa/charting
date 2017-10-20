@@ -30,7 +30,7 @@ The smallest meaningful size that the Library supports is 600x600px. Avoid makin
 
 ### 7. Use the appropriate language
 
-The Charting Library is translated into tens of languages. Use the one that fits your users' needs.
+The Charting Library is translated into a dozen of languages. Use the one that fits your users' needs.
 
 ### 8. If you are experiencing issues
 

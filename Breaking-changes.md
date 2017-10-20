@@ -4,12 +4,47 @@ _Note: you can check Charting Library version by executing `TradingView.version(
 
 Here is the list of breaking changes:
 
-**Version 1.11**
-The following stuff is still supported in Trading Terminal, but will be deprecated in future versions:
-- `supportDOME` renamed to `supportDOM`
-- Changed signature of `showClosePositionDialog
-- `showEditBracketsDialog` renamed to `showPositionBracketsDialog`, changed signature
+**Version 1.12**
 
+**Charting Library**
+
+- `charting_library/charting_library.min.js` now is [UMD](https://github.com/umdjs/umd) module.
+If you just inline this script into HTML - nothing changed.
+But if import it as a module you should import `widget`, `version` and `onready` functions straight from it.
+
+Study overrides:
+- Overrides for `Overlay` should be applied only via `studies_overrides` (and `applyStudiesOverrides` in runtime). In previous versions you had to use `overrides` and `applyOverrides`). See [[Studies-Overrides|Studies-Overrides]] page.
+- Since this version you cannot override `showStudyArguments` and `showLastValue` using `options` keyword.
+
+**Trading Terminal**
+
+- `hasHistory` flag is removed. Use `historyColumns` to display History in Account Manager.
+
+The following stuff is still supported in Trading Terminal, but will be deprecated in future versions:
+- `subscribePL` and `unsubscribePL`. The broker should call `plUpdate` method of the Host every time when the profit is changed.
+- `supportDOM` removed. DOM widget visibility can be set using `dome_widget` featureset.
+
+**The Trading Controller is replaced with [[Broker API]]**.
+
+The following changes should be applied to your Trading Controller implementation to move to new Broker API:
+- Method `setHost` is removed. Host should be passed to the constructor of Broker API.
+- Method `buttonDropdownItems` removed. Broker API should update [[Broker API|Trading-Host]] using `setButtonDropdownActions`.
+- Methods `configFlags` and `durations` are removed. Use [[Widget Constructor]] fields instead.
+- All methods that returned `$.Deferred` should be modified to return Promise.
+- Method `chartContextMenuItems` is renamed to `chartContextMenuActions`.
+- Method `isTradable` changed to return a Promise instead of a Boolean value.
+- All string constants ("working", "buy" etc.) should be replaced with the appropriate number constants.
+- Position `avg_price` renamed to `avgPrice`.
+- `tradingController` field in the [[Widget Constructor]] is removed. Use `brokerFactory` instead.
+
+**Version 1.11**
+
+**Trading Terminal**
+
+The following stuff is still supported in Trading Terminal, but will be deprecated in future versions:
+- `supportDOME` renamed to `supportDOM`.
+- Changed signature of `showClosePositionDialog.
+- `showEditBracketsDialog` renamed to `showPositionBracketsDialog`, changed signature.
 
 **Version 1.10**
 - Default behavior of Volume indicator is changed.
@@ -25,7 +60,7 @@ New behavior: Volume indicator is added on first load of an empty chart if it is
 -  Chart has no option to show only actual orders anymore. Appropriate methods have been removed.
 - `showOrderDialog` receives an object instead of arguments list
 - `showSampleOrderDialog` removed, use [[showOrderDialog|Trading-Host#showorderdialogorder-handler]] instead
-- `showOrderDialog` removed from [[Trading Controller|Trading-Controller]], use `placeOrder` and `modifyOrder` receive `silently` argument instead
+- `showOrderDialog` removed from [[Broker API|Broker API]], use `placeOrder` and `modifyOrder` receive `silently` argument instead
 - `reversePosition`, `closePosition`, `cancelOrder` have an additional argument `silently`. They should should appropriate dialogs by themselves from now.
 
 **Version 1.7**

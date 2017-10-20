@@ -42,13 +42,8 @@ Years are set using months.
 Example: 12M - one year, 24M - two year, 48 - four years.
 
 #### See also
-
 [[How to set a list of available resolutions on a chart|JS-Api#supported_resolutions]]
-
 [[How to set a list of resolutions supported by an instrument|Symbology#supported_resolutions]]
-
-[[Set initial resolution on a chart|Widget-Constructor#interval|]]
-
+[[Set initial resolution on a chart#Widget-Constructor#interval|]]
 [[Get current chart resolution|Chart-Methods#resolution]]
-
 [[Change resolution on a chart|Chart-Methods#setresolutionresolution-callback]]

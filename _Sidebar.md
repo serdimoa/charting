@@ -22,7 +22,7 @@
     4. [[Customization Use Cases]]
 5. Trading Terminal
     1. [[Brief Intro|Trading-Terminal]]
-    2. [[Trading Controller]]
+    2. [[Broker API]]
     3. [[Trading Host]]
     4. [[Account Manager]]
     5. [[Trading Objects and Constants]]

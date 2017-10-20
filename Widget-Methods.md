@@ -14,14 +14,7 @@ widget.onChartReady(function() {
 
 * Subscribing To Chart Events
   * [[onChartReady(callback)|Widget-Methods#onchartreadycallback]]
-  * [[onSymbolChange(callback)|Widget-Methods#onsymbolchangecallback]] [obsolete]
-  * [[onIntervalChange(callback)|Widget-Methods#onintervalchangecallback]] [obsolete]
-  * [[onAutoSaveNeeded(callback)|Widget-Methods#onautosaveneededcallback]] [obsolete]
-  * [[onBarMarkClicked(callback)|Widget-Methods#onbarmarkclickedcallback]] [obsolete]
-  * [[onTimescaleMarkClicked(callback)|Widget-Methods#ontimescalemarkclickedcallback]] [obsolete]
   * [[onGrayedObjectClicked(callback)|Widget-Methods#ongrayedobjectclickedcallback]]
-  * [[onScreenshotReady(callback)|Widget-Methods#onscreenshotreadycallback]] [obsolete]
-  * [[onTick(callback)|Widget-Methods#ontickcallback]] [obsolete]
   * [[onShortcut(shortcut, callback)|Widget-Methods#onshortcutshortcut-callback]]
   * [[subscribe(event, callback)|Widget-Methods#subscribeevent-callback]]
   * [[unsubscribe(event, callback)|Widget-Methods#unsubscribeevent-callback]]
@@ -74,44 +67,6 @@ widget.onChartReady(function() {
 
 The Charting Library will call the callback provided once when chart is initialized and ready. You can safely call all other methods from this moment.
 
-#### onSymbolChange(callback)
-1. `callback`: function(symbolData)
-    1. `symbolData`: object `{name, exchange, description, type, interval}`
-
-The Charting Library will call the callback provided every time the main series symbol changes. New symbol info will be passed as argument.
-
-**Obsolete. Will be removed in 1.8.** Use [[onSymbolChanged|Chart-Methods#onsymbolchanged]] subscription method of `chart` instead.
-
-#### onIntervalChange(callback)
-1. `callback`: function(interval)
-    1. `interval`: string
-
-The Charting Library will call the callback provided every time the main series interval changes. New interval will be passed as argument.
-
-**Obsolete. Will be removed in 1.8.** Use [[onIntervalChanged|Chart-Methods#onintervalchanged]] subscription method of `chart` instead.
-
-#### onAutoSaveNeeded(callback)
-1. `callback`: function()
-
-The Library will call the callback provided every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds.
-See also [auto_save_delay](https://github.com/tradingview/charting_library/wiki/Widget-Constructor#auto_save_delay).
-
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onAutoSaveNeeded` event instead.
-
-#### onBarMarkClicked(callback)
-1. `callback`: function(markId)
-
-The Library will call the callback provided every time when user clicks a [[mark on bar|Marks-On-Bars]]. Mark ID will be passed as an argument.
-
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onMarkClick` event instead.
-
-#### onTimescaleMarkClicked(callback)
-1. `callback`: function(markId)
-
-The Library will call the callback provided every time when user clicks a timescale mark. Mark ID will be passed as an argument.
-
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onTimescaleMarkClick` event instead.
-
 #### onGrayedObjectClicked(callback)
 1. `callback`: function(subject)
     1. `subject`: object `{type, name}`
@@ -149,20 +104,6 @@ widget.onChartReady(function() {
 });
 
 ```
-
-#### onScreenshotReady(callback)
-1. `callback`: function(imageName)
-
-The Library will call the callback provided every time when user creates a screenshot and server returns the created image name.
-
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onScreenshotReady` event instead.
-
-#### onTick(callback)
-1. `callback`: function(data)
-
-The Library will call the callback provided every time when recent bar updates.
-
-**Obsolete. Will be removed in 1.8.** Use [[subscribe|Widget-Methods#subscribeevent-callback]] method with `onTick` event instead.
 
 #### onShortcut(shortcut, callback)
 1. `shortcut`

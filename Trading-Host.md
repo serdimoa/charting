@@ -1,51 +1,51 @@
 :chart: All content on this page is relevant for [[Trading Terminal]] only.
 
-Trading Host is API for interaction between [[Trading Controller]] and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts with your trading logic. In terms of `JS`, it is an `object` with a set of functions. Here is a list of Hosts's **methods**.
+Trading Host is API for interaction between [[Broker API]] and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts with your trading logic. In terms of `JS`, it is an `object` with a set of functions. Here is a list of Hosts's **methods**.
 
 ## Commands
 
-#### showOrderDialog(order, handler, focus) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showOrderDialog(order, handler, focus) : Promise
 1. `order` to be placed or modified
-2. `handler` is a function to process buy/sell/modify. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
+2. `handler` is a function to process buy/sell/modify. It should return Promise
 3. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
 
 Shows standard order dialog to create or modify an order and executes handler if Buy/Sell/Modify is pressed.
 
-#### showCancelOrderDialog(orderId, handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showCancelOrderDialog(orderId, handler) : Promise
 1. `orderId` ID of an order to be cancelled
-2. `handler` is a function to process cancellation. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
+2. `handler` is a function to process cancellation. It should return Promise
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-#### showCancelMultipleOrdersDialog(symbol, side, qty, handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showCancelMultipleOrdersDialog(symbol, side, qty, handler) : Promise
 1. `symbol` of orders to be cancelled
 2. `side` - side of orders to be cancelled
 3. `qty` - amount of orders to be cancelled
-4. `handler` is a function to process cancellation. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
+4. `handler` is a function to process cancellation. It should return Promise
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-#### showClosePositionDialog([[positionId|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showClosePositionDialog([[positionId|Trading-Objects-and-Constants#position]], handler) : Promise
 1. `positionId` identifier of a position to be closed
-2. `handler` is a function to process position close. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
+2. `handler` is a function to process position close. It should return Promise
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-#### showReversePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showReversePositionDialog([[position|Trading-Objects-and-Constants#position]], handler) : Promise
 1. `position` to be reversed
-2. `handler` is a function to process position reverse. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
+2. `handler` is a function to process position reverse. It should return a Promise
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-#### showPositionBracketsDialog([[position|Trading-Objects-and-Constants#position]], [[brackets|Trading-Objects-and-Constants#brackets]], focus, handler) : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### showPositionBracketsDialog([[position|Trading-Objects-and-Constants#position]], [[brackets|Trading-Objects-and-Constants#brackets]], focus, handler) : Promise
 1. `position` to be modified
 2. `brackets` (optional) new [brackets|Trading-Objects-and-Constants#Brackets]
 2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
-3. `handler` is a function to process modification of brackets. It should return [Deferred](https://api.jquery.com/category/deferred-object/)
+3. `handler` is a function to process modification of brackets. It should return Promise
 
 Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
 
-#### activateBottomWidget : [Deferred](https://api.jquery.com/category/deferred-object/)
+#### activateBottomWidget : Promise
 Opens bottom panel and switches tab to Trading.
 
 #### showTradingProperties()
@@ -95,7 +95,7 @@ Bottom Trading Panel has a button with a list of dropdown items. This method can
 1. `actions` is an array of [[ActionMetainfo|Trading-Objects-and-Constants#actionmetainfo]], each of them representing one dropdown item.
 
 #### defaultContextMenuActions()
-Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuItems](Trading-Controller#chartcontextmenuitemse).
+Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuItems](Broker API#chartcontextmenuitemse).
 
 #### defaultDropdownMenuActions(options)
 Provides default dropdown list of actions. You can use default actions in [setButtonDropdownActions](Trading-Host#setButtonDropdownActionsactions).

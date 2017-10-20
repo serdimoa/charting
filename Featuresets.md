@@ -41,7 +41,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | display_market_status                   | on            |                 |                                                            |
 | remove_library_container_border         | on            |                 |                                           |
 | chart_property_page_style               | on            |                 |                                           |
-| property_pages                          | on            | 1.11            | Disable all property pages                |
+| property_pages                          | on            | 1.11            | Disables all property pages                |
 | show_chart_property_page                | on            | 1.6             | Turning it off disables Properties        |
 | chart_property_page_scales              | on            |                 |                                           |
 | chart_property_page_background          | on            |                 |                                           |
@@ -56,6 +56,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | snapshot_trading_drawings               | off           | 1.6             | Includes orders/positions/executions in the screenshot |
 | source_selection_markers                | on            | 1.11            | Disables selection markers for series and indicators |
 | keep_left_toolbar_visible_on_small_screens | off            | 1.11            | Prevents left toolbar disappearing on small screens |
+| go_to_date | on            | 1.11            | Allows you to jump to a particular bar by means of 'Go to' dialog |
 
 ### Elements placement
 

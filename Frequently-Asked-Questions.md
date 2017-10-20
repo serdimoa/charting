@@ -7,7 +7,7 @@
 The Charting Library should to be used by technical specialists. It requires advanced skills in JavaScript and deep knowledge of WEB protocols. You should know it yourself or have/hire people who know this. Additionally, if you don't have a WEB API, you will need at least a server language programmer and a system administrator to implement a WEB API on the server side.
 <p>
 
-Weíve done lot of work to make the process of connecting data simple and clear.
+We‚Äôve done lot of work to make the process of connecting data simple and clear.
 <p>
 
 First, you need to read and understand this article: [[How to connect my data|https://github.com/tradingview/charting_library/wiki/How-To-Connect-My-Data]]
@@ -31,7 +31,7 @@ If you still have questions, open [[Demo Chart|https://demo_chart.tradingview.co
 <p>
 
 <p>
-    We donít have an example of such integration, but we still hope to make this example in the future.
+    We don‚Äôt have an example of such integration, but we still hope to make this example in the future.
 
 </details>
 <details>
@@ -92,7 +92,7 @@ Please read [[Symbology]] thoroughly. Number of decimal places is calculated bas
 
 <p>
 
-You still can display your data if you have only one price for each timestamp, but obviously you will not be able to display the data as bars/candles. Since the library is intended to display different styles of data: candles, bars, histogram, you are supposed to provide Open, High, Low, Close and optional Volume for each timestamp. If you have only one price, you can pass `Open = High = Low = Close = price`. For better view of this data, you can change default chart style to ìLineî (see GUI Questions).
+You still can display your data if you have only one price for each timestamp, but obviously you will not be able to display the data as bars/candles. Since the library is intended to display different styles of data: candles, bars, histogram, you are supposed to provide Open, High, Low, Close and optional Volume for each timestamp. If you have only one price, you can pass `Open = High = Low = Close = price`. For better view of this data, you can change default chart style to ‚ÄúLine‚Äù (see GUI Questions).
 </details>
 
 ## GUI Questions

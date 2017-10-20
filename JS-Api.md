@@ -11,7 +11,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 5. [[subscribeBars|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback]]
 6. [[unsubscribeBars|JS-Api#unsubscribebarssubscriberuid]]
 7. [[calculateHistoryDepth|JS-Api#calculatehistorydepthresolution-resolutionback-intervalback]]
-8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
+8. [[getMarks|JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution-optional]]
 9. [[getTimescaleMarks|JS-Api#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution]]
 10. [[getServerTime|JS-Api#getservertimecallback]]
 

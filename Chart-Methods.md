@@ -26,16 +26,17 @@ Here is a list of supported chart's methods.
 * Studies And Shapes
   * [[getAllShapes()|Chart-Methods#getallshapes]]
   * [[getAllStudies()|Chart-Methods#getallstudies]]
-  * [[setEntityVisibility(id, isVisible)|Chart-Methods#setentityvisibilityid-isvisible]]
+  * [[setEntityVisibility(id, isVisible)|Chart-Methods#setentityvisibilityid-isvisible]] [obsolete]
   * [[createStudy(name, forceOverlay, lock, inputs, callback, overrides, options)|Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides-options]]
-  * [[createShape(point, options, callback)|Chart-Methods#createshapepoint-options-callback]]
-  * [[createMultipointShape(points, options, callback)|Chart-Methods#createmultipointshapepoints-options-callback]]
+  * [[getStudyById(entityId)|Chart-Methods#getstudybyidentityid]]
+  * [[createShape(point, options)|Chart-Methods#createshapepoint-options]]
+  * [[createMultipointShape(points, options)|Chart-Methods#createmultipointshapepoints-options]]
+  * [[getShapeById(entityId)|Chart-Methods#getshapebyidentityid]]
   * [[removeEntity(entityId)|Chart-Methods#removeentityentityid]]
-  * [[createVerticalLine(point, options)|Chart-Methods#createverticallinepoint-options]]
   * [[removeAllShapes()|Chart-Methods#removeallshapes]]
   * [[removeAllStudies()|Chart-Methods#removeallstudies]]
 * Study Templates
-  * [[createStudyTemplate(options, callback)|Chart-Methods#createstudytemplateoptions-callback]]
+  * [[createStudyTemplate(options)|Chart-Methods#createstudytemplateoptions]]
   * [[applyStudyTemplate(template)|Chart-Methods#applystudytemplatetemplate]]
 * Trading Primitives
   * [[createOrderLine()|Chart-Methods#createorderlineoptions]]
@@ -114,20 +115,6 @@ Makes the chart to change its resolution. Callback is called after new data arri
 
 Makes the chart to rerequest data from the data feed. Usually you need to call it when chart's data has changed.
 Before calling this you should call [[onResetCacheNeededCallback|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback]].
-
-#### executeAction(action)
-**_deprecated, use executeActionById instead_**
-
-1. `action`: string
-
-Executes any action from chart's context menu (the menu which is popped up when one right-clicks the empty space on a main pane) by its name. Use names as you see them in English localization. Examples:
-```javascript
-// < ... >
-widget.chart().executeAction("Insert Indicator..."); // calling this will show `Insert Study` dialog
-// < ... >
-widget.chart().executeAction("Hide All Drawing Tools"); // this will toggle all shapes visibility
-// < ... >
-```
 
 #### executeActionById(actionId)
 _**since version 1.3**_
@@ -251,6 +238,8 @@ Returns an array of all created shapes objects. Each object has following fields
 #### setEntityVisibility(id, isVisible)
 Sets visibility of an entity with passed id.
 
+**Deprecated**: Use shape/study API instead (`getShapeById`/`getStudyById`). Will be removed in future releases.
+
 #### createStudy(name, forceOverlay, lock, inputs, callback, overrides, options)
 1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
 2. `forceOverlay`: forces the Charting Library to place the created study on main pane
@@ -260,10 +249,13 @@ Sets visibility of an entity with passed id.
 6. `overrides`: (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
 7. `options`: object with the only possible key `checkLimit`. If it is `true` study limit dialog will be shown if the limit if exceeded.
 
-Creates the study on a main symbol. Examples: 
+**Since 1.11 the function returns the result immediately. Callback is kept for compatibility.**
+
+Creates a study on the main symbol. Examples:
   * `createStudy('MACD', false, false, [14, 30, "close", 9])`
   * `createStudy('Moving Average Exponential', false, false, [26])`
   * `createStudy('Stochastic', false, false, [26], null, {"%d.color" : "#FF0000"})`
+  * `chart.createStudy('Moving Average', false, false, [26], null, {'Plot.linewidth': 10})`
 
 **Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
 
@@ -279,8 +271,31 @@ Creates the study on a main symbol. Examples:
     widget.chart().createStudy('Compare', false, false, ["open", 'AAPL']);
 ```
 
+#### getStudyById(entityId)
+1. `entityId`: object. Value that is returned when a study is created via API.
 
-#### createShape(point, options, callback)
+Returns an object with the following methods to interact with a study:
+1. `isUserEditEnabled()` - return `true` if a user is able to remove/change/hide your shape
+1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding a study by a user
+1. `getInputsInfo()` - returns an information about all inputs. Returned value is an array of objects with the following fields:
+    - `id` - input id of the study
+    - `name` - name of the input
+    - `type` - type of the input
+    - `localizedName` - name of the input translated to the current language
+
+1. `getInputValues()` - returns values of study inputs. Returned value is an array of objects (`StudyInputValue`) with the following fields:
+    - `id` - input id of the study
+    - `value` - value of the input
+
+1. `setInputValues(inputs)` - assigns input values to a study. `inputs` should be an array with objects of `StudyInputValue` (see above). It may contain only some of the inputs that you want to change.
+
+1. `mergeUp()` - merges study up (if can)
+1. `mergeDown()` - merges study down (if can)
+1. `unmergeUp()` - unmerges study up (if can)
+1. `unmergeDown()` - unmerges study down (if can)
+
+
+#### createShape(point, options)
 1. `point`: object `{time, [price], [channel]}`
     1. `time`: unix time. The only mandatory argument.
     2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
@@ -295,13 +310,12 @@ Creates the study on a main symbol. Examples:
     7. `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
     8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
     9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
-3. `callback`: function(`entityId`)
 
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
+The function returns `entityId` - unique id of the shape if creating is success or `null` otherwise.
 
 This call creates a shape at specified point on main series. 
 
-#### createMultipointShape(points, options, callback)
+#### createMultipointShape(points, options)
 1. `points`: an array of objects `[{time, [price], [channel]},...]`
     1. `time`: unix time. The only mandatory argument.
     2. `price`: If you specify `price`, then your icon will be placed on its level. If you do not, then the icon sticks to bar at respective time.
@@ -316,24 +330,36 @@ This call creates a shape at specified point on main series.
     7. `overrides`. It is an object containing properties you'd like to set for your new shape.
     8. `zOrder` (since `1.3`) may be one of the [`top`, `bottom`]. `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources. If it is not specified the line tool is placed above all existing line tools.
     9. `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
-3. `callback`: function(`entityId`)
 
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
+The function returns `entityId` - unique id of the study if creating is success or `null` otherwise.
 
 Look [[Shapes and Overrides|Shapes and Overrides]] for more information.
 
 This call creates a shape with specified points on main series.
 
+#### getShapeById(entityId)
+1. `entityId`: object. Value that is returned when a shape is created via API
+
+Returns an object with the following methods to interact with a shape:
+1. `isSelectionEnabled()` - returns `true` if the shape cannot be selected by a user
+1. `setSelectionEnabled(enable)` - enables or disables selecting of the shape (see `disableSelection` option of `createMultipointShape`)
+1. `isSavingEnabled()` - returns `true` if the shape is not saved to the chart
+1. `setSavingEnabled(enable)` - enables or disables saving the shape into the chart layout (see `disableSave` option of `createMultipointShape`)
+1. `isShowInObjectsTreeEnabled()` - returns `true` if the shape is displayed in the Objects Tree dialog
+1. `setShowInObjectsTreeEnabled(enabled)` - enables or disables displaying of the shape in the Objects Tree dialog
+1. `isUserEditEnabled()` - returns `true` if a user can remove/change/hide the shape
+1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding of the shape by a user
+1. `bringToFront()` - raises the line tool on top of all other sources
+1. `sendToBack()` - puts the line tool below all other sources
+1. `getProperties()` - get all properties of the line tool
+1. `setProperties(properties)` - sets properties of the shape. `properties` should have the same structure as an object from `getProperties` but it can have only those properties that you want to override.
+1. `getPoints()` - returns points of line tool. `Point` is an object `{ price, time }`.
+1. `setPoints(points)` - set the new points to line tool. The point format is the same as `points` argument from `createMultipointShape` method.
+
 #### removeEntity(entityId)
-1. `entityId`: object. Value which was passed to your callback after the entity (shape of study) was created.
+1. `entityId`: object. Value which was returned when the entity (shape of study) was created.
 
 Removes the specified entity.
-
-#### createVerticalLine(point, options)
-1. `point`: object `{time}`
-2. `options`: obejct `{lock}`
-
-This function is a synonym for `createShape` with shape = 'vertical_line'. It is treated as **obsolete**.
 
 #### removeAllShapes()
 Removes all shapes (drawings) from the chart.
@@ -345,12 +371,9 @@ Removed all studies from the chart.
 # Study Templates
 
 
-#### createStudyTemplate(options, callback)
+#### createStudyTemplate(options)
 1. `options`: object `{saveInterval}`
  1. `saveInterval`: boolean
-2. `callback`: function(data)
-
-**Since 1.4 the function returns the result immediately. Callback is kept for compatability.**
 
 Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument. This call is a part of low-level [[save/load API|Saving-and-Loading-Charts]].
 
