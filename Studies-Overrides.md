@@ -30,7 +30,7 @@ You can customize new series added via `Compare`. Use `compare.plot` to customiz
 
 #### Overlay
 
-Since 1.11 to customize `Overlay` you may use the following properties:
+Since 1.12 to customize `Overlay` you may use the following properties:
 
 ```
 Overlay.style: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)
