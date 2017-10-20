@@ -4,8 +4,8 @@ host on your servers, connect your own data & use in your site/app for free. All
 
 | What to do | What you'll get after |
 |---|---|
-|1. `git clone` your [[copy of Charting Library|Package-Content]] and then [[run it|Running-Your-Charting-Library]]|A working example of our chart running on your host|
-|2. Plug your data into Charting Library using [[one of our APIs|How To Connect My Data]]. You can see some examples [[here|How To Connect My Data#want-examples-]]|The complete and working charting tool with your own data|
+|1. `git clone` your [[copy of Charting Library\|Package-Content]] and then [[run it\|Running-Your-Charting-Library]]|A working example of our chart running on your host|
+|2. Plug your data into Charting Library using [[one of our APIs\|How To Connect My Data]]. You can see some examples [[here\|How To Connect My Data#want-examples-]]|The complete and working charting tool with your own data|
 
 If you want to customize your charts, then you may go further.
 
