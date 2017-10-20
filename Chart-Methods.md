@@ -249,7 +249,7 @@ Sets visibility of an entity with passed id.
 6. `overrides`: (since version `1.2`) an object [containing properties](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
 7. `options`: object with the only possible key `checkLimit`. If it is `true` study limit dialog will be shown if the limit if exceeded.
 
-**Since 1.11 the function returns the result immediately. Callback is kept for compatibility.**
+**Since 1.12 the function returns the result immediately. Callback is kept for compatibility.**
 
 Creates a study on the main symbol. Examples:
   * `createStudy('MACD', false, false, [14, 30, "close", 9])`
