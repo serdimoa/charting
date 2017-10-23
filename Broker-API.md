@@ -8,10 +8,16 @@ Broker API is a thing which will make your trading live. Its main purpose is to 
 The constructor of the Broker API usually takes [[Trading Host]].
 
 #### positions : Promise
+This methods is called by the Trading Terminal to request positions. You should return an array of [[positions|Trading-Objects-and-Constants#position]].
+
 #### orders : Promise
+This methods is called by the Trading Terminal to request orders. You should return an array of [[orders|Trading-Objects-and-Constants#order]].
+
 #### executions(symbol) : Promise
-These methods are called by the Chart to request positions/orders/executions and display them on a chart.
-You should return the appropriate lists of [[positions|Trading-Objects-and-Constants#position]], [[orders|Trading-Objects-and-Constants#order]] or [[executions|Trading-Objects-and-Constants#execution]]
+This methods is called by the Trading Terminal to request executions. You should return an array of [[executions|Trading-Objects-and-Constants#execution]].
+
+#### trades : Promise
+This methods is called by the Trading Terminal to request trades (individual positions). You should return an array of [[trades|Trading-Objects-and-Constants#trade]].
 
 #### chartContextMenuActions(e)
 Chart can have a sub-menu `Trading` in the context menu. Return the list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.
@@ -80,6 +86,15 @@ If `silently` is `true` no dialogs show be shown.
 
 #### reversePosition(positionId, silently)
 This method is invoked if `supportReversePosition` configuration flag is on to reverse the position by id.
+If `silently` is `true` no dialogs show be shown.
+
+#### editTradeBrackets(tradeId, focus)
+This method is invoked if `supportTradeBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.
+1. `tradeId` is ID of existing trade to be modified
+2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
+
+#### closeTrade(tradeId, silently)
+This method is invoked if `supportCloseTrade` configuration flag is on to close the trade by id.
 If `silently` is `true` no dialogs show be shown.
 
 #### symbolInfo(symbol) : Deferred (or Promise)

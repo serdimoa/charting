@@ -309,7 +309,7 @@ widgetbar: {
 * **details <false>**: Enables details widget in right-side widget bar.
 * **watchlist <false>**: Enables watchlist widget in right-side widget bar.
 * **watchlist_settings.default_symbols <[]>**: Sets default symbols list for watchlist.
-* **watchlist_settings.readonly: Enables read-only mode for the watchlist.
+* **watchlist_settings.readonly**: Enables read-only mode for the watchlist.
 
 #### :chart: rss_news_feed
 

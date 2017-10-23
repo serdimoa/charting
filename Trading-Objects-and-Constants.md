@@ -118,20 +118,32 @@ Describes a single position.
 * id: String. Usually id should be equal to brokerSymbol
 * symbol : String
 * brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
+* qty : positive number
+* side: [[Side|Trading-Objects-and-Constants#side]]
+* avgPrice : number
+
+## Trade
+
+Describes a single trade (individual position).
+
+* id: String. Usually id should be equal to brokerSymbol
+* symbol : String
+* date: number (UNIX timestamp in milliseconds)
+* brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
 * qty : Double positive
 * side: [[Side|Trading-Objects-and-Constants#side]]
-* avg_price : Double
+* price : number
 
 ## Execution
 
-Describes a single execution.
+Describes a single execution. Execution is a mark on a chart that displays trade information.
 
 * symbol : String
 * brokerSymbol : String. Can be empty if broker symbol is the same as TV symbol.
-* price : double
-* time: time_t
+* price : number
+* time: Date
 * side : [[Side|Trading-Objects-and-Constants#side]]
-* qty : double
+* qty : number
 
 
 ## ActionMetainfo

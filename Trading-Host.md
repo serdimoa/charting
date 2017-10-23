@@ -134,3 +134,12 @@ Call this method when a broker connection has received a PL update. This method 
 
 #### equityUpdate(equity)
 Call this method when a broker connection has received an equity update. This method is required by the standard order dialog.
+
+#### tradeUpdate ([[trade|Trading-Objects-and-Constants#trade]])
+Call this method when a trade is added or changed.
+
+#### tradePartialUpdate ([[trade|Trading-Objects-and-Constants#trade]])
+Call this method when a trade is not changed, but fields that you added to the trade object to display in the Account Manager are changed.
+
+#### tradePLUpdate(tradeId, pl)
+Call this method when a broker connection has received a trade PL update.

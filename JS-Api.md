@@ -20,8 +20,8 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 1. [[getQuotes|JS-Api#chart-getquotessymbols-ondatacallback-onerrorcallback]]
 2. [[subscribeQuotes|JS-Api#chart-subscribequotessymbols-fastsymbols-onrealtimecallback-listenerguid]]
 3. [[unsubscribeQuotes|JS-Api#chart-unsubscribequoteslistenerguid]]
-4. :chart: [[subscribeDepth|JS-Api#subscribedepthsymbolinfo-callback]]
-5. :chart: [[unsubscribeDepth|JS-Api#unsubscribedepthsubscriberuid]]
+4. :chart: [[subscribeDepth|JS-Api#chart-subscribedepthsymbolinfo-callback-string]]
+5. :chart: [[unsubscribeDepth|JS-Api#chart-unsubscribedepthsubscriberuid]]
 
 ### onReady(callback)
 1. `callback`: function(configurationData)
