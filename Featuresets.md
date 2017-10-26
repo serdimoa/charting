@@ -57,6 +57,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | source_selection_markers                | on            | 1.11            | Disables selection markers for series and indicators |
 | keep_left_toolbar_visible_on_small_screens | off            | 1.11            | Prevents left toolbar disappearing on small screens |
 | go_to_date | on            | 1.11            | Allows you to jump to a particular bar by means of 'Go to' dialog |
+| adaptive_logo | on            | 1.11            | Allows you to hide 'charts by TradingView' text on small-screen devices |
 
 ### Elements placement
 
