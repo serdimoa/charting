@@ -43,7 +43,7 @@ An array of filter descriptors. Filter descriptor is an object `{name, value}`. 
 `symbolsTypes` = []  leads to types filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all types)
 
 ##### supported_resolutions
-An array of supported resolutions. Resolution may be a number or a string. If the resolution is a number, it is treated as minutes count. Format is described in another [[article|Resolution]].
+An array of supported resolutions. Resolution must be a string. Format is described in another [[article|Resolution]].
 
 'resolutions'=undefined or [] leads to resolutons widget having its default content (see <http://tradingview.com/e/> ). Example: `[1, 15, 240, "D", "6M"]` will give you "1 minute, 15 minutes, 4 hours, 1 day, 6 months" in resolution widget.
 
@@ -153,7 +153,7 @@ Library calls this function when is doesn't want to receive updates for this sub
 Charting Library calls this function when it is going to request some history data to give you an ability to override required history depth. It passes some arguments so you could know how much bars is it going to get. Here are a few examples:
 
 * `calculateHistoryDepth("D", "M", 12)` called: the Library is going to request 12 months of daily bars
-* `calculateHistoryDepth(60, "D", 15)` called: the Library is going to request 15 days of hourly bars
+* `calculateHistoryDepth("60", "D", 15)` called: the Library is going to request 15 days of hourly bars
 
 This function should return `undefined` if you do not want to override anything. If you do, it should return an object `{resolutionBack, intervalBack}`. Properties meaning is similar to respective arguments' one.
 
