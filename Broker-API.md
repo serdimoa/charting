@@ -24,10 +24,6 @@ Chart can have a sub-menu `Trading` in the context menu. Return the list of item
 
 `e` is a context object passed by a browser
 
-#### bottomContextMenuItems()
-Bottom Trading Panel can have a context menu. Return a list of items for this menu. Format is the same as for `setButtonDropdownActions`.
-Bottom Trading Panel can have a context menu. Return a list of items for this menu. Format is the same as for `setButtonDropdownActions`.
-
 #### connectionStatus()
 Usually you don't need to return values other then `1`, because the broker is already connected when you create the widget. You can use it if you want to display a spinner in the bottom panel while the data is loaded.
 Possible return values are:
