@@ -58,6 +58,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | keep_left_toolbar_visible_on_small_screens | off            | 1.11            | Prevents left toolbar disappearing on small screens |
 | go_to_date | on            | 1.11            | Allows you to jump to a particular bar by means of 'Go to' dialog |
 | adaptive_logo | on            | 1.11            | Allows you to hide 'charts by TradingView' text on small-screen devices |
+| show_dom_first_time					  | off           | 1.12            | Show DOM panel when a user opens the Chart for the first time |
 
 ### Elements placement
 
