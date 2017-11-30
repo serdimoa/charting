@@ -50,24 +50,24 @@ So we give you the ability to use your own dialog and it's 100% up to you how to
 #### placeOrder([[order|Trading-Objects-and-Constants#order]], silently)
 
 Method is invoked when a user want to place an order. Order is pre-filled with partial or full information.
-If `silently` is `true` no order dialog show be shown.
+If `silently` is `true` no order dialog should be shown.
 
 #### modifyOrder([[order|Trading-Objects-and-Constants#order]], silently, focus)
 1. `order` is an order object to modify
-2. `silently` - if it is `true` no order dialog show be shown
+2. `silently` - if it is `true` no order dialog should be shown
 3. `focus` - [[OrderTicketFocusControl constants|Trading-Objects-and-Constants#orderticketfocuscontrol]]. It can be already initialized by the chart.
 
 Method is invoked when a user want to modify an existing order.
 
 #### cancelOrder(orderId, silently)
 This method is invoked to cancel single order with given `id`.
-If `silently` is `true` no dialogs show be shown.
+If `silently` is `true` no dialogs should be shown.
 
 #### cancelOrders(symbol, side, ordersIds, silently)
 1. `symbol` - symbol string
 2. `side`: [[Side constant|Trading-Objects-and-Constants#side]] or `undefined`
 3. `ordersIds` - ids already collected by `symbol` and `side`
-If `silently` is `true` no dialogs show be shown.
+If `silently` is `true` no dialogs should be shown.
 
 This method is invoked to cancel multiple orders for a `symbol` and `side`.
 
@@ -82,7 +82,7 @@ If `silently` is `true` no dialogs show be shown.
 
 #### reversePosition(positionId, silently)
 This method is invoked if `supportReversePosition` configuration flag is on to reverse the position by id.
-If `silently` is `true` no dialogs show be shown.
+If `silently` is `true` no dialogs should be shown.
 
 #### editTradeBrackets(tradeId, focus)
 This method is invoked if `supportTradeBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.

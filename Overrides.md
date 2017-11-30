@@ -18,6 +18,8 @@ paneProperties.vertGridProperties.style: LINESTYLE_SOLID
 paneProperties.horzGridProperties.color: "#E6E6E6"
 paneProperties.horzGridProperties.style: LINESTYLE_SOLID
 paneProperties.crossHairProperties.color: "#989898"
+paneProperties.crossHairProperties.width: 1
+paneProperties.crossHairProperties.style: LINESTYLE_DASHED
 
 //	Margins (percent). Used for auto scaling.
 paneProperties.topMargin: 5
@@ -41,9 +43,15 @@ paneProperties.legendProperties.showSeriesOHLC: true
 scalesProperties.showLeftScale : false
 scalesProperties.showRightScale : true
 scalesProperties.backgroundColor : "#ffffff"
+scalesProperties.fontSize: 11
 scalesProperties.lineColor : "#555"
 scalesProperties.textColor : "#555"
 scalesProperties.scaleSeriesOnly : false
+scalesProperties.showSeriesLastValue: true
+scalesProperties.showSeriesPrevCloseValue: false
+scalesProperties.showStudyLastValue: false
+scalesProperties.showStudyPlotLabels: false
+scalesProperties.showSymbolLabels: false
 
 timeScale.rightOffset: 5
 
@@ -61,16 +69,15 @@ timezone: "Etc/UTC" # See supported timezones list (at Symbology#timezone page) 
 //		Kagi = 5
 //		Point&Figure = 6
 //		Line Break = 7
+//		Baseline = 10
 mainSeriesProperties.style: 1
 
 mainSeriesProperties.showCountdown: true
-mainSeriesProperties.showLastValue:true
 mainSeriesProperties.visible:true
 mainSeriesProperties.showPriceLine: true
 mainSeriesProperties.priceLineWidth: 1
 mainSeriesProperties.lockScale: false
 mainSeriesProperties.minTick: "default"
-mainSeriesProperties.extendedHours: false
 
 mainSeriesProperties.priceAxisProperties.autoScale:true             (see #749)
 mainSeriesProperties.priceAxisProperties.autoScaleDisabled:false    (see #749)
@@ -135,6 +142,20 @@ mainSeriesProperties.areaStyle.linecolor: "#0094FF"
 mainSeriesProperties.areaStyle.linestyle: LINESTYLE_SOLID
 mainSeriesProperties.areaStyle.linewidth: 1
 mainSeriesProperties.areaStyle.priceSource: "close"
+
+//	Baseline styles
+mainSeriesProperties.baselineStyle.baselineColor: "rgba( 117, 134, 150, 1)"
+mainSeriesProperties.baselineStyle.topFillColor1: "rgba( 83, 185, 135, 0.1)"
+mainSeriesProperties.baselineStyle.topFillColor2: "rgba( 83, 185, 135, 0.1)"
+mainSeriesProperties.baselineStyle.bottomFillColor1: "rgba( 235, 77, 92, 0.1)"
+mainSeriesProperties.baselineStyle.bottomFillColor2: "rgba( 235, 77, 92, 0.1)"
+mainSeriesProperties.baselineStyle.topLineColor: "rgba( 83, 185, 135, 1)"
+mainSeriesProperties.baselineStyle.bottomLineColor: "rgba( 235, 77, 92, 1)"
+mainSeriesProperties.baselineStyle.topLineWidth: 1
+mainSeriesProperties.baselineStyle.bottomLineWidth: 1
+mainSeriesProperties.baselineStyle.priceSource: "close"
+mainSeriesProperties.baselineStyle.transparency: 50
+mainSeriesProperties.baselineStyle.baseLevelPercentage: 50
 ```
 
 ##### LineStyles

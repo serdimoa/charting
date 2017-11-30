@@ -214,7 +214,7 @@ Only one mark per bar is allowed. Marks out of bars are not allowed.
 
 **Remark**: This function will be called only if you declared your back-end is [[supporting marks|JS-Api#supports_timescale_marks]].
 
-### getServerTime(callback). Optional.
+### getServerTime(callback)
 1. `callback`: function(unixTime)
 
 This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time. The charting library expects callback to be called once. The time is provided without milliseconds. Example: `1445324591`. It is used to display Countdown on the price scale.
