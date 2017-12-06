@@ -176,7 +176,7 @@ Optional `notSortable` can be set to prevent sorting of the column.
 
 ##### help
 
-`help` is a tooltip string for the column.
+`help` is a tooltip text for the column.
 
 ##### highlightDiff
 
