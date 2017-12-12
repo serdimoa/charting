@@ -5,7 +5,7 @@ Data caching (history & symbol info) is implemented in Charting Library. When yo
 
 # Methods
 1. [[onReady|JS-Api#onreadycallback]]
-2. [[searchSymbolsByName|JS-Api#searchsymbolsbynameuserinput-exchange-symboltype-onresultreadycallback]]
+2. [[searchSymbols|JS-Api#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback]]
 3. [[resolveSymbol|JS-Api#resolvesymbolsymbolname-onsymbolresolvedcallback-onresolveerrorcallback]]
 4. [[getBars|JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest]]
 5. [[subscribeBars|JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback]]
@@ -33,12 +33,12 @@ Charting Library expects you will call callback and pass your datafeed `configur
 Configuration data is an object; for now, following properties are supported:
 
 ##### exchanges
-An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument  to searchSymbolsByName (see below).
+An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument  to searchSymbols (see below).
 
 `exchanges` = []  leads to exchanges filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all exchanges).
 
 ##### symbols_types
-An array of filter descriptors. Filter descriptor is an object `{name, value}`. `value` will be passed as `symbolType` argument  to searchSymbolsByName.
+An array of filter descriptors. Filter descriptor is an object `{name, value}`. `value` will be passed as `symbolType` argument  to searchSymbols.
 
 `symbolsTypes` = []  leads to types filter absence in Symbol Search list. Use `value` = "" if you want to create wildcard filter (all types)
 
@@ -62,7 +62,7 @@ Sample regex: : `/^(.+)([12]!|[FGHJKMNQUVXZ]\d{1,2})$/`. It will be applied to t
 
 ####
 
-### searchSymbolsByName(userInput, exchange, symbolType, onResultReadyCallback)
+### searchSymbols(userInput, exchange, symbolType, onResultReadyCallback)
 1. `userInput`: string. It is text entered by user in symbol search field
 2. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
 3. `symbolType`: string. The requested symbol type: index, stock, forex e.t.c. (chosen by user). Empty value means no filter was specified.
