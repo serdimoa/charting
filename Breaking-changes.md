@@ -11,6 +11,7 @@ Here is the list of breaking changes:
 - `charting_library/charting_library.min.js` now is [UMD](https://github.com/umdjs/umd) module.
 If you just inline this script into HTML - nothing changed.
 But if import it as a module you should import `widget`, `version` and `onready` functions straight from it.
+- `searchSymbolsByName` is removed from `JS-API`, use `searchSymbols` instead.
 
 Study overrides:
 - Overrides for `Overlay` should be applied only via `studies_overrides` (and `applyStudiesOverrides` in runtime). In previous versions you had to use `overrides` and `applyOverrides`). See [[Studies-Overrides|Studies-Overrides]] page.

@@ -104,6 +104,7 @@ Result is an object with the following data:
 - `minTick` - minimal price change (e.g., 0.00001 for EURUSD). It is used for price fields.
 - `description` - a description to be displayed in the dialog
 - `type` - instrument type, only `forex` matters - it enables negative pips check in the order dialog
+- `domVolumePrecision` - number of decimal places of DOM asks/bids volume (optional, 0 by default)
 
 #### accountInfo() : Deferred (or Promise)
 
