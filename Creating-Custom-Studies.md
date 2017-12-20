@@ -132,7 +132,7 @@ _How to use the examples?_
 	widget = new TradingView.Widget(/* ... */);
 
 	widget.onChartReady(function() {
-		widget.chart().createStudy('Equity', false, true);
+		widget.chart().createStudy('<indicator-name>', false, true);
 	});
 ```
 
@@ -222,7 +222,7 @@ __customIndicators = [
 ];
 ```
 
-**2. Coloring bars**
+**2. Coloring bars.**
 ```javascript
 __customIndicators = [{
 	name: "Bar Colorer Demo",
