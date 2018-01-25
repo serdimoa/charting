@@ -91,6 +91,7 @@ Please note that the leading `-` characters are not a part of featureset name in
 | chart_zoom                    | on    |   1.10          | Allows zooming of a chart
 | high_density_bars             | off   |   1.11          | Allows zooming out to show more than 60000 bars on 1 screen
 | cl_feed_return_all_data       | off   |   1.11          | Allows you to return more bars from the feed and display it on a chart at once
+| uppercase_instrument_names    | on    | 1.12            | Disabling this feature allows a user to enter case-sensitive instrument names
 
 ### "Big Rocks"
 
