@@ -293,6 +293,13 @@ Returns an object with the following methods to interact with a study:
 1. `mergeDown()` - merges study down (if can)
 1. `unmergeUp()` - unmerges study up (if can)
 1. `unmergeDown()` - unmerges study down (if can)
+1. `isVisible()` - returns `true` if the study is visible
+1. `setVisible(visible)` - shows/hides the study
+1. `bringToFront()` - raises the study on top of all other sources
+1. `sendToBack()` - puts the study below all other sources
+1. `applyOverrides(overrides)` - apply [overrides](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) to the study.
+    Keys of the `overrides` object don't need to start with the study name, since it is applied to the particular study.
+    For example, you should use `style` instead of `Overlay.style` to override the current style of the Overlay study.
 
 
 #### createShape(point, options)
