@@ -28,6 +28,6 @@
     1. [Trading Objects and Constants](Trading-Objects-and-Constants)
 1. [Saving/Loading Charts](Saving-and-Loading-Charts)
 1. [Creating Custom Studies](Creating-Custom-Studies)
-1. [Best Practices](Best Practices)
-1. [Frequently Asked Questions](Frequently Asked Questions)
+1. [Best Practices](Best-Practices)
+1. [Frequently Asked Questions](Frequently-Asked-Questions)
 1. [Breaking changes in versions](Breaking-Changes)
