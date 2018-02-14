@@ -50,7 +50,7 @@ Some types has specific processing in the chart.
 
 ## session
 
-Trading hours for this symbol. See the [Trading Sessions](Trading-Sessions.md) article to know more details.
+Trading hours for this symbol. See the [Trading Sessions](Trading-Sessions) article to know more details.
 
 ## exchange, listed_exchange
 
@@ -165,7 +165,7 @@ If it is set to `true`, all resolutions that are supplied directly by the datafe
 
 An array of resolutions which should be enabled in resolutions picker for this symbol.
 
-Each item of an array is expected to be a string. Format is described in another [article](Resolution.md).
+Each item of an array is expected to be a string. Format is described in another [article](Resolution).
 
 Resolutions treated as supported by datafeed (see datafeed configuration data) but not supported by the current symbol will be disabled in Resolution picker widget.
 

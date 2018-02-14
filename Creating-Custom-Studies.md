@@ -120,14 +120,14 @@ Please follow these few steps:
 
     Note, that indicators file is a JavaScript source file that just defines an array of indicator objects. So, you can place several indicators in it, or combine them with the ones we compiled for you.
 
-1. Use [indicators_file_name](Widget-Constructor.md#indicators_file_name) option of widget's constructor to load custom indicators from the indicators file.
-1. Update your widget's initialization code to [create](Chart-Methods.md#createstudyname-forceoverlay-lock-inputs-callback-overrides-options) this indicator when chart is ready.
+1. Use [indicators_file_name](Widget-Constructor#indicators_file_name) option of widget's constructor to load custom indicators from the indicators file.
+1. Update your widget's initialization code to [create](Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides-options) this indicator when chart is ready.
 
 ## Examples
 
 *How to use the examples?*
 
-1. Plug the indicator into Charting Library using [indicators_file_name](Widget-Constructor.md#indicators_file_name) option.
+1. Plug the indicator into Charting Library using [indicators_file_name](Widget-Constructor#indicators_file_name) option.
 1. Change your widget's initialization code. Add something like the following:
 
     ```javascript

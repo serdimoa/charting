@@ -8,7 +8,7 @@ Here is the list of breaking changes:
 
 ## Version 1.13
 
-- Action `takeScreenshot` from [executeActionById](Chart-Methods.md#executeactionbyidactionid) method is removed. Use [takeScreenshot](Widget-Methods.md#takescreenshot) method instead.
+- Action `takeScreenshot` from [executeActionById](Chart-Methods#executeactionbyidactionid) method is removed. Use [takeScreenshot](Widget-Methods#takescreenshot) method instead.
 - Featureset `caption_buttons_text_if_possible` is enabled by default.
 
 ## Version 1.12
@@ -24,7 +24,7 @@ Here is the list of breaking changes:
 
 Study overrides:
 
-- Overrides for `Overlay` should be applied only via `studies_overrides` (and `applyStudiesOverrides` in runtime). In the previous versions you had to use `overrides` and `applyOverrides`). See [Studies-Overrides](Studies-Overrides.md) page.
+- Overrides for `Overlay` should be applied only via `studies_overrides` (and `applyStudiesOverrides` in runtime). In the previous versions you had to use `overrides` and `applyOverrides`). See [Studies-Overrides](Studies-Overrides) page.
 - Starting from this version you are no longer able to override `showStudyArguments` and `showLastValue` using `options` keyword.
 
 **Trading Terminal**
@@ -36,19 +36,19 @@ The following items are still supported in the Trading Terminal, but will be dep
 - `subscribePL` and `unsubscribePL`. The broker should call `plUpdate` method of the Host every time the profit is changed.
 - `supportDOM` is removed. DOM widget visibility can be set using `dome_widget` featureset.
 
-**The Trading Controller is replaced with [Broker API](Broker-API.md)**.
+**The Trading Controller is replaced with [Broker API](Broker-API)**.
 
 The following changes should be applied to your Trading Controller implementation to move to new Broker API:
 
 - Method `setHost` is removed. Host should be passed to the constructor of Broker API.
-- Method `buttonDropdownItems` is removed. Broker API should update [Broker API](Trading-Host.md) using `setButtonDropdownActions`.
-- Methods `configFlags` and `durations` are removed. Use [Widget Constructor](Widget-Constructor.md) fields instead.
+- Method `buttonDropdownItems` is removed. Broker API should update [Broker API](Trading-Host) using `setButtonDropdownActions`.
+- Methods `configFlags` and `durations` are removed. Use [Widget Constructor](Widget-Constructor) fields instead.
 - All methods that returned `$.Deferred` should be modified to return Promise.
 - Method `chartContextMenuItems` is renamed to `chartContextMenuActions`.
 - Method `isTradable` changed to return a Promise instead of a Boolean value.
 - All string constants ("working", "buy" etc.) should be replaced with the appropriate number of constants.
 - Position `avg_price` renamed to `avgPrice`.
-- `tradingController` field in the [Widget Constructor](Widget-Constructor.md) is removed. Use `brokerFactory` instead.
+- `tradingController` field in the [Widget Constructor](Widget-Constructor) is removed. Use `brokerFactory` instead.
 
 ## Version 1.11
 
@@ -76,8 +76,8 @@ The following items are still supported in Trading Terminal, but will be depreca
 
 - The chart can no longer show active orders only. Appropriate methods have been removed.
 - `showOrderDialog` receives an object instead of arguments list
-- `showSampleOrderDialog` removed, use [showOrderDialog](Trading-Host.md#showorderdialogorder-handler-focus-promise) instead
-- `showOrderDialog` removed from [Broker API](Broker-API.md), use `placeOrder` and `modifyOrder` receive `silently` argument instead
+- `showSampleOrderDialog` removed, use [showOrderDialog](Trading-Host#showorderdialogorder-handler-focus-promise) instead
+- `showOrderDialog` removed from [Broker API](Broker-API), use `placeOrder` and `modifyOrder` receive `silently` argument instead
 - `reversePosition`, `closePosition`, `cancelOrder` have an additional argument `silently`.
 
 ## Version 1.7

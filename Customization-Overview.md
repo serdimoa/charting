@@ -25,7 +25,7 @@ The example of configuration response:
 };
 ```
 
-One may find more detailed description of this parameters on [JS API page](JS-Api.md#onreadycallback).
+One may find more detailed description of this parameters on [JS API page](JS-Api#onreadycallback).
 
 ## Customizations done on client-side
 
@@ -71,10 +71,10 @@ var widget = new TradingView.widget({
 });
 ```
 
-See the details in [Widget Constructor Arguments article](Widget-Constructor.md).
+See the details in [Widget Constructor Arguments article](Widget-Constructor).
 
 ## See Also
 
-* [Widget's Constructor Arguments](Widget-Constructor.md)
-* [Widget's Methods](Widget-Methods.md)
-* [Customization Use Cases](Customization-Use-Cases.md)
+* [Widget's Constructor Arguments](Widget-Constructor)
+* [Widget's Methods](Widget-Methods)
+* [Customization Use Cases](Customization-Use-Cases)

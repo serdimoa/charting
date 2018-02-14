@@ -1,6 +1,6 @@
-:chart: All content on this page is relevant for [Trading Terminal](Trading-Terminal.md) only.
+:chart: All content on this page is relevant for [Trading Terminal](Trading-Terminal) only.
 
-Trading Host is API for interaction between [Broker API](Broker-API.md) and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts with your trading logic. In terms of `JS`, it is an `object` with a set of functions. Here is a list of Hosts's **methods**.
+Trading Host is API for interaction between [Broker API](Broker-API) and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts with your trading logic. In terms of `JS`, it is an `object` with a set of functions. Here is a list of Hosts's **methods**.
 
 ## Commands
 
@@ -8,7 +8,7 @@ Trading Host is API for interaction between [Broker API](Broker-API.md) and the 
 
 1. `order` to be placed or modified
 1. `handler` is a function to process buy/sell/modify. It should return Promise
-1. `focus` - [Focus constant](Trading-Objects-and-Constants.md#orderticketfocuscontrol).
+1. `focus` - [Focus constant](Trading-Objects-and-Constants#orderticketfocuscontrol).
 
 Shows standard order dialog to create or modify an order and executes handler if Buy/Sell/Modify is pressed.
 
@@ -28,25 +28,25 @@ Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-### showClosePositionDialog([positionId](Trading-Objects-and-Constants.md#position), handler) : Promise
+### showClosePositionDialog([positionId](Trading-Objects-and-Constants#position), handler) : Promise
 
 1. `positionId` identifier of a position to be closed
 1. `handler` is a function to process position close. It should return Promise
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-### showReversePositionDialog([position](Trading-Objects-and-Constants.md#position), handler) : Promise
+### showReversePositionDialog([position](Trading-Objects-and-Constants#position), handler) : Promise
 
 1. `position` to be reversed
 1. `handler` is a function to process position reverse. It should return a Promise
 
 Shows a confirmation dialog and executes handler if YES/OK is pressed.
 
-### showPositionBracketsDialog([position](Trading-Objects-and-Constants.md#position), [brackets](Trading-Objects-and-Constants.md#brackets), focus, handler) : Promise
+### showPositionBracketsDialog([position](Trading-Objects-and-Constants#position), [brackets](Trading-Objects-and-Constants#brackets), focus, handler) : Promise
 
 1. `position` to be modified
-1. `brackets` (optional) new [brackets](Trading-Objects-and-Constants.md#brackets)
-1. `focus` - [Focus constant](Trading-Objects-and-Constants.md#orderticketfocuscontrol).
+1. `brackets` (optional) new [brackets](Trading-Objects-and-Constants#brackets)
+1. `focus` - [Focus constant](Trading-Objects-and-Constants#orderticketfocuscontrol).
 1. `handler` is a function to process modification of brackets. It should return Promise
 
 Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
@@ -69,11 +69,11 @@ Triggers show active orders.
 
 ### numericFormatter(decimalPlaces)
 
-Returns a [Formatter](Trading-Objects-and-Constants.md#formatter) with the specified number of decimal places.
+Returns a [Formatter](Trading-Objects-and-Constants#formatter) with the specified number of decimal places.
 
 ### defaultFormatter(symbol)
 
-Returns a default [Formatter](Trading-Objects-and-Constants.md#formatter) formatter for the specified instrument. This formatter is created based on [SymbolInfo](Symbology.md#symbolinfo-structure).
+Returns a default [Formatter](Trading-Objects-and-Constants#formatter) formatter for the specified instrument. This formatter is created based on [SymbolInfo](Symbology#symbolinfo-structure).
 
 ### factory
 
@@ -81,11 +81,11 @@ Returns a default [Formatter](Trading-Objects-and-Constants.md#formatter) format
 
 ### factory.createDelegate
 
-Creates a [Delegate](Delegate.md) object.
+Creates a [Delegate](Delegate) object.
 
 ### factory.createWatchedValue
 
-Creates a [WatchedValue](WatchedValue.md) object.
+Creates a [WatchedValue](WatchedValue) object.
 
 ### symbolSnapshot(symbol) : Promise
 
@@ -93,15 +93,15 @@ Returns quotes of a symbol.
 
 ## Getters and Setters
 
-### floatingTradingPanelVisibility: [WatchedValue](WatchedValue.md)
+### floatingTradingPanelVisibility: [WatchedValue](WatchedValue)
 
 Returns whether floatingTradingPanel is visible or not.
 
-### showPricesWithZeroVolume: [WatchedValue](WatchedValue.md)
+### showPricesWithZeroVolume: [WatchedValue](WatchedValue)
 
 Returns whether levels with empty volume (between min and max volume levels) are collapsed or not.
 
-### silentOrdersPlacement: [WatchedValue](WatchedValue.md)
+### silentOrdersPlacement: [WatchedValue](WatchedValue)
 
 Returns if orders can be sent to the broker without showing the order ticket.
 
@@ -111,7 +111,7 @@ Returned object properties:
 
 1. value - use it to get current value. It returns Promise.
 1. setValue - use it to set new value
-1. changed : [Subscription](Subscription.md)
+1. changed : [Subscription](Subscription)
 
 It is to synchronize quantity in Trading Floating Panel and in the dialogs.
 
@@ -119,11 +119,11 @@ It is to synchronize quantity in Trading Floating Panel and in the dialogs.
 
 Bottom Trading Panel has a button with a list of dropdown items. This method can be used to replace existing items.
 
-1. `actions` is an array of [ActionMetainfo](Trading-Objects-and-Constants.md#actionmetainfo), each of them representing one dropdown item.
+1. `actions` is an array of [ActionMetainfo](Trading-Objects-and-Constants#actionmetainfo), each of them representing one dropdown item.
 
 ### defaultContextMenuActions()
 
-Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuActions](Broker-API.md#chartcontextmenuactionse).
+Provides default buy/sell, show properties actions to be returned as a default by [chartContextMenuActions](Broker-API#chartcontextmenuactionse).
 
 ### defaultDropdownMenuActions(options)
 
@@ -139,25 +139,25 @@ You can add/remove default action from the result using `options`:
 
 Using of these methods is required to notify the chart that it needs to update information.
 
-### orderUpdate([order](Trading-Objects-and-Constants.md#order))
+### orderUpdate([order](Trading-Objects-and-Constants#order))
 
 Call this method when an order is added or changed.
 
-### orderPartialUpdate([order](Trading-Objects-and-Constants.md#order))
+### orderPartialUpdate([order](Trading-Objects-and-Constants#order))
 
 Call this method when an order is not changed, but fields that you added to the order object to display in the Account Manager are changed.
-It should be used only if you want to display custom fields in the [Account Manager](Account-Manager.md).
+It should be used only if you want to display custom fields in the [Account Manager](Account-Manager).
 
-### positionUpdate ([position](Trading-Objects-and-Constants.md#position))
+### positionUpdate ([position](Trading-Objects-and-Constants#position))
 
 Call this method when a position is added or changed.
 
-### positionPartialUpdate ([position](Trading-Objects-and-Constants.md#position))
+### positionPartialUpdate ([position](Trading-Objects-and-Constants#position))
 
 Call this method when a position is not changed, but fields that you added to the position object to display in the Account Manager are changed.
-It should be used only if you want to display custom fields in the [Account Manager](Account-Manager.md).
+It should be used only if you want to display custom fields in the [Account Manager](Account-Manager).
 
-### executionUpdate([execution](Trading-Objects-and-Constants.md#execution))
+### executionUpdate([execution](Trading-Objects-and-Constants#execution))
 
 Call this method when an execution is added.
 
@@ -173,11 +173,11 @@ Call this method when a broker connection has received a PL update. This method 
 
 Call this method when a broker connection has received an equity update. This method is required by the standard order dialog.
 
-### tradeUpdate ([trade](Trading-Objects-and-Constants.md#trade))
+### tradeUpdate ([trade](Trading-Objects-and-Constants#trade))
 
 Call this method when a trade is added or changed.
 
-### tradePartialUpdate ([trade](Trading-Objects-and-Constants.md#trade))
+### tradePartialUpdate ([trade](Trading-Objects-and-Constants#trade))
 
 Call this method when a trade is not changed, but fields that you added to the trade object to display in the Account Manager are changed.
 

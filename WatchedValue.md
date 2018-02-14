@@ -1,4 +1,4 @@
-WatchedValue object is returned by some [Trading Terminal](Trading-Terminal.md) methods. Using this object you can get/set value and be notified when the value is changed.
+WatchedValue object is returned by some [Trading Terminal](Trading-Terminal) methods. Using this object you can get/set value and be notified when the value is changed.
 
 ### value()
 

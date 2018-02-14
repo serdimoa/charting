@@ -49,8 +49,8 @@ Example: `12M` - one year, `24M` - two year, `48M` - four years.
 
 ## See also
 
-* [How to set a list of available resolutions on a chart](JS-Api.md#supported_resolutions)
-* [How to set a list of resolutions supported by an instrument](Symbology.md#supported_resolutions)
-* [Set initial resolution on a chart](Widget-Constructor.md#symbol-interval)
-* [Get current chart resolution](Chart-Methods.md#resolution)
-* [Change resolution on a chart](Chart-Methods.md#setresolutionresolution-callback)
+* [How to set a list of available resolutions on a chart](JS-Api#supported_resolutions)
+* [How to set a list of resolutions supported by an instrument](Symbology#supported_resolutions)
+* [Set initial resolution on a chart](Widget-Constructor#symbol-interval)
+* [Get current chart resolution](Chart-Methods#resolution)
+* [Change resolution on a chart](Chart-Methods#setresolutionresolution-callback)

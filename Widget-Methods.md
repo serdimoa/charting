@@ -11,7 +11,7 @@ widget.onChartReady(function() {
 
 ## Methods
 
-**Before 1.5 [Chart Methods](Chart-Methods.md) belonged to the Widget. Please see the full list of actions [here](Chart-Methods.md).**
+**Before 1.5 [Chart Methods](Chart-Methods) belonged to the Widget. Please see the full list of actions [here](Chart-Methods).**
 
 * [Subscribing To Chart Events](#subscribing-to-chart-events)
   * [onChartReady(callback)](#onchartreadycallback)
@@ -148,9 +148,9 @@ widget.onShortcut("alt+s", function() {
 | `add_compare` | 1.7 | Compare instrument is added |
 | `load_study` template | 1.7 | A study template is loaded |
 | `onTick` | | callback will be called every time when recent bar updates |
-| `onAutoSaveNeeded` | | callback will be called every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds. See also [auto_save_delay](Widget-Constructor.md#auto_save_delay) |
+| `onAutoSaveNeeded` | | callback will be called every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds. See also [auto_save_delay](Widget-Constructor#auto_save_delay) |
 | `onScreenshotReady` | | callback will be called every time when user creates a screenshot and server returns the created image name |
-| `onMarkClick` | | callback will be called every time when user clicks a [mark on bar](Marks-On-Bars.md). Mark ID will be passed as an argument |
+| `onMarkClick` | | callback will be called every time when user clicks a [mark on bar](Marks-On-Bars). Mark ID will be passed as an argument |
 | `onTimescaleMarkClick` | | callback will be called every time when user clicks a timescale mark. Mark ID will be passed as an argument |
 | `onSelectedLineToolChanged` | | callback will be called every time when selected line tool changes |
 | :chart: `layout_about_to_be_changed` | | amount or placement of charts about to be changed |
@@ -170,11 +170,11 @@ Unsubscribe a previously subscribed `callback` listener from a given `event` (wh
 
 ### chart()
 
-Returns a chart object that you can use to call [Chart-Methods](Chart-Methods.md)
+Returns a chart object that you can use to call [Chart-Methods](Chart-Methods)
 
 ### setLanguage(locale)
 
-1. `locale`: [language code](Localization.md)
+1. `locale`: [language code](Localization)
 
 Sets the Widget's language. For now, this call reloads the chart. **Please avoid using it**.
 
@@ -196,7 +196,7 @@ Calling this method closes a context menu or a dialog if it is shown.
 
 ### selectLineTool(drawingId)
 
-1. `drawingId`: may be one of the [identifiers](Shapes-and-Overrides.md) or
+1. `drawingId`: may be one of the [identifiers](Shapes-and-Overrides) or
     1. `cursor`
     1. `dot`
     1. `arrow_cursor`
@@ -209,7 +209,7 @@ Selection of a drawing or cursor which is identical to a single click on a drawi
 
 ### selectedLineTool()
 
-Returns an [identifier](Shapes-and-Overrides.md) of the selected drawing or cursor (see above).
+Returns an [identifier](Shapes-and-Overrides) of the selected drawing or cursor (see above).
 
 ### takeScreenshot()
 
@@ -225,13 +225,13 @@ It includes the URL to the snapshot.
 
 Saves the chart state to JS object. Charting Library will call your callback and pass the state object as argument.
 
-This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
+This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 ### load(state)
 
 1. `state`: object
 
-Loads the chart from state object. This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
+Loads the chart from state object. This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 ### getSavedCharts(callback)
 
@@ -407,14 +407,14 @@ Returns an array of all studies ids. They can be used to create a study.
 
 This method was introduced in version `1.3`.
 
-Starting from `1.4` use [custom_css_url](Widget-Constructor.md#custom_css_url) instead.
+Starting from `1.4` use [custom_css_url](Widget-Constructor#custom_css_url) instead.
 
 ### applyOverrides(overrides)
 
 *Since version 1.5.*
 
 1. `overrides` is an object.
-    It is the same as [overrides](Widget-Constructor.md#overrides) in Widget Constructor.
+    It is the same as [overrides](Widget-Constructor#overrides) in Widget Constructor.
 
 This method applies overrides to properties without reloading the chart.
 
@@ -422,13 +422,13 @@ This method applies overrides to properties without reloading the chart.
 
 *Since version 1.9.*
 
-1. `overrides` is an object. It is the same as [studies_overrides](Widget-Constructor.md#studies_overrides) in Widget Constructor.
+1. `overrides` is an object. It is the same as [studies_overrides](Widget-Constructor#studies_overrides) in Widget Constructor.
 
 This method applies studies overrides to indicators' style or inputs without reloading the chart.
 
 ## :chart: Trading Terminal specific
 
-The following methods are available in [Trading Terminal](Trading-Terminal.md) only.
+The following methods are available in [Trading Terminal](Trading-Terminal) only.
 
 ### :chart: watchList()
 
@@ -479,11 +479,11 @@ If there is no WatchList or an equivalent list already exists `false` will be re
 
 1. `index`: index of a chart starting from `0`. `index` is `0` by default.
 
-Returns a chart object that you can use to call [Chart-Methods](Chart-Methods.md)
+Returns a chart object that you can use to call [Chart-Methods](Chart-Methods)
 
 ### :chart: activeChart()
 
-Returns current active chart object that you can use to call [Chart-Methods](Chart-Methods.md)
+Returns current active chart object that you can use to call [Chart-Methods](Chart-Methods)
 
 ### :chart: chartsCount()
 
@@ -501,9 +501,9 @@ Changes current chart layout.
 
 ## See Also
 
-* [Chart-Methods](Chart-Methods.md)
-* [Customization Overview](Customization-Overview.md)
-* [Widget Constructor](Widget-Constructor.md)
-* [Saving and Loading Charts](Saving-and-Loading-Charts.md)
-* [Overriding Studies' Defaults](Studies-Overrides.md)
-* [Overriding Chart's Defaults](Overrides.md)
+* [Chart-Methods](Chart-Methods)
+* [Customization Overview](Customization-Overview)
+* [Widget Constructor](Widget-Constructor)
+* [Saving and Loading Charts](Saving-and-Loading-Charts)
+* [Overriding Studies' Defaults](Studies-Overrides)
+* [Overriding Chart's Defaults](Overrides)

@@ -1,4 +1,4 @@
-Here is a full list of drawings overrides with default values. You can change default values using `overrides` argument of the [widget constructor](Widget-Constructor.md#overrides). At the bottom of the list you will find a list of constants and abbreviations used in the values.
+Here is a full list of drawings overrides with default values. You can change default values using `overrides` argument of the [widget constructor](Widget-Constructor#overrides). At the bottom of the list you will find a list of constants and abbreviations used in the values.
 
 ```javascript
 linetoolicon: {

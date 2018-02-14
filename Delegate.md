@@ -1,4 +1,4 @@
-Delegate object is returned by some [Trading Terminal](Trading-Terminal.md) methods and is is required to use an [Account Manager](Account-Manager.md). Using this object you can get updated and update of an event.
+Delegate object is returned by some [Trading Terminal](Trading-Terminal) methods and is is required to use an [Account Manager](Account-Manager). Using this object you can get updated and update of an event.
 
 ### subscribe(object, member)
 

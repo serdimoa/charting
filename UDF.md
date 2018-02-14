@@ -37,7 +37,7 @@ GOOG|0.1|Google
 
 Request: `GET /config`
 
-Response: Library expects to receive JSON of the same structure as for JS API [setup() call](JS-Api.md#onreadycallback).
+Response: Library expects to receive JSON of the same structure as for JS API [setup() call](JS-Api#onreadycallback).
 
 Also there should be 2 additional properties:
 
@@ -67,8 +67,8 @@ Request: `GET /symbol_info?group=<group_name>`
 Example: `GET /symbol_info?group=NYSE`
 
 Response: Response is expected to be an object with properties listed below.
-Each property is treated as table column, like described above (see [response-as-a-table](UDF.md#response-as-a-table-concept)).
-The response structure is similar (but **not equal**) to [SymbolInfo](Symbology.md#symbolinfo-structure) so see its description for details about all fields.
+Each property is treated as table column, like described above (see [response-as-a-table](UDF#response-as-a-table-concept)).
+The response structure is similar (but **not equal**) to [SymbolInfo](Symbology#symbolinfo-structure) so see its description for details about all fields.
 
 * `symbol`
 * `description`
@@ -127,7 +127,7 @@ Request: `GET /symbols?symbol=<symbol>`
 
 Example: `GET /symbols?symbol=AAL`, `GET /symbols?symbol=NYSE:MSFT`
 
-Response: JSON containing object **exactly** similar to [SymbolInfo](Symbology.md#symbolinfo-structure)
+Response: JSON containing object **exactly** similar to [SymbolInfo](Symbology#symbolinfo-structure)
 
 **Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
 
@@ -136,13 +136,13 @@ Response: JSON containing object **exactly** similar to [SymbolInfo](Symbology.m
 Request: `GET /search?query=<query>&type=<type>&exchange=<exchange>&limit=<limit>`
 
 * `query`: string. Text typed by user in Symbol Search edit box
-* `type`: string. One of the types [supported](JS-Api.md#symbols_types) by your back-end
-* `exchange`: string. One of the exchanges [supported](JS-Api.md#exchanges) by your back-end
+* `type`: string. One of the types [supported](JS-Api#symbols_types) by your back-end
+* `exchange`: string. One of the exchanges [supported](JS-Api#exchanges) by your back-end
 * `limit`: integer. Maximal items count in response
 
 Example: `GET /search?query=AA&type=stock&exchange=NYSE&limit=15`
 
-Response: Response is expected to be an array of symbol records as in [respective JS API call](JS-Api.md#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback)
+Response: Response is expected to be an array of symbol records as in [respective JS API call](JS-Api#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback)
 
 **Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
 
@@ -170,7 +170,7 @@ Response: Response is expected to be an object with some properties listed below
 * `nextTime`: time of the next bar if there is no data (status code is `no_data`) in the requested period (optional)
 
 **Remark**: bar time for daily bars is expected to be a trading day (not session start day) at 00:00 UTC.
-Charting Library aligns time according to [Session](Symbology.md#session) from SymbolInfo.
+Charting Library aligns time according to [Session](Symbology#session) from SymbolInfo.
 
 **Remark**: bar time for monthly bars is the first trading day of the month without the time part
 
@@ -232,7 +232,7 @@ Request: `GET /marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timesta
 * `resolution`: string
 
 Response: Response is expected to be an object with some properties listed below.
-This object is similar to [respective response](JS-Api.md#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution) in JS API, but each property is treated as table column, like described above.
+This object is similar to [respective response](JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution) in JS API, but each property is treated as table column, like described above.
 
 ```javascript
 {
@@ -285,7 +285,7 @@ Response: Response is an object.
 
 * `s`: status code for request. Expected values: `ok` | `error`
 * `errmsg`: error message for client
-* `d`: [symbols data](Quotes.md) array
+* `d`: [symbols data](Quotes) array
 
 Example:
 

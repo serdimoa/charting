@@ -1,6 +1,6 @@
 Quote is a short set of data describing trades briefly. Charting Library supports watch-lists (in **Trading Terminal** configuration) and uses quotes to show some info about symbols.
 
-Charting Library uses the same data structures for quotes in both [JS API](JS Api.md) and [UDF](UDF.md). Here is the description of response object:
+Charting Library uses the same data structures for quotes in both [JS API](JS Api) and [UDF](UDF). Here is the description of response object:
 
 # Symbol Quote Data
 

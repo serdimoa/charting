@@ -10,134 +10,134 @@ Change default symbol (instrument) and resolution (interval).
 
 Minimum supported resolution is 1 second.
 
-[documentation](Widget-Constructor.md#symbol-interval)
+[documentation](Widget-Constructor#symbol-interval)
 
 #### Default visible range (time frame)
 
 Change time range of bars for the default resolution
 
-[documentation](Widget-Constructor.md#timeframe)
+[documentation](Widget-Constructor#timeframe)
 
 #### Default visible range for resolutions
 
 Change time range of bars when the resolution is changed by a user. Look at the sample here:
 
-[documentation](Chart-Methods.md#onintervalchanged)
+[documentation](Chart-Methods#onintervalchanged)
 
 #### Initial timezone
 
 You can set what time zone is used by default. It can be changed by the user in the menu.
 
-[documentation](Widget-Constructor.md#timezone)
+[documentation](Widget-Constructor#timezone)
 
 #### Size of the chart
 
 You can place the chart as en element on your web page or use fullscreen mode.
 
-[Width and Height](Widget-Constructor.md#width-height)
+[Width and Height](Widget-Constructor#width-height)
 
-[Fullscreen](Widget-Constructor.md#fullscreen)
+[Fullscreen](Widget-Constructor#fullscreen)
 
-[Autosize](Widget-Constructor.md#autosize)
+[Autosize](Widget-Constructor#autosize)
 
 #### Chart colors
 
 Customize colors of the chart so it perfectly fits in your site.
 
-1. Color of toolbars - [documentation](Widget-Constructor.md#toolbar_bg)
-1. Color of the chart - [documentation](Widget-Constructor.md#overrides)
+1. Color of toolbars - [documentation](Widget-Constructor#toolbar_bg)
+1. Color of the chart - [documentation](Widget-Constructor#overrides)
 
 #### Indicators
 
-1. Limit amount of indicators for 1 chart layout - [documentation](Widget-Constructor.md#study_count_limit)
-1. Limit what indicators are displayed and can be added - [documentation](Widget-Constructor.md#studies_access)
-1. Add your own indicators calculated on a server - [documentation](Creating-Custom-Studies.md)
-1. Change default properties of indicators - [documentation](Widget-Constructor.md#studies_overrides)
-1. Change default properties on the fly - [documentation](Widget-Methods.md#applystudiesoverridesoverrides)
+1. Limit amount of indicators for 1 chart layout - [documentation](Widget-Constructor#study_count_limit)
+1. Limit what indicators are displayed and can be added - [documentation](Widget-Constructor#studies_access)
+1. Add your own indicators calculated on a server - [documentation](Creating-Custom-Studies)
+1. Change default properties of indicators - [documentation](Widget-Constructor#studies_overrides)
+1. Change default properties on the fly - [documentation](Widget-Methods#applystudiesoverridesoverrides)
 
 #### Drawings
 
-1. Limit what drawings are displayed and can be added - [documentation](Widget-Constructor.md#drawings_access)
-1. Change default properties of drawings - [documentation](Widget-Constructor.md#overrides)
-1. Change default properties on the fly - [documentation](Widget-Methods.md#applyoverridesoverrides)
+1. Limit what drawings are displayed and can be added - [documentation](Widget-Constructor#drawings_access)
+1. Change default properties of drawings - [documentation](Widget-Constructor#overrides)
+1. Change default properties on the fly - [documentation](Widget-Methods#applyoverridesoverrides)
 
 #### Language
 
 Choose one of more than 20 translations of the library
 
-[documentation](Widget-Constructor.md#locale)
+[documentation](Widget-Constructor#locale)
 
 Note: Language is set when the chart is created. It cannot be changed without recreating of a chart.
 
 #### Formatting of numbers and dates
 
-1. Change decimal sign of numbers - [documentation](Widget-Constructor.md#numeric_formatting)
-1. Set custom formatters for data and time - [documentation](Widget-Constructor.md#customformatters)
-1. Prices are formatted according to the symbol information - [documentation](Symbology.md#minmov-pricescale-minmove2-fractional)
+1. Change decimal sign of numbers - [documentation](Widget-Constructor#numeric_formatting)
+1. Set custom formatters for data and time - [documentation](Widget-Constructor#customformatters)
+1. Prices are formatted according to the symbol information - [documentation](Symbology#minmov-pricescale-minmove2-fractional)
 
 #### Default properties of a chart
 
 You can change any properties that present in the properties dialog.
 
-1. Initially - [documentation](Widget-Constructor.md#overrides)
-1. On the fly - [documentation](Widget-Methods.md#applyoverridesoverrides)
+1. Initially - [documentation](Widget-Constructor#overrides)
+1. On the fly - [documentation](Widget-Methods#applyoverridesoverrides)
 
 #### Server for snapshots
 
 TradingView allows you to save snapshot on its servers, but if you wish you can change it.
 
-[documentation](Widget-Constructor.md#snapshot_url)
+[documentation](Widget-Constructor#snapshot_url)
 
 #### Show/hide elements of the chart
 
 If you don't need some elements of the chart (toolbars, buttons, other controls), you can hide them:
 
-1. Most of the chart elements can be shown/hidden by using [Featuresets](Featuresets.md)
-1. You can add your own CSS - [documentation](Widget-Constructor.md#custom_css_url)
+1. Most of the chart elements can be shown/hidden by using [Featuresets](Featuresets)
+1. You can add your own CSS - [documentation](Widget-Constructor#custom_css_url)
 
 #### Time frames at the bottom of the chart
 
 Time frame is a time period of bars and a resolution preferred for displaying of the period. You can customize the list.
 
-[documentation](Widget-Constructor.md#time_frames)
+[documentation](Widget-Constructor#time_frames)
 
 #### Initial list of favorite intervals / chart styles
 
-You can select what intervals and chart styles should be shown on the top toolbar by default. A user can change it if `items_favoriting` is enabled in the [Featuresets](Featuresets.md).
+You can select what intervals and chart styles should be shown on the top toolbar by default. A user can change it if `items_favoriting` is enabled in the [Featuresets](Featuresets).
 
-[documentation](Widget-Constructor.md#favorites)
+[documentation](Widget-Constructor#favorites)
 
 #### Resolutions displayed in the menu
 
-1. Full list of resolution is provided in the configuration of the datafeed - [documentation](JS-Api.md#supported_resolutions)
-1. Resolutions are enabled or disabled in the list basing on the symbol information - [documentation](Symbology.md#supported_resolutions)
-1. Initial list of favorite resolutions can be set - [documentation](Widget-Constructor.md#favorites)
+1. Full list of resolution is provided in the configuration of the datafeed - [documentation](JS-Api#supported_resolutions)
+1. Resolutions are enabled or disabled in the list basing on the symbol information - [documentation](Symbology#supported_resolutions)
+1. Initial list of favorite resolutions can be set - [documentation](Widget-Constructor#favorites)
 
 #### Volume indicator
 
-In spite of other indicators Volume is added by default if the instrument supports it ([documentation](Symbology.md#has_no_volume)).
-You can disable this behaviour using [documentation](Featuresets.md).
+In spite of other indicators Volume is added by default if the instrument supports it ([documentation](Symbology#has_no_volume)).
+You can disable this behaviour using [documentation](Featuresets).
 
 #### Context menu
 
 You can add new elements to the context menu or hide existing items.
 
-[documentation](Widget-Methods.md#oncontextmenucallback)
+[documentation](Widget-Methods#oncontextmenucallback)
 
 #### Custom buttons on the toolbar
 
 You can add your own buttons to the top toolbar of the chart.
 
-[documentation](Widget-Methods.md#createbuttonoptions)
+[documentation](Widget-Methods#createbuttonoptions)
 
 #### :chart: Watch list
 
 It is possible to choose default symbols for the watch list and set read-only state if needed.
 
-[documentation](Widget-Constructor.md#widgetbar)
+[documentation](Widget-Constructor#widgetbar)
 
 #### :chart: News feed
 
 You can attach to any RSS feed and even select the feed depending on the instrument type.
 
-[documentation](Widget-Constructor.md#rss_news_feed)
+[documentation](Widget-Constructor#rss_news_feed)

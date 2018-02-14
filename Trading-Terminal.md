@@ -12,7 +12,7 @@ The product is under development so some features are not there yet. They are ma
 
 ### Trading Capabilities
 
-You can trade right from the chart, and all you have to do to make this work is to implement your [Broker API](Broker-API.md) and plug it into the chart widget.
+You can trade right from the chart, and all you have to do to make this work is to implement your [Broker API](Broker-API) and plug it into the chart widget.
 
 ![images/tt_trading.png](images/tt_trading.png)
 
@@ -29,7 +29,7 @@ You can display orders/positions and account information in an interactive table
 
 **Read more about this feature:**
 
-* [How to enable Account Manager](Account-Manager.md)
+* [How to enable Account Manager](Account-Manager)
 
 ### DOM Widget
 
@@ -45,8 +45,8 @@ In Trading Terminal, you can have the Watchilsts and Details widget (see the sna
 
 **Read more about this feature:**
 
-* [How to enable sidebar quotes](Widget-Constructor.md#widgetbar)
-* How to provide the data for quotes: depends on what kind of data integration do you use - [JS API](JS-Api.md#trading-terminal-specific) or [UDF](UDF.md#quotes)
+* [How to enable sidebar quotes](Widget-Constructor#widgetbar)
+* How to provide the data for quotes: depends on what kind of data integration do you use - [JS API](JS-Api#trading-terminal-specific) or [UDF](UDF#quotes)
 
 ### Sidebar Market News Feed
 
@@ -56,8 +56,8 @@ You can have the news feed right in the side bar of the chart. Our support for t
 
 **Read more about this feature:**
 
-* [How to enable sidebar news](Widget-Constructor.md#widgetbar)
-* [How to set up which feeds to use](Widget-Constructor.md#rss_news_feed)
+* [How to enable sidebar news](Widget-Constructor#widgetbar)
+* [How to set up which feeds to use](Widget-Constructor#rss_news_feed)
 
 ### Multiple charts layout
 
@@ -90,6 +90,6 @@ The only thing you should remember is that features which are specific to Tradin
 
 ## See Also
 
-* [How to connect your trading to the charts](Broker-API.md)
-* [Widget methods specific for Trading Terminal](Widget-Methods.md#chart-trading-terminal-specific)
-* [Widget constructor parameters specific for Trading Terminal](Widget-Constructor.md#trading-terminal-only)
+* [How to connect your trading to the charts](Broker-API)
+* [Widget methods specific for Trading Terminal](Widget-Methods#chart-trading-terminal-specific)
+* [Widget constructor parameters specific for Trading Terminal](Widget-Constructor#trading-terminal-only)

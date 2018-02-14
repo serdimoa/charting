@@ -1,4 +1,4 @@
-Subscription object is returned by [Chart Methods](Chart-Methods.md). Using this object you can subscribe to a chart event and unsubscribe from it. So it has two methods:
+Subscription object is returned by [Chart Methods](Chart-Methods). Using this object you can subscribe to a chart event and unsubscribe from it. So it has two methods:
 
 ### subscribe(object, method, singleshot)
 

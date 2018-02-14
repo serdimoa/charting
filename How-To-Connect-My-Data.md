@@ -2,11 +2,11 @@
 
 1. Update in real-time with a PUSH type connection, for example through WebSocket.
     This way your charts will autoupdate with new prices when they arrive.
-    To achieve this, you have to use the [JavaScript API](JS-Api.md) and have your own transport method ready.
+    To achieve this, you have to use the [JavaScript API](JS-Api) and have your own transport method ready.
 
 1. Update on a PULL/pulse/refresh basis (like most web-based charts today),
     where the chart data is updating every X number of seconds (the chart client will ask the server emulating PUSH updates),
-    or only get reloaded manually by the user. For this, use the [UDF protocol](UDF.md) and write your own datafeed wrapper.
+    or only get reloaded manually by the user. For this, use the [UDF protocol](UDF) and write your own datafeed wrapper.
 
 ### JavaScript API or UDF
 
@@ -23,12 +23,12 @@
 The pictures above illustrate the difference between UDF and JSAPI. Mandatory Charting Library parts are colored blue. Red parts (default data transport) are included in default package (having non-minimized source code) and may be replaced. You may see the default data transport implements JS API to interact with the chart. Also, default transport implements UDF protocol to communicate with a server.
 
 1. **If you already have a data transport ready** (websocket streaming, polling, or any other transport),
-    or if you don’t but need streaming data - use our [JavaScript API](JS-Api.md), which is extremely compact and simple to implement.
+    or if you don’t but need streaming data - use our [JavaScript API](JS-Api), which is extremely compact and simple to implement.
     You will have to create a small **client-side data adapter** between your data transport and our charts using JavaScript.
 
 1. **If you don’t have any transports** and do not need streaming data (e.g., data pulsing is all you need),
     then you will have to create (or use) at least a thin server-side datafeed wrapper.
-    You may use any language and technology for this purpose: it’s just necessary for your wrapper to support our data exchange protocol (we call it [UDF](UDF.md)) to be able to feed your Charting Library with data.
+    You may use any language and technology for this purpose: it’s just necessary for your wrapper to support our data exchange protocol (we call it [UDF](UDF)) to be able to feed your Charting Library with data.
     You will have to create a small **server-side data adapter** between your back-end and our charts using you favorite language.
 
 ### Examples

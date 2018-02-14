@@ -2,7 +2,7 @@ Here is a list of supported chart's methods.
 
 **Before 1.4 version.** You can call these methods using widget object returned to you by widget's constructor.
 
-**Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [chart(index)](Widget-Methods.md#chart-chartindex) or [activeChart()](Widget-Methods.md#chart-activechart).
+**Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [chart(index)](Widget-Methods#chart-chartindex) or [activeChart()](Widget-Methods#chart-activechart).
 
 ## Methods
 
@@ -55,15 +55,15 @@ Here is a list of supported chart's methods.
 
 ### onDataLoaded()
 
-You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when new history bars are loaded and unsubscribe from the event.
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when new history bars are loaded and unsubscribe from the event.
 
 ### onSymbolChanged()
 
-You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
 
 ### onIntervalChanged()
 
-You can subscribe using [Subscription](Subscription.md) object returned by this function to be notified when the interval is changed and unsubscribe from the event.
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the interval is changed and unsubscribe from the event.
 When the event is fired it will provide the following arguments:
 
 1. `interval`: new interval
@@ -116,7 +116,7 @@ Makes the chart to change its symbol. Callback is called after new symbol's data
 
 ### setResolution(resolution, callback)
 
-1. `resolution`: string. Format is described in another [article](Resolution.md).
+1. `resolution`: string. Format is described in another [article](Resolution).
 1. `callback`: function()
 
 Makes the chart to change its resolution. Callback is called after new data arrived.
@@ -125,7 +125,7 @@ Makes the chart to change its resolution. Callback is called after new data arri
 
 Makes the chart to rerequest data from the data feed. Usually you need to call it when chart's data has changed.
 
-Before calling this you should call [onResetCacheNeededCallback](JS-Api.md#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback).
+Before calling this you should call [onResetCacheNeededCallback](JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback).
 
 ### executeActionById(actionId)
 
@@ -229,7 +229,7 @@ Calling this method closes a context menu or a dialog if it is shown.
 
 1. `timezone`: string
 
-See [timezone](Widget-Constructor.md#timezone) for more information.
+See [timezone](Widget-Constructor#timezone) for more information.
 
 Example:
 
@@ -268,7 +268,7 @@ Sets visibility of an entity with passed id.
 1. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
 1. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
 1. `callback`: function(`entityId`)
-1. `overrides`: (since version `1.2`) an object [containing properties](Studies-Overrides.md) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
+1. `overrides`: (since version `1.2`) an object [containing properties](Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
 1. `options`: object with the only possible key `checkLimit`. If it is `true` study limit dialog will be shown if the limit if exceeded.
 
 **Since 1.12 the function returns the result immediately. Callback is kept for compatibility.**
@@ -366,7 +366,7 @@ This call creates a shape at specified point on main series.
     * `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`).
         If no channel is specified, 'open' is a default.
 1. `options`: object `{shape, [text], [lock], [overrides]}`
-    * `shape` may be one of the [identifiers](Shapes-and-Overrides.md)
+    * `shape` may be one of the [identifiers](Shapes-and-Overrides)
     * `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
     * `lock` shows whether a user will be able to remove/change/hide your shape or not.
     * `disableSelection` (since `1.3`) prevents selecting of the shape
@@ -380,7 +380,7 @@ This call creates a shape at specified point on main series.
 
 The function returns `entityId` - unique id of the study if creating is success or `null` otherwise.
 
-Look [Shapes and Overrides](Shapes-and-Overrides.md) for more information.
+Look [Shapes and Overrides](Shapes-and-Overrides) for more information.
 
 This call creates a shape with specified points on main series.
 
@@ -430,7 +430,7 @@ Removed all studies from the chart.
 
 Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument.
 
-This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
+This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 ### applyStudyTemplate(template)
 
@@ -438,7 +438,7 @@ This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
 
 Loads the study template from state object.
 
-This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
+This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 ## Trading Primitives
 
@@ -449,7 +449,7 @@ This call is a part of low-level [save/load API](Saving-and-Loading-Charts.md).
 
 Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior.
 
-It's strongly recommended to read [this article](Trading-Primitives.md) before using this call.
+It's strongly recommended to read [this article](Trading-Primitives) before using this call.
 
 API object methods:
 
@@ -525,7 +525,7 @@ widget.chart().createOrderLine()
 
 Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior.
 
-It's strongly recommended to read [this article](Trading-Primitives.md) before using this call.
+It's strongly recommended to read [this article](Trading-Primitives) before using this call.
 
 API object methods:
 
@@ -608,7 +608,7 @@ widget.chart().createPositionLine()
 
 Creates a new execution on the chart and returns an API-object which you can use to control the execution properties.
 
-It's strongly recommended to read [this article](Trading-Primitives.md) before using this call.
+It's strongly recommended to read [this article](Trading-Primitives) before using this call.
 
 API object has a set of properties listed below. Each property should be used through respective accessors.
 I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
@@ -673,7 +673,7 @@ Returns chart's symbol information object. The object has the following fields:
 
 ### resolution()
 
-Returns chart's resolution. Format is described in another [article](Resolution.md).
+Returns chart's resolution. Format is described in another [article](Resolution).
 
 ### getVisibleRange()
 
@@ -695,9 +695,9 @@ Returns the main series style.
 
 ## See Also
 
-* [Widget Methods](Widget-Methods.md)
-* [Customization Overview](Customization-Overview.md)
-* [Widget Constructor](Widget-Constructor.md)
-* [Saving and Loading Charts](Saving-and-Loading-Charts.md)
-* [Overriding Studies' Defaults](Studies-Overrides.md)
-* [Overriding Chart's Defaults](Overrides.md)
+* [Widget Methods](Widget-Methods)
+* [Customization Overview](Customization-Overview)
+* [Widget Constructor](Widget-Constructor)
+* [Saving and Loading Charts](Saving-and-Loading-Charts)
+* [Overriding Studies' Defaults](Studies-Overrides)
+* [Overriding Chart's Defaults](Overrides)

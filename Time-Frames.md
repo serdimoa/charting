@@ -15,6 +15,6 @@ Time Frame|Chart Resolution
 5D|5
 1D|1
 
-One may customize default time frames list using respective widget [.ctor argument](Widget-Constructor.md#time_frames).
+One may customize default time frames list using respective widget [.ctor argument](Widget-Constructor#time_frames).
 
 **Remark**: Time frames requiring resolutions which are not available for current chart's symbol will be hidden.

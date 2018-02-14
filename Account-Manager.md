@@ -1,11 +1,11 @@
-:chart: All content on this page is relevant to [Trading Terminal](Trading-Terminal.md) only.
+:chart: All content on this page is relevant to [Trading Terminal](Trading-Terminal) only.
 
 Account Manager is an interactive table that displays trading information.
 It includes 3 pages: orders/positions and account information.
 
 To create an account manager you will need to describe columns of each page and provide data.
 
-Remark 1. [Broker API](Broker-API.md) should implement [accountManagerInfo](Broker-API.md#accountmanagerinfo)
+Remark 1. [Broker API](Broker-API) should implement [accountManagerInfo](Broker-API#accountmanagerinfo)
 
 <!--
 Be sure that you have the following structure:
@@ -17,7 +17,7 @@ Be sure that you have the following structure:
 
 # Account Manager Meta Information
 
-The following information should be returned by [accountManagerInfo](Broker-API.md#accountManagerInfo).
+The following information should be returned by [accountManagerInfo](Broker-API#accountManagerInfo).
 
 ## Account Manager header
 
@@ -27,7 +27,7 @@ Account Manager's header includes the name of the broker and an account name or 
 
 ### accountsList: array of AccountInfo
 
-### account: [WatchedValue](WatchedValue.md) of AccountInfo
+### account: [WatchedValue](WatchedValue) of AccountInfo
 
 `AccountInfo` is an object with the following keys:
 
@@ -42,9 +42,9 @@ If the `currency` key is not set, `USD` will be used as a default value.
 ### orderColumns: array of [Column](#column-description)
 
 Columns description that you want to be displayed on the Orders page.
-You can display any field of an [order](Trading-Objects-and-Constants.md#order) or add your own fields to an order object and display them.
+You can display any field of an [order](Trading-Objects-and-Constants#order) or add your own fields to an order object and display them.
 
-### possibleOrderStatuses: array of [OrderStatus](Trading-Objects-and-Constants.md#orderstatus)
+### possibleOrderStatuses: array of [OrderStatus](Trading-Objects-and-Constants#orderstatus)
 
 Optional list of statuses to be used in the orders filter. Default list is used if it hasn't been set.
 
@@ -56,7 +56,7 @@ History page will be displayed if it exists. All orders from previous sessions w
 
 ### positionColumns: array of [Column](#column-description)
 
-You can display any field of a [position](Trading-Objects-and-Constants.md#position) or add your own fields to a position object and display them.
+You can display any field of a [position](Trading-Objects-and-Constants#position) or add your own fields to a position object and display them.
 
 ## Additional Pages (e.g. Account Summary)
 
@@ -103,7 +103,7 @@ Account Summary table metainfo is an object with the following fields:
 
     There is a predefined field `isTotalRow` which can be used to mark a row that should be at the bottom of a table.
 
-1. `changeDelegate` : [Delegate](Delegate.md)
+1. `changeDelegate` : [Delegate](Delegate)
 
     This delegate is used to watch the data changes and update the table. Pass new account manager data to `fire` method of the delegate.
 
