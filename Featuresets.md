@@ -58,33 +58,32 @@ Please note that the leading `-` characters are not a part of featureset name in
 | keep_left_toolbar_visible_on_small_screens | off            | 1.11            | Prevents left toolbar disappearing on small screens |
 | go_to_date | on            | 1.11            | Allows you to jump to a particular bar by means of 'Go to' dialog |
 | adaptive_logo | on            | 1.11            | Allows you to hide 'charts by TradingView' text on small-screen devices |
-| show_dom_first_time					  | off           | 1.12            | Show DOM panel when a user opens the Chart for the first time |
-| hide_left_toolbar_by_default			  | off           | 1.12            | Hides left toolbar when a user opens the Chart for the first time |
+| show_dom_first_time                      | off           | 1.12            | Show DOM panel when a user opens the Chart for the first time |
+| hide_left_toolbar_by_default             | off           | 1.12            | Hides left toolbar when a user opens the Chart for the first time |
 
 ### Elements placement
 
 | ID                           | Default State | Library Version | Description                                                        |
 |------------------------------|---------------|-----------------|--------------------------------------------------------------------|
 | move_logo_to_main_pane       | off           |                 | Places the logo on the main series pane instead of the bottom pane |
-| header_saveload_to_the_right | off           |                 | Moves Save and Load buttons to the right                           |
 
 ### Behavior
 
-| ID	| Default State	| Library Version | Description
+| ID  | Default State | Library Version | Description
 |-------|---------------|-----------------|------------
-| **use_localstorage_for_settings**	| on	|                 | allows to save user settings to the local storage
-| - items_favoriting	| on	|                 | disabling this feature hides all "Favorite this item" buttons
-| - save_chart_properties_to_local_storage	| on	|                 | disabling this feature prevents saving of chart properties (colors, styles, fonts) to the local storage, but still keeps saving of favorite items
-| create_volume_indicator_by_default	| on	|                 |
+| **use_localstorage_for_settings** | on |                 | allows to save user settings to the local storage
+| - items_favoriting | on |                 | disabling this feature hides all "Favorite this item" buttons
+| - save_chart_properties_to_local_storage | on |                 | disabling this feature prevents saving of chart properties (colors, styles, fonts) to the local storage, but still keeps saving of favorite items
+| create_volume_indicator_by_default | on |                 |
 | create_volume_indicator_by_default_once | on |                  |
-| volume_force_overlay	| on	|                 | places Volume indicator on the same pane with the main series
-| right_bar_stays_on_scroll	| on	|                 | determines zoom behavior: bar under cursor is kept if disabled
-| constraint_dialogs_movement	| on	|                 | prevents moving dialogs out of the chart
-| charting_library_debug_mode	| off	|                 | enables logs
-| show_dialog_on_snapshot_ready	| on	|                 | disabling this feature allows you to make a snapshot silently
-| study_market_minimized	| on	|                 | relates to Indicators dialog, determines whether it is compact or contains a search bar and categories
+| volume_force_overlay | on |                 | places Volume indicator on the same pane with the main series
+| right_bar_stays_on_scroll | on |                 | determines zoom behavior: bar under cursor is kept if disabled
+| constraint_dialogs_movement | on |                 | prevents moving dialogs out of the chart
+| charting_library_debug_mode | off |                 | enables logs
+| show_dialog_on_snapshot_ready | on |                 | disabling this feature allows you to make a snapshot silently
+| study_market_minimized | on |                 | relates to Indicators dialog, determines whether it is compact or contains a search bar and categories
 | study_dialog_search_control   | on    | 1.6             | displays search control in the indicators dialog
-| side_toolbar_in_fullscreen_mode	| off	|                 | using this feature you can enable Drawings Toolbar in fullscreen mode
+| side_toolbar_in_fullscreen_mode | off |                 | using this feature you can enable Drawings Toolbar in fullscreen mode
 | same_data_requery             | off   |                 | allows you to call `setSymbol` with the same symbol to refresh the data
 | disable_resolution_rebuild    | off   |                 | Shows bars time exactly as it is provided by a datafeed without aligning. Strictly not recommended if you expect the chart to build some resolutions.
 | chart_scroll                  | on    |   1.10          | Allows scrolling of a chart
@@ -95,21 +94,22 @@ Please note that the leading `-` characters are not a part of featureset name in
 
 ### "Big Rocks"
 
-| ID	| Default State	| Library Version | Description
+| ID | Default State | Library Version | Description
 |-------|---------------|-----------------|------------
 | study_templates | off | |
 | datasource_copypaste | on | | enables copying of drawings and studies
 | seconds_resolution| off | 1.4 | enables seconds resolution support
 
-
 ## :chart: Trading Terminal
 
-| ID	| Default State	| Terminal Version | Description
+| ID | Default State | Terminal Version | Description
 |-------|---------------|------------------|------------
-| support_multicharts | on | | enables context menu actions (Clone, Sync) related to Multiple Chart Layout
-| header_layouttoggle | on | | shows Select Layout button in the header
-| show_logo_on_all_charts | off | |shows logo on every chart of multichart layout
+| support_multicharts | on | | Enables context menu actions (Clone, Sync) related to Multiple Chart Layout
+| header_layouttoggle | on | | Shows Select Layout button in the header
+| show_logo_on_all_charts | off | |Shows logo on every chart of multichart layout
 | chart_crosshair_menu    | on  | 1.7 |Enables "plus" button on the price scale for quick trading
 | add_to_watchlist | on | 1.9 | Enabled "Add symbol to Watchlist" item in the menu
 | footer_screenshot | on | 1.11 | Shows a screenshot button in the footer (account manager)
 | open_account_manager | on | 1.11 | Keeps Account Manager opened by default
+| trading_notifications | on | 1.11 | Shows trading notifications on the chart
+| multiple_watchlists | on | 1.12 | enables creating multiple watchlists

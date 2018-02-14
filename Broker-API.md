@@ -1,131 +1,160 @@
-:chart: All content on this page is relevant for [[Trading Terminal]] only.
+:chart: All content on this page is related to [Trading Terminal](Trading-Terminal.md) only.
 
-Broker API is a thing which will make your trading live. Its main purpose is to connect our charts with your trading logic. In terms of `JS`, it is an `object` which is expected to expose the specific interface. Here is a list of API's **methods** which Terminal will expect to have.
+Broker API is a key component that enables live trading. Its main purpose is to connect our charts with your trading logic. In terms of `JS`, it is an `object` which is expected to expose the specific interface. Here is a list of API's **methods** that Terminal is expected to have.
 
 ## Required Methods
 
-#### constructor(host)
-The constructor of the Broker API usually takes [[Trading Host]].
+### constructor(host)
 
-#### positions : Promise
-This methods is called by the Trading Terminal to request positions. You should return an array of [[positions|Trading-Objects-and-Constants#position]].
+The constructor of the Broker API usually takes [Trading Host](Trading-Host.md).
 
-#### orders : Promise
-This methods is called by the Trading Terminal to request orders. You should return an array of [[orders|Trading-Objects-and-Constants#order]].
+### positions : Promise<Position[]>
 
-#### executions(symbol) : Promise
-This methods is called by the Trading Terminal to request executions. You should return an array of [[executions|Trading-Objects-and-Constants#execution]].
+This method is called by the Trading Terminal to request [positions](Trading-Objects-and-Constants.md#position).
 
-#### trades : Promise
-This methods is called by the Trading Terminal to request trades (individual positions). You should return an array of [[trades|Trading-Objects-and-Constants#trade]].
+### orders : Promise<Order[]>
 
-#### chartContextMenuActions(e)
-Chart can have a sub-menu `Trading` in the context menu. Return the list of items for a sub-menu. Format is the same as for `buttonDropdownItems`.
+This method is called by the Trading Terminal to request [orders](Trading-Objects-and-Constants.md#order).
 
-`e` is a context object passed by a browser
+### executions(symbol) : Promise<Execution[]>
 
-#### connectionStatus()
-Usually you don't need to return values other then `1`, because the broker is already connected when you create the widget. You can use it if you want to display a spinner in the bottom panel while the data is loaded.
+This method is called by the Trading Terminal to request [executions](Trading-Objects-and-Constants.md#execution).
+
+### trades : Promise<Trade[]>
+
+This method is called by the Trading Terminal to request [trades](Trading-Objects-and-Constants.md#trade) (individual positions).
+
+### chartContextMenuActions(e)
+
+- `e` is a context object passed by a browser
+
+Chart can have a sub-menu `Trading` in the context menu. It returns the list of items in a sub-menu. The format is the same as in `buttonDropdownItems`.
+
+### connectionStatus()
+
+You don't need to return values other than `1` typically since the broker is already connected when you create the widget. You can use it if you want to display a spinner in the bottom panel while the data is being loaded.
 Possible return values are:
 
-```
+```javascript
 ConnectionStatus.Connected = 1
 ConnectionStatus.Connecting = 2
 ConnectionStatus.Disconnected = 3
 ConnectionStatus.Error = 4
 ```
 
-#### isTradable(symbol)
-This function is required for the Floating Trading Panel. Ability to trade via the panel depends on the result of this function: `true` or `false`. You don't need to imlement this method if all the symbols can be traded.
+### isTradable(symbol)
 
-#### accountManagerInfo()
-This function should return information that will be used to build an account manager.
-See [[Account Manager]] for more information.
+This function is required for the Floating Trading Panel. The ability to trade via the panel depends on the result of this function: `true` or `false`. You don't need to implement this method if all symbols can be traded.
 
-#### showOrderDialog([[order|Trading-Objects-and-Constants#order]])
-This function is invoked by the chart when user requests to create or modify an order.
+### accountManagerInfo()
 
-So we give you the ability to use your own dialog and it's 100% up to you how to manage it.
+This function should return the information that will be used to build an account manager.
+See [Account Manager](Account-Manager.md) for more information.
 
-#### placeOrder([[order|Trading-Objects-and-Constants#order]], silently)
+### showOrderDialog([order](Trading-Objects-and-Constants.md#order))
 
-Method is invoked when a user want to place an order. Order is pre-filled with partial or full information.
+This function is requested by the chart when a user creates or modifies an order.
+
+You have the ability to use your own dialog and manage it as you see fit.
+
+### placeOrder([order](Trading-Objects-and-Constants.md#order), silently)
+
+Method is requested when a user wants to place an order. Order is pre-filled with partial or complete information.
+
 If `silently` is `true` no order dialog should be shown.
 
-#### modifyOrder([[order|Trading-Objects-and-Constants#order]], silently, focus)
+### modifyOrder([order](Trading-Objects-and-Constants.md#order), silently, focus)
+
 1. `order` is an order object to modify
-2. `silently` - if it is `true` no order dialog should be shown
-3. `focus` - [[OrderTicketFocusControl constants|Trading-Objects-and-Constants#orderticketfocuscontrol]]. It can be already initialized by the chart.
+1. `silently` - if it is `true` no order dialog should be shown
+1. `focus` - [OrderTicketFocusControl constants](Trading-Objects-and-Constants.md#orderticketfocuscontrol). It can be already initialized by the chart.
 
-Method is invoked when a user want to modify an existing order.
+Method is requested when a user wants to modify an existing order.
 
-#### cancelOrder(orderId, silently)
-This method is invoked to cancel single order with given `id`.
+### cancelOrder(orderId, silently)
+
+This method is requested to cancel a single order with a given `id`.
+
 If `silently` is `true` no dialogs should be shown.
 
-#### cancelOrders(symbol, side, ordersIds, silently)
+### cancelOrders(symbol, side, ordersIds, silently)
+
 1. `symbol` - symbol string
-2. `side`: [[Side constant|Trading-Objects-and-Constants#side]] or `undefined`
-3. `ordersIds` - ids already collected by `symbol` and `side`
+1. `side`: [Side constant](Trading-Objects-and-Constants.md#side) or `undefined`
+1. `ordersIds` - ids already collected by `symbol` and `side`
+
 If `silently` is `true` no dialogs should be shown.
 
-This method is invoked to cancel multiple orders for a `symbol` and `side`.
+This method is requested to cancel multiple orders for a `symbol` and `side`.
 
-#### editPositionBrackets(positionId, focus)
-This method is invoked if `supportPositionBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.
-1. `positionId` is ID of existing position to be modified
-2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
+### editPositionBrackets(positionId, focus)
 
-#### closePosition(positionId, silently)
-This method is invoked if `supportClosePosition` configuration flag is on to close the position by id.
-If `silently` is `true` no dialogs show be shown.
+1. `positionId` is an ID of an existing position to be modified
+1. `focus` - [Focus constant](Trading-Objects-and-Constants.md#orderticketfocuscontrol).
 
-#### reversePosition(positionId, silently)
-This method is invoked if `supportReversePosition` configuration flag is on to reverse the position by id.
+This method is requested if `supportPositionBrackets` configuration flag is on. It shows a dialog that enables take profit and stop loss editing.
+
+### closePosition(positionId, silently)
+
+This method is requested if `supportClosePosition` configuration flag is on. It allows to close the position by id.
 If `silently` is `true` no dialogs should be shown.
 
-#### editTradeBrackets(tradeId, focus)
-This method is invoked if `supportTradeBrackets` configuration flag is on to display a dialog for editing of take profit and stop loss.
+### reversePosition(positionId, silently)
+
+This method is requested if `supportReversePosition` configuration flag is on. It allows to reverse the position by id.
+If `silently` is `true` no dialogs should be shown.
+
+### editTradeBrackets(tradeId, focus)
+
 1. `tradeId` is ID of existing trade to be modified
-2. `focus` - [[Focus constant|Trading-Objects-and-Constants#focusoptions]].
+1. `focus` - [Focus constant](Trading-Objects-and-Constants.md#orderticketfocuscontrol).
 
-#### closeTrade(tradeId, silently)
-This method is invoked if `supportCloseTrade` configuration flag is on to close the trade by id.
-If `silently` is `true` no dialogs show be shown.
+This method is requested if `supportTradeBrackets` configuration flag is on. It displays a dialog that enables take profit and stop loss editing.
 
-#### symbolInfo(symbol) : Deferred (or Promise)
+### closeTrade(tradeId, silently)
+
+This method is requested if `supportCloseTrade` configuration flag is on. It allows to close the trade by id.
+
+If `silently` is `true` no dialogs should be shown.
+
+### symbolInfo(symbol) : Deferred (or Promise)
+
 1. `symbol` - symbol string
 
-This method is invoked by the internal Order Dialog, DOM panel and floating trading panel to get symbol information.
-Result is an object with the following data:
-- `qty` - object with fields `min`, `max` and `step` that specifies Quantity field step and boundaries.
+This method is requested by the internal Order Dialog, DOM panel and floating trading panel to get symbol information.
+
+The result is an object with the following data:
+
+- `qty` - object with fields `min`, `max` and `step` that specifies Quantity, field step and boundaries.
 - `pipSize` - size of 1 pip (e.g., 0.0001 for EURUSD)
 - `pipValue` - values of 1 pip in account currency (e.g., 1 for EURUSD for an account in USD)
-- `minTick` - minimal price change (e.g., 0.00001 for EURUSD). It is used for price fields.
+- `minTick` - minimal price change (e.g., 0.00001 for EURUSD). Used for price fields.
 - `description` - a description to be displayed in the dialog
-- `type` - instrument type, only `forex` matters - it enables negative pips check in the order dialog
+- `type` - instrument type, only `forex` matters - it enables negative pips. You can check that in the order dialog
 - `domVolumePrecision` - number of decimal places of DOM asks/bids volume (optional, 0 by default)
 
-#### accountInfo() : Deferred (or Promise)
+### accountInfo() : Deferred (or Promise)
 
-This method is invoked by the internal Order Dialog to get account information.
+This method is requested by the internal Order Dialog to get the account information.
 It should return only one field for now:
-1. currencySign: string - which is a sign of acccount currency
 
-Since this method is called the broker should stop providing profit/loss.
+1. currencySign: string - which is a sign of account currency
 
-#### subscribeEquity()
+Once this method is called the broker should stop providing profit/loss.
 
-Method should be implemented if you use standard order dialog and support stop loss.
-Since this method is called the broker should provide equity updates via [[equityUpdate|Trading-Host#equityupdateequity]] method.
+### subscribeEquity()
 
-#### unsubscribeEquity()
+The method should be implemented if you use a standard order dialog and support stop loss.
 
-Method should be implemented if you use standard order dialog and support stop loss.
-Since this method is called the broker should stop providing equity updates.
+Once this method is called the broker should provide equity updates via [equityUpdate](Trading-Host.md#equityupdateequity) method.
 
-And this is it !
+### unsubscribeEquity()
 
-# See Also
-  * [[How to connect|Widget-Constructor#chart-trading_controller]] your trading controller to the chart
-  * [[Trading Host]]
+The method should be implemented if you use a standard order dialog and support stop loss.
+
+Once this method is called the broker should stop providing equity updates.
+
+## See Also
+
+- [How to connect](Widget-Constructor.md#brokerfactory) your trading controller to the chart
+- [Trading Host](Trading-Host.md)

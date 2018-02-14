@@ -3,13 +3,13 @@ as customizable ones. Other properties customization is not supported.
 
 This file format:
 
-    <property_path>: <default Charting Library value>
+`<property_path>: <default Charting Library value>`
 
-```
-//	supported values: large, medium, small, tiny
+```javascript
+// supported values: large, medium, small, tiny
 volumePaneSize: "large"
 
-//	fonts available in text editors (i.e., in `Text` drawing tool properties dialog)
+// fonts available in text editors (i.e., in `Text` drawing tool properties dialog)
 editorFontsList: ['Verdana', 'Courier New', 'Times New Roman', 'Arial']
 
 paneProperties.background: "#ffffff"
@@ -21,7 +21,7 @@ paneProperties.crossHairProperties.color: "#989898"
 paneProperties.crossHairProperties.width: 1
 paneProperties.crossHairProperties.style: LINESTYLE_DASHED
 
-//	Margins (percent). Used for auto scaling.
+// Margins (percent). Used for auto scaling.
 paneProperties.topMargin: 5
 paneProperties.bottomMargin: 5
 
@@ -58,18 +58,18 @@ timeScale.rightOffset: 5
 timezone: "Etc/UTC" # See supported timezones list (at Symbology#timezone page) for available values
 
 
-//	Series style. See the supported values below
-//		Bars = 0
-//		Candles = 1
-//		Line = 2
-//		Area = 3
-//		Heiken Ashi = 8
-//		Hollow Candles = 9
-//		Renko = 4
-//		Kagi = 5
-//		Point&Figure = 6
-//		Line Break = 7
-//		Baseline = 10
+// Series style. See the supported values below
+// Bars = 0
+// Candles = 1
+// Line = 2
+// Area = 3
+// Heiken Ashi = 8
+// Hollow Candles = 9
+// Renko = 4
+// Kagi = 5
+// Point&Figure = 6
+// Line Break = 7
+// Baseline = 10
 mainSeriesProperties.style: 1
 
 mainSeriesProperties.showCountdown: true
@@ -88,9 +88,9 @@ mainSeriesProperties.priceAxisProperties.logDisabled:false
 
 symbolWatermarkProperties.color : "rgba(0, 0, 0, 0.00)"
 
-//	Different chart types defaults
+// Different chart types defaults
 
-//	Candles styles
+// Candles styles
 mainSeriesProperties.candleStyle.upColor: "#6ba583"
 mainSeriesProperties.candleStyle.downColor: "#d75442"
 mainSeriesProperties.candleStyle.drawWick: true
@@ -102,7 +102,7 @@ mainSeriesProperties.candleStyle.wickUpColor: 'rgba( 115, 115, 117, 1)'
 mainSeriesProperties.candleStyle.wickDownColor: 'rgba( 115, 115, 117, 1)'
 mainSeriesProperties.candleStyle.barColorsOnPrevClose: false
 
-//	Hollow Candles styles
+// Hollow Candles styles
 mainSeriesProperties.hollowCandleStyle.upColor: "#6ba583"
 mainSeriesProperties.hollowCandleStyle.downColor: "#d75442"
 mainSeriesProperties.hollowCandleStyle.drawWick: true
@@ -112,7 +112,7 @@ mainSeriesProperties.hollowCandleStyle.borderUpColor: "#225437"
 mainSeriesProperties.hollowCandleStyle.borderDownColor: "#5b1a13"
 mainSeriesProperties.hollowCandleStyle.wickColor: "#737375"
 
-//	Heiken Ashi styles
+// Heiken Ashi styles
 mainSeriesProperties.haStyle.upColor: "#6ba583"
 mainSeriesProperties.haStyle.downColor: "#d75442"
 mainSeriesProperties.haStyle.drawWick: true
@@ -123,19 +123,19 @@ mainSeriesProperties.haStyle.borderDownColor: "#5b1a13"
 mainSeriesProperties.haStyle.wickColor: "#737375"
 mainSeriesProperties.haStyle.barColorsOnPrevClose: false
 
-//	Bars styles
+// Bars styles
 mainSeriesProperties.barStyle.upColor: "#6ba583"
 mainSeriesProperties.barStyle.downColor: "#d75442"
 mainSeriesProperties.barStyle.barColorsOnPrevClose: false
 mainSeriesProperties.barStyle.dontDrawOpen: false
 
-//	Line styles
+// Line styles
 mainSeriesProperties.lineStyle.color: "#0303F7"
 mainSeriesProperties.lineStyle.linestyle: LINESTYLE_SOLID
 mainSeriesProperties.lineStyle.linewidth: 1
 mainSeriesProperties.lineStyle.priceSource: "close"
 
-//	Area styles
+// Area styles
 mainSeriesProperties.areaStyle.color1: "#606090"
 mainSeriesProperties.areaStyle.color2: "#01F6F5"
 mainSeriesProperties.areaStyle.linecolor: "#0094FF"
@@ -143,7 +143,7 @@ mainSeriesProperties.areaStyle.linestyle: LINESTYLE_SOLID
 mainSeriesProperties.areaStyle.linewidth: 1
 mainSeriesProperties.areaStyle.priceSource: "close"
 
-//	Baseline styles
+// Baseline styles
 mainSeriesProperties.baselineStyle.baselineColor: "rgba( 117, 134, 150, 1)"
 mainSeriesProperties.baselineStyle.topFillColor1: "rgba( 83, 185, 135, 0.1)"
 mainSeriesProperties.baselineStyle.topFillColor2: "rgba( 83, 185, 135, 0.1)"
@@ -158,11 +158,11 @@ mainSeriesProperties.baselineStyle.transparency: 50
 mainSeriesProperties.baselineStyle.baseLevelPercentage: 50
 ```
 
-##### LineStyles
+#### LineStyles
+
+```javascript
 LINESTYLE_SOLID = 0
-
 LINESTYLE_DOTTED = 1
-
 LINESTYLE_DASHED = 2
-
 LINESTYLE_LARGE_DASHED = 3
+```

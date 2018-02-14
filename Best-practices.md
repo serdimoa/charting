@@ -2,7 +2,7 @@
 
 We love our charts. We want them to be the best: the most beautiful, the most responsive and the most powerful charts in the whole HTML5 world. We are working hard to reach these goals.
 
-We know all about our charts and about how to create the best user experience on them and we'd be glad to share our knowledge to you. This document describes several best practices for integrating the Charting Library into your website/application. The main point is to always think about your users and their experience.
+We know all about our charts and about creating the best user experience using them and we'd be glad to share our knowledge with you. This document describes several best practices for integrating the Charting Library into your website/application. The main point is to always think about your users and their experience.
 
 ### 1. Understand what Charting Library IS and what it ISN’T
 
@@ -18,7 +18,7 @@ The same as for the bars above. Send only marks matching the requested range.
 
 ### 4. Do not override calculateHistoryDepth() to get more than 2 screens of data
 
-Charting Library avoids loading content which the user didn’t ask for. Loading more bars into the chart means loading the CPU and memory with more operations that necessary. This means responsiveness of the whole solution decreases.
+Charting Library avoids loading content which the user didn’t ask for. Loading more bars into the chart means loading the CPU and memory with more operations than necessary. This means responsiveness of the whole solution decreases.
 
 ### 5. Do not make your chart look as a mess
 
@@ -43,6 +43,7 @@ You can watch the output of our [demo data service](https://demo_feed.tradingvie
 Always use `debug: true` in the Widget constructor options during the development and always remove it in the production to make the code work faster.
 
 ### 9. Read the docs
+
 We spent a lot of time creating those docs for you to make your life easier. Please give it a try.
 
 ### 10. Choose an appropriate data transport for your solution
@@ -53,13 +54,13 @@ Do not use UDF with data grouping (see `supports_group_request`) if your backend
 
 ### 11. Do not try to sniff our code and use undocumented features
 
-All features not mentioned in our documentation are subjects for change without any warnings and backward compatibility. Also altering the source code is strictly prohibited by the legal agreement you signed.
+All features not mentioned in our documentation are subjects for change without any warnings and backward compatibility. Also, altering the source code is strictly prohibited by the legal agreement you signed.
 
 ### 12. Do not use our demo datafeed on your production website
 
 This datafeed is just a demo and is not intended for real usage. It may be unstable and can't bear significant load.
 
-### 13. Use the API for customization. Avoid editing CSS.
+### 13. Use the API for customization. Avoid editing CSS
 
 We do not guarantee CSS selectors' backward compatibility.
 
