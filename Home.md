@@ -4,7 +4,7 @@ Charting library is a standalone solution that you download, host on your server
 
 | What to do | What you'll get after |
 |---|---|
-|1. `git clone` your [copy of Charting Library](Package-Content) and then [run it](Running-Your-Charting-Library.md)|A working example of our chart running on your host|
+|1. `git clone` your [copy of Charting Library](Package-Content.md) and then [run it](Running-Your-Charting-Library.md)|A working example of our chart running on your host|
 |2. Plug your data into Charting Library using [one of our APIs](How-To-Connect-My-Data.md). You can see some examples [here](How-To-Connect-My-Data.md#examples)|The complete and working charting tool with your own data|
 
 If you want to customize your charts, then you may go further.
