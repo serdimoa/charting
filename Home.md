@@ -14,7 +14,7 @@ If you want to customize your charts, then you may go further.
 
 ### Trading Terminal
 
-:chart: Trading Terminal is the ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [Read more](Trading-Terminal.md).
+:chart: Trading Terminal is the ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [Read more](Trading-Terminal).
 
 ### Best Practices
 
