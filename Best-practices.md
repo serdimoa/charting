@@ -30,7 +30,7 @@ The smallest meaningful size that the Library supports is 600x600px. Avoid makin
 
 ### 7. Use the appropriate language
 
-The Charting Library is translated into a dozen of languages. Use the one that fits your users' needs.
+The Charting Library is translated into dozens of languages. Use the one that fits your users' needs.
 
 ### 8. If you are experiencing issues
 
@@ -67,3 +67,10 @@ We do not guarantee CSS selectors' backward compatibility.
 ### 14. Set up your server to gzip files when sending to client
 
 This is the common best practice for static HTML content. Gzipping the Library's HTML file will decrease your users' waiting time.
+
+### 15. Set minimum expiration time for charting_library.min.js
+
+All files in the Charting Library contain hash in their names, except for `charting_library.min.js` that you add to your HTML files.
+When you update the Charting Library to a newer version all file names are changed as well.
+If a browser loads `charting_library.min.js` from the cache, then all the links in this file are going to be broken.
+The expiration time for this file should be set to the minimum in order to make sure that it’s not cached by the browser.

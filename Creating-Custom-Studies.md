@@ -1,17 +1,15 @@
-## How to show your data as an indicator
+## Displaying your data as an indicator
 
-Here is an instruction for the case if you have some data which you want to show on the chart like an indicator.
+The instruction below explains how to display chart data as an indicator. Please follow these steps.
 
-Please follow these few steps:
-
-1. Contrive a new ticker for your data and set up your server to return valid SymbolInfo for this ticker.
-1. Also set up the server to return valid history data for this ticker.
-1. Use the following indicator template and fill in all placeholder values: name, descriptions, and the ticker. Also modify the default style of plot, if required.
+1. Come up with a new ticker name to display your data and set up your server to return valid SymbolInfo for this new ticker.
+1. Also, set up the server to return valid historical data for this ticker.
+1. Use the indicator template and complete the following fields: name, descriptions, and the ticker. Modify the default style of the indicator if required.
 
     ```javascript
     {
         // Replace the <study name> with your study name
-        // It will be used internally by the Charting Library
+        // The name will be used internally by the Charting Library
         name: "<study name>",
         metainfo: {
             "_metainfoVersion": 40,
@@ -20,7 +18,7 @@ Please follow these few steps:
             "name": "<study name>",
 
             // This description will be displayed in the Indicators window
-            // It is also used as a "name" argument when calling createStudy method
+            // It is also used as a "name" argument when calling the createStudy method
             "description": "<study description>",
 
             // This description will be displayed on the chart
@@ -114,21 +112,19 @@ Please follow these few steps:
 
     ```javascript
     __customIndicators = [
-        // *** your indicator object, created from template ***
+        // *** your indicator object, created from the template ***
     ];
     ```
 
-    Note, that indicators file is a JavaScript source file that just defines an array of indicator objects. So, you can place several indicators in it, or combine them with the ones we compiled for you.
+    Note, that indicators file is a JavaScript source file that only defines an array of indicator objects. You are able to add several indicators to this file. You are also able to add the indicators that we compiled for you.
 
 1. Use [indicators_file_name](Widget-Constructor#indicators_file_name) option of widget's constructor to load custom indicators from the indicators file.
-1. Update your widget's initialization code to [create](Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides-options) this indicator when chart is ready.
+1. Update your widget's initialization code to [create](Chart-Methods#createstudyname-forceoverlay-lock-inputs-callback-overrides-options) this indicator when the chart is ready.
 
 ## Examples
 
-*How to use the examples?*
-
-1. Plug the indicator into Charting Library using [indicators_file_name](Widget-Constructor#indicators_file_name) option.
-1. Change your widget's initialization code. Add something like the following:
+1. Add the indicator to the Charting Library using [indicators_file_name](Widget-Constructor#indicators_file_name) option.
+1. Change your widget's initialization code. Here is an example.
 
     ```javascript
     widget = new TradingView.widget(/* ... */);
@@ -140,12 +136,12 @@ Please follow these few steps:
 
 ### Requesting data for another ticker
 
-Assume you want to show user's equity curve on his charts. You will have to do the following:
+Let's assume that you wish to dispaly the equity curve on the chart. You will have to do the following.
 
-* Create a name for the new ticker. Assume it will be `#EQUITY` ticker. You can use any name you can imagine.
-* Change your server's code to resolve this ticker as a valid symbol. Return the minimal valuable SymbolInfo for this case.
-* Make the server to return valid history for this ticker. I.e., the server could ask your database for equity history and return this data just as you return the history for generic symbols (like, say, `AAPL`).
-* Adopt the indicator template mentioned above and create the indicators file (or add a new indicator to the existing indicators file). This could be something like the following:
+* Create a name for the new ticker, e.g. `#EQUITY`. You can use any name that you can think of.
+* Change your server's code to validate this symbol. The minimum amount of symobol information should be returned for this ticker.
+* Make the server return valid historical data for this ticker just as you return the historcal data for the generic symbols such as AAPL.
+* Modify the indicator template mentioned above and create the indicators file (or add a new indicator to the existing indicators file). Here is an example:
 
 ```javascript
 __customIndicators = [
@@ -181,12 +177,12 @@ __customIndicators = [
 
                         "transparency": 40,
 
-                        // Set the dark red color for the plot line
+                        // Set the plotted line color to dark red
                         "color": "#880000"
                     }
                 },
 
-                // Precision is one digit, like 777.7
+                // Precision is set to one digit, e.g. 777.7
                 "precision": 1,
 
                 "inputs": {}
@@ -250,9 +246,9 @@ __customIndicators = [
                 palettes: {
                     palette_0: {
                         // palette colors
-                        // change it to the defaults you prefer,
-                        // but note that user can change them in Style tab
-                        // of indicator property page
+                        // change it to the default colors that you prefer,
+                        // but note that the user can change them in the Style tab
+                        // of indicator properties
                         colors: [
                             { color: "#FFFF00" },
                             { color: "#0000FF" }
@@ -267,8 +263,8 @@ __customIndicators = [
                 // plot type should be set to 'bar_colorer'
                 type: "bar_colorer",
 
-                // this is the reference to the palette
-                // defined in 'palettes' and 'defaults.palettes' sections
+                // this is the name of the palette that is defined
+                // in 'palettes' and 'defaults.palettes' sections
                 palette: "palette_0"
             }],
             palettes: {
@@ -278,9 +274,8 @@ __customIndicators = [
                         { name: "Color 1" }
                     ],
 
-                    // mapping of values returned by the script
-                    // to the specific colors in the palette
-                    // value can be arbitrary number constant
+                    // the mapping between the values that
+                    // are retured by the script and palette colors
                     valToIndex: {
                         100: 0,
                         200: 1
@@ -297,9 +292,9 @@ __customIndicators = [
                 var valueForColor1 = 200;
 
                 // perform your calculations here and return one of the constants
-                // specified as key in 'valToIndex' mapping
+                // that is specified as a key in 'valToIndex' mapping
                 var result =
-                    Math.random() * 100 % 2 > 1 ? // we just randomly select one of the color values
+                    Math.random() * 100 % 2 > 1 ? // we randomly select one of the color values
                         valueForColor0 : valueForColor1;
 
                 return [result];

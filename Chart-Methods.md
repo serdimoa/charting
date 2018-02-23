@@ -1,8 +1,8 @@
-Here is a list of supported chart's methods.
+Here is a list of methods supported by the chart.
 
-**Before 1.4 version.** You can call these methods using widget object returned to you by widget's constructor.
+**Before version 1.4.** You can call these methods using widget object returned to you by widget's constructor.
 
-**Since 1.5 version.** You can call these methods using chart object returned to you by widget's methods [chart(index)](Widget-Methods#chart-chartindex) or [activeChart()](Widget-Methods#chart-activechart).
+**Starting from version 1.5.** You can call these methods using chart object returned to you by widget's methods [chart(index)](Widget-Methods#chart-chartindex) or [activeChart()](Widget-Methods#chart-activechart).
 
 ## Methods
 
@@ -55,15 +55,15 @@ Here is a list of supported chart's methods.
 
 ### onDataLoaded()
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when new history bars are loaded and unsubscribe from the event.
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when new history bars are loaded. You can also use the same object to unsubscribe from the event.
 
 ### onSymbolChanged()
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the symbol is changed and unsubscribe from the event.
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the symbol is changed. You can also use the same object to unsubscribe from the event.
 
 ### onIntervalChanged()
 
-You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the interval is changed and unsubscribe from the event.
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when the interval is changed. You can also use the same object to unsubscribe from the event.
 When the event is fired it will provide the following arguments:
 
 1. `interval`: new interval
@@ -85,7 +85,7 @@ widget.chart().onIntervalChanged().subscribe(null, function(interval, obj) {
 
 1. `callback`: function(interval)
 
-The Charting Library will call the callback provided immediately if bars are already loaded or when the bars are received.
+The Charting Library will immediately call the callback function if bars are already loaded or when the bars are received.
 The function returns `true` if bars are already loaded and `false` otherwise.
 
 ### crossHairMoved(callback)
@@ -94,7 +94,7 @@ The function returns `true` if bars are already loaded and `false` otherwise.
 
 1. `callback`: function({time, price})
 
-The Charting Library will call the callback every time the crosshair position is changed.
+The Charting Library will call the callback function every time the crosshair position is changed.
 
 ## Chart Actions
 
@@ -105,27 +105,27 @@ The Charting Library will call the callback every time the crosshair position is
 1. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
 
 Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
-Neither `from`, nor `to` must not be in future. This method was introduced in version `1.2`.
+Neither `from`, nor `to` can be set to a future date. This method was introduced in version `1.2`.
 
 ### setSymbol(symbol, callback)
 
 1. `symbol`: string
 1. `callback`: function()
 
-Makes the chart to change its symbol. Callback is called after new symbol's data arrived.
+Makes the chart change its symbol. Callback function is called once new symbol's data is loaded.
 
 ### setResolution(resolution, callback)
 
 1. `resolution`: string. Format is described in another [article](Resolution).
 1. `callback`: function()
 
-Makes the chart to change its resolution. Callback is called after new data arrived.
+Makes the chart change its resolution. Callback function is called once new data is loaded.
 
 ### resetData()
 
-Makes the chart to rerequest data from the data feed. Usually you need to call it when chart's data has changed.
+Makes the chart rerequest data from the data feed. The function is often called when chart's data has changed.
 
-Before calling this you should call [onResetCacheNeededCallback](JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback).
+Before calling this function you should call [onResetCacheNeededCallback](JS-Api#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback).
 
 ### executeActionById(actionId)
 
@@ -133,7 +133,7 @@ Before calling this you should call [onResetCacheNeededCallback](JS-Api#subscrib
 
 1. `actionId`: string
 
-Executes an action by its id.
+Executes an action according to its id.
 
 **Showing a dialog:**
 
@@ -188,15 +188,15 @@ widget.chart().executeActionById("drawingToolbarAction"); // hides or shows the 
 
 1. `actionId`: string
 
-Get checkable action (e.g. `lockDrawingsAction`, `stayInDrawingModeAction`, `magnetAction`) state by its id (see ids of actions above)
+Get a checkable action (e.g. `lockDrawingsAction`, `stayInDrawingModeAction`, `magnetAction`) state according to its ID (see ids of actions above)
 
 ### refreshMarks()
 
-Calling this method makes the Library to request visible marks once again.
+Calling this method makes the Library request visible marks once again.
 
 ### clearMarks()
 
-Calling this method makes the Library to remove all visible marks.
+Calling this method makes the Library remove all visible marks.
 
 ### setChartType(type)
 
@@ -223,7 +223,7 @@ STYLE_PB* = 7;
 
 ### closePopupsAndDialogs()
 
-Calling this method closes a context menu or a dialog if it is shown.
+Calling this method closes a context menu or a dialog if applicable.
 
 ### setTimezone(timezone)
 
@@ -237,41 +237,41 @@ Example:
 widget.activeChart().setTimezone('Asia/Singapore');
 ```
 
-Makes the chart to change its timezone.
+Makes the chart change its timezone.
 
 ## Studies And Shapes
 
 ### getAllShapes()
 
-Returns an array of all created shapes objects. Each object has following fields:
+Returns an array of all created shape objects. Each object has the following fields:
 
 * `id`: id of a shape
 * `name`: name of a shape
 
 ### getAllStudies()
 
-Returns an array of all created shapes objects. Each object has following fields:
+Returns an array of all created shape objects. Each object has the following fields:
 
 * `id`: id of a study
 * `name`: name of a study
 
 ### setEntityVisibility(id, isVisible)
 
-Sets visibility of an entity with passed id.
+Sets visibility of an entity with a passed ID.
 
-**Deprecated**: Use shape/study API instead (`getShapeById`/`getStudyById`). Will be removed in future releases.
+**Deprecated**: Use a shape/study API instead (`getShapeById`/`getStudyById`). Will be removed in future releases.
 
 ### createStudy(name, forceOverlay, lock, inputs, callback, overrides, options)
 
-1. `name`: string, a name of an indicator as you can see it in `Indicators` widget
-1. `forceOverlay`: forces the Charting Library to place the created study on main pane
-1. `lock`: boolean, shows whether a user will be able to remove/change/hide your study or not
-1. `inputs`: (since version `1.2`) an array of study inputs. This array is expected to contain just inputs values in the same order they are printed in study's properties page.
+1. `name`: string, name of an indicator as shown in the `Indicators` widget
+1. `forceOverlay`: forces the Charting Library to place the created study on the main pane
+1. `lock`: boolean, shows whether a user will be able to remove/change/hide the study or not
+1. `inputs`: (starting from version `1.2`) an array of study inputs. This array is expected to contain input values in the same order as in the study properties dialog.
 1. `callback`: function(`entityId`)
-1. `overrides`: (since version `1.2`) an object [containing properties](Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
-1. `options`: object with the only possible key `checkLimit`. If it is `true` study limit dialog will be shown if the limit if exceeded.
+1. `overrides`: (starting from version `1.2`) an object [containing properties](Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
+1. `options`: object with the only possible key `checkLimit`. If it is `true` then study limit dialog will be shown when the limit is exceeded.
 
-**Since 1.12 the function returns the result immediately. Callback is kept for compatibility.**
+**Starting from v 1.12 the function returns the result immediately. Callback is kept to maintain compatibility.**
 
 Creates a study on the main symbol. Examples:
 
@@ -280,15 +280,15 @@ Creates a study on the main symbol. Examples:
 * `createStudy('Stochastic', false, false, [26], null, {"%d.color" : "#FF0000"})`
 * `chart.createStudy('Moving Average', false, false, [26], null, {'Plot.linewidth': 10})`
 
-**Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values: `["close", "high", "low", "open"]`.
+**Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values are: `["close", "high", "low", "open"]`.
 
-**Remark 2**: You actually use `Overlay` study when choose to `Add` a series on the chart. This study has the single input -- `symbol`. Here is an example how to add a symbol:
+**Remark 2**: You use `Overlay` study when you choose to `Add` series on the chart. This study has the single input -- `symbol`. Here is an example of adding a symbol:
 
 ```javascript
     widget.chart().createStudy('Overlay', false, false, ['AAPL']);
 ```
 
-**Remark 3**: You actually also use `Compare` study when choose to compare a series. This study has two inputs -- `source` and `symbol`. Here is an example how to add a compare series:
+**Remark 3**: You also use the `Compare` study when you choose to compare different financial instruments. This study has two inputs -- `source` and `symbol`. Here is an example:
 
 ```javascript
     widget.chart().createStudy('Compare', false, false, ["open", 'AAPL']);
@@ -298,11 +298,11 @@ Creates a study on the main symbol. Examples:
 
 1. `entityId`: object. Value that is returned when a study is created via API.
 
-Returns an object with the following methods to interact with a study:
+Returns an object with the following methods that allows you to interact with the study:
 
-1. `isUserEditEnabled()` - return `true` if a user is able to remove/change/hide your shape
-1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding a study by a user
-1. `getInputsInfo()` - returns an information about all inputs.
+1. `isUserEditEnabled()` - returns `true` if a user is able to remove/change/hide the study
+1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding a study by the user
+1. `getInputsInfo()` - returns the information about all the inputs.
 
     Returned value is an array of objects with the following fields:
     * `id` - input id of the study
@@ -316,110 +316,110 @@ Returns an object with the following methods to interact with a study:
     * `id` - input id of the study
     * `value` - value of the input
 1. `setInputValues(inputs)` - assigns input values to a study.
-    `inputs` should be an array with objects of `StudyInputValue` (see above).
+    `inputs` should be an array of `StudyInputValue` objects (see above).
     It may contain only some of the inputs that you want to change.
 
-1. `mergeUp()` - merges study up (if can)
-1. `mergeDown()` - merges study down (if can)
-1. `unmergeUp()` - unmerges study up (if can)
-1. `unmergeDown()` - unmerges study down (if can)
+1. `mergeUp()` - merges the study up (if possible)
+1. `mergeDown()` - merges the study down (if possible)
+1. `unmergeUp()` - unmerges the study up (if possible)
+1. `unmergeDown()` - unmerges the study down (if possible)
 1. `isVisible()` - returns `true` if the study is visible
 1. `setVisible(visible)` - shows/hides the study
-1. `bringToFront()` - raises the study on top of all other sources
-1. `sendToBack()` - puts the study below all other sources
-1. `applyOverrides(overrides)` - apply [overrides](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) to the study.
-    Keys of the `overrides` object don't need to start with the study name, since it is applied to the particular study.
-    For example, you should use `style` instead of `Overlay.style` to override the current style of the Overlay study.
+1. `bringToFront()` - places the study on top of all other chart objects
+1. `sendToBack()` - places the study behind all other chart objects
+1. `applyOverrides(overrides)` - applies [overrides](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) to the study.
+   `overrides` object keys don’t need to start with the study name. The key is applied to a particular study.
+   For example, you should use `style` instead of `Overlay.style` to override the current style of the Overlay study.
 
 ### createShape(point, options)
 
 1. `point`: object `{time, [price], [channel]}`
-    * `time`: unix time. The only mandatory argument.
-    * `price`: If you specify `price`, then your icon will be placed on its level.
-        If you do not, then the icon sticks to bar at respective time.
-    * `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`).
-        If no channel is specified, 'open' is a default.
+    * `time`: unix time. It's the only mandatory key in this function argument.
+    * `price`: If you specify `price`, then the shape will be placed at the same price level.
+        If not, then the shape will be placed close to the bar according the `channel` value.
+    * `channel`: If the price is not set then `channel` value defines where the shape is placed relative to the bar. Possible values are `open`, `high`, `low`, `close`.
+        If no channel is specified, 'open' is a default value.
 1. `options`: object `{shape, [text], [lock], [overrides]}`
-    * `shape` may be one of the `arrow_up`, `arrow_down`, `flag`, `vertical_line`, `horizontal_line`.
+    * `shape` could be one of the folling: `arrow_up`, `arrow_down`, `flag`, `vertical_line`, `horizontal_line`.
         `flag` is the default value.
-    * `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
-    * `lock` shows whether a user will be able to remove/change/hide your shape or not.
-    * `disableSelection` (since `1.3`) prevents selecting of the shape
-    * `disableSave` (since `1.3`) prevents saving the shape with a chart
-    * `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
-    * `overrides` (since `1.2`). It is an object containing properties you'd like to set for your new shape.
-    * `zOrder` (since `1.3`) may be one of the [`top`, `bottom`].
-        `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources.
-        If it is not specified the line tool is placed above all existing line tools.
-    * `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
+    * `text` is an optional argument. It's the text that will be included in the shape if it's supported.
+    * `lock` shows whether a user will be able to remove/change/hide the shape or not.
+    * `disableSelection` prevents selecting of the shape
+    * `disableSave` prevents saving the shape on the chart
+    * `disableUndo` prevents adding of the action to the undo stack
+    * `overrides` is an object containing properties you'd like to set for your new shape.
+    * `zOrder` can have the following values `top`, `bottom`.
+        `top` places the line tool on top of all other chart objects while `bottom` places the line tool behind all other chart objects.
+        If not specified the line tool is placed on top of all existing chart objects.
+    * `showInObjectsTree`: Displays the shape in the Objects Tree dialog. The default value is `true`.
 
-The function returns `entityId` - unique id of the shape if creating is success or `null` otherwise.
+The function returns `entityId` - unique ID of the shape if the creation was successful and `null` if it wasn't.
 
-This call creates a shape at specified point on main series.
+This call creates a shape at a specific point on the chart provided that its within the main series area.
 
 ### createMultipointShape(points, options)
 
-1. `points`: an array of objects `[{time, [price], [channel]},...]`
-    * `time`: unix time. The only mandatory argument.
-    * `price`: If you specify `price`, then your icon will be placed on its level.
-        If you do not, then the icon sticks to bar at respective time.
-    * `channel`: The price level to stick to is specified by `channel` argument (`open`, `high`, `low`, `close`).
-        If no channel is specified, 'open' is a default.
+1. `points`: is an array of object with the following keys `[{time, [price], [channel]},...]`
+    * `time`: unix time. It's the only mandatory key in this function argument.
+    * `price`: If you specify `price`, then the shape will be placed at the same price level.
+        If not, then the shape will be placed close to the bar according the `channel` value.
+    * `channel`: If the price is not set then `channel` value defines where the shape is placed relative to the bar. Possible values are `open`, `high`, `low`, `close`.
+        If no channel is specified, 'open' is a default value.
 1. `options`: object `{shape, [text], [lock], [overrides]}`
     * `shape` may be one of the [identifiers](Shapes-and-Overrides)
-    * `text` is an optional argument. It's the text that will be assigned to shape if it can contain a text.
-    * `lock` shows whether a user will be able to remove/change/hide your shape or not.
-    * `disableSelection` (since `1.3`) prevents selecting of the shape
-    * `disableSave` (since `1.3`) prevents saving the shape with a chart
-    * `disableUndo` (since `1.4`) prevents adding of the action to the undo stack
-    * `overrides`. It is an object containing properties you'd like to set for your new shape.
-    * `zOrder` (since `1.3`) may be one of the [`top`, `bottom`].
-        `top` puts the line tool on top of all other sources, `bottom` puts the line tool below all other sources.
-        If it is not specified the line tool is placed above all existing line tools.
-    * `showInObjectsTree`: `true` by default. Displays the shape in the Objects Tree dialog.
+    * `text` is an optional argument. It's the text that will be included in the shape if it's supported.
+    * `lock` shows whether a user will be able to remove/change/hide the shape or not.
+    * `disableSelection` prevents selecting of the shape
+    * `disableSave` prevents saving the shape on the chart
+    * `disableUndo` prevents adding of the action to the undo stack
+    * `overrides` is an object containing properties you'd like to set for your new shape.
+    * `zOrder` can have the following values `top`, `bottom`.
+        `top` places the line tool on top of all other chart objects while `bottom` places the line tool behind all other chart objects.
+        If not specified the line tool is placed on top of all existing chart objects.
+    * `showInObjectsTree`: Displays the shape in the Objects Tree dialog. The default value is `true`.
 
-The function returns `entityId` - unique id of the study if creating is success or `null` otherwise.
+The function returns `entityId` - unique ID of the shape if the creation was successful and `null` if it wasn't.
 
-Look [Shapes and Overrides](Shapes-and-Overrides) for more information.
+Check out [Shapes and Overrides](Shapes-and-Overrides) for more information.
 
-This call creates a shape with specified points on main series.
+This call creates a shape at a specific point on the chart provided that its within the main series area.
 
 ### getShapeById(entityId)
 
 1. `entityId`: object. Value that is returned when a shape is created via API
 
-Returns an object with the following methods to interact with a shape:
+Returns an object with the following methods that allows you to interact with the study:
 
 1. `isSelectionEnabled()` - returns `true` if the shape cannot be selected by a user
-1. `setSelectionEnabled(enable)` - enables or disables selecting of the shape (see `disableSelection` option of `createMultipointShape`)
-1. `isSavingEnabled()` - returns `true` if the shape is not saved to the chart
-1. `setSavingEnabled(enable)` - enables or disables saving the shape into the chart layout (see `disableSave` option of `createMultipointShape`)
+1. `setSelectionEnabled(enable)` - enables or disables shape selection (see `disableSelection` option of `createMultipointShape`)
+1. `isSavingEnabled()` - returns `true` if the shape is not saved on the chart
+1. `setSavingEnabled(enable)` - enables or disables saving of the shape in the chart layout (see `disableSave` option of `createMultipointShape`)
 1. `isShowInObjectsTreeEnabled()` - returns `true` if the shape is displayed in the Objects Tree dialog
 1. `setShowInObjectsTreeEnabled(enabled)` - enables or disables displaying of the shape in the Objects Tree dialog
 1. `isUserEditEnabled()` - returns `true` if a user can remove/change/hide the shape
 1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding of the shape by a user
-1. `bringToFront()` - raises the line tool on top of all other sources
-1. `sendToBack()` - puts the line tool below all other sources
-1. `getProperties()` - get all properties of the line tool
-1. `setProperties(properties)` - sets properties of the shape.
-    `properties` should have the same structure as an object from `getProperties` but it can have only those properties that you want to override.
-1. `getPoints()` - returns points of line tool. `Point` is an object `{ price, time }`.
-1. `setPoints(points)` - set the new points to line tool.
+1. `bringToFront()` - places the line tool on top of all other chart objects.
+1. `sendToBack()` - places the line tool behind all other chart objects.
+1. `getProperties()` - gets all the properties of the shape.
+1. `setProperties(properties)` - sets the properties of the shape.
+    `properties` should have the same structure as an object from `getProperties`. It can only include the properties that you want to override.
+1. `getPoints()` - returns the points of the shape. `Point` is an object with the following keys `{ price, time }`.
+1. `setPoints(points)` - set the new points of the shape.
     The point format is the same as `points` argument from `createMultipointShape` method.
 
 ### removeEntity(entityId)
 
-1. `entityId`: object. Value which was returned when the entity (shape of study) was created.
+1. `entityId`: object. It's the value that was returned when the entity (shape or study) was created.
 
 Removes the specified entity.
 
 ### removeAllShapes()
 
-Removes all shapes (drawings) from the chart.
+Removes all the shapes from the chart.
 
 ### removeAllStudies()
 
-Removed all studies from the chart.
+Removed all the studies from the chart.
 
 ## Study Templates
 
@@ -428,7 +428,7 @@ Removed all studies from the chart.
 1. `options`: object `{saveInterval}`
     * `saveInterval`: boolean
 
-Saves the study template to JS object. Charting Library will call your callback and pass the state object as argument.
+Saves the study template to JS object. Charting Library will call your callback function and pass the state object as an argument.
 
 This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
@@ -436,7 +436,7 @@ This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 1. `template`: object
 
-Loads the study template from state object.
+Loads the study template from the `template` object.
 
 This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
@@ -444,21 +444,21 @@ This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
 
 ### createOrderLine(options)
 
-1. `options` *(since version 1.4)* is an object with one possible key: `disableUndo` which can be `true` or `false`.
-    For compatibility reasons the default value is `false`.
+1. `options` is an object with one possible key - `disableUndo` which can be `true` or `false`.
+    For compatibility reasons the default value is set to `false`.
 
-Creates a new order on the chart and returns an API-object which you can use to control the order properties and behavior.
+Creates a new trading order on the chart and returns an API-object that you can use to adjust its properties and behavior.
 
-It's strongly recommended to read [this article](Trading-Primitives) before using this call.
+It is strongly recommended to read [this article](Trading-Primitives) before using this call.
 
 API object methods:
 
-* `remove()`: Removes the position from the chart. You can’t use API-object after this call.
+* `remove()`: Removes the position from the chart. You can’t this API-object after the call.
 * `onModify(callback)` / `onModify(data, callback)`
 * `onMove(callback)` / `onMove(data, callback)`
 
 API object has a set of properties listed below. Each property should be used through respective accessors.
-I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
+For example, if you wish to work with the `Extend Left` property, then use `getExtendLeft()` of `setExtendLeft()` methods.
 
 **General properties**:
 
@@ -470,7 +470,7 @@ Tooltip|String|String|""
 Quantity|String|String|""
 Editable|Boolean|Boolean|true
 
-**Connection line properties**:
+**Horizontal line properties**:
 
 Property|Type|Supported Values|Default Value
 ---|---|---|---
@@ -520,22 +520,22 @@ widget.chart().createOrderLine()
 
 ### createPositionLine(options)
 
-1. `options` *(since version 1.4)* is an object with one possible key: `disableUndo` which can be `true` or `false`.
-    For compatibility reasons the default value is `false`.
+1. `options` is an object with one possible key - `disableUndo` which can be `true` or `false`.
+    For compatibility reasons the default value is set to `false`.
 
-Creates a new position on the chart and returns an API-object which you can use to control the position properties and behavior.
+Creates a new trading position on the chart and returns an API-object that you can use to adjust its properties and behavior.
 
-It's strongly recommended to read [this article](Trading-Primitives) before using this call.
+It is strongly recommended to read [this article](Trading-Primitives) before using this call.
 
 API object methods:
 
-* `remove()`: Removes the position from the chart. You can’t use API-object after this call.
+* `remove()`: Removes the position from the chart. You can’t use this API-object after the call.
 * `onClose(callback)` / `onClose(data, callback)`
 * `onModify(callback)` / `onModify(data, callback)`
 * `onReverse(callback)` / `onReverse(data, callback)`
 
 API object has a set of properties listed below. Each property should be used through respective accessors.
-I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
+For examaple, if you wish to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
 
 **General properties**:
 
@@ -546,7 +546,7 @@ Text|String|String|""
 Tooltip|String|String|""
 Quantity|String|String|""
 
-**Connection line properties**:
+**Connecting (horizontal) line properties**:
 
 Property|Type|Supported Values|Default Value
 ---|---|---|---
@@ -603,19 +603,19 @@ widget.chart().createPositionLine()
 
 ### createExecutionShape(options)
 
-1. `options` *(since version 1.4)* is an object with one possible key: `disableUndo` which can be `true` or `false`.
-    For compatibility reasons the default value is `false`.
+1. `options` is an object with one possible key - `disableUndo` which can be `true` or `false`.
+    For compatibility reasons the default value is set to `false`.
 
-Creates a new execution on the chart and returns an API-object which you can use to control the execution properties.
+Creates a new trade execution on the chart and returns an API-object that you can use to control the execution properties.
 
-It's strongly recommended to read [this article](Trading-Primitives) before using this call.
+It is strongly recommended to read [this article](Trading-Primitives) before using this call.
 
 API object has a set of properties listed below. Each property should be used through respective accessors.
-I.e., if you want to work with `Extend Left` property, use `getExtendLeft()` of `setExtendLeft()` methods.
+For example, if you wish to work with `Extend Left` property, then use `getExtendLeft()` of `setExtendLeft()` methods.
 
 API object methods:
 
-* `remove()`: Removes the execution shape from the chart. You can’t use API-object after this call.
+* `remove()`: Removes the execution shape from the chart. You can’t use this API-object after the call.
 
 **General properties**:
 
@@ -659,39 +659,39 @@ widget.chart().createExecutionShape()
 
 ### symbol()
 
-Returns chart's symbol.
+Returns the current symbol of the chart.
 
 ### symbolExt()
 
-Returns chart's symbol information object. The object has the following fields:
+Returns the current symbol information of the chart. The object has the following fields:
 
-* `symbol`: the same as [symbol()](#symbol) method result
-* `full_name`: full symbol name
-* `exchange`: symbol's exchange
-* `description`: symbol's description
-* `type`: symbol's type
+* `symbol`: is the same as the result of [symbol()](#symbol) method
+* `full_name`: the full name of the symbol
+* `exchange`: the exchange of the symbol
+* `description`: the description of the symbol
+* `type`: the type of the symbol
 
 ### resolution()
 
-Returns chart's resolution. Format is described in another [article](Resolution).
+Returns the chart's time interval. The format is described in this [article](Resolution).
 
 ### getVisibleRange()
 
-Returns object `{from, to}`. `from` and `to` are Unit timestamps **in the timezone of chart**.
+Returns the object `{from, to}`. `from` and `to` are Unix timestamps **in the timezone of the chart**.
 
 ### getVisiblePriceRange()
 
-*Since version 1.7.*
+*Starting from V 1.7.*
 
-Returns object `{from, to}`. `from` and `to` are boundaries of main series price scale visible range.
+Returns the object `{from, to}`. `from` and `to` are boundaries of the price scale visible range in main series area.
 
 ### priceFormatter()
 
-Returns object with `format` function that you can use to format prices. Introduced in 1.5.
+Returns the object with `format` function that you can use to format the prices.
 
 ### chartType()
 
-Returns the main series style.
+Returns the main series style type.
 
 ## See Also
 

@@ -1,6 +1,6 @@
 Charting Library allows you to customize its appearance, the way it displays data, default properties and lots of other things.
 
-Customizations are client-side and server-side. Some of them are made through the constructor, other ones can be made using widget/chart methods.
+There are client-side and server-side customizations. Some of them are made through the constructor, other ones can be made using widget/chart methods.
 
 Here is the single place where you can find most used customizations and links to their descriptions.
 
