@@ -112,4 +112,5 @@ Please note that the leading `-` characters are not a part of featureset name in
 | footer_screenshot | on | 1.11 | Shows a screenshot button in the footer (account manager)
 | open_account_manager | on | 1.11 | Keeps Account Manager opened by default
 | trading_notifications | on | 1.11 | Shows trading notifications on the chart
-| multiple_watchlists | on | 1.12 | enables creating multiple watchlists
+| multiple_watchlists | on | 1.12 | Enables creating of multiple watchlists
+| show_trading_notifications_history | on | 1.13 | Enables the Notifications Log tab in the bottom panel
