@@ -1,6 +1,6 @@
 ### Charting Library
 
-Charting library is a standalone solution that you download, host on your servers, connect your own data & use in your site/app for free. All you have to do is
+Charting library is a standalone solution that you download, host on your servers, connect your own data & use in your site/app for free.
 
 | What to do | What you'll get after |
 |---|---|
@@ -9,7 +9,7 @@ Charting library is a standalone solution that you download, host on your server
 
 If you want to customize your charts, then you may go further.
 
-* Investigate Charting Library [Customization Overview](Customization-Overview) and [Customization Possibilities](Customization-Use-Cases)
+* Read Charting Library [Customization Overview](Customization-Overview) and [Customization Use Cases](Customization-Use-Cases)
 * [Creating Custom Studies](Creating-Custom-Studies)
 
 ### Examples
@@ -18,8 +18,8 @@ We’ve got a [public GitHub repository](https://github.com/tradingview/charting
 
 ### Trading Terminal
 
-:chart: Trading Terminal is the ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [Read more](Trading-Terminal).
+:chart: Trading Terminal is a ready-to-use product for those who want to have a great charting solution along with the ability to trade right from the chart. [Read more](Trading-Terminal).
 
 ### Best Practices
 
-Reading [this article](Best-Practices) will prevent you from making the most common mistakes and **save your time**.
+Reading [this article](Best-Practices) will prevent you from making the most common mistakes and will **save your time**.

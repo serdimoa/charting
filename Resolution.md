@@ -1,5 +1,5 @@
-Resolution or interval is a time period of one bar. Charting Library supports intraday resolutions (seconds, minutes, hours) and DWM resolutions (daily, weekly, monthly).
-Charting Library API has lots of methods that accepts and returns Resolutions.
+Resolution or time interval is a time period of one bar. The Charting Library supports intraday resolutions (seconds, minutes, hours) and DWM resolutions (daily, weekly, monthly).
+Charting Library API has lots of methods that accept and return resolutions.
 
 ## Intraday
 
@@ -50,7 +50,7 @@ Example: `12M` - one year, `24M` - two year, `48M` - four years.
 ## See also
 
 * [How to set a list of available resolutions on a chart](JS-Api#supported_resolutions)
-* [How to set a list of resolutions supported by an instrument](Symbology#supported_resolutions)
+* [How to set a list of resolutions supported by the financial instrument](Symbology#supported_resolutions)
 * [Set initial resolution on a chart](Widget-Constructor#symbol-interval)
 * [Get current chart resolution](Chart-Methods#resolution)
 * [Change resolution on a chart](Chart-Methods#setresolutionresolution-callback)

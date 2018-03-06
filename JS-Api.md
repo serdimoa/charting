@@ -1,10 +1,10 @@
-**What it is?**: A set of JS methods (specific public interface).
+**What is JS API?**: A set of JS methods (specific public interface).
 
-**What should I do to use it?**: You should create a JS object which will receive the data by some way and respond to Charting Library requests.
+**Which steps should I follow to start using it?**: You should create a JS object that will receive data by some way and respond to Charting Library requests.
 
-Data caching (history & symbol info) is implemented in Charting Library.
+Data caching (history & symbol info) is implemented in the Charting Library.
 
-When you create an object implementing described interface, just pass it to Library widget constructor through [`datafeed` argument](Widget-Constructor#datafeed).
+When you create an object that implements the described interface simply pass it to Library widget constructor through [`datafeed` argument](Widget-Constructor#datafeed).
 
 ## Methods
 
@@ -32,28 +32,28 @@ When you create an object implementing described interface, just pass it to Libr
 1. `callback`: function(configurationData)
     1. `configurationData`: object (see below)
 
-This call is intended to provide the object filled with configuration data.
-This data affects some of chart behavior aspects so it is called [server-side customization](Customization-Overview#customization-done-through-data-stream).
-Charting Library expects you will call callback and pass your datafeed `configurationData` as an argument.
-Configuration data is an object; for now, following properties are supported:
+This call is intended to provide the object filled with the configuration data.
+This data partially affects the chart behavior and is called [server-side customization](Customization-Overview#customization-done-through-data-stream).
+Charting Library assumes that you will call the callback function and pass your datafeed `configurationData` as an argument.
+Configuration data is an object; for now, the following properties are supported:
 
 #### exchanges
 
 An array of exchange descriptors. Exchange descriptor is an object `{value, name, desc}`. `value` will be passed as `exchange` argument to [searchSymbols](#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback).
 
-`exchanges = []`  leads to exchanges filter absence in Symbol Search list. Use `value = ""` if you want to create wildcard filter (all exchanges).
+`exchanges = []`  leads to the absence of the exchanges filter in Symbol Search list. Use `value = ""` if you wish to include all exchanges.
 
 #### symbols_types
 
 An array of filter descriptors. Filter descriptor is an object `{name, value}`. `value` will be passed as `symbolType` argument to [searchSymbols](#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback).
 
-`symbolsTypes = []`  leads to types filter absence in Symbol Search list. Use `value = ""` if you want to create wildcard filter (all types).
+`symbolsTypes = []`  leads to the absence of filter types in Symbol Search list. Use `value = ""` if you wish to include all filter types.
 
 #### supported_resolutions
 
 An array of supported resolutions. Resolution must be a string. Format is described in another [article](Resolution).
 
-`supported_resolutions = undefined` or `supported_resolutions = []` leads to resolutions widget having its default content.
+`supported_resolutions = undefined` or `supported_resolutions = []` leads to resolution widget including the default content.
 
 Example: `["1", "15", "240", "D", "6M"]` will give you "1 minute, 15 minutes, 4 hours, 1 day, 6 months" in resolution widget.
 
@@ -71,20 +71,20 @@ Set this one to `true` if your datafeed provides server time (unix time). It is 
 
 #### futures_regex
 
-Set it if you want to group futures in the symbol search. This REGEX should divide an instrument name in 2 parts: a root and an expiration.
+Set it if you want to group futures in the symbol search. This REGEX should divide an instrument name into 2 parts: a root and an expiration.
 
-Sample regex: : `/^(.+)([12]!|[FGHJKMNQUVXZ]\d{1,2})$/`. It will be applied to the instruments whose `type` is `futures`.
+Sample regex: : `/^(.+)([12]!|[FGHJKMNQUVXZ]\d{1,2})$/`. It will be applied to the instruments with `futures` as a `type`.
 
 ### searchSymbols(userInput, exchange, symbolType, onResultReadyCallback)
 
-1. `userInput`: string. It is text entered by user in symbol search field
+1. `userInput`: string. It is text entered by user in the symbol search field.
 1. `exchange`: string. The requested exchange (chosen by user). Empty value means no filter was specified.
 1. `symbolType`: string. The requested symbol type: `index`, `stock`, `forex`, etc (chosen by user).
     Empty value means no filter was specified.
 1. `onResultReadyCallback`: function(result)
     1. `result`: array (see below)
 
-This call is intended to provide the list of symbols matching to user's search query. `result` is expected to be something like this:
+This call is intended to provide the list of symbols that match the user's search query. `result` is expected to look like the following:
 
 ```javascript
 [
@@ -110,7 +110,7 @@ If no symbols are found, then callback should be called with an empty array. See
 1. `onSymbolResolvedCallback`: function([SymbolInfo](Symbology#symbolinfo-structure))
 1. `onResolveErrorCallback`: function(reason)
 
-Charting Library will call this function when it need to get [SymbolInfo](Symbology#symbolinfo-structure) by symbol's name.
+Charting Library will call this function when it needs to get [SymbolInfo](Symbology#symbolinfo-structure) by symbol name.
 
 ### getBars(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback, firstDataRequest)
 
@@ -122,22 +122,21 @@ Charting Library will call this function when it need to get [SymbolInfo](Symbol
     1. `bar`: object `{time, close, open, high, low, volume}`
     1. `meta`: object `{noData = true | false, nextTime - unix time}`
 1. `onErrorCallback`: function(reason)
-1. `firstDataRequest`: boolean to identify the first history call for this symbol/resolution.
-    When it is `true` you can ignore `to` (which depends on browser's `Date.now()`) and return bars up to current bar (including it).
+1. `firstDataRequest`: boolean to identify the first call of this method for the particular symbol resolution.
+    When it is set to `true` you can ignore `to` (which depends on browser's `Date.now()`) and return bars up to the latest bar.
 
-This function is called when chart needs a history fragment defined by dates range.
+This function is called when the chart needs a history fragment defined by dates range.
 
-The charting library expects `onHistoryCallback` to be called **just once** after receiving all the requesting history.
-No further calls are expected.
+The charting library assumes `onHistoryCallback` to be called **just once**.
 
-**Important**: `nextTime` is a time of the next bar in the history. It should be set when there is no data in the requested period only.
+**Important**: `nextTime` is a time of the next bar in the history. It should be set only in the event that there is no data in the requested period.
 
-**Important**: `noData` should be set when there is no data in the requested period and earlier only.
+**Important**: `noData` should be set only in the event that there is no data in the requested and earlier period.
 
 **Remark**: `bar.time` is expected to be the amount of milliseconds since Unix epoch start in **UTC** timezone.
 
 **Remark**: `bar.time` for daily bars is expected to be a trading day (not session start day) at 00:00 UTC.
-Charting Library aligns time according to [Session](Symbology#session) from SymbolInfo
+Charting Library adjusts time according to [Session](Symbology#session) from SymbolInfo
 
 **Remark**: `bar.time` for monthly bars is the first trading day of the month without the time part
 
@@ -148,52 +147,51 @@ Charting Library aligns time according to [Session](Symbology#session) from Symb
 1. `onRealtimeCallback`: function(bar)
     1. `bar`: object `{time, close, open, high, low, volume}`
 1. `subscriberUID`: object
-1. `onResetCacheNeededCallback` *(since version 1.7)*: function() to be executed when bars data has changed
+1. `onResetCacheNeededCallback` *(since version 1.7)*: function() to be executed when bar data has changed
 
-Charting Library calls this function when it wants to receive realtime updates for a symbol. Chart expects you will call `onRealtimeCallback` every time you want to update the most recent bar or to append a new one.
+Charting Library calls this function when it wants to receive real-time updates for a symbol. The Library assumes that you will call `onRealtimeCallback` every time you want to update the most recent bar or to add a new one.
 
-**Remark**: When you call `onRealtimeCallback` with bar having time equal to most recent bar's time, the whole last bar is replaced with the `bar` object you've passed into the call.
+**Remark**: When you call `onRealtimeCallback` with bar having time equal to the most recent bar's time then the entire last bar is replaced with the `bar` object you've passed into the call.
 
 Example:
 
 1. The most recent bar is `{1419411578413, 10, 12, 9, 11}`
 1. You call `onRealtimeCallback({1419411578413, 10, 14, 9, 14})`
-1. Library finds out that bar with time `1419411578413` already exists and is the most recent one
-1. Library replaces the whole bar so now the most recent bar is `{1419411578413, 10, 14, 9, 14}`
+1. Library finds out that the bar with the time `1419411578413` already exists and is the most recent one
+1. Library replaces the entire bar making the most recent bar `{1419411578413, 10, 14, 9, 14}`
 
-**Remark 2**: Is it possible either to update the most recent bar or to append a new one with `onRealtimeCallback`.
-You've get an error if you call this function trying to update a bar in history.
+**Remark 2**: Is it possible either to update the most recent bar or to add a new one with `onRealtimeCallback`.
+You'll get an error if you call this function when trying to update a hisorical bar.
 
-**Remark 3**: For now, there is no way to change bars in history after the chart received it.
+**Remark 3**: There is no way to change historcical bars once they've been received by the chart currently.
 
 ### unsubscribeBars(subscriberUID)
 
 1. `subscriberUID`: object
 
-Library calls this function when is doesn't want to receive updates for this subscriber any more. `subscriberUID` will be the same object which Library passed to `subscribeBars` before.
+Charting Library calls this function when it doesn't want to receive updates for this subscriber any more. `subscriberUID` will be the same object that Library passed to `subscribeBars` before.
 
 ### calculateHistoryDepth(resolution, resolutionBack, intervalBack)
 
 *Optional.*
 
-1. `resolution`: requested symbol's resolution
-1. `resolutionBack`: desired history period dimension. Supported values: `D` | `M`
-1. `intervalBack`: amount or `resolutionBack` periods which Library is going to request
+1. `resolution`: requested symbol resolution
+1. `resolutionBack`: time period types. Supported values are: `D` | `M`
+1. `intervalBack`: amount of `resolutionBack` periods that the Charting Library is going to request
 
-Charting Library calls this function when it is going to request some history data to give you an ability to override required history depth.
+Charting Library calls this function when it is going to request some historical data to give you an ability to override the amount of bars requested.
 
-It passes some arguments so you could know how much bars is it going to get. Here are a few examples:
+It passes some arguments so that you are aware of the amount of bars it's going to get. Here are some examples:
 
 * `calculateHistoryDepth("D", "M", 12)` called: the Library is going to request 12 months of daily bars
 * `calculateHistoryDepth("60", "D", 15)` called: the Library is going to request 15 days of hourly bars
 
-This function should return `undefined` if you do not want to override anything.
+This function should return `undefined` if you do not wish to override anything.
 If you do, it should return an object `{resolutionBack, intervalBack}`.
-Properties meaning is similar to respective arguments' one.
 
 Example:
 
-Assume the implementation is
+Let's assume that the implementation is as follows
 
 ```javascript
 Datafeed.prototype.calculateHistoryDepth = function(resolution, resolutionBack, intervalBack) {
@@ -206,7 +204,7 @@ Datafeed.prototype.calculateHistoryDepth = function(resolution, resolutionBack, 
 }
 ```
 
-This means when Charting Library will request the data for `1D` resolution, the history will be 6 months in depth.
+When the Charting Library requests the data for `1D` resolution, the history will be 6 months deep.
 In all other cases the history depth will have the default value.
 
 ### getMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
@@ -219,23 +217,23 @@ In all other cases the history depth will have the default value.
 1. `onDataCallback`: function(array of `mark`s)
 1. `resolution`: string
 
-Library calls this function to get [marks](Marks-On-Bars) for visible bars range.
+The Library calls this function to get [marks](Marks-On-Bars) for visible bars range.
 
-Chart expects you to call `onDataCallback` only once per each `getMarks` call.
+The Library assumes that you will call `onDataCallback` only once per `getMarks` call.
 
-`mark` is an object having following properties:
+`mark` is an object that has the following properties:
 
-* `id`: unique mark id. Will be passed to a [respective callback](Widget-Methods#subscribeevent-callback) when user clicks on a mark
+* `id`: unique mark ID. It will be passed to a [respective callback](Widget-Methods#subscribeevent-callback) when user clicks on a mark
 * `time`: unix time, UTC
 * `color`: `red` | `green` | `blue` | `yellow` | `{ border: '#ff0000', background: '#00ff00' }`
 * `text`: mark popup text. HTML supported
 * `label`: a letter to be printed on a mark. Single character
 * `labelFontColor`: color of a letter on a mark
-* `minSize`: minimal size of mark (diameter, pixels)
+* `minSize`: minimum mark size (diameter, pixels)
 
-A few marks per bar are allowed (for now, maximum is `10`). Marks out of bars are not allowed.
+A few marks per bar are allowed (for now, the maximum is `10`). Marks outside of the bars are not allowed.
 
-**Remark**: This function will be called only if you declared your back-end is [supporting marks](#supports_marks).
+**Remark**: This function will be called only if you confirmed that your back-end is [supporting marks](#supports_marks).
 
 ### getTimescaleMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
 
@@ -247,29 +245,29 @@ A few marks per bar are allowed (for now, maximum is `10`). Marks out of bars ar
 1. `onDataCallback`: function(array of `mark`s)
 1. `resolution`: string
 
-Library calls this function to get timescale marks for visible bars range.
+The Library calls this function to get timescale marks for visible bars range.
 
-Chart expects you to call `onDataCallback` only once per each `getTimescaleMarks` call.
+The Library assumes that you will call `onDataCallback` only once per `getTimescaleMarks` call.
 
-`mark` is an object having following properties:
+`mark` is an object that has the following properties:
 
-* `id`: unique mark id. Will be passed to a [respective callback](Widget-Methods#subscribeevent-callback) when user clicks on a mark
+* `id`: unique mark ID. Will be passed to a [respective callback](Widget-Methods#subscribeevent-callback) when user clicks on a mark
 * `time`: unix time, UTC
 * `color`: `red` | `green` | `blue` | `yellow` | ... | `#000000`
 * `label`: a letter to be printed on a mark. Single character
 * `tooltip`: array of text strings. Each element of the array is a new text line of a tooltip.
 
-Only one mark per bar is allowed. Marks out of bars are not allowed.
+Only one mark per bar is allowed. Marks outside of the bars are not allowed.
 
-**Remark**: This function will be called only if you declared your back-end is [supporting marks](#supports_timescale_marks).
+**Remark**: This function will be called only if you confirmed that your back-end is [supporting marks](#supports_timescale_marks).
 
 ### getServerTime(callback)
 
 1. `callback`: function(unixTime)
 
-This function is called if configuration flag `supports_time` is set to `true` when chart needs to know the server time.
+This function is called if the configuration flag `supports_time` is set to `true` when the Charting Library needs to know the server time.
 
-The charting library expects callback to be called once.
+The Charting Library assumes that the callback is called once.
 
 The time is provided without milliseconds.
 
@@ -288,21 +286,21 @@ Example: `1445324591`.
     1. `data`: [symbol quote data](Quotes#symbol-quote-data)
 1. `onErrorCallback`: function(reason)
 
-This function is called when chart needs quotes data. The charting library expects onDataCallback to be called once when all requesting data received. No further calls are expected.
+This function is called when the Charting Library needs quote data. The charting library assumes that `onDataCallback` is called once when all the requested data is received.
 
 ### subscribeQuotes(symbols, fastSymbols, onRealtimeCallback, listenerGUID)
 
 :chart: *[Trading Terminal](Trading-Terminal) specific.*
 
-1. `symbols`: array of symbols to be updated rarely (suggested frequency is once per minute). These symbols are in the watch list but they are not visible at the moment.
-1. `fastSymbols`: array of symbols to be updated quite frequently (once in 10 seconds or more often)
+1. `symbols`: array of symbols that should be updated rarely (once per minute). These symbols are included in the watchlist but they are not visible at the moment.
+1. `fastSymbols`: array of symbols that should be updated frequently (once every 10 seconds or more often)
 1. `onRealtimeCallback`: function(array of `data`)
     1. `data`: [symbol quote data](Quotes#symbol-quote-data)
 1. `listenerGUID`: unique identifier of the listener
 
-Trading Terminal calls this function when it wants to receive realtime quotes for a symbol.
+Trading Terminal calls this function when it wants to receive real-time quotes for a symbol.
 
-Chart expects you will call `onRealtimeCallback` every time you want to update quotes.
+The Charting Library assumes that you will call `onRealtimeCallback` every time you want to update the quotes.
 
 ### unsubscribeQuotes(listenerGUID)
 
@@ -310,9 +308,9 @@ Chart expects you will call `onRealtimeCallback` every time you want to update q
 
 1. `listenerGUID`: unique identifier of the listener
 
-Trading Terminal calls this function when is doesn't want to receive updates for this listener any more.
+Trading Terminal calls this function when it doesn't want to receive updates for this listener anymore.
 
-`listenerGUID` will be the same object which Library passed to `subscribeQuotes` before.
+`listenerGUID` will be the same object that the Library passed to `subscribeQuotes` before.
 
 ### subscribeDepth(symbolInfo, callback): string
 
@@ -325,9 +323,9 @@ Trading Terminal calls this function when is doesn't want to receive updates for
         * `asks`: Array of `{price, volume}`
         * `bids`: Array of `{price, volume}`
 
-Trading Terminal calls this function when it wants to receive realtime level 2 (DOM) for a symbol. Chart expects you will call `callback` every time you want to update depth data.
+Trading Terminal calls this function when it wants to receive real-time level 2 (DOM) for a symbol. The Charting Library assumes that you will call the `callback` every time you want to update DOM data.
 
-This method should return unique identified (`subscriberUID`) that will be used to unsubscribe data.
+This method should return a unique identifier (`subscriberUID`) that will be used to unsubscribe from the data.
 
 ### unsubscribeDepth(subscriberUID)
 
@@ -335,6 +333,6 @@ This method should return unique identified (`subscriberUID`) that will be used 
 
 1. `subscriberUID`: String
 
-Trading Terminal calls this function when is doesn't want to receive updates for this listener any more.
+Trading Terminal calls this function when it doesn't want to receive updates for this listener anymore.
 
-`subscriberUID` will be the same object which you have returned from `subscribeDepth`.
+`subscriberUID` will be the same object that was returned from `subscribeDepth`.

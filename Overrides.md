@@ -1,7 +1,7 @@
-This topic contains chart properties description. These properties are treated
-as customizable ones. Other properties customization is not supported.
+This Charting Library section includes the chart property description. These properties are treated
+as customizable ones. The customizaion of other properties is not supported.
 
-This file format:
+The properties are listed in the following format:
 
 `<property_path>: <default Charting Library value>`
 
@@ -21,7 +21,7 @@ paneProperties.crossHairProperties.color: "#989898"
 paneProperties.crossHairProperties.width: 1
 paneProperties.crossHairProperties.style: LINESTYLE_DASHED
 
-// Margins (percent). Used for auto scaling.
+// Margins (percentage). Used for auto scaling.
 paneProperties.topMargin: 5
 paneProperties.bottomMargin: 5
 
@@ -123,7 +123,7 @@ mainSeriesProperties.haStyle.borderDownColor: "#5b1a13"
 mainSeriesProperties.haStyle.wickColor: "#737375"
 mainSeriesProperties.haStyle.barColorsOnPrevClose: false
 
-// Bars styles
+// Bar styles
 mainSeriesProperties.barStyle.upColor: "#6ba583"
 mainSeriesProperties.barStyle.downColor: "#d75442"
 mainSeriesProperties.barStyle.barColorsOnPrevClose: false

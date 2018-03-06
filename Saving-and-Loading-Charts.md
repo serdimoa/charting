@@ -1,34 +1,34 @@
-Charting Library supports saving/loading charts and study templates on 2 levels of abstraction:
+The Charting Library supports saving/loading charts and study templates using 2 levels of API:
 
-1. **Low-Level**: save/load functionality is present by widget's `save()` / `load()` [methods](Widget-Methods#savecallback) and `createStudyTemplate()` / `applyStudyTemplate()` [methods](Chart-Methods#createstudytemplateoptions).
-    One who uses them should take care of physical storage on his own.
-    But you can save those JSONs where you want to - in example, you may embed them to your saved pages or user's working area and so on.
+1. **Low-Level**: save/load functionality is enabled by widget's `save()` / `load()` [methods](Widget-Methods#savecallback) and `createStudyTemplate()` / `applyStudyTemplate()` [methods](Chart-Methods#createstudytemplateoptions).
+    One should take of the storage on the server.
+    You are able to save the JSONs where you wish. For example, you may embed them to your saved pages or user's working area etc.
 
-1. **High-Level**: Charting Library is able to save / load charts and study templates from storage you'll point to.
-    We created a tiny storage sample with Python and PostgreSQL and put it on [our GitHub](https://github.com/tradingview/saveload_backend).
-    You may grab it and run on your own server so you'll have control over all your users' saved data.
+1. **High-Level**: Charting Library is able to save / load charts and study templates from the storage that you'll point it to.
+    We created a tiny storage sample with Python and PostgreSQL that can be found in [our GitHub](https://github.com/tradingview/saveload_backend).
+    You can use it and run on your own server so that you'll be able to have control over all your users' saved data.
 
 ## Using High-Level Save/Load
 
-Here are a few steps for those who want to have their own charts storage:
+Here are a few steps for those who want to have their own chart storage:
 
-1. Clone our repo to your host
-1. Run the data service or use our demo service.Here are a short todo list for those who's not familiar with Django.
+1. Clone our repository to your host
+1. Run the data service or use our demo service. Here is a short to-do list for anyone who is not familiar with Django.
     1. Install Python 3.x and Pip.
     1. Install PostgreSQL or some other Django-friendly database engine.
-    1. go to you charts storage folder and run `pip install -r requirements.txt`
-    1. go to charting_library_charts folder and set up your database connection in settings.py (see `DATABASES` @ line #12). Please remember to create appropriate database in your PostgreSQL.
-    1. run `python manage.py migrate` . This will create database schema without any data.
-    1. run `python manage.py runserver` to run TEST instance of your database. don't use the command above on production environment. Use some other stuff (i.e., Gunicorn)
-1. Set up your Charting Library page: set `charts_storage_url = url-of-your-charts-storage`, also set `client_id` and `user_id` (see details below) in widget's .ctor.
+    1. Go to you chart storage folder and run `pip install -r requirements.txt`
+    1. Go to charting_library_charts folder and set up your database connection in settings.py (see `DATABASES` @ line #12). Please remember to create the appropriate database in your PostgreSQL.
+    1. Run `python manage.py migrate` . This will create the database schema without any data.
+    1. Run `python manage.py runserver` to run a TEST instance of your database. Don't use the command above in production environment. Use some other programm (i.e., Gunicorn).
+1. Set up your Charting Library page: set `charts_storage_url = url-of-your-charts-storage`, also set `client_id` and `user_id` (see details below) in the widget constructor.
 1. Enjoy!
 
-**Remark**: Manual filling/editing database is not the desired usage for this stuff. Please avoid this because you may hurt Django.
+**Remark**: Manual database filling/editing is not the intended usage. Please avoid doing this as you you may hurt the Django infrastructure.
 
 ## Developing your own backend
 
 * Charting Library sends HTTP/HTTPS commands to `charts_storage_url/charts_storage_api_version/charts?client=client_id&user=user_id`. `charts_storage_url`, `charts_storage_api_version`, `client_id` and `user_id` are the arguments of the [widget constructor](Widget-Constructor).
-* You should implement processing of 4 requests: save chart / load chart / delete chart / list charts.
+* You should implement the processing of 4 requests: save chart / load chart / delete chart / list charts.
 
 ### LIST CHARTS
 
@@ -94,26 +94,26 @@ RESPONSE: JSON Object
 
 ## Using Demo Charts and Study Templates Storage
 
-We're running demo charts storage service to let you try save/load as fast as you've got new Library's build.
-This storage URL is <http://saveload.tradingview.com>. It's just a demo so it is provided as-is.
+We're running a demo chart storage service to let you save/load charts as soon as you build your Charting Library.
+Here is the link <http://saveload.tradingview.com>. Note that it's provided as-is since it's a demo.
 
-We do not guarantee its stability. Also, we drop all the data from this storage now and again.
+We do not guarantee its stability. Also, note that we delete the data in the storage on a regular basis.
 
-## Managing Saved Charts Access
+## Managing Access to Saved Charts
 
-You should take care of which charts your users will be able to see and load.
-Basically, user can see/load charts having the same `client_id` and `user_id` the user has.
+You are responsible for the charts that your users are able to see and load.
+A user can see/load charts that have the same `client_id` and `user_id` that the user has.
 `client_id` is an identifier of user's group.
-It is intended to cover the case when you have few groups of users (i.e, when you have few sites) using the same charts storage.
-So the common practice is to set `client_id = your-site's-URL`. It's up to you however.
+The intended use is when you have a few groups of users or when you have a few sites that use the same chart storage.
+So the common practice is to set `client_id = your-site's-URL`. It's up to you to decide.
 
-`user_id` is expected to be user's id in context of your `client_id` group.
-You can either set is to each user individually (to make each user to have his own private charts storage) or set it the same for all users or any users group to create a kind of public storage.
+`user_id` is a unique identfier of a user. Users ID belongs to a particular `client_id` group.
+You can either set it for each user individually (private storage for each user) or set it for all users or user groups (public storage).
 
 Here are a few examples:
 
 `client_id`|`user_id`|Effect
 ---|---|---
-your site url or anything else|unique user id|Each user has his private charts storage other users can't see.
-your site url or anything else|the same value for all users|Each user can see and load each of saved charts.
-your site url or anything else|unique user id for registered users and some constant for all who's anonymous|Each registered user has his private charts storage other users can't see. All anonymous users have one shared storage.
+Your site URL or other link|Unique user ID|Each user has a private chart storage that other users can't see.
+Your site URL or other link|The same value for all users|Each user can see and load any saved chart.
+Your site URL or other link|Unique user ID for registered users along with a separate setting for anonymous users|Each registered user has a private chart storage that other users can't see. All anonymous users share a single storage.

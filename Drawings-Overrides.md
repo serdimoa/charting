@@ -1,4 +1,4 @@
-Here is a full list of drawings overrides with default values. You can change default values using `overrides` argument of the [widget constructor](Widget-Constructor#overrides). At the bottom of the list you will find a list of constants and abbreviations used in the values.
+The complete list of drawings overrides with default values is presented here. You can change the default values using the `overrides` argument of the [widget constructor](Widget-Constructor#overrides). At the bottom of this list you will find a list of constants and abbreviations used in the values.
 
 ```javascript
 linetoolicon: {
@@ -962,7 +962,7 @@ linetoolvisibilities: {
 
 ### Constants
 
-These constants are used in the drawings defaults. You cannot use their names directly. Use the values instead.
+These constants are used in the default properties of drawings. You cannot use their names directly. Use their values instead.
 
 ```javascript
 LINESTYLE_SOLID = 0;

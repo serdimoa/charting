@@ -1,4 +1,4 @@
-Quote is a short set of data describing trades briefly. Charting Library supports watch-lists (in **Trading Terminal** configuration) and uses quotes to show some info about symbols.
+Quote is a short set of data that describes the current price. Charting Library supports watchlists (in **Trading Terminal** configuration) and uses quotes to display symbol information.
 
 Charting Library uses the same data structures for quotes in both [JS API](JS Api) and [UDF](UDF). Here is the description of response object:
 
@@ -6,13 +6,13 @@ Charting Library uses the same data structures for quotes in both [JS API](JS Ap
 
 * `s`: Status code for symbol. Expected values: `ok` | `error`
 * `n`: Symbol name. This value must be **exactly the same** as in the request
-* `v`: object, symbol quotes itself
-  * `ch`: price change (usually counts from day's open price)
-  * `chp`: price change percent
-  * `short_name`: symbol's short name
-  * `exchange`: exchange name.
-  * `description`: short description of symbol.
-  * `lp`: last deal price
+* `v`: object, symbol quote itself
+  * `ch`: price change (usually counts as an open price on a particlar day)
+  * `chp`: price change percentage
+  * `short_name`: short name of the symbol
+  * `exchange`: the exchange name
+  * `description`: short description of the symbol
+  * `lp`: last traded price
   * `ask`: ask price
   * `bid`: bid price
   * `spread`: spread
