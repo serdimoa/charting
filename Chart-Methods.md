@@ -160,7 +160,6 @@ Executes an action according to its id.
 * `drawingToolbarAction`
 * `magnetAction`
 * `stayInDrawingModeAction`
-* `lockDrawingsAction`
 * `hideAllDrawingsAction`
 * `hideAllMarks`
 * `showCountdown`
@@ -188,7 +187,7 @@ widget.chart().executeActionById("drawingToolbarAction"); // hides or shows the 
 
 1. `actionId`: string
 
-Get a checkable action (e.g. `lockDrawingsAction`, `stayInDrawingModeAction`, `magnetAction`) state according to its ID (see ids of actions above)
+Get a checkable action (e.g. `stayInDrawingModeAction`, `magnetAction`) state according to its ID (see ids of actions above)
 
 ### refreshMarks()
 

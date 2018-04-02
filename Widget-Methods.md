@@ -28,6 +28,7 @@ widget.onChartReady(function() {
   * [selectLineTool(drawingId)](#selectlinetooldrawingid)
   * [selectedLineTool()](#selectedlinetool)
   * [takeScreenshot()](#takescreenshot)
+  * [lockAllDrawingTools](#lockAllDrawingTools)
 * [Saving/Loading Charts](#savingloading-charts)
   * [save(callback)](#savecallback)
   * [load(state)](#loadstate)
@@ -216,6 +217,10 @@ Returns an [identifier](Shapes-and-Overrides) of the selected drawing or cursor 
 This method creates a snapshot of the chart and uploads it to the server.
 When it is done the [onScreenshotReady](#subscribeevent-callback) callback function is called.
 It includes the URL to the snapshot.
+
+### lockAllDrawingTools()
+
+This method returns a [WatchedValue](WatchedValue) object that can be used to read/set/watch the state of Lock All Drawing Tools button.
 
 ## Saving/Loading Charts
 
