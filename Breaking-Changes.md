@@ -9,7 +9,7 @@ Here is the list of breaking changes:
 ## Version 1.13
 
 - Action `takeScreenshot` from [executeActionById](Chart-Methods#executeactionbyidactionid) method is removed. Use [takeScreenshot](Widget-Methods#takescreenshot) method instead.
-- Action `lockDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) method are removed. Use [lockAllDrawingTools](Widget-Methods#lockAllDrawingTools) instead.
+- Action `lockDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) method are removed. Use [lockAllDrawingTools](Widget-Methods#lockalldrawingtools) instead.
 - Featureset `caption_buttons_text_if_possible` is enabled by default.
 
 ## Version 1.12

@@ -28,7 +28,7 @@ widget.onChartReady(function() {
   * [selectLineTool(drawingId)](#selectlinetooldrawingid)
   * [selectedLineTool()](#selectedlinetool)
   * [takeScreenshot()](#takescreenshot)
-  * [lockAllDrawingTools](#lockAllDrawingTools)
+  * [lockAllDrawingTools](#lockalldrawingtools)
 * [Saving/Loading Charts](#savingloading-charts)
   * [save(callback)](#savecallback)
   * [load(state)](#loadstate)
