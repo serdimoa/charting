@@ -1,6 +1,6 @@
-:chart: All content on this page is relevant for [Trading Terminal](Trading-Terminal) only.
+:chart: All content on this page applies to [Trading Terminal](Trading-Terminal) only.
 
-**NOTE:** If you use TypeScript - you can import this constants/interfaces/types from `broker-api.d.ts` file.
+**NOTE:** If you use TypeScript - you can import these constants/interfaces/types from the `broker-api.d.ts` file.
 
 ## Broker Configuration
 
@@ -10,13 +10,13 @@ This is an object that should be passed in the constructor of the Trading Termin
 
 * `supportReversePosition`
 
-    Broker supports reverse of a position.
-    If it is not supported by broker, Chart will have the reverse button, but it will place a reverse order.
+    Broker supports reversing of a position.
+    If it is not supported by broker, Chart will have the reverse button, but it will place a reversing order.
 
 * `supportClosePosition`
 
-    Broker supports close of a position.
-    If it is not supported by broker, Chart will have the close button, but it will place a close order.
+    Broker supports closing of a position.
+    If it is not supported by broker, Chart will have the close button, but it will place a closing order.
 
 * `supportReducePosition`
 
@@ -25,22 +25,22 @@ This is an object that should be passed in the constructor of the Trading Termin
 * `supportPLUpdate`
 
     Broker provides PL for a position. If the broker calculates profit/loss by itself it should call [plUpdate](Trading-Host#plupdatepositionid-pl) as soon as PL is changed.
-    Otherwise Chart will calculate PL as a difference between current trade and an average price of the position.
+    Otherwise Chart will calculate PL as a difference between the current trade and an average price of the position.
 
 * `supportOrderBrackets`
 
     Broker supports brackets (take profit and stop loss) for orders.
-    If this flag is `true` the Chart will display additional fields in the order ticket and Modify button on a chart and in the Account Manager.
+    If this flag is set to `true` the Chart will display additional fields in the order ticket and Modify button on a chart and in the Account Manager.
 
 * `supportPositionBrackets`
 
     Broker supports brackets (take profit and stop loss orders) for positions.
-    If this flag is `true` the Chart will display an Edit button for positions and add `Edit position...` to the context menu of a position.
+    If this flag is set to `true` the Chart will display an Edit button for positions and add `Edit position...` to the context menu of a position.
 
 * `supportTradeBrackets`
 
     Broker supports brackets for trades (take profit and stop loss orders).
-    If this flag is `true` the Chart will display an Edit button for trades (individual positions) and add `Edit position...` to the context menu of a trade.
+    If this flag is set to `true` the Chart will display an Edit button for trades (individual positions) and add `Edit position...` to the context menu of a trade.
 
 * `supportTrades`
 
@@ -57,7 +57,7 @@ This is an object that should be passed in the constructor of the Trading Termin
 
 * `supportMultiposition`
 
-    Supporting multiposition prevents creating default implementation for reverse position.
+    Supporting multiposition prevents creating the default implementation for a reversing position.
 
 * `showQuantityInsteadOfAmount`
 
@@ -73,16 +73,16 @@ This is an object that should be passed in the constructor of the Trading Termin
 
 * `supportMarketBrackets`
 
-    Using this flag you can disable brackets for market orders. By default it is enabled.
+    Using this flag you can disable brackets for market orders. It is enabled by default.
 
 * `supportModifyDuration`
 
-    Using this flag you can enable modification of the duration of the existing order. By default it is disabled.
+    Using this flag you can enable modification of the duration of the existing order. It is disabled by default.
 
 ### durations: array of objects
 
 List of expiration options of orders. It is optional. Do not set it if you don't want the durations to be displayed in the order ticket.
-The objects have two kes: `{ name, value }`.
+The objects have two keys: `{ name, value }`.
 
 Example:
 
@@ -165,7 +165,7 @@ Describes a single action to put it into a dropdown or a context menu. It is a s
 
 ## OrderType
 
-Number constants to describe an order status.
+Constants describing an order status.
 
 ```javascript
 OrderType.Limit = 1
@@ -176,7 +176,7 @@ OrderType.StopLimit = 4
 
 ## Side
 
-Number constants to describe an order/execution side.
+Constants describing an order/execution side.
 
 ```javascript
 Side.Buy = 1
@@ -185,7 +185,7 @@ Side.Sell = -1
 
 ## ParentType
 
-Number constants to describe a bracket owner.
+Constants describing a bracket order.
 
 ```javascript
 ParentType.Order = 1
@@ -194,7 +194,7 @@ ParentType.Position = 2
 
 ## OrderStatus
 
-Number constants to describe an order status.
+Constants describing an order status.
 
 ```javascript
 OrderStatus.Canceled = 1 // order is canceled
@@ -209,12 +209,12 @@ OrderStatus.Working = 6 // order is created but not executed yet
 
 Duration or expiration of an order.
 
-* `type`: string identifier from the list that you passes to [durations](#orderduration)
+* `type`: string identifier from the list that you pass to [durations](#orderduration)
 * `datetime`: number
 
 ## DOMEObject
 
-Object that describes a single DOME response.
+Object that describes a single DOM response.
 
 * `snapshot`: Boolean
 
@@ -225,14 +225,14 @@ Object that describes a single DOME response.
 
 ## DOMELevel
 
-Single DOME price level object.
+Single DOM price level object.
 
 * `price`: double
 * `volume`: double
 
 ## OrderTicketFocusControl
 
-Number constants to set focus when you open standard Order dialog or Position dialog.
+Constants that are used to set the focus when you open standard Order dialog or Position dialog.
 
 ```javascript
 OrderTicketFocusControl.StopLoss = 1 // focus stop loss control
@@ -247,4 +247,4 @@ OrderTicketFocusControl.TakeProfit = 3 // focus take profit control
 
 ## Formatter
 
-An object with `format` method that can be used to format number to string.
+An object with `format` method that can be used to format the number to a string.

@@ -69,7 +69,7 @@ When the event is fired it will provide the following arguments:
 1. `interval`: new interval
 1. `timeframeParameters`: object with the only field `timeframe`.
 
-    It contains a timeframe if the interval is changed as a result of a user click on a timeframe panel.
+    It contains a timeframe if the interval is changed when the user clicks on the timeframe panel.
 
     Otherwise `timeframe` is `undefined` and you can change it to display a certain range of bars. Valid timeframe is a number with letter `D` for days and `M` for months.
 
@@ -104,7 +104,7 @@ The Charting Library will call the callback function every time the crosshair po
     * `from`, `to`: unix timestamps, UTC
 1. `callback`: `function()`. The Library will call it after it's done with the viewport setup.
 
-Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the view port.
+Forces the chart to adjust its parameters (scroll, scale) to make the selected time period fit the widget.
 Neither `from`, nor `to` can be set to a future date. This method was introduced in version `1.2`.
 
 ### setSymbol(symbol, callback)
@@ -112,7 +112,7 @@ Neither `from`, nor `to` can be set to a future date. This method was introduced
 1. `symbol`: string
 1. `callback`: function()
 
-Makes the chart change its symbol. Callback function is called once new symbol's data is loaded.
+Makes the chart change its symbol. Callback function is called once the data for the new symbol is loaded.
 
 ### setResolution(resolution, callback)
 
@@ -129,13 +129,13 @@ Before calling this function you should call [onResetCacheNeededCallback](JS-Api
 
 ### executeActionById(actionId)
 
-*Since version 1.3.*
+*Starting from version 1.3.*
 
 1. `actionId`: string
 
 Executes an action according to its id.
 
-**Showing a dialog:**
+**Shows a dialog:**
 
 * `chartProperties`
 * `compareOrAdd`
@@ -183,19 +183,19 @@ widget.chart().executeActionById("drawingToolbarAction"); // hides or shows the 
 
 ### getCheckableActionState(actionId)
 
-*Since version 1.7.*
+*Starting from version 1.7.*
 
 1. `actionId`: string
 
-Get a checkable action (e.g. `stayInDrawingModeAction`, `magnetAction`) state according to its ID (see ids of actions above)
+Get a checkable action state (e.g. `stayInDrawingModeAction`, `magnetAction`) according to its ID (see the IDs of actions above)
 
 ### refreshMarks()
 
-Calling this method makes the Library request visible marks once again.
+When you call this method the Library requests visible marks once again.
 
 ### clearMarks()
 
-Calling this method makes the Library remove all visible marks.
+When you call this method the Library removes all visible marks.
 
 ### setChartType(type)
 
@@ -222,7 +222,7 @@ STYLE_PB* = 7;
 
 ### closePopupsAndDialogs()
 
-Calling this method closes a context menu or a dialog if applicable.
+When you call this method a context menu or a dialog closes (if applicable).
 
 ### setTimezone(timezone)
 
@@ -258,7 +258,7 @@ Returns an array of all created shape objects. Each object has the following fie
 
 Sets visibility of an entity with a passed ID.
 
-**Deprecated**: Use a shape/study API instead (`getShapeById`/`getStudyById`). Will be removed in future releases.
+**Deprecated**: Use a shape/study API instead (`getShapeById`/`getStudyById`). This is going to be removed in future releases.
 
 ### createStudy(name, forceOverlay, lock, inputs, callback, overrides, options)
 
@@ -267,21 +267,21 @@ Sets visibility of an entity with a passed ID.
 1. `lock`: boolean, shows whether a user will be able to remove/change/hide the study or not
 1. `inputs`: (starting from version `1.2`) an array of study inputs. This array is expected to contain input values in the same order as in the study properties dialog.
 1. `callback`: function(`entityId`)
-1. `overrides`: (starting from version `1.2`) an object [containing properties](Studies-Overrides) you'd like to set for your new study. Note: you should not specify study name: start a property path with a plot name.
+1. `overrides`: (starting from version `1.2`) an object [containing properties](Studies-Overrides) you'd like to set for your new study. Note that you should not specify the study name. Start a property path with a plot name.
 1. `options`: object with the only possible key `checkLimit`. If it is `true` then study limit dialog will be shown when the limit is exceeded.
 
 **Starting from v 1.12 the function returns the result immediately. Callback is kept to maintain compatibility.**
 
-Creates a study on the main symbol. Examples:
+Creates a study on the main symbol. Here are the examples:
 
 * `createStudy('MACD', false, false, [14, 30, "close", 9])`
 * `createStudy('Moving Average Exponential', false, false, [26])`
 * `createStudy('Stochastic', false, false, [26], null, {"%d.color" : "#FF0000"})`
 * `chart.createStudy('Moving Average', false, false, [26], null, {'Plot.linewidth': 10})`
 
-**Remark**: `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values are: `["close", "high", "low", "open"]`.
+**Remark**: The `Compare` study has 2 inputs: `[dataSource, symbol]`. Supported `dataSource` values are: `["close", "high", "low", "open"]`.
 
-**Remark 2**: You use `Overlay` study when you choose to `Add` series on the chart. This study has the single input -- `symbol`. Here is an example of adding a symbol:
+**Remark 2**: You use `Overlay` study when you choose to `Add` series on the chart. This study has a single input -- `symbol`. Here is an example of adding a symbol:
 
 ```javascript
     widget.chart().createStudy('Overlay', false, false, ['AAPL']);
@@ -304,7 +304,7 @@ Returns an object with the following methods that allows you to interact with th
 1. `getInputsInfo()` - returns the information about all the inputs.
 
     Returned value is an array of objects with the following fields:
-    * `id` - input id of the study
+    * `id` - input ID of the study
     * `name` - name of the input
     * `type` - type of the input
     * `localizedName` - name of the input translated to the current language
@@ -312,11 +312,11 @@ Returns an object with the following methods that allows you to interact with th
 1. `getInputValues()` - returns values of study inputs.
 
     Returned value is an array of objects (`StudyInputValue`) with the following fields:
-    * `id` - input id of the study
+    * `id` - input ID of the study
     * `value` - value of the input
-1. `setInputValues(inputs)` - assigns input values to a study.
+1. `setInputValues(inputs)` - sets input values for a study.
     `inputs` should be an array of `StudyInputValue` objects (see above).
-    It may contain only some of the inputs that you want to change.
+    It may contain only some of the inputs that you wish to change.
 
 1. `mergeUp()` - merges the study up (if possible)
 1. `mergeDown()` - merges the study down (if possible)
@@ -337,7 +337,7 @@ Returns an object with the following methods that allows you to interact with th
     * `price`: If you specify `price`, then the shape will be placed at the same price level.
         If not, then the shape will be placed close to the bar according the `channel` value.
     * `channel`: If the price is not set then `channel` value defines where the shape is placed relative to the bar. Possible values are `open`, `high`, `low`, `close`.
-        If no channel is specified, 'open' is a default value.
+        If no channel is specified then 'open' is a default value.
 1. `options`: object `{shape, [text], [lock], [overrides]}`
     * `shape` could be one of the folling: `arrow_up`, `arrow_down`, `flag`, `vertical_line`, `horizontal_line`.
         `flag` is the default value.
@@ -354,7 +354,7 @@ Returns an object with the following methods that allows you to interact with th
 
 The function returns `entityId` - unique ID of the shape if the creation was successful and `null` if it wasn't.
 
-This call creates a shape at a specific point on the chart provided that its within the main series area.
+This call creates a shape at a specific point on the chart provided that it's within the main series area.
 
 ### createMultipointShape(points, options)
 
@@ -381,11 +381,11 @@ The function returns `entityId` - unique ID of the shape if the creation was suc
 
 Check out [Shapes and Overrides](Shapes-and-Overrides) for more information.
 
-This call creates a shape at a specific point on the chart provided that its within the main series area.
+This call creates a shape at a specific point on the chart provided that it's within the main series area.
 
 ### getShapeById(entityId)
 
-1. `entityId`: object. Value that is returned when a shape is created via API
+1. `entityId`: object. The value that is returned when a shape is created via API
 
 Returns an object with the following methods that allows you to interact with the study:
 
@@ -545,7 +545,7 @@ Text|String|String|""
 Tooltip|String|String|""
 Quantity|String|String|""
 
-**Connecting (horizontal) line properties**:
+**Horizontal line properties**:
 
 Property|Type|Supported Values|Default Value
 ---|---|---|---

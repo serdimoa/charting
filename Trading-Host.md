@@ -1,6 +1,6 @@
-:chart: All content on this page is relevant for [Trading Terminal](Trading-Terminal) only.
+:chart: All content on this page applies to the [Trading Terminal](Trading-Terminal) only.
 
-Trading Host is API for interaction between [Broker API](Broker-API) and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts with your trading logic. In terms of `JS`, it is an `object` with a set of functions. Here is a list of Hosts's **methods**.
+Trading Host is an API for interaction between [Broker API](Broker-API) and the Chart Trading Subsystem. Its main purpose is to exchange information between our charts and your trading adapter. In terms of `JS`, it is an `object` with a set of functions. Here is the list of Hosts's **methods**.
 
 ## Commands
 
@@ -53,7 +53,7 @@ Shows a default edit brackets dialog and executes handler if MODIFY is pressed.
 
 ### activateBottomWidget : Promise
 
-Opens bottom panel and switches tab to Trading.
+Opens the bottom panel and switches the tab to Trading.
 
 ### showTradingProperties()
 
@@ -77,7 +77,7 @@ Returns a default [Formatter](Trading-Objects-and-Constants#formatter) formatter
 
 ### factory
 
-`factory` is an object property. Its members are described below.
+`factory` is an object property. Its functions are described below.
 
 ### factory.createDelegate
 
@@ -109,11 +109,11 @@ Returns if orders can be sent to the broker without showing the order ticket.
 
 Returned object properties:
 
-1. value - use it to get current value. It returns Promise.
+1. value - use it to get the current value. It returns Promise.
 1. setValue - use it to set new value
 1. changed : [Subscription](Subscription)
 
-It is to synchronize quantity in Trading Floating Panel and in the dialogs.
+It is to synchronize quantity in the Floating Trading Panel and in the dialogs.
 
 ### setButtonDropdownActions(actions)
 
@@ -137,7 +137,7 @@ You can add/remove default action from the result using `options`:
 
 ## Data Updates
 
-Using of these methods is required to notify the chart that it needs to update information.
+The usage of these methods is required to notify the chart that it needs to update information.
 
 ### orderUpdate([order](Trading-Objects-and-Constants#order))
 
@@ -145,7 +145,7 @@ Call this method when an order is added or changed.
 
 ### orderPartialUpdate([order](Trading-Objects-and-Constants#order))
 
-Call this method when an order is not changed, but fields that you added to the order object to display in the Account Manager are changed.
+Call this method when an order is not changed, but the fields that you added to the order object to display in the Account Manager are changed.
 It should be used only if you want to display custom fields in the [Account Manager](Account-Manager).
 
 ### positionUpdate ([position](Trading-Objects-and-Constants#position))
@@ -163,7 +163,7 @@ Call this method when an execution is added.
 
 ### fullUpdate()
 
-Call this method when an data is invalidated. For example, user account has been changed.
+Call this method when all data has been changed. For example, user account has been changed.
 
 ### plUpdate(positionId, pl)
 

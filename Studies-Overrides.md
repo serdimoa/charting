@@ -1,5 +1,5 @@
 You can set the default style along with the input values for newly created indicators using the `studies_overrides` parameter.
-Its value is expected to be an object where key is a path to property being changed and value is the new value for it.
+Its value is expected to be an object where key is a path to a property that is going to be changed while value is the new value for it.
 
 Example:
 
@@ -17,21 +17,21 @@ studies_overrides: {
 }
 ```
 
-In the example above, in example, all created Bollinger Bands will have upper line width = 7 (unless you create it through API and have specified another value for this line).
+In the example above, all created Bollinger Bands will have upper line width set to 7 (unless you create it through an API and specify a different value).
 
-## How to set study name
+## Setting the study name
 
-You should use studies names as-they-are in the Insert Study dialog, but in lower case.
+You should use the names of the studies in the Insert Study dialog as they are but using lower case letters.
 
-So if you want to override default EMA's length, try using `moving average exponential.length`.
+If you wish to override default EMA's length, try using `moving average exponential.length`.
 
-The same principle works for inputs names: use names as you can see them in Study Properties dialog (use lower case also).
+The same logic applies to input names: use names as you see them in the Study Properties dialog (use lower case letters).
 
 Example: `stochastic.smooth d`.
 
 ### Compare
 
-You can customize new series added via `Compare`.
+You can customize new series that are added via `Compare`.
 
 Use `compare.plot` to customize the line and `compare.source` to change the price source:
 
@@ -42,7 +42,7 @@ Use `compare.plot` to customize the line and `compare.source` to change the pric
 
 ### Overlay
 
-Since 1.12 to customize `Overlay` you may use the following properties:
+Starting from V 1.12 you may use the following properties to customize `Overlay`:
 
 ```javascript
 Overlay.style: (bars = 0, candles = 1, line = 2, area = 3, heiken ashi = 8, hollow candles = 9)
@@ -88,17 +88,17 @@ Overlay.areaStyle.priceSource: open/high/low/close
 
 ## Syntax
 
-Property path is a set of lower-case identifiers splitted with dot (`.`). Path formats are described below.
+Property path is a set of lower case identifiers splitted with a dot (`.`). Path formats are described below.
 
-**Remark**: If a plot/band/area/input name is the same you can get an error.
+**Remark**: You can get an error if a plot/band/area/input name is the same .
 In this case you can specify an exact destination that you want to change by adding `:plot`, `:band`, `:area` or `:input` to the path. (e.g. `short:plot.color`)
 
 ### Study input
 
 Format: `indicator_name.input_name`
 
-* **indicator_name**: use name as you can see it in `Indicators` dialog.
-* **input_name**: use name as you can see it in indicator's properties dialog (for example, `show ma`)
+* **indicator_name**: use the name as you see it in the `Indicators` dialog.
+* **input_name**: use the name as you see it in the indicator's properties dialog (for example, `show ma`)
 
 Examples: `volume.show ma`, `bollinger bands.length`
 
@@ -107,7 +107,7 @@ Examples: `volume.show ma`, `bollinger bands.length`
 Format: `indicator_name.plot_name.property_name`
 
 * **indicator_name**:  < ... >
-* **plot_name**: as you can see it in indicator's properties dialog (for example, `Volume` or `Plot`)
+* **plot_name**: as you see it in the indicator's properties dialog (for example, `Volume` or `Plot`)
 * **property_name**: one of the following:
   * **transparency**
   * **linewidth**
@@ -129,22 +129,22 @@ Format: `indicator_name.plot_name.color<.color_index>`
 
 * **indicator_name**:  < ... >
 * **plot_name**:  < ... >
-* **color**. It is just a keyword.
+* **color**. It's just a keyword.
 * **color_index** (optional): color index (if any). It's just an ordinal number of a color for this plot.
-    I.e., to replace the color which is green by default for Volume, one should use `color_index = 1`.
+    I.e., to replace the color that is green by default for Volume, one should use `color_index = 1`.
 
-**Remark 1**: `color.0` is a synonym of `color`. So paths `volume.volume.color.0` and `volume.volume.color` are treated to be the same.
+**Remark 1**: `color.0` is a synonym of `color`. Paths such as `volume.volume.color.0` and `volume.volume.color` are treated the same.
 
-**Remark 2**: For now, customizing area fill color and transparency is not supported.
+**Remark 2**: The customization of area fill color and transparency is not supported currently.
 
 **Limitations**:
 
-* Only `#RRGGBB` format is supported for colors. Do not use short format `#RGB`.
-* Transparency varies in [0..100] range. 100 means plot is fully opaque.
+* Only `#RRGGBB` format is supported for colors. Do not use a short format `#RGB`.
+* Transparency varies and the range is [0..100]. 100 means plot is fully opaque.
 * Thickness is an integer.
 
 ### Default precision
 
-Since 1.6 you can change default precision of studies using `name.precision` format.
+You can change the default precision of studies using the `name.precision` format starting from V 1.6.
 
 Example: `"average true range.precision": 8`
