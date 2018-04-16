@@ -15,6 +15,6 @@ Time Frame|Chart Resolution
 5D|5
 1D|1
 
-You can customize default time frames using the respective widget [.ctor argument](Widget-Constructor#time_frames).
+You can customize default time frames using the [time_frames](Widget-Constructor#time_frames) argument of the widget constructor.
 
 **Remark**: Time frames that require resolutions which are not available for a particular symbol will be hidden.

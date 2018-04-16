@@ -1,17 +1,16 @@
-Here is a list of supported widget's methods. You can call them using widget object returned to you by widget's constructor.
+Below is the list of methods that the widget supports. You can call them using the widget object that is returned to you by the widget's constructor.
 
-**Remark**: Please note that it's safe to call any method only **after** onChartReady callback is fired.
-So the common practice is to do something like
+**Remark**: Please note that it's safe to call any method only **after** onChartReady callback function is called.
+
+Example:
 
 ```javascript
 widget.onChartReady(function() {
-    // now it's safe to call any other widget's methods
+    // It's now safe to call any other methods of the widget
 });
 ```
 
 ## Methods
-
-**Before 1.5 [Chart Methods](Chart-Methods) belonged to the Widget. Please see the full list of actions [here](Chart-Methods).**
 
 * [Subscribing To Chart Events](#subscribing-to-chart-events)
   * [onChartReady(callback)](#onchartreadycallback)
@@ -68,17 +67,17 @@ widget.onChartReady(function() {
 
 1. `callback`: function()
 
-The Charting Library will call the callback provided once when chart is initialized and ready.
-You can safely call all other methods from this moment.
+The Charting Library will call the callback function 1 time when chart is initialized.
+You can safely call all other methods starting from this moment.
 
 ### onGrayedObjectClicked(callback)
 
 1. `callback`: function(subject)
     1. `subject`: object `{type, name}`
         * `type`: `drawing` | `study`
-        * `name`: string, name of a subject which was clicked
+        * `name`: string, name of a clicked subject
 
-The Library will call the callback provided every time when user clicks on grayed out object.
+The Library will call the `callback` function every time a user clicks on a grayed out object.
 
 Example:
 
@@ -103,8 +102,8 @@ new TradingView.widget({
 
 widget.onChartReady(function() {
     widget.onGrayedObjectClicked(function(data) {
-        // this function will be called when one tries to
-        // create Balance Of Power study or Trend Angle shape
+        // this function will be called when a user tries to
+        // create the Balance Of Power study or the Trend Angle shape
 
         alert(data.name + " is grayed out!");
     })
@@ -116,7 +115,7 @@ widget.onChartReady(function() {
 1. `shortcut`
 1. `callback`: function(data)
 
-The Library will call the callback provided every time when shortcut is pressed.
+The Library will call the `callback` function every time the shortcut key is pressed.
 
 Example:
 
@@ -132,40 +131,40 @@ widget.onShortcut("alt+s", function() {
 
 | Event name | Library Version | Description |
 |------------|-----------------|-------------|
-| `toggle_sidebar` | | drawing toolbar is shown/hidden |
+| `toggle_sidebar` | | Drawing toolbar is shown/hidden |
 | `indicators_dialog` | | Indicators dialog is shown |
-| `toggle_header` | | chart header is shown/hidden |
+| `toggle_header` | | Chart header is shown/hidden |
 | `edit_object_dialog` | | Chart/Study Properties dialog is shown |
-| `chart_load_requested` | | new chart about to be loaded |
+| `chart_load_requested` | | New chart is about to be loaded |
 | `chart_loaded` | | |
 | `mouse_down` | | |
 | `mouse_up` | | |
-| `drawing` | 1.7 | a drawing is added to a chart. Arguments contains an object with  `value` field that is the name of the drawing. |
-| `study` | 1.7 | an indicator is added to a chart. Arguments contains an object with  `value` field that is the name of the indicator. |
+| `drawing` | 1.7 | A drawing is added to a chart. The arguments contain an object with the `value` field that corresponds with the name of the drawing. |
+| `study` | 1.7 | An indicator is added to a chart.The arguments contain an object with the `value` field that corresponds with the name of the indicator. |
 | `undo` | 1.7 | |
 | `redo` | 1.7 | |
-| `reset_scales` | 1.7 | reset scales button is clicked |
-| `compare_add` | 1.7 | Compare dialog is shown |
-| `add_compare` | 1.7 | Compare instrument is added |
+| `reset_scales` | 1.7 | Reset scales button is clicked |
+| `compare_add` | 1.7 | A compare dialog is shown |
+| `add_compare` | 1.7 | A compare instrument is added |
 | `load_study` template | 1.7 | A study template is loaded |
-| `onTick` | | callback will be called every time when recent bar updates |
-| `onAutoSaveNeeded` | | callback will be called every time when user changes the chart. `Chart change` means any user action that can be undone. The callback will not be called more than once in five seconds. See also [auto_save_delay](Widget-Constructor#auto_save_delay) |
-| `onScreenshotReady` | | callback will be called every time when user creates a screenshot and server returns the created image name |
-| `onMarkClick` | | callback will be called every time when user clicks a [mark on bar](Marks-On-Bars). Mark ID will be passed as an argument |
-| `onTimescaleMarkClick` | | callback will be called every time when user clicks a timescale mark. Mark ID will be passed as an argument |
-| `onSelectedLineToolChanged` | | callback will be called every time when selected line tool changes |
-| :chart: `layout_about_to_be_changed` | | amount or placement of charts about to be changed |
-| :chart: `layout_changed` | | amount or placement of charts is changed |
-| :chart: `activeChartChanged` | | active chart is changed |
+| `onTick` | | Last bar is updated |
+| `onAutoSaveNeeded` | | User changed the chart. `Chart change` means any user action that can be undone. The callback function will not be called more than once every 5 seconds. See also [auto_save_delay](Widget-Constructor#auto_save_delay) |
+| `onScreenshotReady` | | A screenshot URL is returned by the server |
+| `onMarkClick` | | User clicked a [mark on a bar](Marks-On-Bars). Mark ID will be passed as an argument |
+| `onTimescaleMarkClick` | | User clicked a timescale mark. Mark ID will be passed as an argument |
+| `onSelectedLineToolChanged` | | Selected line tool is changed |
+| :chart: `layout_about_to_be_changed` | | Amount or placement of the charts is about to be changed |
+| :chart: `layout_changed` | | Amount or placement of the charts is changed |
+| :chart: `activeChartChanged` | | Active chart is changed |
 
 1. `callback`: function(arguments)
 
-The library will call `callback` when GUI `event` is happened.
-Every event can have different set of arguments.
+The library will call the `callback` function when a GUI `event` has happened.
+Every event can have a different set of arguments.
 
 ### unsubscribe(event, callback)
 
-Unsubscribe a previously subscribed `callback` listener from a given `event` (which is one of the events in the table above).
+Unsubscribes a previously subscribed `callback` funciton from a given `event` (that is one of the events in the table above).
 
 ## Chart Actions
 
@@ -177,7 +176,7 @@ Returns a chart object that you can use to call [Chart-Methods](Chart-Methods)
 
 1. `locale`: [language code](Localization)
 
-Sets the Widget's language. For now, this call reloads the chart. **Please avoid using it**.
+Sets the language of the widget. For now, this call reloads the chart. **Please avoid using it**.
 
 ### setSymbol(symbol, interval, callback)
 
@@ -185,15 +184,15 @@ Sets the Widget's language. For now, this call reloads the chart. **Please avoid
 1. `interval`: string
 1. `callback`: function()
 
-Makes the chart to change its symbol and resolution. Callback is called after new symbol's data arrived.
+Changes the symbol and resolution of the chart. The `callback` function is called only when new symbol's data has been received.
 
 ### remove()
 
-Removes chart widget from your page.
+Removes the chart widget from the web page.
 
 ### closePopupsAndDialogs()
 
-Calling this method closes a context menu or a dialog if it is shown.
+Calling this method closes all context menus, pop-ups or dialogs.
 
 ### selectLineTool(drawingId)
 
@@ -206,7 +205,7 @@ Calling this method closes a context menu or a dialog if it is shown.
     1. `zoom`
     1. `brush`
 
-Selection of a drawing or cursor which is identical to a single click on a drawing button.
+Selects a drawing or a cursor. It's the same as a single click on a drawing button.
 
 ### selectedLineTool()
 
@@ -216,7 +215,7 @@ Returns an [identifier](Shapes-and-Overrides) of the selected drawing or cursor 
 
 This method creates a snapshot of the chart and uploads it to the server.
 When it is done the [onScreenshotReady](#subscribeevent-callback) callback function is called.
-It includes the URL to the snapshot.
+The URL of the snapshot will be passed as an argument to the callback function.
 
 ### lockAllDrawingTools()
 
@@ -228,15 +227,15 @@ This method returns a [WatchedValue](WatchedValue) object that can be used to re
 
 1. `callback`: function(object)
 
-Saves the chart state to JS object. Charting Library will call your callback and pass the state object as argument.
+Saves the chart state to JS object. Charting Library will call your callback function and pass the state object as an argument.
 
-This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
+This call is part of the low-level [save/load API](Saving-and-Loading-Charts).
 
 ### load(state)
 
 1. `state`: object
 
-Loads the chart from state object. This call is a part of low-level [save/load API](Saving-and-Loading-Charts).
+Loads the chart from the `state` object. This call is part of the low-level [save/load API](Saving-and-Loading-Charts).
 
 ### getSavedCharts(callback)
 
@@ -251,13 +250,13 @@ Loads the chart from state object. This call is a part of low-level [save/load A
 * `short_symbol`
 * `interval`
 
-Returns a list of chart descriptions saved on a server for current user.
+Returns a list of chart descriptions saved to the server for the current user.
 
 ### loadChartFromServer(chartRecord)
 
 1. `chartRecord` is an object that you get using [getSavedCharts(callback)](#getsavedchartscallback)
 
-Loads and displays a chart from a server.
+Loads and displays a chart from the server.
 
 ### saveChartToServer(onCompleteCallback, onFailCallback, saveAsSnapshot, options)
 
@@ -265,30 +264,29 @@ Loads and displays a chart from a server.
 1. `onFailCallback`: function()
 1. `saveAsSnapshot`: should be always `false`
 1. `options`: object `{ chartName }`
-    * `chartName`: name of a chart. Should be specified for new charts and renaming.
-    * `defaultChartName`: default name of a chart. It will be used if current chart has no name.
+    * `chartName`: name of a chart. Should be specified for new charts and when renaming the chart.
+    * `defaultChartName`: default name of a chart. It will be used if the current chart has no name.
 
-Saves current chart to the server.
+Saves the current chart to the server.
 
 ### removeChartFromServer(chartId, onCompleteCallback)
 
-1. `chartId`: `id` should be got from a record received using [getSavedCharts(callback)](#getsavedchartscallback)
+1. `chartId`: the `id` should be received from the object that is returned by the [getSavedCharts(callback)](#getsavedchartscallback)
 1. `onCompleteCallback`: function()
 
-Removes chart from the server.
+Removes the chart from the server.
 
 ## Custom UI Controls
 
 ### onContextMenu(callback)
 
 1. `callback`: function(unixtime, price).
-    This callback is expected to return a value (see below).
+    This callback function is expected to return a value (see below).
 
-The Library will call the callback provided every time when user opens context menu on the chart.
-Unix time and price of context menu point will be provided as arguments.
-To customize context menu items you have to return array of items descriptors.
+The Charting Library will call the callback function every time  user opens a context menu on the chart.
+The arguments that are passed to the callback function contain unix time and price of the clicked point on the chart.
 
-Item descriptor has following structure:
+You have to return an array of objects that have the following format to add or remove items from the context menu.
 
 ```javascript
 {
@@ -298,14 +296,13 @@ Item descriptor has following structure:
 }
 ```
 
-* `position`: position of item in context menu
-* `text`: text of menu item
-* `click`: callback which will be called when user select your menu item
+* `position`: position of the item in the context menu
+* `text`: menu item text
+* `click`: a callback functon that will be called when a user selects your menu item
 
-To add a separator use minus sign. Example: `{ text: "-", position: "top" }`.
+Use the minus sign to add a separator. Example: `{ text: "-", position: "top" }`.
 
-To remove an existing item from a menu use minus sign in front of the item text.
-Example: `{ text: "-Objects Tree..." }`
+Use the minus sign in front of the item text to remove an existing item from the menu.
 
 Example:
 
@@ -336,8 +333,8 @@ widget.onChartReady(function() {
 1. `options`: object `{ align: "left" }`
     * `align`: `right` | `left`. default: `left`
 
-Creates a new DOM element in chart top toolbar and returns **jQuery object** for this button.
-You can use it to append custom controls right on the chart.
+Creates a new DOM element in the top toolbar of the chart and returns **jQuery object** for this button.
+You can use it to add custom controls right on the chart.
 
 Example:
 
@@ -352,7 +349,7 @@ widget.onChartReady(function() {
 
 ## Dialogs
 
-*Since version 1.6.*
+*Starting from version 1.6.*
 
 ### showNoticeDialog(params)
 
@@ -361,7 +358,7 @@ widget.onChartReady(function() {
     * `body`: text to be shown in the body
     * `callback`: function to be called when ok button is pressed
 
-This method shows a dialog with custom title and text and "OK" button.
+This method shows a dialog with custom title and text along with the "OK" button.
 
 ### showConfirmDialog(params)
 
@@ -371,112 +368,107 @@ This method shows a dialog with custom title and text and "OK" button.
     * `callback(result)`: function to be called when ok button is pressed.
         `result` is `true` if `OK` is pressed, otherwise it is `false`.
 
-This method shows a dialog with custom title and text and "OK", "CANCEL" buttons.
+This method shows a dialog with the custom title and text along with the "OK" and "CANCEL" buttons.
 
 ### showLoadChartDialog()
 
-Displays Load chart dialog.
+Displays the "Load chart layout" dialog.
 
 ### showSaveAsChartDialog()
 
-Displays Save As... chart dialog.
+Displays the "Copy chart layout" dialog.
 
 ## Getters
 
-### symbolInterval(callback)
+### symbolInterval()
 
-1. `callback`: function(result)
-    1. `result`: object `{symbol, interval}`
-
-**Since 1.4 the function returns the result immediately. Callback is kept for compatibility.**
-
-Charting Library will call your callback with an object containing chart's symbol and interval.
+Charting Library returns an object that contains the symbol and interval of the chart.
 
 ### mainSeriesPriceFormatter()
 
-Returns object with method `format` that you can use to format prices. Introduced in 1.5.
+Returns an object with the `format` method that you can use to format the prices. This was introduced in version 1.5.
 
 ### getIntervals()
 
-Returns an array of supported resolutions. Introduced in 1.7.
+Returns an array of supported resolutions. This was introduced in version 1.7.
 
 ### getStudiesList()
 
-Returns an array of all studies ids. They can be used to create a study.
+Returns an array of IDs of all studies. They can be used to create a study.
 
 ## Customization
 
 ### addCustomCSSFile(url)
 
-1. `url` should be absolute or relative path to 'static` folder
+1. `url` should be an absolute or relative path to the 'static` folder
 
 This method was introduced in version `1.3`.
 
-Starting from `1.4` use [custom_css_url](Widget-Constructor#custom_css_url) instead.
+Starting from version `1.4` use [custom_css_url](Widget-Constructor#custom_css_url) instead.
 
 ### applyOverrides(overrides)
 
-*Since version 1.5.*
+*Starting from version 1.5.*
 
 1. `overrides` is an object.
-    It is the same as [overrides](Widget-Constructor#overrides) in Widget Constructor.
+    It is the same as [overrides](Widget-Constructor#overrides) in the Widget Constructor.
 
-This method applies overrides to properties without reloading the chart.
+This method applies "overrides" to the properties without reloading the chart.
 
 ### applyStudiesOverrides(overrides)
 
-*Since version 1.9.*
+*Starting from version 1.9.*
 
-1. `overrides` is an object. It is the same as [studies_overrides](Widget-Constructor#studies_overrides) in Widget Constructor.
+1. `overrides` is an object. It is the same as [studies_overrides](Widget-Constructor#studies_overrides) in the Widget Constructor.
 
-This method applies studies overrides to indicators' style or inputs without reloading the chart.
+This method applies "overrides" to the styles or inputs of the indicators without reloading the chart.
 
-## :chart: Trading Terminal specific
+## :chart: Trading Terminal only
 
 The following methods are available in [Trading Terminal](Trading-Terminal) only.
 
 ### :chart: watchList()
 
-*Since version 1.9.*
+*Starting from version 1.9.*
 
-Returns an object to manipulate the watchlist. The object has the following methods:
+Returns an object to manage the watchlist. The object has the following methods:
 
 1. `defaultList()` - allows you to get a default list of symbols.
 
-1. `getList(id?: string)` - allows you to get a list of the symbols. If parameter `id` is not supplied, the current list will be returned. If there is no WatchList `null` will be returned.
+1. `getList(id?: string)` - allows you to get a list of symbols. If the `id` parameter is not provided then the current list will be returned. If there is no WatchList then `null` will be returned.
 
-1. `getActiveListId()` - allows you to get id of the current list. If there is no WatchList `null` will be returned.
+1. `getActiveListId()` - allows you to get the ID of the current list. If there is no WatchList then `null` will be returned.
 
-1. `getAllLists()` - allows you to get all lists. If there is no WatchList `null` will be returned.
+1. `getAllLists()` - allows you to get all lists. If there is no WatchList then `null` will be returned.
 
-1. `setList(symbols: string[])` - allows you to set a list of symbols into the watchlist. It will replace the whole list. **Obsolete. Will be removed in version `1.13`. Use `updateList` instead.**
+1. `setList(symbols: string[])` - allows you to set a list of symbols into the watchlist. It will replace the entire list. **Obsolete. Will be removed in version `1.13`. Use `updateList` instead.**
 
-1. `updateList(listId: string, symbols: string[])` - allows you to edit list of the symbols.
+1. `updateList(listId: string, symbols: string[])` - allows you to edit the list of symbols.
 
 1. `renameList(listId: string, newName: string)` - allows you to rename the list to `newName`.
 
-1. `createList(listName?: string, symbols?: string[])` - allows you to create a list of symbols with `listName` name. If parameter `listName` is not supplied or there is no WatchList `null` will be returned;
+1. `createList(listName?: string, symbols?: string[])` - allows you to create a list of symbols with `listName` name. If the `listName` parameter is not provided or there is no WatchList then `null` will be returned;
 
-1. `saveList(list: SymbolList)` - allows you to save a list of symbols, where `list` is an object with the next keys:
+1. `saveList(list: SymbolList)` - allows you to save a list of symbols where `list` is an object with the following keys:
 
   ```js
   id: string;
   title: string;
   symbols: string[];
   ```
-If there is no WatchList or an equivalent list already exists `false` will be returned, otherwise `true`.
+If there is no WatchList or an equivalent list already exists then `false` will be returned, otherwise `true` will returned.
 
 1. `deleteList(listId: string)` - allows you to delete a list of symbols.
 
-1. `onListChanged()` - you can subscribe using [[Subscription]] object returned by this function to be notified when the active watchlist's symbols are changed and unsubscribe from the event.
+1. `onListChanged()` - you can use this method to be notified when the symbols of the active watchlist are changed. You can subscribe and unsubscribe using the [[Subscription]] object returned by this function.
 
-1. `onActiveListChanged()` - you can subscribe using [[Subscription]] object returned by this function to be notified when the active watchlist is changed and unsubscribe from the event.
+1. `onActiveListChanged()` - you can use this method to be notified when a different list of the watchlist is selected. You can subscribe and unsubscribe using the [[Subscription]] object returned by this function.
 
-1. `onListAdded()` - you can subscribe using [[Subscription]] object returned by this function to be notified when the new watchlist is added and unsubscribe from the event.
+1. `onListAdded()` - - you can use this method to be notified when the new list is added to the watchlist. You can subscribe and unsubscribe using the [[Subscription]] object returned by this function.
 
-1. `onListRemoved()` - you can subscribe using [[Subscription]] object returned by this function to be notified when the watchlist is removed and unsubscribe from the event.
+1. `onListRemoved()` - you can use this method to be notified when the list is removed from the watchlist. You can subscribe and unsubscribe using the [[Subscription]] object returned by this function.
 
-1. `onListRenamed()` - you can subscribe using [[Subscription]] object returned by this function to be notified when the watchlist is renamed and unsubscribe from the event.
+1. `onListRenamed()` - - you can use this method to be notified when the list is renamed in the watchlist. You can subscribe and unsubscribe using the [[Subscription]] object returned by this function.
 
 ## :chart: Multiple Charts Layout
 
@@ -488,21 +480,21 @@ Returns a chart object that you can use to call [Chart-Methods](Chart-Methods)
 
 ### :chart: activeChart()
 
-Returns current active chart object that you can use to call [Chart-Methods](Chart-Methods)
+Returns a chart object of the active chart that you can use to call [Chart-Methods](Chart-Methods)
 
 ### :chart: chartsCount()
 
-Returns amount of charts in the current layout
+Returns the amount of charts in the current layout.
 
 ### :chart: layout()
 
-Returns current layout mode. Possible values: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
+Returns the current layout mode. Possible values are: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
 
 ### :chart: setLayout(layout)
 
-1. `layout`: Possible values: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
+1. `layout`: Possible values are: `4`, `6`, `8`, `s`, `2h`, `2-1`, `2v`, `3h`, `3v`, `3s`.
 
-Changes current chart layout.
+Changes the current chart layout.
 
 ## See Also
 
@@ -510,5 +502,5 @@ Changes current chart layout.
 * [Customization Overview](Customization-Overview)
 * [Widget Constructor](Widget-Constructor)
 * [Saving and Loading Charts](Saving-and-Loading-Charts)
-* [Overriding Studies' Defaults](Studies-Overrides)
-* [Overriding Chart's Defaults](Overrides)
+* [Overriding Default Properties of the Studies](Studies-Overrides)
+* [Overriding Default Properties of the Chart](Overrides)

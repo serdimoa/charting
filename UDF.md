@@ -1,18 +1,17 @@
-**What it is ?**: HTTP-based protocol designed to deliver data to Charting Library in a simple and efficient way.
+**What is UDF?** It's an HTTP-based protocol that is designed to deliver data to the Charting Library in a simple and efficient way.
 
-**What should I do to use it ?**: You should create tiny server-side HTTP service which will get the data from your storage and respond to Charting Library requests.
+**How can I start using it?** You should create a tiny server-side HTTP service that will get the data from your storage and respond to Charting Library requests.
 
 ## Response-as-a-table concept
 
-Datafeed responses often may be treated as tables.
-I.e., response about exchange’s symbols list may be treated as a table where each symbol represents a row, and there are some columns (minimal_price_movement, description, has_intraday e.t.c.).
-Each column may be an array (thus, it will provide separate value for each table’s row).
-But there may be a situation when all table’s rows has the same values of the column.
-In this case, the column’s value may be a single value in JSON response.
+Think of data feed responses as tables. For example, a data feed response that includes a symbol list from the exhange may be treated as a table where each symbol represents a row, along with some columns (minimal_price_movement, description, has_intraday e.t.c.).
+Each column may be an array (it will provide a separate value for each row in a table).
+Note that there might be a situation when all rows have the same value in the same column.
+In this case, the column value can be defined as a single value in JSON response.
 
 Example:
 
-Let’s suppose we’ve requested the symbols list of exchange named NYSE. The response (in pseudo-format) might look like
+Let's assume that we reqested a symbol list from the New York Stock Exchange. The response (in pseudo-format) might look like
 
 ```javascript
 {
@@ -22,7 +21,7 @@ Let’s suppose we’ve requested the symbols list of exchange named NYSE. The r
 }
 ```
 
-If we try to imagine this response as a table, it will look like
+Here is how this response will look like in a table format.
 
 Symbol|min_price_move|Description
 ---|---|---
@@ -33,32 +32,32 @@ GOOG|0.1|Google
 
 ## API Calls
 
-### Datafeed configuration data
+### Data feed configuration data
 
 Request: `GET /config`
 
-Response: Library expects to receive JSON of the same structure as for JS API [setup() call](JS-Api#onreadycallback).
+Response: Library expects to receive a JSON response of the same structure as a result of JS API [setup() call](JS-Api#onreadycallback).
 
 Also there should be 2 additional properties:
 
-* `supports_search`: Set this one to `true` if your datafeed supports symbol search and individual symbol resolve logic.
-* `supports_group_request`: Set this one to `true`  if your datafeed provides full info about symbols group only and is not able to perform symbol search or individual symbol resolve.
+* `supports_search`: Set it to `true` if your data feed supports symbol search and individual symbol resolve logic.
+* `supports_group_request`: Set it to `true`  if your data feed provides full information on symbol group only and is not able to perform symbol search or individual symbol resolve.
 
-Either `supports_search` or `supports_group_request` should be `true`.
+Either `supports_search` or `supports_group_request` should be set to `true`.
 
-**Remark**: If your datafeed does not implement this call (do not respond at all or send 404), default configuration is used. Here it is:
+**Remark**: If your data feed doesn't implement this call (doesn't respond or sends 404 error) then the default configuration is being used. Here is the default configuration:
 
 ```javascript
 {
-    supports_search: false,
+    supported_resolutions: ['1', '5', '15', '30', '60', '1D', '1W', '1M'],
     supports_group_request: true,
-    supported_resolutions: ["1", "5", "15", "30", "60", "1D", "1W", "1M"],
     supports_marks: false,
-    supports_time: true,
+    supports_search: false,
+    supports_timescale_marks: false,
 }
 ```
 
-### Group symbols info
+### Symbol group request
 
 Request: `GET /symbol_info?group=<group_name>`
 
@@ -67,8 +66,8 @@ Request: `GET /symbol_info?group=<group_name>`
 Example: `GET /symbol_info?group=NYSE`
 
 Response: Response is expected to be an object with properties listed below.
-Each property is treated as table column, like described above (see [response-as-a-table](UDF#response-as-a-table-concept)).
-The response structure is similar (but **not equal**) to [SymbolInfo](Symbology#symbolinfo-structure) so see its description for details about all fields.
+Each property is treated as table column, as described above (see [response-as-a-table](UDF#response-as-a-table-concept)).
+The response structure is similar (but **not equal**) to [SymbolInfo](Symbology#symbolinfo-structure) so please read the description to learn about the details of each field.
 
 * `symbol`
 * `description`
@@ -91,7 +90,7 @@ The response structure is similar (but **not equal**) to [SymbolInfo](Symbology#
 * `has-weekly-and-monthly`
 * `has-empty-bars`
 
-Example: Here is the example of datafeed response to `GET /symbol_info?group=NYSE` (all data is artificial):
+Here is an example of data feed response to `GET /symbol_info?group=NYSE` request:
 
 ```javascript
 {
@@ -112,12 +111,12 @@ Example: Here is the example of datafeed response to `GET /symbol_info?group=NYS
 }
 ```
 
-**Remark 1**: This call will be used if your datafeed sent `supports_group_request: true` in configuration data or had not responded to configuration request at all.
+**Remark 1**: This call will be used if your data feed sent `supports_group_request: true` in the configuration data or didn't respond to the configuration request at all.
 
-**Remark 2**: if your datafeed does not support requested group (which should not happen if your response to request #1 (supported groups) is correct), Error 404 is expected.
+**Remark 2**: In the event that your data feed does not support the requested symbol group (which should not happen if your response to request #1 (supported groups) is correct) you may expect a 404 error.
 
-**Remark 3**: using this mode (getting large bulks of symbols data) makes the browser to store data which user even wasn't asking for.
-So if your symbols list has more than a few items, please consider supporting symbol search / individual symbol resolve instead.
+**Remark 3**: When using this mode of receiving data (getting large amount of symbol data) your brower will keep the data that wasn't even requested by the user.
+If your symbol list has more than a few items, please consider supporting symbol search / individual symbol resolve instead.
 
 ### Symbol resolve
 
@@ -127,24 +126,24 @@ Request: `GET /symbols?symbol=<symbol>`
 
 Example: `GET /symbols?symbol=AAL`, `GET /symbols?symbol=NYSE:MSFT`
 
-Response: JSON containing object **exactly** similar to [SymbolInfo](Symbology#symbolinfo-structure)
+A JSON response of the same structure as [SymbolInfo](Symbology#symbolinfo-structure)
 
-**Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
+**Remark**: This call will be requested if your data feed sent `supports_group_request: false` and `supports_search: true` in the configuration data.
 
 ### Symbol search
 
 Request: `GET /search?query=<query>&type=<type>&exchange=<exchange>&limit=<limit>`
 
-* `query`: string. Text typed by user in Symbol Search edit box
-* `type`: string. One of the types [supported](JS-Api#symbols_types) by your back-end
+* `query`: string. Text typed by the user in the Symbol Search edit box
+* `type`: string. One of the symbol types [supported](JS-Api#symbols_types) by your back-end
 * `exchange`: string. One of the exchanges [supported](JS-Api#exchanges) by your back-end
-* `limit`: integer. Maximal items count in response
+* `limit`: integer. The maximum number of symbols in a response
 
 Example: `GET /search?query=AA&type=stock&exchange=NYSE&limit=15`
 
-Response: Response is expected to be an array of symbol records as in [respective JS API call](JS-Api#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback)
+A response is expected to be an array of symbol objects as in [respective JS API call](JS-Api#searchsymbolsuserinput-exchange-symboltype-onresultreadycallback)
 
-**Remark**: This call will be requested if your datafeed sent `supports_group_request: false` and `supports_search: true` in configuration data.
+**Remark**: This call will be requested if your data feed sent `supports_group_request: false` and `supports_search: true` in the configuration data.
 
 ### Bars
 
@@ -157,24 +156,24 @@ Request: `GET /history?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_times
 
 Example: `GET /history?symbol=BEAM~0&resolution=D&from=1386493512&to=1395133512`
 
-Response: Response is expected to be an object with some properties listed below. Each property is treated as table column, like described above.
+A response is expected to be an object with some properties listed below. Each property is treated as a table column, as described above.
 
 * `s`: status code. Expected values: `ok` | `error` | `no_data`
-* `errmsg`: error message. Should be present just if `s = 'error'`
-* `t`: bar time. unix timestamp (UTC)
-* `c`: close price
-* `o`: open price (optional)
-* `h`: high price (optional)
-* `l`: low price (optional)
-* `v`: volume (optional)
-* `nextTime`: time of the next bar if there is no data (status code is `no_data`) in the requested period (optional)
+* `errmsg`: Error message. Should be present only when `s = 'error'`
+* `t`: Bar time. Unix timestamp (UTC)
+* `c`: Closing price
+* `o`: Opening price (optional)
+* `h`: High price (optional)
+* `l`: Low price (optional)
+* `v`: Volume (optional)
+* `nextTime`: Time of the next bar if there is no data (status code is `no_data`) in the requested period (optional)
 
-**Remark**: bar time for daily bars is expected to be a trading day (not session start day) at 00:00 UTC.
-Charting Library aligns time according to [Session](Symbology#session) from SymbolInfo.
+**Remark**: Bar time for daily bars should be 00:00 UTC and is expected to be a trading day (not a day when the session starts).
+Charting Library aligns the time according to the [Session](Symbology#session) from SymbolInfo.
 
-**Remark**: bar time for monthly bars is the first trading day of the month without the time part
+**Remark**: Bar time for monthly bars should be 00:00 UTC and is the first trading day of the month.
 
-**Remark**: prices should be passed as numbers, not quoted string
+**Remark**: Prices should be passed as numbers and not as strings in quotation marks.
 
 Example:
 
@@ -207,9 +206,9 @@ Example:
 
 #### How `nextTime` works
 
-Assume you watch the chart with `resolution = 1` and Library asks you for data in range `[3 Apr 2015 16:00 UTC+0, 3 Apr 2015 19:00 UTC+0]` for stock which is traded in NYSE.
-3 Apr was a Good Friday so market was closed.
-Library assumes that you'll respond something like
+Let's assume that a user opened the chart where `resolution = 1` and the Library requests the following range of data from the data feed `[3 Apr 2015 16:00 UTC+0, 3 Apr 2015 19:00 UTC+0]` for a stock that is traded on the NYSE.
+April 3rd was Good Friday which means that the markets were closed.
+Library expects the following response from the data feed.
 
 ```javascript
 {
@@ -218,9 +217,7 @@ Library assumes that you'll respond something like
 }
 ```
 
-So `nextTime` is a time of the bar which is next to the left (at the imaginary time line) from left boundary of Library's original request.
-
-All omitted prices will be treated as equal to `close`.
+`nextTime` is the time of the closest available bar in the past.
 
 ### Marks
 
@@ -231,8 +228,8 @@ Request: `GET /marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<unix_timesta
 * `to`: unix timestamp (UTC) of rightmost visible bar
 * `resolution`: string
 
-Response: Response is expected to be an object with some properties listed below.
-This object is similar to [respective response](JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution) in JS API, but each property is treated as table column, like described above.
+A response is expected to be an object with some properties listed below.
+This object is similar to [respective response](JS-Api#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution) in JS API, but each property is treated as a table column, as described above.
 
 ```javascript
 {
@@ -246,7 +243,7 @@ This object is similar to [respective response](JS-Api#getmarkssymbolinfo-startd
 }
 ```
 
-**Remark**: This call will be requested if your datafeed sent `supports_marks: true` in configuration data.
+**Remark**: This call will be requested if your data feed sent `supports_marks: true` in the configuration data.
 
 ### Timescale marks
 
@@ -257,7 +254,7 @@ Request: `GET /timescale_marks?symbol=<ticker_name>&from=<unix_timestamp>&to=<un
 * `to`: unix timestamp (UTC) or rightmost visible bar
 * `resolution`: string
 
-Response: Response is expected to be an array of objects with properties listed below.
+A response is expected to be an array of objects with properties listed below.
 
 * `id`: unique identifier of a mark
 * `color`: rgba color
@@ -265,7 +262,7 @@ Response: Response is expected to be an array of objects with properties listed 
 * `time`: unix time
 * `tooltip`: tooltip text
 
-**Remark**: This call will be requested if your datafeed sent `supports_timescale_marks: true` in configuration data.
+**Remark**: This call will be requested if your data feed sent `supports_timescale_marks: true` in the configuration data.
 
 ### Server time
 
@@ -281,11 +278,11 @@ Request: `GET /quotes?symbols=<ticker_name_1>,<ticker_name_2>,...,<ticker_name_n
 
 Example: `GET /quotes?symbols=NYSE%3AAA%2CNYSE%3AF%2CNasdaqNM%3AAAPL`
 
-Response: Response is an object.
+A response is an object with the following keys.
 
-* `s`: status code for request. Expected values: `ok` | `error`
-* `errmsg`: error message for client
-* `d`: [symbols data](Quotes) array
+* `s`: Status code for the request. Expected values are: `ok` or `error`
+* `errmsg`: Error message. Should be present only when `s = 'error'`
+* `d`: [symbols data](Quotes) Array
 
 Example:
 
@@ -320,7 +317,7 @@ Example:
                 "chp": "0.89",
                 "short_name": "F",
                 "exchange": "NYSE",
-                "description": "Ford Motor Compan",
+                "description": "Ford Motor Company",
                 "lp": "17.02",
                 "ask": "17.03",
                 "bid": "17.02",
@@ -341,8 +338,8 @@ Example:
 
 ### datafeedURL
 
-This is a URL of a data server which will get requests and return data.
+This is a URL of a data server that will receive requests and return data.
 
 ### updateFrequency
 
-This in an interval of real-time requests the datafeed will send to the server in milliseconds. Default is 10000 (10 sec).
+This is a frequency of requests that the data feed will send to the server in milliseconds. Default is 10000 (10 sec).

@@ -1,4 +1,4 @@
-You may specify Charting library widget parameters when calling its constructor. E.g., your call may look like
+You may specify Charting library widget parameters when calling its constructor. Here is an example of a call.
 
 ```javascript
 new TradingView.widget({
@@ -11,86 +11,79 @@ new TradingView.widget({
 });
 ```
 
-Find full supported parameters list below. Please remember that changing those parameters after chart is initialized **does not work**. If you want to change the state of a chart after it was initialized, use [Widget methods](Widget-Methods) instead.
+Below is a complete list of supported parameters. Note that you can't change the parameters once the Charting Library is created. Use [Widget methods](Widget-Methods) if you wish to modify the parameteres after the creation of the Charting Library.
 
 ### symbol, interval
 
-*Required.*
-
-Initial symbol & interval of your chart. Format of `interval` is described in another [article](Resolution).
+The default symbol & time interval of your chart. The `interval` value is described in the [Resolution](Section). *Mandatory*
 
 ### timeframe
 
-Sets initial timeframe for the chart. Timeframe is period of bars that will be loaded and shown on a screen.
-Valid timeframe is a number with letter D for days and M for months.
+Sets the default timeframe of the chart. Timeframe is a period of bars that will be loaded and shown on the screen.
+Valid timeframe is a number with a letter D for days and M for months.
 
 ### container_id
 
-*Required.*
-
-`id` attribute of a DOM element you want to contain the widget.
+`id` is an attribute of a DOM element that you wish to inlude in the widget. *Mandatory*
 
 ### datafeed
 
-*Required.*
-
-JavaScript object implementing appropriate interface ([JS API](JS-Api)) to feed the chart width data.
+JavaScript object that implements the ([JS API](JS-Api)) interface to supply the chart with data. *Mandatory*
 
 ### timezone
 
-Initial timezone of the chart. Numbers on time scale depend on this timezone.
-See [supported timezones list](Symbology#timezone) for available values. Set it to `exchange` to use the exchange timezone. For overriding default value you should use [overrides](#overrides) section
+Default timezone of the chart. The time on the timescale is displayed accodring to this timezone.
+See the [list of supported timezones](Symbology#timezone) for available values. Set it to `exchange` to use the exchange timezone. Use the [overrides](#overrides) section if you wish to override the default value.
 
 ### debug
 
-Setting this property to `true` makes the chart to write detailed API logs to console. Feature `charting_library_debug_mode` is a synonym for this field usage.
+Setting this property to `true` will make the chart write detailed API logs into the browser console. Alternatively, you can use the `charting_library_debug_mode` featureset to enable it.
 
 ### library_path
 
-A path to `static` folder
+A path to a `static` folder.
 
 ### width, height
 
-The desired size of a widget. Please make sure the widget has enough space to look smart.
+The desired size of a widget. Please make sure that there is enough space for the widget to be displayed correctly.
 
-**Remark**: if you want the chart to occupy all the available space, do not use '100%' in those field. Use `fullscreen` parameter instead (see below). It's because of issues with DOM nodes resizing in different browsers.
+**Remark**: If you want the chart to use all the available space use the `fullscreen` parameter instead of setting it to '100%'.
 
 ### fullscreen
 
 *Default:* `false`
 
-Boolean value showing whether chart should occupy all the available space in the window.
+Boolean value showing whether the chart should use all the available space in the window.
 
 ### autosize
 
 *Default:* `false`
 
-Boolean value showing whether chart should occupy all the available space in the container and resize with it is resized. This parameter is introduced in version 1.3.
+Boolean value showing whether the chart should use all the available space in the container and resize when the container itself is resized.
 
 ### symbol_search_request_delay
 
-Delay in milliseconds to wait after key is pressed before making a symbol search request.
+A threshold delay in milliseconds that is used to reduce the number of symbol search requests when the user is typing a name of a symbol in the search box.
 
 ### auto_save_delay
 
-Delay in seconds to wait before onAutoSaveNeeded can be called again.
-This parameter is introduced in version 1.5.
+A threshold delay in seconds that is used to reduce the number of `onAutoSaveNeeded` calls.
 
 ### toolbar_bg
 
-Toolbars background color
+Background color of the toolbars.
 
 ### study_count_limit
 
-*Since version 1.5.*
+*Starting from version 1.5.*
 
-Maximum amount of studies on a chart or multichart layout. Minimum value is 2.
+Maximum amount of studies on the chart of a multichart layout. Minimum value is 2.
 
 ### studies_access
 
-*Since version 1.1.*
+*Starting from version 1.1.*
 
-An object with following structure:
+An object with the following structure:
 
 ```javascript
 {
@@ -105,22 +98,22 @@ An object with following structure:
 }
 ```
 
-* `type` is a type of list. Supported values: `black` (all the listed items should be disabled), `white` (only the listed items should be enabled).
-* `tools` is an array of objects. Each object could have following properties:
-  * `name` (*required*) is the name of a study. Use the same names as you can see them in Indicators widget
-  * `grayed` is a boolean showing whether this study should be visible but look like it's disabled. If the study is grayed and user clicks it, then `onGrayedObjectClicked` is called.
+* `type` is the list type. Supported values are: `black` (all listed items should be disabled), `white` (only the listed items should be enabled).
+* `tools` is an array of objects. Each object could have the following properties:
+  * `name` (*Mandatory*) is the name of a study. Use the same names as in the pop-ups of indicators.
+  * `grayed` is a boolean showing whether this study should be visible but look as if it's disabled. If the study is grayed out and user clicks it, then the `onGrayedObjectClicked` function is called.
 
 ### drawings_access
 
-*Since version 1.1.*
+*Starting from version 1.1.*
 
-This property has the same structure as the `studies_access` described above. Use the same names as you see them in UI.
+This property has the same structure as the `studies_access`argument that is described above. Use the same names as you see in the UI.
 
-**Remark**: There is a special case for font-based drawings. Use "Font Icons" name for them. This group is a special case and its drawings cannot be enabled or disabled particularly -- one can either enable or disable the whole group.
+**Remark**: There is a special case for font-based drawings. Use the "Font Icons" name for them. Those drawings cannot be enabled or disabled separately - the entire group will have to be either enabled or disabled.
 
 ### saved_data
 
-JS object containing saved chart content (JSON, see save/load calls below). Use this parameter if you already have chart's JSON when creating chart. If you want to load chart content to chart that is already initialized then use `loadData()` widget method.
+JS object containing saved chart content. Use this parameter when creating the widget if you have a saved chart already. If you want to load the chart content when the chart is initialized then use [load() method](https://github.com/tradingview/charting_library/wiki/Widget-Methods#loadstate) of the widget.
 
 ### locale
 
@@ -128,7 +121,7 @@ Locale to be used by Charting Library. See [Localization](Localization) section 
 
 ### numeric_formatting
 
-The object containing formatting options for numbers. The only possible options is `decimal_sign` for now.
+The object containing formatting options for numbers. The only possible option is `decimal_sign` currently.
 Example: `numeric_formatting: { decimal_sign: "," }`
 
 ### customFormatters
@@ -138,15 +131,15 @@ It is an object that contains the following fields:
 1. timeFormatter
 1. dateFormatter
 
-You can use these formatters to customize displaying of date and time values.
-Both values are objects with functions `format` and `formatLocal`:
+You can use these formatters to adjust the display format of the date and time values.
+Both values are objects that include functions such as `format` and `formatLocal`:
 
 ```javascript
 function format(date)
 function formatLocal(date)
 ```
 
-These functions should return text representing date or time. `formatLocal` should convert date and time to local timezone.
+These functions should return the text that specifies date or time. `formatLocal` should convert date and time to local timezone.
 
 Example:
 
@@ -163,8 +156,8 @@ customFormatters: {
 
 ### overrides
 
-The object containing default Widget properties overrides. Overriding a property means assigning a default value to it.
-You can override most of Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` supposed to be an object having range of fields. Each field name is a name of overridden property and the field value is the desired value for those property. Example:
+The object that contains new values for default widget properties.
+You can override most of the Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` is supposed to be an object. The keys of this object are the names of overidden properties. The values of these keys are the new values of the properties. Example:
 
 ```javascript
 overrides: {
@@ -172,11 +165,11 @@ overrides: {
 }
 ```
 
-This override will make the watermark 100% opaque (invisible). All customizable properties are listed in [separate article](Overrides). Since 1.5 you can use [Drawings-Overrides](Drawings-Overrides).
+This code will make the watermark 100% opaque (invisible). All customizable properties are listed in [separate article](Overrides). You can use [Drawings-Overrides](Drawings-Overrides) starting from v 1.5.
 
 ### disabled_features, enabled_features
 
-The array containing names of features which should be enabled/disabled by default. `Feature` means a part of chart's functionality (more likely a part of UI/UX). Supported features are listed [here](Featuresets).
+The array containing names of features that should be enabled/disabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed [here](Featuresets).
 
 Example:
 
@@ -193,24 +186,23 @@ TradingView.onready(function()
 
 ### snapshot_url
 
-*experimental feature*
-URL for POST request with base64-encoded chart snapshots which will been sent when user press snapshot button. The service should return full URL to saved image in its response.
+This URL is used to send a POST request with base64-encoded chart snapshots when a user presses the snapshot button. This endpoint should return the full URL of the saved image in the the response.
 
 ### indicators_file_name
 
-Path to file containing your compiled indicators. See more details [here](Creating-Custom-Studies).
+Path to the file that contains your compiled indicators. See more details [here](Creating-Custom-Studies).
 
 ### preset
 
-`preset` is a name of a set of pre-defined widget settings. All settings used by preset also may be used directly by you in widget's constructor. For now, the only `mobile` preset is supported. The example of this preset is available online.
+`preset` is a name of predefined widget settings. For now, the only value supported in the `preset` is  `mobile`. The example of this `preset` is [available here](https://demo_chart.tradingview.com/mobile_black.html).
 
 ### studies_overrides
 
-Use this option to customize default indicators' style or inputs. You can also customize `Compare` series' styles and inputs using this argument. See more details [here](Studies-Overrides)
+Use this option to customize the style or inputs of the indicators. You can also customize the styles and inputs of the `Compare` series using this argument. See more details [here](Studies-Overrides)
 
 ### time_frames
 
-List of time frames visible in timeframes picker at the bottom of the chart.
+List of visible timeframes that can be selected at the bottom of the chart.
 
 Example:
 
@@ -224,33 +216,33 @@ time_frames: [
 ]
 ```
 
-Time frame is an object containing `text` and `resolution` property. Text must have following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string having the common resolutions format. See [this topic](Time-Frames) to learn more about time frames.
+Timeframe is an object containing the `text` and `resolution` properties. The `text` property should have the following format: `<integer><y|m|d>` ( \d+(y|m|d) as Regex ). Resolution is a string and its format is described here - [here](Resolution). See [this topic](Time-Frames) to learn more about timeframes.
 
-The `description` property was added in 1.7 and it is displayed in the popup menu. This parameter is optional (if the time frame descriptor does not contain this property: `title` (if it is specified) or `text` is used).
+The `description` property was added in v 1.7 and is displayed in the pop-up menu. This parameter is optional. If it isn't specified then the `title` or `text` property is used as a description.
 
-The `title` property was added in 1.9 and this value will override default title generated from `text` property. This parameter is optional.
+The `title` property was added in v 1.9 and its value will override the default title generated based on the `text` property. This parameter is optional.
 
 ### charts_storage_url, client_id, user_id
 
-Those arguments are regarding high-level charts save/load. See more details [here](Saving-and-Loading-Charts).
+These arguments are related to the high-level API for saving/loading the charts. See more details [here](Saving-and-Loading-Charts).
 
 ### charts_storage_api_version
 
-A version of your backend. Supported values: `"1.0"` | `"1.1"`. Study Templates are supported starting from `"1.1"`.
+A version of your backend. Supported values are: `"1.0"` | `"1.1"`. Study Templates are supported starting from version `"1.1"`.
 
 ### load_last_chart
 
-Set this param to `true` if you want the library to load the last chart for a user (you also should have [save/load|Saving-and-Loading-Charts])
+Set this parameter to `true` if you want the library to load the last saved chart for a user (you should implement [save/load](Saving-and-Loading-Charts) first to make it work).
 
 ### custom_css_url
 
-*Since version 1.4.*
+*Starting from version 1.4.*
 
-Adds your custom css to the chart. `url` should be absolute or relative path to 'static` folder
+Adds your custom CSS to the chart. `url` should be an absolute or relative path to the 'static` folder.
 
 ### loading_screen
 
-*Since version 1.12.*
+*Starting from version 1.12.*
 
 Customization of the loading spinner. Value is an object with the following possible keys:
 
@@ -265,25 +257,25 @@ loading_screen: { backgroundColor: "#000000" }
 
 ### favorites
 
-Items which should be favored by default. This option requires disabling localstorage usage(see [featuresets](Featuresets) list to know more). `favorites` property expects to be an object. Following properties are supported:
+Items that should be maked as favorite by default. This option requires that the usage of localstorage is disabled (see [featuresets](Featuresets) to know more). The `favorites` property is supposed to be an object. The following properties are supported:
 
-* **intervals**: an array of favored intervals. Example: `["D", "2D"]`
-* **chartTypes**: an array of favored chart types. Chart types names are the same as you can see in chart's UI in english version. Example: `["Area", "Candles"]`.
+* **intervals**: an array of time intervals that are marked as favorite. Example: `["D", "2D"]`
+* **chartTypes**: an array of chart types that are marked as favorite. The names of chart types are identical to chart's UI in the English version. Example: `["Area", "Candles"]`.
 
 ### save_load_adapter
 
-*Since version 1.12.*
+*Starting from version 1.12.*
 
-Object containing save/load functions. If it is set, it should have the following methods:
+An object containing the save/load functions. If it is available it should have the following methods:
 
 **Chart layouts:**
 
  1. `getAllCharts(): Promise<ChartMetaInfo[]>`
 
-    Function to get all saved charts.
+    A function to get all saved charts.
 
     `ChartMetaInfo` is an object with the following fields:
-     * `id` - unique id of the chart.
+     * `id` - unique ID of the chart.
      * `name` - name of the chart.
      * `symbol` - symbol of the chart.
      * `resolution` - resolution of the chart.
@@ -291,24 +283,24 @@ Object containing save/load functions. If it is set, it should have the followin
 
  1. `removeChart(chartId): Promise<void>`
 
-     Function to remove a chart. `chartId` is unique id of the chart (see `getAllCharts` above).
+     A function to remove a chart. `chartId` is a unique ID of the chart (see `getAllCharts` above).
 
  1. `saveChart(chartData: ChartData): Promise<ChartId>`
 
-     Function to save a chart.
+     A function to save a chart.
 
-    `ChartData` is object with the following fields:
-     * `id` - unique id of the chart (may be `undefined` if it wasn't save before).
+    `ChartData` is an object with the following fields:
+     * `id` - unique ID of the chart (may be `undefined` if it wasn't saved before).
      * `name` - name of the chart.
      * `symbol` - symbol of the chart.
      * `resolution` - resolution of the chart.
      * `content` - content of the chart.
 
-    `ChartId` - unique id of the chart (string)
+    `ChartId` - unique ID of the chart (string)
 
  1. `getChartContent(chartId): Promise<ChartContent>`
 
-     Function to load chart from the server.
+     A function to load the chart from the server.
 
     `ChartContent` is a string with the chart content (see `ChartData::content` field in `saveChart` function).
 
@@ -316,18 +308,18 @@ Object containing save/load functions. If it is set, it should have the followin
 
  1. `getAllStudyTemplates(): Promise<StudyTemplateMetaInfo[]>`
 
-     Function to get all saved study templates.
+     A function to get all saved study templates.
 
     `StudyTemplateMetaInfo` is an object with the following fields:
      * `name` - name of the study template.
 
  1. `removeStudyTemplate(studyTemplateInfo: StudyTemplateMetaInfo): Promise<void>`
 
-     Function to remove a study template.
+     A function to remove a study template.
 
  1. `saveStudyTemplate(studyTemplateData: StudyTemplateData): Promise<void>`
 
-     Function to save a study template.
+     A function to save a study template.
 
     `StudyTemplateData` is an object with the following fields:
      * `name` - name of the study template.
@@ -335,39 +327,39 @@ Object containing save/load functions. If it is set, it should have the followin
 
  1. `getStudyTemplateContent(studyTemplateInfo: StudyTemplateMetaInfo): Promise<StudyTemplateContent>`
 
-     Function to load a study template from the server.
+     A function to load a study template from the server.
 
     `StudyTemplateContent` - content of the study template (string)
 
- If both `charts_storage_url` and `save_load_adapter` are set - `save_load_adapter` will be used.
+ If both `charts_storage_url` and `save_load_adapter` are available  then `save_load_adapter` will be used.
 
  **IMPORTANT:** All functions should return a `Promise` (or `Promise`-like objects).
 
 ### settings_adapter
 
-*Since version 1.11.*
+*Starting from version 1.11.*
 
-Object containing set/remove functions. Use it to save chart settings to your preferred storage, including server-side. If it is set, it should have the following methods:
+An object that contains set/remove functions. Use it to save chart settings to your preferred storage (including server-side). If it is available then it should have the following methods:
 
 1. `initialSettings: Object`
 
-    Object with initial settings
+    An object with the initial settings
 
 1. `setValue(key: string, value: string): void`
 
-    Function that is called to store key/value pair.
+    A function that is called to store key/value pair.
 
 1. `removeValue(key: string): void`
 
-    Function that is called to remove a key.
+    A function that is called to remove a key.
 
 ## Trading Terminal only
 
 ### widgetbar
 
-:chart: *[Trading Terminal](Trading-Terminal) specific.*
+:chart: *applies to [Trading Terminal](Trading-Terminal) only*
 
-The object containing settings for widget bar on the right side of chart. Data window, watchlist and details tabs in right-side widget bar could be enabled using widgetbar field in Widget constructor:
+The object that contains settings for the widget panel on the right side of the chart. Watchlist, news and details widgets on the right side of the chart can be enabled using the `widgetbar` field in Widget constructor:
 
 ```javascript
 widgetbar: {
@@ -380,19 +372,19 @@ widgetbar: {
 }
 ```
 
-* `details` (*default:* `false`): Enables details widget in right-side widget bar.
-* `watchlist` (*default:* `false`): Enables watchlist widget in right-side widget bar.
-* `watchlist_settings.default_symbols` (*default:* `[]`): Sets default symbols list for watchlist.
+* `details` (*default:* `false`): Enables details widget in the widget panel on the right.
+* `watchlist` (*default:* `false`): Enables watchlist widget in the widget panel on the right.
+* `watchlist_settings.default_symbols` (*default:* `[]`): Sets the list of default symbols for watchlist.
 * `watchlist_settings.readonly` (*default:* `false`): Enables read-only mode for the watchlist.
 
 ### rss_news_feed
 
-:chart: *[Trading Terminal](Trading-Terminal) specific.*
+:chart: *applies to [Trading Terminal](Trading-Terminal) only*
 
-Use this property to change rss feed for news. You can set a different rss for each symbol type or use one rss for every symbols. The object should have `default` property, the other properties are optional; their names are equal to symbol types. Each property is an object (or array of objects) with the following properties:
+Use this property to change the RSS feed for news. You can set a different RSS for each symbol type or use a single RSS for all symbols. The object should have the `default` property, other properties are optional. The names of the properties match the symbol types. Each property is an object (or an array of objects) with the following properties:
 
-1. `url` - is an url to be requested. It can contain tags in curly braces which will be changed by the terminal: `{SYMBOL}`, `{TYPE}`, `{EXCHANGE}`.
-1. `name` of a feed is displayed at the bottom of every news
+1. `url` - is a URL to be requested. It can contain tags in curly brackets that will be replaced by the terminal: `{SYMBOL}`, `{TYPE}`, `{EXCHANGE}`.
+1. `name` - is a name of the feed to be displayed underneath the news.
 
 Here is an example:
 
@@ -436,25 +428,25 @@ One more example:
 
 ### news_provider
 
-:chart: *[Trading Terminal](Trading-Terminal) specific.*
+:chart: *applies to [Trading Terminal](Trading-Terminal) only*
 
-The object which represent a news provider. It may contain the following properties:
+An object that specifies the news provider. It may contain the following properties:
 
-1. `is_news_generic` - if `true` the title of the news widget will no have a symbol name (just `Headlines`). Otherwise `for SYMBOL_NAME` will be added.
-1. `get_news` - use this property to set own news getter function. `symbol` and `callback` will be passed to the function.
+1. `is_news_generic` - if set to `true` then the title of the news widget will not include a symbol name (`Headlines` will be included only). Otherwise `for SYMBOL_NAME` will be added.
+1. `get_news` - use this property to set your own news getter function. Both the `symbol` and `callback` will be passed to the function.
 
-    The callback function should be called with an array of news objects with the following structure:
+    The callback function should be called with an array of news objects that have the following structure:
 
-    * `title` (required) - News item title.
-    * `published` (required) - News item time in ms (UTC).
-    * `source` (optional) - Title of news item source.
+    * `title` (required) - the title of news item.
+    * `published` (required) - the time of news item in ms (UTC).
+    * `source` (optional) - source of the news item title.
     * `shortDescription` (optional) - Short description of a news item that will be displayed under the title.
-    * `link` (optional) - URL to the news story
-    * `fullDescription` (optional) - Full description (body) of a news item
+    * `link` (optional) - URL to the news story.
+    * `fullDescription` (optional) - full description (body) of a news item.
 
-    **NOTE:** When a user clicks on a news item a new tab with `link` URL will be opened. If `link` is not specified a dialog popup with `fullDescription` will be shown.
+    **NOTE:** When a user clicks on a news item a new tab with the `link` URL will be opened. If `link` is not specified then a pop-up dialog with `fullDescription` will be shown.
 
-    **NOTE 2:** If it is set `rss_news_feed` will be ignored.
+    **NOTE 2:** If both `news_provider` and `rss_news_feed` are available then the `rss_news_feed` will be ignored.
 
 Example:
 
@@ -464,19 +456,19 @@ news_provider: {
     get_news: function(symbol, callback) {
         callback([
             {
-                title: 'It is news for symbol ' + symbol,
+                title: 'News for symbol ' + symbol,
                 shortDescription: 'Short description of the news item',
                 fullDescription: 'Full description of the news item',
                 published: new Date().valueOf(),
-                source: 'My own news source',
+                source: 'My own source of news',
                 link: 'https://www.tradingview.com/'
             },
             {
                 title: 'Another news for symbol ' + symbol,
                 shortDescription: 'Short description of the news item',
-                fullDescription: 'Full description of the news item. Very long long long long long long long long text.',
+                fullDescription: 'Full description of the news item. Long text here.',
                 published: new Date().valueOf(),
-                source: 'My own news source',
+                source: 'My own source of news',
             }
         ]);
     }
@@ -485,13 +477,13 @@ news_provider: {
 
 ### brokerFactory
 
-:chart: *[Trading Terminal](Trading-Terminal) specific.*
+:chart: *applies to [Trading Terminal](Trading-Terminal) only*
 
-Use this field to pass the function that constructs implementation of [Broker API](Broker-API). This is a function that accepts [Trading Host](Trading-Host) and returns [Broker API](Broker-API).
+Use this field to pass the function that returns a new object which implements [Broker API](Broker-API). This is a function that accepts [Trading Host](Trading-Host) and returns [Broker API](Broker-API).
 
 ### brokerConfig
 
-:chart: *[Trading Terminal](Trading-Terminal) specific.*
+:chart: *applies to [Trading Terminal](Trading-Terminal) only*
 
 Use this field to set the configuration flags for the Trading Terminal. [Read more](Trading-Objects-and-Constants#configflags-object).
 
@@ -501,5 +493,5 @@ Use this field to set the configuration flags for the Trading Terminal. [Read mo
 * [Widget Methods](Widget-Methods)
 * [Featuresets](Featuresets)
 * [Saving and Loading Charts](Saving-and-Loading-Charts)
-* [Overriding Studies' Defaults](Studies-Overrides)
-* [Overriding Chart's Defaults](Overrides)
+* [Overriding Default Properties of the Studies](Studies-Overrides)
+* [Overriding Default Properties of the Chart](Overrides)
