@@ -451,12 +451,13 @@ Returns an object to manage the watchlist. The object has the following methods:
 
 1. `saveList(list: SymbolList)` - allows you to save a list of symbols where `list` is an object with the following keys:
 
-  ```js
-  id: string;
-  title: string;
-  symbols: string[];
-  ```
-If there is no WatchList or an equivalent list already exists then `false` will be returned, otherwise `true` will returned.
+    ```js
+    id: string;
+    title: string;
+    symbols: string[];
+    ```
+
+    If there is no WatchList or an equivalent list already exists then `false` will be returned, otherwise `true` will returned.
 
 1. `deleteList(listId: string)` - allows you to delete a list of symbols.
 
