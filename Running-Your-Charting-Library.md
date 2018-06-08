@@ -8,7 +8,7 @@ The Charting Library works out of the box, but you have to set up your HTTP serv
 
 ## 2. Start an HTTP server
 
-You may set up any HTTP server to listen on any of your host’s free ports and refer to the folder containing the Charting Library. Below you will find instructions on how to start several most common HTTP servers.
+You may set up any HTTP server to listen to any of your host’s free ports and refer to the folder containing the Charting Library. Below you will find instructions on how to start several most common HTTP servers.
 
 ### Python 2.x
 

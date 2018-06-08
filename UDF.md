@@ -4,14 +4,14 @@
 
 ## Response-as-a-table concept
 
-Think of data feed responses as tables. For example, a data feed response that includes a symbol list from the exhange may be treated as a table where each symbol represents a row, along with some columns (minimal_price_movement, description, has_intraday e.t.c.).
+Think of data feed responses as tables. For example, a data feed response that includes a symbol list from the exchange may be treated as a table where each symbol represents a row, along with some columns (minimal_price_movement, description, has_intraday e.t.c.).
 Each column may be an array (it will provide a separate value for each row in a table).
 Note that there might be a situation when all rows have the same value in the same column.
 In this case, the column value can be defined as a single value in JSON response.
 
 Example:
 
-Let's assume that we reqested a symbol list from the New York Stock Exchange. The response (in pseudo-format) might look like
+Let's assume that we requested a symbol list from the New York Stock Exchange. The response (in pseudo-format) might look like
 
 ```javascript
 {
@@ -115,7 +115,7 @@ Here is an example of data feed response to `GET /symbol_info?group=NYSE` reques
 
 **Remark 2**: In the event that your data feed does not support the requested symbol group (which should not happen if your response to request #1 (supported groups) is correct) you may expect a 404 error.
 
-**Remark 3**: When using this mode of receiving data (getting large amount of symbol data) your brower will keep the data that wasn't even requested by the user.
+**Remark 3**: When using this mode of receiving data (getting large amount of symbol data) your browser will keep the data that wasn't even requested by the user.
 If your symbol list has more than a few items, please consider supporting symbol search / individual symbol resolve instead.
 
 ### Symbol resolve

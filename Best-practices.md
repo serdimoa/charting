@@ -1,12 +1,12 @@
 ## Creating the best user experience
 
-We love our charts. We want them to be the best: the most beautiful, the most responsive and the most powerful charts in the whole HTML5 world. We are working hard to reach these goals.
+We love our charts. We want them to be the best, the most beautiful, the most responsive and the most powerful charts in the whole HTML5 world. We are working hard to reach these goals.
 
 We know all about our charts and about creating the best user experience using them and we'd be glad to share our knowledge with you. This document describes several best practices for integrating the Charting Library into your website/application. The main point is to always think about your users and their experience.
 
 ### 1. Understand what Charting Library IS and what it ISN’T
 
-Charting Library is a charting component able to show prices, charts & technical analysis tools. Library does the chart magic, and nothing more. If you want some additional functionality (like chats, special symbols list, hottest deals, ads, etc) the best approach is to implement them outside of the chart. However, if you want to link your outside functionality with the library, you can use the library’s API to link them.
+Charting Library is a charting component that is able to show prices, charts & technical analysis tools. Our Library does the chart magic, and nothing more. If you want some additional functionality (like chats, special symbols list, hottest deals, ads, etc) the best approach is to implement them outside of the chart. However, if you want to link your outside functionality with the library, you can use the library’s API to link them.
 
 ### 2. Return exactly as many bars as the Library requests
 
@@ -20,9 +20,9 @@ The same as for the bars above. Send only marks matching the requested range.
 
 Charting Library avoids loading content which the user didn’t ask for. Loading more bars into the chart means loading the CPU and memory with more operations than necessary. This means responsiveness of the whole solution decreases.
 
-### 5. Do not make your chart look as a mess
+### 5. Do not make your chart look messy
 
-Users like beautiful charts. As we do. Please remember to keep your chart looking good when customizing size or style. Avoid embedding custom controls that look alien to the entire chart's style.
+Users like beautiful charts. So do we. Please remember to keep your chart looking good when customizing size or style. Avoid embedding custom controls that look alien to the entire chart's style.
 
 ### 6. Avoid making very small charts
 
@@ -54,7 +54,7 @@ Do not use UDF with data grouping (see `supports_group_request`) if your backend
 
 ### 11. Do not try to sniff our code and use undocumented features
 
-All features not mentioned in our documentation are subjects for change without any warnings and backward compatibility. Also, altering the source code is strictly prohibited by the legal agreement you signed.
+All features not mentioned in our documentation are subjects to change without any warnings and backward compatibility. Also, altering the source code is strictly prohibited by the legal agreement you signed.
 
 ### 12. Do not use our demo datafeed on your production website
 

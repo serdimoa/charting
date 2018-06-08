@@ -64,7 +64,7 @@ First of all, the Charting Library is not intended to display data from files. I
 
 1. Write an application using any server language (.NET, PHP, NodeJS, Python etc.). This application should read the file and provide the data from it in [UDF](UDF) format over HTTP(S).
 
-    Note: You can provide data in another format or use websocket to transfer it, but in this case you will need to implement a [JS-Api](JS-Api) adapter on a client.
+    Note: You can provide data in another format or use a websocket to transfer it, but in this case you will need to implement a [JS-Api](JS-Api) adapter on a client.
 1. You should either have a static IP or register a domain so a browser can send requests to your server.
 1. Open `index.html` and replace `demo_feed.tradingview.com` with the URL to your server.
 
@@ -75,7 +75,7 @@ First of all, the Charting Library is not intended to display data from files. I
 </summary><p>
 
 The first thing you should do is open `index.html` or your script where you create the library widget and put the following line in the initialization options of the widget: `debug: true,`.
-Once you have done that, you will see lot of helpful information in your browser console.
+Once you have done that, you will see lots of helpful information in your browser console.
 Most of important actions that happen in the library are explained in the console.
 
 Please read [Symbology](Symbology) thoroughly. Most of errors with data happen because of incorrect symbol settings.

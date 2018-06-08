@@ -71,9 +71,9 @@ Please note that the leading `-` characters are not part of the featureset name 
 
 | ID  | Default State | Library Version | Description
 |-------|---------------|-----------------|------------
-| **use_localstorage_for_settings** | on |                 | Allows to save user settings to the Local Storage
+| **use_localstorage_for_settings** | on |                 | Allows storing all properties (including favorites) to the localstorage
 | - items_favoriting | on |                 | Disabling this feature hides all "Favorite this item" buttons
-| - save_chart_properties_to_local_storage | on |                 | Disabling this feature prevents saving of chart properties (colors, styles, fonts) to the Local Storage, but maintains the saving of favorite items
+| - save_chart_properties_to_local_storage | on |                 |  Can be disabled to forbid storing chart properties to the localstorage while allowing to save other properties. The other properties are favorites in the Charting Library and Watchlist symbols and some panels states in the Trading Terminal.
 | create_volume_indicator_by_default | on |                 |
 | create_volume_indicator_by_default_once | on |                  |
 | volume_force_overlay | on |                 | Places Volume indicator on the same pane with the main series
