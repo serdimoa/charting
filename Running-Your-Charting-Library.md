@@ -18,6 +18,10 @@ Execute the following command in the Charting Library folder:
 
 `python -m SimpleHTTPServer 9090`
 
+### Python 3.x
+
+`python -m http.server 9090`
+
 ### NodeJS
 
 First install `http-server`:
