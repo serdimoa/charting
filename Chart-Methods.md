@@ -268,7 +268,13 @@ Sets visibility of an entity with a passed ID.
 1. `inputs`: (starting from version `1.2`) an array of study inputs. This array is expected to contain input values in the same order as in the study properties dialog.
 1. `callback`: function(`entityId`)
 1. `overrides`: (starting from version `1.2`) an object [containing properties](Studies-Overrides) you'd like to set for your new study. Note that you should not specify the study name. Start a property path with a plot name.
-1. `options`: object with the only possible key `checkLimit`. If it is `true` then study limit dialog will be shown when the limit is exceeded.
+1. `options`: object with the the following keys:
+    * `checkLimit` - if it is `true` then the study limit dialog will be shown if the limit is exceeded.
+    * `priceScale` - preferred price scale for the study. Possible values are:
+        * `left` - attach the study to the left price scale
+        * `right` - attach the study to the right price scale
+        * `no-scale` - do not attach the study to any price scale. The study will be added in 'No Scale' mode
+        * `as-series` - attach the study to the price scale where the main series is attached (it is only applicable the study is added to the pane with the main series)
 
 **Starting from v 1.12 the function returns the result immediately. Callback is kept to maintain compatibility.**
 
@@ -314,6 +320,7 @@ Returns an object with the following methods that allows you to interact with th
     Returned value is an array of objects (`StudyInputValue`) with the following fields:
     * `id` - input ID of the study
     * `value` - value of the input
+
 1. `setInputValues(inputs)` - sets input values for a study.
     `inputs` should be an array of `StudyInputValue` objects (see above).
     It may contain only some of the inputs that you wish to change.
@@ -322,6 +329,14 @@ Returns an object with the following methods that allows you to interact with th
 1. `mergeDown()` - merges the study down (if possible)
 1. `unmergeUp()` - unmerges the study up (if possible)
 1. `unmergeDown()` - unmerges the study down (if possible)
+1. `changePriceScale(priceScale)` - changes the price scale of the study
+
+    `priceScale` should be a string with one of the following values:
+    * `left` - attach the study to the left price scale
+    * `right` - attach the study to the right price scale
+    * `no-scale` - do not attach the study to any price scale. The study will be added in 'No Scale' mode
+    * `as-series` - attach the study to the price scale where the main series is attached (it is only applicable if the study and the main series are located on the same pane)
+
 1. `isVisible()` - returns `true` if the study is visible
 1. `setVisible(visible)` - shows/hides the study
 1. `bringToFront()` - places the study on top of all other chart objects
