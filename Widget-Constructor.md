@@ -15,7 +15,7 @@ Below is a complete list of supported parameters. Note that you can't change the
 
 ### symbol, interval
 
-The default symbol & time interval of your chart. The `interval` value is described in the [Resolution](Section). *Mandatory*
+The default symbol & time interval of your chart. The `interval` value is described in the [Section](Resolution). *Mandatory*
 
 ### timeframe
 

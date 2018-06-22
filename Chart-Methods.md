@@ -35,6 +35,7 @@ Here is a list of methods supported by the chart.
   * [removeEntity(entityId)](#removeentityentityid)
   * [removeAllShapes()](#removeallshapes)
   * [removeAllStudies()](#removeallstudies)
+  * [getPanes()](#getpanes)
 * [Study Templates](#study-templates)
   * [createStudyTemplate(options)](#createstudytemplateoptions)
   * [applyStudyTemplate(template)](#applystudytemplatetemplate)
@@ -303,47 +304,7 @@ Creates a study on the main symbol. Here are the examples:
 
 1. `entityId`: object. Value that is returned when a study is created via API.
 
-Returns an object with the following methods that allows you to interact with the study:
-
-1. `isUserEditEnabled()` - returns `true` if a user is able to remove/change/hide the study
-1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding a study by the user
-1. `getInputsInfo()` - returns the information about all the inputs.
-
-    Returned value is an array of objects with the following fields:
-    * `id` - input ID of the study
-    * `name` - name of the input
-    * `type` - type of the input
-    * `localizedName` - name of the input translated to the current language
-
-1. `getInputValues()` - returns values of study inputs.
-
-    Returned value is an array of objects (`StudyInputValue`) with the following fields:
-    * `id` - input ID of the study
-    * `value` - value of the input
-
-1. `setInputValues(inputs)` - sets input values for a study.
-    `inputs` should be an array of `StudyInputValue` objects (see above).
-    It may contain only some of the inputs that you wish to change.
-
-1. `mergeUp()` - merges the study up (if possible)
-1. `mergeDown()` - merges the study down (if possible)
-1. `unmergeUp()` - unmerges the study up (if possible)
-1. `unmergeDown()` - unmerges the study down (if possible)
-1. `changePriceScale(priceScale)` - changes the price scale of the study
-
-    `priceScale` should be a string with one of the following values:
-    * `left` - attach the study to the left price scale
-    * `right` - attach the study to the right price scale
-    * `no-scale` - do not attach the study to any price scale. The study will be added in 'No Scale' mode
-    * `as-series` - attach the study to the price scale where the main series is attached (it is only applicable if the study and the main series are located on the same pane)
-
-1. `isVisible()` - returns `true` if the study is visible
-1. `setVisible(visible)` - shows/hides the study
-1. `bringToFront()` - places the study on top of all other chart objects
-1. `sendToBack()` - places the study behind all other chart objects
-1. `applyOverrides(overrides)` - applies [overrides](https://github.com/tradingview/charting_library/wiki/Studies-Overrides) to the study.
-   `overrides` object keys don’t need to start with the study name. The key is applied to a particular study.
-   For example, you should use `style` instead of `Overlay.style` to override the current style of the Overlay study.
+Returns an instance of the [StudyApi](Study-Api) that allows you to interact with the study.
 
 ### createShape(point, options)
 
@@ -402,24 +363,7 @@ This call creates a shape at a specific point on the chart provided that it's wi
 
 1. `entityId`: object. The value that is returned when a shape is created via API
 
-Returns an object with the following methods that allows you to interact with the study:
-
-1. `isSelectionEnabled()` - returns `true` if the shape cannot be selected by a user
-1. `setSelectionEnabled(enable)` - enables or disables shape selection (see `disableSelection` option of `createMultipointShape`)
-1. `isSavingEnabled()` - returns `true` if the shape is not saved on the chart
-1. `setSavingEnabled(enable)` - enables or disables saving of the shape in the chart layout (see `disableSave` option of `createMultipointShape`)
-1. `isShowInObjectsTreeEnabled()` - returns `true` if the shape is displayed in the Objects Tree dialog
-1. `setShowInObjectsTreeEnabled(enabled)` - enables or disables displaying of the shape in the Objects Tree dialog
-1. `isUserEditEnabled()` - returns `true` if a user can remove/change/hide the shape
-1. `setUserEditEnabled(enabled)` - enables or disables removing/changing/hiding of the shape by a user
-1. `bringToFront()` - places the line tool on top of all other chart objects.
-1. `sendToBack()` - places the line tool behind all other chart objects.
-1. `getProperties()` - gets all the properties of the shape.
-1. `setProperties(properties)` - sets the properties of the shape.
-    `properties` should have the same structure as an object from `getProperties`. It can only include the properties that you want to override.
-1. `getPoints()` - returns the points of the shape. `Point` is an object with the following keys `{ price, time }`.
-1. `setPoints(points)` - set the new points of the shape.
-    The point format is the same as `points` argument from `createMultipointShape` method.
+Returns an instance of the [ShapeApi](Shape-Api) that allows you to interact with the shape.
 
 ### removeEntity(entityId)
 
@@ -434,6 +378,10 @@ Removes all the shapes from the chart.
 ### removeAllStudies()
 
 Removed all the studies from the chart.
+
+### getPanes()
+
+Returns an array of instances of the [PaneApi](Pane-Api) that allows you to interact with the panes.
 
 ## Study Templates
 

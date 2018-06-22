@@ -89,5 +89,5 @@ Note that the specific features that are available in the Trading Terminal only 
 ## See Also
 
 * [How to connect your trading back-end to the Trading Terminal](Broker-API)
-* [Widget methods specific for Trading Terminal](Widget-Methods#chart-trading-terminal-specific)
+* [Widget methods specific for Trading Terminal](Widget-Methods#chart-trading-terminal-only)
 * [Widget constructor parameters specific for Trading Terminal](Widget-Constructor#trading-terminal-only)
