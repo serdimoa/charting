@@ -79,6 +79,12 @@ This is an object that should be passed in the constructor of the Trading Termin
 
     Using this flag you can enable modification of the duration of the existing order. It is disabled by default.
 
+* `supportModifyOrder`
+
+    *Default:* `true`
+
+    Using this flag you can disable modification of the existing order. It is enabled by default.
+
 ### durations: array of objects
 
 List of expiration options of orders. It is optional. Do not set it if you don't want the durations to be displayed in the order ticket.
