@@ -49,6 +49,7 @@ widget.onChartReady(function() {
   * [getIntervals()](#getintervals)
   * [getStudiesList()](#getstudieslist)
 * [Customization](#customization)
+  * [changeTheme(themeName)](#changethemethemename)
   * [addCustomCSSFile(url)](#addcustomcssfileurl)
   * [applyOverrides(overrides)](#applyoverridesoverrides)
   * [applyStudiesOverrides(overrides)](#applystudiesoverridesoverrides)
@@ -397,6 +398,14 @@ Returns an array of supported resolutions. This was introduced in version 1.7.
 Returns an array of IDs of all studies. They can be used to create a study.
 
 ## Customization
+
+### changeTheme(themeName)
+
+1. `themeName` should be `"Light"` | `"Dark"`
+
+This method changes the chart theme without reloading the chart.
+
+You can also use the [theme](Widget-Constructor#theme) in the Widget Constructor to create the chart with a custom theme.
 
 ### addCustomCSSFile(url)
 

@@ -234,6 +234,10 @@ A version of your backend. Supported values are: `"1.0"` | `"1.1"`. Study Templa
 
 Set this parameter to `true` if you want the library to load the last saved chart for a user (you should implement [save/load](Saving-and-Loading-Charts) first to make it work).
 
+### theme
+
+Adds custom theme color for the chart. Supported values are: `"Light"` | `"Dark"`.
+
 ### custom_css_url
 
 *Starting from version 1.4.*

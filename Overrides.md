@@ -77,6 +77,10 @@ mainSeriesProperties.showCountdown: true
 mainSeriesProperties.visible:true
 mainSeriesProperties.showPriceLine: true
 mainSeriesProperties.priceLineWidth: 1
+mainSeriesProperties.priceLineColor: ''
+mainSeriesProperties.showPrevClosePriceLine: false
+mainSeriesProperties.prevClosePriceLineWidth: 1
+mainSeriesProperties.prevClosePriceLineColor: 'rgba( 85, 85, 85, 1)'
 mainSeriesProperties.lockScale: false
 mainSeriesProperties.minTick: "default"
 
