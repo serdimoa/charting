@@ -236,6 +236,8 @@ Set this parameter to `true` if you want the library to load the last saved char
 
 ### theme
 
+*Starting from version 1.13.*
+
 Adds custom theme color for the chart. Supported values are: `"Light"` | `"Dark"`.
 
 ### custom_css_url

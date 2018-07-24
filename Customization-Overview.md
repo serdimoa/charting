@@ -44,7 +44,7 @@ var widget = new TradingView.widget({
     datafeed: new Datafeeds.UDFCompatibleDatafeed("http://demo_feed.tradingview.com"),
     library_path: "charting_library/",
     locale: "en",
-    drawings_access: { type: 'black', tools: [ { name: "Regression Trend" } ] },
+    drawings_access: { type: 'black', tools: [ { name: "Trend Line" } ] },
     disabled_features: ["use_localstorage_for_settings", "volume_force_overlay"],
     enabled_features: ["move_logo_to_main_pane"],
     overrides: {

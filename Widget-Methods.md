@@ -87,7 +87,7 @@ new TradingView.widget({
     drawings_access: {
         type: "black",
         tools: [
-            { name: "Regression Trend" },
+            { name: "Trend Line" },
             { name: "Trend Angle", grayed: true },
         ]
     },
@@ -400,6 +400,8 @@ Returns an array of IDs of all studies. They can be used to create a study.
 ## Customization
 
 ### changeTheme(themeName)
+
+*Starting from version 1.13.*
 
 1. `themeName` should be `"Light"` | `"Dark"`
 
