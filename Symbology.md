@@ -107,7 +107,7 @@ Timezone of the exchange for this symbol. We expect to get the name of the time 
 
 ## minmov, pricescale, minmove2, fractional
 
-These three keys have different meanings when used for common and fractional prices.
+These four keys have different meanings when used for common and fractional prices.
 
 ### Common prices
 

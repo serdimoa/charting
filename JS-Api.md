@@ -15,8 +15,8 @@ When you create an object that implements the described interface simply pass it
 1. [subscribeBars](#subscribebarssymbolinfo-resolution-onrealtimecallback-subscriberuid-onresetcacheneededcallback)
 1. [unsubscribeBars](#unsubscribebarssubscriberuid)
 1. [calculateHistoryDepth](#calculatehistorydepthresolution-resolutionback-intervalback)
-1. [getMarks](#getmarkssymbolinfo-startdate-enddate-ondatacallback-resolution)
-1. [getTimescaleMarks](#gettimescalemarkssymbolinfo-startdate-enddate-ondatacallback-resolution)
+1. [getMarks](#getmarkssymbolinfo-from-to-ondatacallback-resolution)
+1. [getTimescaleMarks](#gettimescalemarkssymbolinfo-from-to-ondatacallback-resolution)
 1. [getServerTime](#getservertimecallback)
 
 :chart: [Trading Terminal](Trading-Terminal) specific:
@@ -195,7 +195,7 @@ Let's assume that the implementation is as follows
 
 ```javascript
 Datafeed.prototype.calculateHistoryDepth = function(resolution, resolutionBack, intervalBack) {
-    if (period === "1D") {
+    if (resolution === "1D") {
         return {
             resolutionBack: 'M',
             intervalBack: 6
@@ -207,13 +207,13 @@ Datafeed.prototype.calculateHistoryDepth = function(resolution, resolutionBack, 
 When the Charting Library requests the data for `1D` resolution, the history will be 6 months deep.
 In all other cases the history depth will have the default value.
 
-### getMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
+### getMarks(symbolInfo, from, to, onDataCallback, resolution)
 
 *Optional.*
 
 1. `symbolInfo`: [SymbolInfo](Symbology#symbolinfo-structure) object
-1. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
-1. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
+1. `from`: unix timestamp (UTC). Leftmost visible bar's time.
+1. `to`: unix timestamp (UTC). Rightmost visible bar's time.
 1. `onDataCallback`: function(array of `mark`s)
 1. `resolution`: string
 
@@ -229,19 +229,19 @@ The Library assumes that you will call `onDataCallback` only once per `getMarks`
 * `text`: mark popup text. HTML supported
 * `label`: a letter to be printed on a mark. Single character
 * `labelFontColor`: color of a letter on a mark
-* `minSize`: minimum mark size (diameter, pixels)
+* `minSize`: minimum mark size (diameter, pixels) (default value is `5`)
 
 A few marks per bar are allowed (for now, the maximum is `10`). Marks outside of the bars are not allowed.
 
 **Remark**: This function will be called only if you confirmed that your back-end is [supporting marks](#supports_marks).
 
-### getTimescaleMarks(symbolInfo, startDate, endDate, onDataCallback, resolution)
+### getTimescaleMarks(symbolInfo, from, to, onDataCallback, resolution)
 
 *Optional.*
 
 1. `symbolInfo`: [SymbolInfo](Symbology#symbolinfo-structure) object
-1. `startDate`: unix timestamp (UTC). Leftmost visible bar's time.
-1. `endDate`: unix timestamp (UTC). Rightmost visible bar's time.
+1. `from`: unix timestamp (UTC). Leftmost visible bar's time.
+1. `to`: unix timestamp (UTC). Rightmost visible bar's time.
 1. `onDataCallback`: function(array of `mark`s)
 1. `resolution`: string
 
