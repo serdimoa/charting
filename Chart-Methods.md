@@ -12,6 +12,7 @@ Here is a list of methods supported by the chart.
   * [onIntervalChanged()](#onintervalchanged)
   * [dataReady(callback)](#datareadycallback)
   * [crossHairMoved(callback)](#crosshairmovedcallback)
+  * [onVisibleRangeChanged()](#onvisiblerangechanged)
 * [Chart Actions](#chart-actions)
   * [setVisibleRange(range, callback)](#setvisiblerangerange-callback)
   * [setSymbol(symbol, callback)](#setsymbolsymbol-callback)
@@ -96,6 +97,12 @@ The function returns `true` if bars are already loaded and `false` otherwise.
 1. `callback`: function({time, price})
 
 The Charting Library will call the callback function every time the crosshair position is changed.
+
+### onVisibleRangeChanged()
+
+*Since version 1.13.*
+
+You can subscribe using [Subscription](Subscription) object returned by this function to be notified when visible time range is changed. You can also use the same object to unsubscribe from the event.
 
 ## Chart Actions
 
