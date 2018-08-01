@@ -88,7 +88,7 @@ Overlay.areaStyle.priceSource: open/high/low/close
 
 ## Syntax
 
-Property path is a set of lower case identifiers splitted with a dot (`.`). Path formats are described below.
+Property path is a set of lower case identifiers split with a dot (`.`). Path formats are described below.
 
 **Remark**: You can get an error if a plot/band/area/input name is the same .
 In this case you can specify an exact destination that you want to change by adding `:plot`, `:band`, `:area` or `:input` to the path. (e.g. `short:plot.color`)

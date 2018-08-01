@@ -22,7 +22,7 @@ It's the name of the symbol. It is a string that your users will be able to see.
 ## ticker
 
 It's an unique identifier for this particular symbol in your symbology.
-If you specify this property then its value will be used for all data requests for this symbol. `ticker` will be treated the same as `symbol` if not specified explicitly.
+If you specify this property then its value will be used for all data requests for this symbol. `ticker` will be treated the same as [name](#name) if not specified explicitly.
 
 ## description
 
@@ -60,49 +60,75 @@ Timezone of the exchange for this symbol. We expect to get the name of the time 
 
 *Supported timezones are:*
 
+- `Etc/UTC`
+- `Africa/Cairo`
 - `Africa/Johannesburg`
+- `Africa/Lagos`
 - `America/Argentina/Buenos_Aires`
 - `America/Bogota`
 - `America/Caracas`
 - `America/Chicago`
 - `America/El_Salvador`
+- `America/Juneau`
+- `America/Lima`
 - `America/Los_Angeles`
 - `America/Mexico_City`
 - `America/New_York`
 - `America/Phoenix`
+- `America/Santiago`
 - `America/Sao_Paulo`
 - `America/Toronto`
 - `America/Vancouver`
 - `Asia/Almaty`
 - `Asia/Ashkhabad`
+- `Asia/Bahrain`
 - `Asia/Bangkok`
+- `Asia/Chongqing`
 - `Asia/Dubai`
+- `Asia/Ho_Chi_Minh`
 - `Asia/Hong_Kong`
+- `Asia/Jakarta`
+- `Asia/Jerusalem`
 - `Asia/Kathmandu`
 - `Asia/Kolkata`
+- `Asia/Kuwait`
+- `Asia/Muscat`
+- `Asia/Qatar`
+- `Asia/Riyadh`
 - `Asia/Seoul`
 - `Asia/Shanghai`
 - `Asia/Singapore`
 - `Asia/Taipei`
 - `Asia/Tehran`
 - `Asia/Tokyo`
+- `Atlantic/Reykjavik`
 - `Australia/ACT`
 - `Australia/Adelaide`
 - `Australia/Brisbane`
 - `Australia/Sydney`
 - `Europe/Athens`
+- `Europe/Belgrade`
 - `Europe/Berlin`
+- `Europe/Copenhagen`
+- `Europe/Helsinki`
 - `Europe/Istanbul`
 - `Europe/London`
+- `Europe/Luxembourg`
 - `Europe/Madrid`
 - `Europe/Moscow`
 - `Europe/Paris`
+- `Europe/Riga`
+- `Europe/Rome`
+- `Europe/Stockholm`
+- `Europe/Tallinn`
+- `Europe/Vilnius`
 - `Europe/Warsaw`
 - `Europe/Zurich`
 - `Pacific/Auckland`
 - `Pacific/Chatham`
 - `Pacific/Fakaofo`
 - `Pacific/Honolulu`
+- `Pacific/Norfolk`
 - `US/Mountain`
 
 ## minmov, pricescale, minmove2, fractional
@@ -181,9 +207,15 @@ Supported resolutions affect available timeframes too. The timeframe will not be
 
 *Default:* `[]`
 
-It is an array containing intraday resolutions (in minutes) that the data feed may provide.
+Array of resolutions (in minutes) supported directly by the data feed.
+Each such resolution may be passed to, and should be implemented by, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest).
+`[]` meaning that the data feed supports aggregating by any number of minutes.
 
-E.g., if the data feed supports resolutions such as `["1", "5", "15"]`, but has 1-minute bars for some symbols then you should set `intraday_multipliers` of this symbol to `[1]`. This will make Charting Library build 5 and 15-minute resolutions by itself.
+If the data feed only supports certain minute resolutions but not the requested resolution, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest) will be called (repeatedly if needed) with a higher resolution as a parameter, in order to build the requested resolution.
+
+For example, if the data feed only supports minute resolution, set `intraday_multipliers` to `['1']`.
+
+When the user wants to see 5-minute or relative path to te data, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest) will be called with the resolution set to 1 until the library builds all the 5-minute resolution by itself.
 
 ## has_seconds
 
@@ -191,7 +223,7 @@ E.g., if the data feed supports resolutions such as `["1", "5", "15"]`, but has 
 
 Boolean value showing whether the symbol includes seconds in the historical data.
 
-If it's `false` then all buttons for resolutions that include seconds will be disabled for this paricular symbol.
+If it's `false` then all buttons for resolutions that include seconds will be disabled for this particular symbol.
 
 If it is set to `true`, all resolutions that are supplied directly by the data feed must be provided in `seconds_multipliers` array.
 
@@ -199,7 +231,7 @@ If it is set to `true`, all resolutions that are supplied directly by the data f
 
 *Default:* `[]`
 
-It is an array containing resolutions that include seconds (exluding postfix) that the data feed provides.
+It is an array containing resolutions that include seconds (excluding postfix) that the data feed provides.
 
 E.g., if the data feed supports resolutions such as `["1S", "5S", "15S"]`, but has 1-second bars for some symbols then you should set `seconds_multipliers` of this symbol to `[1]`. This will make Charting Library build 5S and 15S resolutions by itself.
 
@@ -215,7 +247,7 @@ If `has_daily` = `false` then Charting Library will build the respective resolut
 
 *Default:* `false`
 
-The boolean value showing whether data feed has its own weekly and manthly resolution bars or not.
+The boolean value showing whether data feed has its own weekly and monthly resolution bars or not.
 
 If `has_weekly_and_monthly` = `false` then Charting Library will build the respective resolutions using daily bars by itself. If not, then it will request those bars from the data feed.
 
@@ -235,7 +267,7 @@ The boolean value showing whether the library should filter bars using the curre
 
 If `false`, bars will be filtered only when the library builds data from another resolution or if `has_empty_bars` was set to `true`.
 
-If `true`, then the Library will remove bars that dont't belong to the trading session from your data.
+If `true`, then the Library will remove bars that don't belong to the trading session from your data.
 
 ## has_no_volume
 

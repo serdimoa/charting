@@ -226,8 +226,8 @@ Object that describes a single DOM response.
 
     Positive value means that previous data should be cleaned
 
-* `asks`: array of DOMELevel sorted by price ascendingly
-* `bids`: array of DOMELevel sorted by price ascendingly
+* `asks`: array of DOMELevel sorted by price in ascending order
+* `bids`: array of DOMELevel sorted by price in ascending order
 
 ## DOMELevel
 

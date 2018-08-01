@@ -161,9 +161,9 @@ Example:
 1. Library replaces the entire bar making the most recent bar `{1419411578413, 10, 14, 9, 14}`
 
 **Remark 2**: Is it possible either to update the most recent bar or to add a new one with `onRealtimeCallback`.
-You'll get an error if you call this function when trying to update a hisorical bar.
+You'll get an error if you call this function when trying to update a historical bar.
 
-**Remark 3**: There is no way to change historcical bars once they've been received by the chart currently.
+**Remark 3**: There is no way to change historical bars once they've been received by the chart currently.
 
 ### unsubscribeBars(subscriberUID)
 

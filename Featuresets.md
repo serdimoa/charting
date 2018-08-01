@@ -22,9 +22,9 @@ Please note that the leading `-` characters are not part of the featureset name 
 | - header_undo_redo                      | on            |                 |                                                            |
 | - header_screenshot                     | on            |                 |                                                            |
 | - header_fullscreen_button              | on            |                 |                                                            |
-| compare_symbol                          | on            |       1.5       | You can remove Compare/Overlay dialog from context menues using this featureset |
+| compare_symbol                          | on            |       1.5       | You can remove Compare/Overlay dialog from context menus using this featureset |
 | border_around_the_chart                 | on            |                 |                                                            |
-| header_saveload                         | on            |                 | Hides save/laod buttons (the feature is not part of `header_widget` featureset)                    |
+| header_saveload                         | on            |                 | Hides save/load buttons (the feature is not part of `header_widget` featureset)                    |
 | left_toolbar                            | on            |                 |                                                            |
 | control_bar                             | on            |                 | Relates to the navigation buttons at the bottom of the chart            |
 | timeframes_toolbar                      | on            |                 |                                                            |

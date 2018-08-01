@@ -165,7 +165,7 @@ Every event can have a different set of arguments.
 
 ### unsubscribe(event, callback)
 
-Unsubscribes a previously subscribed `callback` funciton from a given `event` (that is one of the events in the table above).
+Unsubscribes a previously subscribed `callback` function from a given `event` (that is one of the events in the table above).
 
 ## Chart Actions
 
@@ -299,7 +299,7 @@ You have to return an array of objects that have the following format to add or 
 
 * `position`: position of the item in the context menu
 * `text`: menu item text
-* `click`: a callback functon that will be called when a user selects your menu item
+* `click`: a callback function that will be called when a user selects your menu item
 
 Use the minus sign to add a separator. Example: `{ text: "-", position: "top" }`.
 

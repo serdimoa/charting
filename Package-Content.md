@@ -28,6 +28,6 @@ You can check the Charting Library version by entering the `TradingView.version(
 * `/charting_library/static` folder stores Charting Library internal content and is not intended for other purposes.
 * `/index.html` is an example of using Charting Library widget on your web page.
 * `/test.html` is an example of using different Charting Library customization features.
-* `/mobile*.html` are also examlpes of Widget customization.
+* `/mobile*.html` are also examples of Widget customization.
 
 All internal JS and CSS codes of the Charting Library are inlined and minified to reduce the page load time. Files that are expected to be edited by you were not minified.

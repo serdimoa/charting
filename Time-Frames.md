@@ -3,7 +3,7 @@ You can see the toolbar at the bottom of the chart. Each of those buttons on the
 1. Switch the chart resolution
 1. Force the bars to scale horizontally in order to cover the entire requested date/time range.
 
-I.e., clicking `1Y` will make the chart switch the resolution to `1D` and scale it accordingly to dispaly daily bars for the entire year. Each time frame has its own chart resolution. Here it the list of default time frames:
+I.e., clicking `1Y` will make the chart switch the resolution to `1D` and scale it accordingly to display daily bars for the entire year. Each time frame has its own chart resolution. Here it the list of default time frames:
 
 Time Frame|Chart Resolution
 ---|---

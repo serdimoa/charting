@@ -37,7 +37,7 @@ You can display orders/positions and Level 2 data in an interactive DOM widget.
 
 ### Sidebar Quotes (Symbol Details & Watchlist)
 
-In the Trading Terminal, you can have the functionality of the Watchilsts and Details widget (see the snapshot below).
+In the Trading Terminal, you can have the functionality of the Watchlist and Details widget (see the snapshot below).
 
 ![images/tt_top.png](images/tt_top.png)
 
@@ -59,7 +59,7 @@ You can have the news feed right in the sidebar of the chart. We are quite flexi
 
 ### Multiple charts layout
 
-You can have multiple charts inside of a single widget. This gives your user the ability to use a wide range of strategies, as well as the ability to have a broad view of the market. You don't have to do anythng to enable or tweak it: it works out-of-the-box.
+You can have multiple charts inside of a single widget. This gives your user the ability to use a wide range of strategies, as well as the ability to have a broad view of the market. You don't have to do anything to enable or tweak it: it works out-of-the-box.
 
 ![images/tt_charts.png](images/tt_charts.png)
 

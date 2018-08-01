@@ -19,7 +19,7 @@ Here are a few steps for those who want to have their own chart storage:
     1. Go to you chart storage folder and run `pip install -r requirements.txt`
     1. Go to charting_library_charts folder and set up your database connection in settings.py (see `DATABASES` @ line #12). Please remember to create the appropriate database in your PostgreSQL.
     1. Run `python manage.py migrate` . This will create the database schema without any data.
-    1. Run `python manage.py runserver` to run a TEST instance of your database. Don't use the command above in production environment. Use some other programm (i.e., Gunicorn).
+    1. Run `python manage.py runserver` to run a TEST instance of your database. Don't use the command above in production environment. Use some other program (i.e., Gunicorn).
 1. Set up your Charting Library page: set `charts_storage_url = url-of-your-charts-storage`, also set `client_id` and `user_id` (see details below) in the widget constructor.
 1. Enjoy!
 
@@ -107,7 +107,7 @@ A user can see/load charts that have the same `client_id` and `user_id` that the
 The intended use is when you have a few groups of users or when you have a few sites that use the same chart storage.
 So the common practice is to set `client_id = your-site's-URL`. It's up to you to decide.
 
-`user_id` is a unique identfier of a user. Users ID belongs to a particular `client_id` group.
+`user_id` is a unique identifier of a user. Users ID belongs to a particular `client_id` group.
 You can either set it for each user individually (private storage for each user) or set it for all users or user groups (public storage).
 
 Here are a few examples:

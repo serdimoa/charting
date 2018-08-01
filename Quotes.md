@@ -7,7 +7,7 @@ Charting Library uses the same data structures for quotes in both [JS API](JS Ap
 * `s`: Status code for symbol. Expected values: `ok` | `error`
 * `n`: Symbol name. This value must be **exactly the same** as in the request
 * `v`: object, symbol quote itself
-  * `ch`: price change (usually counts as an open price on a particlar day)
+  * `ch`: price change (usually counts as an open price on a particular day)
   * `chp`: price change percentage
   * `short_name`: short name of the symbol
   * `exchange`: the exchange name

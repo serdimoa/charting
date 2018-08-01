@@ -11,7 +11,7 @@ new TradingView.widget({
 });
 ```
 
-Below is a complete list of supported parameters. Note that you can't change the parameters once the Charting Library is created. Use [Widget methods](Widget-Methods) if you wish to modify the parameteres after the creation of the Charting Library.
+Below is a complete list of supported parameters. Note that you can't change the parameters once the Charting Library is created. Use [Widget methods](Widget-Methods) if you wish to modify the parameters after the creation of the Charting Library.
 
 ### symbol, interval
 
@@ -24,7 +24,7 @@ Valid timeframe is a number with a letter D for days and M for months.
 
 ### container_id
 
-`id` is an attribute of a DOM element that you wish to inlude in the widget. *Mandatory*
+`id` is an attribute of a DOM element that you wish to include in the widget. *Mandatory*
 
 ### datafeed
 
@@ -32,7 +32,7 @@ JavaScript object that implements the ([JS API](JS-Api)) interface to supply the
 
 ### timezone
 
-Default timezone of the chart. The time on the timescale is displayed accodring to this timezone.
+Default timezone of the chart. The time on the timescale is displayed according to this timezone.
 See the [list of supported timezones](Symbology#timezone) for available values. Set it to `exchange` to use the exchange timezone. Use the [overrides](#overrides) section if you wish to override the default value.
 
 ### debug
@@ -157,7 +157,7 @@ customFormatters: {
 ### overrides
 
 The object that contains new values for default widget properties.
-You can override most of the Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` is supposed to be an object. The keys of this object are the names of overidden properties. The values of these keys are the new values of the properties. Example:
+You can override most of the Charting Library properties (which also may be edited by user through UI) using `overrides` parameter of Widget constructor. `overrides` is supposed to be an object. The keys of this object are the names of overridden properties. The values of these keys are the new values of the properties. Example:
 
 ```javascript
 overrides: {
@@ -244,7 +244,7 @@ Adds custom theme color for the chart. Supported values are: `"Light"` | `"Dark"
 
 *Starting from version 1.4.*
 
-Adds your custom CSS to the chart. `url` should be an absolute or relative path to the 'static` folder.
+Adds your custom CSS to the chart. `url` should be an absolute or relative path to the `static` folder.
 
 ### loading_screen
 
@@ -263,7 +263,7 @@ loading_screen: { backgroundColor: "#000000" }
 
 ### favorites
 
-Items that should be maked as favorite by default. This option requires that the usage of localstorage is disabled (see [featuresets](Featuresets) to know more). The `favorites` property is supposed to be an object. The following properties are supported:
+Items that should be marked as favorite by default. This option requires that the usage of localstorage is disabled (see [featuresets](Featuresets) to know more). The `favorites` property is supposed to be an object. The following properties are supported:
 
 * **intervals**: an array of time intervals that are marked as favorite. Example: `["D", "2D"]`
 * **chartTypes**: an array of chart types that are marked as favorite. The names of chart types are identical to chart's UI in the English version. Example: `["Area", "Candles"]`.

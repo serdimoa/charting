@@ -39,7 +39,7 @@ The instruction below explains how to display chart data as an indicator. Please
                         "linewidth": 2,
 
                         // Plot type:
-                        //    1 - Histogramm
+                        //    1 - Histogram
                         //    2 - Line
                         //    3 - Cross
                         //    4 - Area
@@ -136,11 +136,11 @@ The instruction below explains how to display chart data as an indicator. Please
 
 ### Requesting data for another ticker
 
-Let's assume that you wish to dispaly the equity curve on the chart. You will have to do the following.
+Let's assume that you wish to display the equity curve on the chart. You will have to do the following.
 
 * Create a name for the new ticker, e.g. `#EQUITY`. You can use any name that you can think of.
-* Change your server's code to validate this symbol. The minimum amount of symobol information should be returned for this ticker.
-* Make the server return valid historical data for this ticker just as you return the historcal data for the generic symbols such as AAPL.
+* Change your server's code to validate this symbol. The minimum amount of symbol information should be returned for this ticker.
+* Make the server return valid historical data for this ticker just as you return the historical data for the generic symbols such as AAPL.
 * Modify the indicator template mentioned above and create the indicators file (or add a new indicator to the existing indicators file). Here is an example:
 
 ```javascript
@@ -275,7 +275,7 @@ __customIndicators = [
                     ],
 
                     // the mapping between the values that
-                    // are retured by the script and palette colors
+                    // are returned by the script and palette colors
                     valToIndex: {
                         100: 0,
                         200: 1

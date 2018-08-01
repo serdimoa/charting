@@ -1,6 +1,6 @@
 The Charting Library supports localization. It has been translated to a number of languages already. All you have to do to change your Charting Library language is to specify `locale` parameter when creating the Library widget.
 
-Our translations are crowd-sourced so everyone can participate. Visit [our page on WebtranslateIt](https://webtranslateit.com/en/projects/11203-TradingView) to participate.
+Our translations are crowd-sourced so everyone can participate. Visit [our page on WebTranslateIt](https://webtranslateit.com/en/projects/11203-TradingView) to participate.
 
 Supported languages:
 

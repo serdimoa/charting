@@ -147,9 +147,9 @@ Here is a list of predefined classes:
 
 | class name   |   description  |
 |--------------|----------------|
-| tv-data-table__cell--symbol-cell | Special formatter for a symbol field |
-| tv-data-table__cell--right-align | It aligns cell value to the right |
-| tv-data-table__cell--buttons-cell | Cell with a buttons |
+| `tv-data-table__cell--symbol-cell` | Special formatter for a symbol field |
+| `tv-data-table__cell--right-align` | It aligns cell value to the right |
+| `tv-data-table__cell--buttons-cell` | Cell with a buttons |
 
 ### formatter
 
@@ -160,17 +160,17 @@ Here is the list of default formatters:
 
 | name | description |
 | ---- | ----------- |
-| symbol | It is used for a symbol field. It displays `brokerSymbol`, but when you click on a symbol the chart changes according to the `symbol` field. `property` key is ignored.|
-| side | It is used to display the side: Sell or Buy. |
-| type| It is used to display the type of order: Limit/Stop/StopLimit/Market. |
-| formatPrice | Symbol price formatting. |
-| formatPriceForexSup | The same as `formatPrice`, but it makes the last character of the price superscripted. It works only if instrument type is set to `forex`.|
-| status | It is used to format the `status`. |
-| date | Displays the date or time. |
-| localDate | Displays the local date or time. |
-| fixed | Displays a number with 2 decimal places. |
-| pips | Displays a number with 1 decimal place. |
-| profit | Displays profit. It also adds the `+` sign, separates thousands and changes the cell text color to red or green. |
+| `symbol` | It is used for a symbol field. It displays `brokerSymbol`, but when you click on a symbol the chart changes according to the `symbol` field. `property` key is ignored.|
+| `side` | It is used to display the side: Sell or Buy. |
+| `type` | It is used to display the type of order: Limit/Stop/StopLimit/Market. |
+| `formatPrice` | Symbol price formatting. |
+| `formatPriceForexSup` | The same as `formatPrice`, but it makes the last character of the price superscripted. It works only if instrument type is set to `forex`.|
+| `status` | It is used to format the `status`. |
+| `date` | Displays the date or time. |
+| `localDate` | Displays the local date or time. |
+| `fixed` | Displays a number with 2 decimal places. |
+| `pips` | Displays a number with 1 decimal place. |
+| `profit` | Displays profit. It also adds the `+` sign, separates thousands and changes the cell text color to red or green. |
 
 There are some special formatters that are used to add buttons to the table:
 

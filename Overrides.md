@@ -1,5 +1,5 @@
 This Charting Library section includes the chart property description. These properties are treated
-as customizable ones. The customizaion of other properties is not supported.
+as customizable ones. The customization of other properties is not supported.
 
 The properties are listed in the following format:
 
@@ -64,7 +64,7 @@ timezone: "Etc/UTC" # See supported timezones list (at Symbology#timezone page) 
 // Candles = 1
 // Line = 2
 // Area = 3
-// Heiken Ashi = 8
+// Heikin Ashi = 8
 // Hollow Candles = 9
 // Renko = 4
 // Kagi = 5
@@ -117,7 +117,7 @@ mainSeriesProperties.hollowCandleStyle.borderUpColor: "#225437"
 mainSeriesProperties.hollowCandleStyle.borderDownColor: "#5b1a13"
 mainSeriesProperties.hollowCandleStyle.wickColor: "#737375"
 
-// Heiken Ashi styles
+// Heikin Ashi styles
 mainSeriesProperties.haStyle.upColor: "#6ba583"
 mainSeriesProperties.haStyle.downColor: "#d75442"
 mainSeriesProperties.haStyle.drawWick: true

@@ -1,7 +1,7 @@
 **The Charting Library does NOT include market data.** You must provide your own data in the required format. Quandl historical data is used as a sample. The charts can receive data in two ways:
 
 1. Update in real-time with a PUSH type connection, for example through WebSocket.
-    This way your charts will autoupdate with new prices when they arrive.
+    This way your charts will auto update with new prices when they arrive.
     To achieve this, you have to use the [JavaScript API](JS-Api) and have your own transport method ready.
 
 1. Update on a PULL/pulse/refresh basis (like most web-based charts today),
@@ -35,4 +35,4 @@ The pictures above illustrate the difference between UDF and JSAPI. Mandatory Ch
 
 A sample implementation of **UDF-compatible** (case #2 described below) server-side wrapper is available [on github](https://github.com/tradingview/yahoo_datafeed). It uses Quandl data.
 
-A sample of **JS API** implementation (and UDF client-side at the same time) is a part of Charting Library package (see */datafeeds/udf/* folder).
+A sample of **JS API** implementation (and UDF client-side at the same time) is a part of Charting Library package (see `/datafeeds/udf/` folder).

@@ -77,7 +77,7 @@ Note that you select the language when creating the chart. You'd have to recreat
 
 #### Default properties of a chart
 
-You can change any availalbe properties in the properties dialog.
+You can change any available properties in the properties dialog.
 
 1. Initially - [documentation](Widget-Constructor#overrides)
 1. On the fly - [documentation](Widget-Methods#applyoverridesoverrides)
