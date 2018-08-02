@@ -209,13 +209,13 @@ Supported resolutions affect available timeframes too. The timeframe will not be
 
 Array of resolutions (in minutes) supported directly by the data feed.
 Each such resolution may be passed to, and should be implemented by, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest).
-`[]` meaning that the data feed supports aggregating by any number of minutes.
+The default of `[]` means that the data feed supports aggregating by any number of minutes.
 
 If the data feed only supports certain minute resolutions but not the requested resolution, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest) will be called (repeatedly if needed) with a higher resolution as a parameter, in order to build the requested resolution.
 
 For example, if the data feed only supports minute resolution, set `intraday_multipliers` to `['1']`.
 
-When the user wants to see 5-minute or relative path to te data, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest) will be called with the resolution set to 1 until the library builds all the 5-minute resolution by itself.
+When the user wants to see 5-minute data, [getBars](JS-Api#getbarssymbolinfo-resolution-from-to-onhistorycallback-onerrorcallback-firstdatarequest) will be called with the resolution set to 1 until the library builds all the 5-minute resolution by itself.
 
 ## has_seconds
 

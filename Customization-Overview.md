@@ -9,7 +9,6 @@ Here is an example of a configuration response.
 ```javascript
 {
     supports_search: true,
-    supports_group_request: false,
     supports_marks: true,
     exchanges: [
         {value: "", name: "All Exchanges", desc: ""},
@@ -21,8 +20,8 @@ Here is an example of a configuration response.
         {name: "Stock", value: "stock"},
         {name: "Index", value: "index"}
     ],
-    supportedResolutions: [ "1", "15", "30", "60", "D", "2D", "3D", "W", "3W", "M", '6M' ]
-};
+    supportedResolutions: [ "1", "15", "30", "60", "1D", "2D", "3D", "1W", "3W", "1M", '6M' ]
+}
 ```
 
 You can find the detailed descriptions of these parameters on the [JS API page](JS-Api#onreadycallback).
@@ -65,7 +64,7 @@ var widget = new TradingView.widget({
     client_id: 'tradingview.com',
     user_id: 'public_user',
     favorites: {
-        intervals: ["1D", "3D", "3W", "W", "M"],
+        intervals: ["1D", "3D", "3W", "1W", "1M"],
         chartTypes: ["Area", "Line"]
     }
 });
