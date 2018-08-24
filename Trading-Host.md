@@ -87,6 +87,10 @@ Creates a [Delegate](Delegate) object.
 
 Creates a [WatchedValue](WatchedValue) object.
 
+### factory.createPriceFormatter(priceScale, minMove, fractional, minMove2)
+
+Creates a price [Formatter](Trading-Objects-and-Constants#formatter). The arguments of this function are described in [another article](Symbology#minmov-pricescale-minmove2-fractional).
+
 ### symbolSnapshot(symbol) : Promise
 
 Returns quotes of a symbol.

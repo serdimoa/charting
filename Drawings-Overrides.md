@@ -178,7 +178,6 @@ linetooldateandpricerange: {
     borderColor: 'rgba( 102, 123, 139, 1)'
 },
 linetoolriskrewardshort: {
-    isShort:true,
     linecolor: 'rgba( 88, 88, 88, 1)',
     linewidth: 1.0,
     font: 'Verdana',
@@ -196,7 +195,6 @@ linetoolriskrewardshort: {
     borderColor: 'rgba( 102, 123, 139, 1)'
 },
 linetoolriskrewardlong: {
-    isShort:false,
     linecolor: 'rgba( 88, 88, 88, 1)',
     linewidth: 1.0,
     font: 'Verdana',

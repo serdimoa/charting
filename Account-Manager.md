@@ -44,6 +44,10 @@ If the `currency` key is not set, `USD` will be used as a default value.
 Columns description that you want to be displayed on the Orders page.
 You can display any field of an [order](Trading-Objects-and-Constants#order) or add your own fields to an order object and display them.
 
+### orderColumnsSorting: [SortingParameters](#sortingparameters)
+
+Optional sorting of the table. If it is not set, the table is sorted by the first column.
+
 ### possibleOrderStatuses: array of [OrderStatus](Trading-Objects-and-Constants#orderstatus)
 
 Optional list of statuses to be used in the orders filter. Default list is used if it hasn't been set.
@@ -51,6 +55,10 @@ Optional list of statuses to be used in the orders filter. Default list is used 
 ### historyColumns: array of [Column](#column-description)
 
 History page will be displayed if it exists. All orders from previous sessions will be shown in the History.
+
+### historyColumnsSorting: [SortingParameters](#sortingparameters)
+
+Optional sorting of the table. If it is not set, the table is sorted by the first column.
 
 ## Positions Page
 
@@ -107,14 +115,19 @@ Account Summary table metainfo is an object with the following fields:
 
     This delegate is used to watch the data changes and update the table. Pass new account manager data to `fire` method of the delegate.
 
-1. `initialSorting`: object with the following properties:
-    - `columnId` - `id` or `property` of the column that will be used for sorting.
-    - `asc` - (optional, default `false`) - If it is `true`, then initial sorting will be in ascending order.
+1. `initialSorting`: [SortingParameters](#sortingparameters)
 
-    `initialSorting` is an optional sorting of the table. If it is not set, the table is sorted by the first column.
+    Optional sorting of the table. If it is not set, the table is sorted by the first column.
 
 **NOTE**: if you have more than 1 row in a table and want to update a row using `changeDelegate` make sure that you have `id` field in each row to identify it.
 It is not necessary if you have only 1 row in a table.
+
+#### SortingParameters
+
+Object with the following properties:
+
+    - `columnId` - `id` or `property` of the column that will be used for sorting.
+    - `asc` - (optional, default `false`) - If it is `true`, then initial sorting will be in ascending order.
 
 ## Formatters
 
@@ -164,6 +177,7 @@ Here is the list of default formatters:
 | `side` | It is used to display the side: Sell or Buy. |
 | `type` | It is used to display the type of order: Limit/Stop/StopLimit/Market. |
 | `formatPrice` | Symbol price formatting. |
+| `formatQuantity` | Displays an integer or floating point quantity, separates thousands groups with a space. |
 | `formatPriceForexSup` | The same as `formatPrice`, but it makes the last character of the price superscripted. It works only if instrument type is set to `forex`.|
 | `status` | It is used to format the `status`. |
 | `date` | Displays the date or time. |
@@ -207,6 +221,19 @@ Optional `notSortable` can be set to prevent column sorting.
 ### fixedWidth
 
 If it is `true` then the column width will not be changed when the cell value is decreased.
+
+### supportedStatusFilters
+
+An optional numeric array of order statuses that is applied to order columns only. If it is available then the column will be displayed in the specified tabs of the status filter only.
+
+Here is the list of possible order statuses:
+
+1. 0 - All
+1. 1 - Canceled
+1. 2 - Filled
+1. 3 - Inactive
+1. 5 - Rejected,
+1. 6 - Working
 
 ## Context Menu
 

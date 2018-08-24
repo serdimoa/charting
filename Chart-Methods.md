@@ -52,6 +52,8 @@ Here is a list of methods supported by the chart.
   * [getVisiblePriceRange()](#getvisiblepricerange)
   * [priceFormatter()](#priceformatter)
   * [chartType()](#charttype)
+* [Other](#other)
+  * [exportData(options)](#exportdataoptions)
 
 ## Subscribing To Chart Events
 
@@ -168,7 +170,6 @@ Executes an action according to its id.
 * `drawingToolbarAction`
 * `magnetAction`
 * `stayInDrawingModeAction`
-* `hideAllDrawingsAction`
 * `hideAllMarks`
 * `showCountdown`
 * `showSeriesLastValue`
@@ -661,6 +662,50 @@ Returns the object with `format` function that you can use to format the prices.
 ### chartType()
 
 Returns the main series style type.
+
+## Other
+
+### exportData(options)
+
+*Starting from version 1.13.*
+
+1. `options` (optional) is an object, which can contain the following properties:
+    * `from` (`number`) - date of the first exporting bar (UNIX timestamp in seconds).
+        By default the time of the leftmost loaded bar is used.
+    * `to` (`number`) - date of the last exporting bar (UNIX timestamp in seconds).
+        By default the time of the rightmost (real-time) bar is used.
+    * `includeTime` (`boolean`, default `true`) - defines whether each item of the exported data should contain time.
+    * `includeSeries` (`boolean`, default `true`) - defines whether the exported data should contain the main series (open, high, low, close).
+    * `includedStudies` - which studies should be included in the exported data
+        (by default, the value is `'all'` which means that all studies are included, but if you want to export only some of them then you can assign an array of [studies' ids](#getallstudies)).
+
+Exports data from the chart, returns a Promise object. This method doesn't load data. The result has the following structure:
+
+* `schema` is an array of field descriptors, each descriptor might be one the following types:
+  * `TimeFieldDescriptor` - description of the time field. It contains only one field - `type` with the `'time'` value.
+  * `SeriesFieldDescriptor` - description of a series field. It contains the following fields:
+    * `type` (`'value'`)
+    * `sourceType` (`'series'`)
+    * `plotTitle` (`string`) - the name of the plot (open, high, low, close).
+  * `StudyFieldDescriptor` - description of a study field. It contains the following fields:
+    * `type` (`'value'`)
+    * `sourceType` (`'study'`)
+    * `sourceId` (`string`) - id of the study
+    * `sourceTitle` (`string`) - title of the study
+    * `plotTitle` (`string`) - title of the plot
+
+* `data` is an array of [Float64Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array)s.
+   Each `Float64Array` array has the same length as `schema` array and represents the associated field's item.
+
+**Examples:**
+
+1. `chart.exportData({ includeTime: false, includeSeries: true, includedStudies: [] })` - to export series' data only.
+1. `chart.exportData({ includeTime: true, includeSeries: true, includedStudies: [] })` - to export series' data with times.
+1. `chart.exportData({ includeTime: false, includeSeries: false, includedStudies: ['STUDY_ID'] })` - to export data for the study with the id `STUDY_ID`.
+1. `chart.exportData({ includeTime: true, includeSeries: true, includedStudies: 'all' })` - to export all available data from the chart.
+1. `chart.exportData({ includeTime: false, includeSeries: true, to: Date.UTC(2018, 0, 1) / 1000 })` - to export series' data before `2018-01-01`.
+1. `chart.exportData({ includeTime: false, includeSeries: true, from: Date.UTC(2018, 0, 1) / 1000 })` - to export series' data in the range before `2018-01-01`.
+1. `chart.exportData({ includeTime: false, includeSeries: true, from: Date.UTC(2018, 0, 1) / 1000, to: Date.UTC(2018, 1, 1) / 1000 })` - to export series' data in the range between `2018-01-01` and `2018-02-01`.
 
 ## See Also
 

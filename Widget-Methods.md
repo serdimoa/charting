@@ -28,6 +28,7 @@ widget.onChartReady(function() {
   * [selectedLineTool()](#selectedlinetool)
   * [takeScreenshot()](#takescreenshot)
   * [lockAllDrawingTools](#lockalldrawingtools)
+  * [hideAllDrawingTools](#hidealldrawingtools)
 * [Saving/Loading Charts](#savingloading-charts)
   * [save(callback)](#savecallback)
   * [load(state)](#loadstate)
@@ -221,6 +222,10 @@ The URL of the snapshot will be passed as an argument to the callback function.
 ### lockAllDrawingTools()
 
 This method returns a [WatchedValue](WatchedValue) object that can be used to read/set/watch the state of Lock All Drawing Tools button.
+
+### hideAllDrawingTools()
+
+This method returns a [WatchedValue](WatchedValue) object that can be used to read/set/watch the state of Hide All Drawing Tools button.
 
 ## Saving/Loading Charts
 

@@ -55,7 +55,6 @@ Please note that the leading `-` characters are not part of the featureset name 
 | timezone_menu                           | on            | 1.5             | Disables timezone context menu    |
 | snapshot_trading_drawings               | off           | 1.6             | Includes orders/positions/executions in the screenshot |
 | source_selection_markers                | on            | 1.11            | Disables selection markers for series and indicators |
-| keep_left_toolbar_visible_on_small_screens | off            | 1.11            | Prevents left toolbar from disappearing on small screens |
 | go_to_date | on            | 1.11            | Allows you to jump to a particular bar using 'Go to' dialog |
 | adaptive_logo | on            | 1.11            | Allows you to hide 'charts by TradingView' text on small-screen devices |
 | show_dom_first_time                      | off           | 1.12            | Shows DOM panel when a user opens the Chart for the first time |

@@ -10,72 +10,122 @@ This is an object that should be passed in the constructor of the Trading Termin
 
 * `supportReversePosition`
 
+    *Default:* `false`
+
     Broker supports reversing of a position.
     If it is not supported by broker, Chart will have the reverse button, but it will place a reversing order.
 
 * `supportClosePosition`
+
+    *Default:* `false`
 
     Broker supports closing of a position.
     If it is not supported by broker, Chart will have the close button, but it will place a closing order.
 
 * `supportReducePosition`
 
+    *Default:* `false`
+
     Broker supports changing of a position without orders.
 
 * `supportPLUpdate`
+
+    *Default:* `false`
 
     Broker provides PL for a position. If the broker calculates profit/loss by itself it should call [plUpdate](Trading-Host#plupdatepositionid-pl) as soon as PL is changed.
     Otherwise Chart will calculate PL as a difference between the current trade and an average price of the position.
 
 * `supportOrderBrackets`
 
+    *Default:* `false`
+
     Broker supports brackets (take profit and stop loss) for orders.
     If this flag is set to `true` the Chart will display additional fields in the order ticket and Modify button on a chart and in the Account Manager.
 
 * `supportPositionBrackets`
+
+    *Default:* `false`
 
     Broker supports brackets (take profit and stop loss orders) for positions.
     If this flag is set to `true` the Chart will display an Edit button for positions and add `Edit position...` to the context menu of a position.
 
 * `supportTradeBrackets`
 
+    *Default:* `false`
+
     Broker supports brackets for trades (take profit and stop loss orders).
     If this flag is set to `true` the Chart will display an Edit button for trades (individual positions) and add `Edit position...` to the context menu of a trade.
 
 * `supportTrades`
+
+    *Default:* `false`
 
     Broker supports individual positions (trades).
     If it is set to `true`, there will be two tabs in the Account Manager - Individual Positions and Net Positions.
 
 * `requiresFIFOCloseTrades`
 
+    *Default:* `false`
+
     Trading account requires closing of trades in FIFO order.
 
 * `supportCloseTrade`
+
+    *Default:* `false`
 
     Individual positions (trades) can be closed.
 
 * `supportMultiposition`
 
+    *Default:* `false`
+
     Supporting multiposition prevents creating the default implementation for a reversing position.
 
 * `showQuantityInsteadOfAmount`
+
+    *Default:* `false`
 
     This flag can be used to change "Amount" to "Quantity" in the order dialog
 
 * `supportLevel2Data`
 
+    *Default:* `false`
+
     Level2 data is used for DOM widget. `subscribeDepth` and `unsubscribeDepth` should be implemented.
 
+* `supportMarketOrders`
+
+    *Default:* `true`
+
+    This flag adds market orders type to the order dialog.
+
+* `supportLimitOrders`
+
+    *Default:* `true`
+
+    This flag adds limit orders type to the order dialog.
+
+* `supportStopOrders`
+
+    *Default:* `true`
+
+    This flag adds stop orders type to the order dialog.
+
 * `supportStopLimitOrders`
+
+    *Default:* `false`
 
     This flag adds stop-limit orders type to the order dialog.
 
 * `supportMarketBrackets`
 
+    *Default:* `true`
+
     Using this flag you can disable brackets for market orders. It is enabled by default.
 
 * `supportModifyDuration`
+
+    *Default:* `false`
 
     Using this flag you can enable modification of the duration of the existing order. It is disabled by default.
 

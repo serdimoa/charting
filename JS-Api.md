@@ -129,9 +129,9 @@ This function is called when the chart needs a history fragment defined by dates
 
 The charting library assumes `onHistoryCallback` to be called **just once**.
 
-**Important**: `nextTime` is a time of the next bar in the history. It should be set only in the event that there is no data in the requested period.
+**Important**: `nextTime` is a time of the next bar in the history. It should be set if the requested period represents a gap in the data. Hence there is available data prior to the requested period.
 
-**Important**: `noData` should be set only in the event that there is no data in the requested and earlier period.
+**Important**: `noData` should be set if there is no data in the requested period.
 
 **Remark**: `bar.time` is expected to be the amount of milliseconds since Unix epoch start in **UTC** timezone.
 

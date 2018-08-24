@@ -6,10 +6,21 @@ Here is the list of breaking changes:
 
 <!-- markdownlint-disable no-emphasis-as-header -->
 
+## Version 1.14
+
+**TypeScript type definitions**
+
+- `StudyInputValueType` type is renamed to `StudyInputValue`.
+
+**Featureset**
+
+- Starting from this version you are no longer able to use the `keep_left_toolbar_visible_on_small_screens` featureset. This featureset is removed and the left toolbar visibility no longer depends on the screen size.
+
 ## Version 1.13
 
 - Action `takeScreenshot` from [executeActionById](Chart-Methods#executeactionbyidactionid) method is removed. Use [takeScreenshot](Widget-Methods#takescreenshot) method instead.
-- Action `lockDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) method are removed. Use [lockAllDrawingTools](Widget-Methods#lockalldrawingtools) instead.
+- Action `lockDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) methods is removed. Use [lockAllDrawingTools](Widget-Methods#lockalldrawingtools) instead.
+- Action `hideAllDrawingsAction` from [executeActionById](Chart-Methods#executeactionbyidactionid) and [getCheckableActionState](Chart-Methods#getcheckableactionstateactionid) methods is removed. Use [hideAllDrawingTools](Widget-Methods#hidealldrawingtools) instead.
 - Featureset `caption_buttons_text_if_possible` is enabled by default.
 - Fixed an [issue](https://github.com/tradingview/charting_library/issues/2652) that was causing bars to shift. Time-shifted bars used to appear when daily bars had a negative exchange timezone offset along with a 24x7 session. If you have a workaround for this issue, please remove it before updating to this version.
 
