@@ -667,7 +667,7 @@ Returns the main series style type.
 
 ### exportData(options)
 
-*Starting from version 1.13.*
+*Starting from version 1.14.*
 
 1. `options` (optional) is an object, which can contain the following properties:
     * `from` (`number`) - date of the first exporting bar (UNIX timestamp in seconds).
