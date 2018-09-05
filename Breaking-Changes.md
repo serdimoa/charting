@@ -8,6 +8,9 @@ Here is the list of breaking changes:
 
 ## Version 1.14
 
+- [createButton](Widget-Methods#createButtonoptions) returns `HTMLElement` instead of `JQuery`.
+- [createButton](Widget-Methods#createButtonoptions) must be used after [headerReady()](Widget-Methods#headerready) `Promise` is resolved.
+
 **TypeScript type definitions**
 
 - `StudyInputValueType` type is renamed to `StudyInputValue`.

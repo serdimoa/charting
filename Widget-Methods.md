@@ -14,6 +14,7 @@ widget.onChartReady(function() {
 
 * [Subscribing To Chart Events](#subscribing-to-chart-events)
   * [onChartReady(callback)](#onchartreadycallback)
+  * [headerReady()](#headerready)
   * [onGrayedObjectClicked(callback)](#ongrayedobjectclickedcallback)
   * [onShortcut(shortcut, callback)](#onshortcutshortcut-callback)
   * [subscribe(event, callback)](#subscribeevent-callback)
@@ -71,6 +72,10 @@ widget.onChartReady(function() {
 
 The Charting Library will call the callback function 1 time when chart is initialized.
 You can safely call all other methods starting from this moment.
+
+### headerReady()
+
+Returns a `Promise` object that should be used to handle an event when the Charting Library header widget API is ready (e.g. [createButton](#createbuttonoptions)).
 
 ### onGrayedObjectClicked(callback)
 
@@ -339,17 +344,19 @@ widget.onChartReady(function() {
 1. `options`: object `{ align: "left" }`
     * `align`: `right` | `left`. default: `left`
 
-Creates a new DOM element in the top toolbar of the chart and returns **jQuery object** for this button.
+Creates a new DOM element in the top toolbar of the chart and returns [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) for this button.
 You can use it to add custom controls right on the chart.
+
+**NOTE:** This method MUST be called after [headerReady](#headerready) promise is resolved.
 
 Example:
 
 ```javascript
-widget.onChartReady(function() {
-    widget.createButton()
-        .attr('title', "My custom button tooltip")
-        .on('click', function (e) { alert("My custom button pressed!"); })
-        .append($('<span>My custom button caption</span>'));
+widget.headerReady().then(function() {
+    var button = widget.createButton();
+    button.setAttribute('title', 'My custom button tooltip');
+    button.addEventListener('click', function() { alert("My custom button pressed!"); });
+    button.textContent = 'My custom button caption';
 });
 ```
 
